@@ -345,7 +345,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 
 			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_price', 15 );
 
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_add_to_cart', 25 );
+			add_action( 'flance_wcqv_product_summary', 'flance_woocommerce_template_single_add_to_cart', 25 );
 
 		}
 
