@@ -21,7 +21,7 @@ if ( $product ) {
 				<input type="checkbox" class="wpc-addon-field wpc-addon-checkbox yith-wcqv-button-checkbox" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>[]" value="red"
 					   data-price-type="quantity_based"
 					   data-price="<?php echo esc_attr( $product_price ); ?>"
-					   data-label="red"
+					   data-label="<?php echo esc_attr( $product_name ); ?>"
 					   data-product_id="<?php echo esc_attr( $product_id ); ?>">
 				<span class="wpc-veriation-attribute">
                     <?php echo esc_attr( $product_name ); ?> (+<span class="woocommerce-Price-amount amount"><bdi>
