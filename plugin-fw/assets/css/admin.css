@@ -1,5 +1,5 @@
 /*-----------------------
-        YITH Debug
+        FLANCE Debug
  ------------------------*/
 #wpadminbar .yith-debug-admin-bar div,
 #wpadminbar .yith-debug-admin-bar:hover div {
@@ -54,7 +54,7 @@
 }
 
 /*-----------------------
-    YITH FEEDS
+    FLANCE FEEDS
  ------------------------*/
 .yith-feeds-wrapper {
     display : none;
@@ -82,7 +82,7 @@
 }
 
 /*-----------------------
-    YITH Plugins Columns
+    FLANCE Plugins Columns
  ------------------------*/
 @media screen and (min-width : 783px) {
 
@@ -124,7 +124,7 @@
 }
 
 /*---------------------------
-    YITH System Information
+    FLANCE System Information
  ----------------------------*/
 
 #yith-sysinfo ul.yith-plugin-fw-tabs {

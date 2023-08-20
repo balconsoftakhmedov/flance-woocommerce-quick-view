@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Plugin Sub-panel Class.
+ * FLANCE Plugin Sub-panel Class.
  *
  * @class   YIT_Plugin_SubPanel
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'YIT_Plugin_SubPanel' ) ) {
 	/**
 	 * YIT_Plugin_SubPanel class.
 	 *
-	 * @author YITH <plugins@yithemes.com>
+	 * @author FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Plugin_SubPanel extends YIT_Plugin_Panel {
 
@@ -74,7 +74,7 @@ if ( ! class_exists( 'YIT_Plugin_SubPanel' ) ) {
 
 			if ( ! isset( $admin_page_hooks['yith_plugin_panel'] ) ) {
 				$position = apply_filters( 'yit_plugins_menu_item_position', '62.32' );
-				add_menu_page( 'yith_plugin_panel', 'YITH', 'nosuchcapability', 'yith_plugin_panel', null, $logo, $position );
+				add_menu_page( 'yith_plugin_panel', 'FLANCE', 'nosuchcapability', 'yith_plugin_panel', null, $logo, $position );
 				// Prevent issues for backward compatibility.
 				$admin_page_hooks['yith_plugin_panel'] = 'yith-plugins'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}

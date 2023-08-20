@@ -3,8 +3,8 @@
  * The Template for displaying the BH Onboarding tabs.
  *
  * @var array $options The premium tab  options array.
- * @package YITH\PluginFramework\Templates
- * @author  YITH <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Templates
+ * @author  FLANCE <plugins@yithemes.com>
  * @since   3.9.11
  */
 

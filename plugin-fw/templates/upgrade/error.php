@@ -3,7 +3,7 @@
  * The Template for displaying the plugin changelog error.
  *
  * @var string $error The error.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

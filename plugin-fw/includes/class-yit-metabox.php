@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Meta-box Class.
+ * FLANCE Meta-box Class.
  *
  * @class   YIT_Metabox
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 	/**
 	 * YIT_Metabox class.
 	 *
-	 * @author YITH <plugins@yithemes.com>
+	 * @author FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Metabox {
 

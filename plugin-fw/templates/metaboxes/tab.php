@@ -5,7 +5,7 @@
  * @var array  $tabs        The tabs.
  * @var string $class       The CSS Class.
  * @var string $meta_box_id The ID of the meta-box.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

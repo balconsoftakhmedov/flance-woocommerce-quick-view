@@ -2,7 +2,7 @@
 /**
  * Functions for WooCommerce 3.0 compatibility.
  *
- * @package YITH\PluginFramework
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

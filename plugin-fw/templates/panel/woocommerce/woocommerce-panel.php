@@ -2,11 +2,11 @@
 /**
  * The Template for displaying the WooCommerce Panel.
  *
- * @var YIT_Plugin_Panel_WooCommerce $this           The YITH WooCommerce Panel.
+ * @var YIT_Plugin_Panel_WooCommerce $this           The FLANCE WooCommerce Panel.
  * @var string                       $page           The current page.
  * @var string                       $wrap_class     The wrapper class.
  * @var array                        $available_tabs The available tabs.
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

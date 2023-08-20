@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Plugin License Class.
+ * FLANCE Plugin License Class.
  *
  * @class   YIT_Plugin_Licence
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! class_exists( 'YIT_Plugin_Licence' ) ) {
 	 * YIT_Plugin_Licence class.
 	 * Set page to manage products.
 	 *
-	 * @author YITH <plugins@yithemes.com>
+	 * @author FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Plugin_Licence {
 		/**

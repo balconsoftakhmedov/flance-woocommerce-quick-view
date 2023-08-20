@@ -2,8 +2,8 @@
 /**
  * Admin class
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE WooCommerce Quick View
  * @version 1.1.1
  */
 
@@ -106,7 +106,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 
 			add_action( 'yith_quick_view_premium', array( $this, 'premium_tab' ) );
 
-			// YITH WCQV Loaded!
+			// FLANCE WCQV Loaded!
 			do_action( 'yith_wcqv_loaded' );
 
 		}
@@ -127,7 +127,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		}
 
 		/**
-		 * Add a panel under YITH Plugins tab
+		 * Add a panel under FLANCE Plugins tab
 		 *
 		 * @since    1.0
 		 * @use      /Yit_Plugin_Panel class
@@ -148,7 +148,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 			$args = array(
 				'create_menu_page' => true,
 				'parent_slug'      => '',
-				'page_title'       => 'YITH WooCommerce Quick View',
+				'page_title'       => 'FLANCE WooCommerce Quick View',
 				'menu_title'       => 'Quick View',
 				'capability'       => 'manage_options',
 				'parent'           => '',

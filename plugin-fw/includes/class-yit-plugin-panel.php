@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Plugin Panel Class.
+ * FLANCE Plugin Panel Class.
  *
  * @class   YIT_Plugin_Panel
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -194,7 +194,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		}
 
 		/**
-		 * Init actions to show YITH Panel tabs in WP Pages
+		 * Init actions to show FLANCE Panel tabs in WP Pages
 		 *
 		 * @since    3.4.0
 		 */
@@ -255,7 +255,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 */
 		protected static function init_actions() {
 			if ( ! static::$actions_initialized ) {
-				// Sort plugins by name in YITH Plugins menu.
+				// Sort plugins by name in FLANCE Plugins menu.
 				add_action( 'admin_menu', array( __CLASS__, 'sort_plugins' ), 90 );
 				add_filter( 'add_menu_classes', array( __CLASS__, 'add_menu_class_in_yith_plugin' ) );
 
@@ -378,9 +378,9 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				$capability = apply_filters( 'yit_plugin_panel_menu_page_capability', 'manage_options' );
 				$show       = apply_filters( 'yit_plugin_panel_menu_page_show', true );
 
-				// YITH text must NOT be translated.
+				// FLANCE text must NOT be translated.
 				if ( ! ! $show ) {
-					add_menu_page( 'yith_plugin_panel', 'YITH', $capability, 'yith_plugin_panel', null, yith_plugin_fw_get_default_logo(), $position );
+					add_menu_page( 'yith_plugin_panel', 'FLANCE', $capability, 'yith_plugin_panel', null, yith_plugin_fw_get_default_logo(), $position );
 					// Prevent issues for backward compatibility.
 					$admin_page_hooks['yith_plugin_panel'] = 'yith-plugins'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				}
@@ -846,8 +846,8 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			$is_premium   = $this->is_premium() || ! $is_extended;
 			$plugin_slug  = $this->get_plugin_slug();
 
-			if ( 0 !== strpos( $plugin_title, 'YITH' ) ) {
-				$plugin_title = "YITH {$plugin_title}";
+			if ( 0 !== strpos( $plugin_title, 'FLANCE' ) ) {
+				$plugin_title = "FLANCE {$plugin_title}";
 			}
 
 			// translators: 1. Plugin name.
@@ -1236,7 +1236,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					array(
 						'name'    => 'Max Ackerman',
 						'avatar'  => YIT_CORE_PLUGIN_URL . '/assets/images/premium-tab/testimonial.jpg',
-						'message' => __( "At first, I was hesitant to buy the premium version so I started with the free option.\nAfter a while, seeing the quality of the plugin and the results I was getting, I decided to give it a shot and switch to premium. No regrets!\nThey have an amazing support team that is always there no matter how big or small your problem is. Do yourself a favor and stop using free plugins that kind of work and just buy whatever plugin you need from YITH.", 'yith-plugin-fw' ),
+						'message' => __( "At first, I was hesitant to buy the premium version so I started with the free option.\nAfter a while, seeing the quality of the plugin and the results I was getting, I decided to give it a shot and switch to premium. No regrets!\nThey have an amazing support team that is always there no matter how big or small your problem is. Do yourself a favor and stop using free plugins that kind of work and just buy whatever plugin you need from FLANCE.", 'yith-plugin-fw' ),
 					),
 				),
 			);
@@ -1893,7 +1893,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		}
 
 		/**
-		 * Sort plugins by name in YITH Plugins menu.
+		 * Sort plugins by name in FLANCE Plugins menu.
 		 *
 		 * @since    3.0.0
 		 */
@@ -1914,7 +1914,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		}
 
 		/**
-		 * Add menu class in YITH Plugins menu.
+		 * Add menu class in FLANCE Plugins menu.
 		 *
 		 * @param array $menu The menu.
 		 *
@@ -2333,13 +2333,13 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * @return string
 		 */
 		protected function get_header_title() {
-			$stop_words = array( 'YITH', 'for WordPress & WooCommerce', 'for WordPress and WooCommerce', 'for WordPress', 'for WooCommerce', 'WooCommerce' );
+			$stop_words = array( 'FLANCE', 'for WordPress & WooCommerce', 'for WordPress and WooCommerce', 'for WordPress', 'for WooCommerce', 'WooCommerce' );
 
 			return $this->settings['menu_title'] ?? trim( str_replace( $stop_words, '', $this->get_plugin_name() ) );
 		}
 
 		/**
-		 * Print the YITH logo and the plugin name.
+		 * Print the FLANCE logo and the plugin name.
 		 *
 		 * @since 4.0.0
 		 */

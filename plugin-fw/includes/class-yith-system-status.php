@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH System Status Class
+ * FLANCE System Status Class
  * handle System Status panel
  *
  * @class   FLANCE_System_Status
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 	/**
 	 * FLANCE_System_Status class.
 	 *
-	 * @author     YITH <plugins@yithemes.com>
+	 * @author     FLANCE <plugins@yithemes.com>
 	 */
 	class FLANCE_System_Status {
 		/**
@@ -122,7 +122,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		}
 
 		/**
-		 * Add "System Information" submenu page under YITH Plugins
+		 * Add "System Information" submenu page under FLANCE Plugins
 		 *
 		 * @return void
 		 * @since  1.0.0
@@ -150,7 +150,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		}
 
 		/**
-		 * Add "System Information" page template under YITH Plugins
+		 * Add "System Information" page template under FLANCE Plugins
 		 *
 		 * @return void
 		 * @since  1.0.0
@@ -174,7 +174,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 			if ( '' === get_option( 'yith_system_info' ) || ( isset( $_GET['page'] ) && $_GET['page'] === $this->page ) ) { //phpcs:ignore
 
 				$this->add_requirements(
-					esc_html__( 'YITH Plugins', 'yith-plugin-fw' ),
+					esc_html__( 'FLANCE Plugins', 'yith-plugin-fw' ),
 					array(
 						'min_wp_version'  => '5.9',
 						'min_wc_version'  => '7.2',

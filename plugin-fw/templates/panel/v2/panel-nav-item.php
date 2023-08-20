@@ -6,7 +6,7 @@
  * @var string                                        $tab_key
  * @var array                                         $tab_data
  * @var array                                         $nav_args
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

@@ -9,7 +9,7 @@
  * @var bool   $is_extended     Whether current plugin is an Extended version.
  * @var bool   $is_premium      Whether current plugin is a Premium version.
  *
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

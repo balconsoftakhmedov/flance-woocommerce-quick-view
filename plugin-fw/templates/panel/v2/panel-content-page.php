@@ -7,7 +7,7 @@
  * @var string           $form_method
  * @var string           $option_key
  * @var string           $reset_warning
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

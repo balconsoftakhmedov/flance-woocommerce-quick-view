@@ -4,7 +4,7 @@
  *
  * @var array $field The field.
  * @since   3.0.13
- * @package YITH\PluginFramework\Templates\Fields
+ * @package FLANCE\PluginFramework\Templates\Fields
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

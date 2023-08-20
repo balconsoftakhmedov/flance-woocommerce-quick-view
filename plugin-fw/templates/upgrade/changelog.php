@@ -4,7 +4,7 @@
  *
  * @var string $plugin_name The plugin name.
  * @var string $changelog   The changelog.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

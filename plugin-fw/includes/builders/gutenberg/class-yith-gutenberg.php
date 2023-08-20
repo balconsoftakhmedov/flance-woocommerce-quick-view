@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Gutenberg Class
+ * FLANCE Gutenberg Class
  * handle Gutenberg blocks and shortcodes.
  *
  * @class   FLANCE_Gutenberg
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 	/**
 	 * FLANCE_Gutenberg class.
 	 *
-	 * @author  YITH <plugins@yithemes.com>
+	 * @author  FLANCE <plugins@yithemes.com>
 	 */
 	class FLANCE_Gutenberg {
 		/**
@@ -153,7 +153,7 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 				array(
 					array(
 						'slug'  => 'yith-blocks',
-						'title' => _x( 'YITH', '[gutenberg]: Category Name', 'yith-plugin-fw' ),
+						'title' => _x( 'FLANCE', '[gutenberg]: Category Name', 'yith-plugin-fw' ),
 					),
 				)
 			);

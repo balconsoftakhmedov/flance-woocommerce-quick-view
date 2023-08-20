@@ -2,7 +2,7 @@
 /**
  * Deprecated file. Use the correct one in includes folder instead
  *
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 /**

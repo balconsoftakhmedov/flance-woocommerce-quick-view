@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Plugin Panel WooCommerce Class.
+ * FLANCE Plugin Panel WooCommerce Class.
  *
  * @class   YIT_Plugin_Panel_WooCommerce
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 	/**
 	 * YIT_Plugin_Panel_WooCommerce class.
 	 *
-	 * @author YITH <plugins@yithemes.com>
+	 * @author FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Plugin_Panel_WooCommerce extends YIT_Plugin_Panel {
 		/**
@@ -128,7 +128,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 
 				add_filter( 'woocommerce_admin_settings_sanitize_option', array( __CLASS__, 'sanitize_option' ), 10, 3 );
 
-				// Sort plugins by name in YITH Plugins menu.
+				// Sort plugins by name in FLANCE Plugins menu.
 				add_action( 'admin_menu', array( __CLASS__, 'sort_plugins' ), 90 );
 
 				add_filter( 'add_menu_classes', array( __CLASS__, 'add_menu_class_in_yith_plugin' ) );
@@ -818,7 +818,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 		}
 
 		/**
-		 * Add YITH Fields.
+		 * Add FLANCE Fields.
 		 *
 		 * @param array $field The field.
 		 *

@@ -3,7 +3,7 @@
  * The Template for displaying the WooCommerce option row.
  *
  * @var array $field The field.
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

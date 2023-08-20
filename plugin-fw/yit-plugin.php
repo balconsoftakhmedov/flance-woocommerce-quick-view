@@ -2,8 +2,8 @@
 /**
  * Define constants and include Plugin Framework files.
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -68,7 +68,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 	 */
 	function yit_plugin_fw_row_meta( $plugin_meta, $plugin_file, $plugin_data, $status ) {
 		if ( false === strstr( $plugin_file, 'yith' ) ) {
-			// Not an YITH plugin.
+			// Not an FLANCE plugin.
 			return $plugin_meta;
 		}
 
@@ -268,7 +268,7 @@ if ( ! function_exists( 'yith_plugin_fw_print_deactivation_message' ) ) {
 				$name = get_plugin_data( WP_PLUGIN_DIR . '/' . $init_file )['Name'] ?? '';
 				if ( ! $name ) {
 					$name = str_replace( array( '-', 'init.php', '/' ), ' ', $init_file );
-					$name = str_replace( array( 'yith', 'woocommerce', 'wordpress' ), array( 'YITH', 'WooCommerce', 'WordPress' ), $name );
+					$name = str_replace( array( 'yith', 'woocommerce', 'wordpress' ), array( 'FLANCE', 'WooCommerce', 'WordPress' ), $name );
 					$name = trim( ucwords( $name ) );
 				}
 

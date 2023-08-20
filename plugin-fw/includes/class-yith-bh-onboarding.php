@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH BH Onboarding Class
+ * FLANCE BH Onboarding Class
  *
  * @class   FLANCE_BH_Onboarding
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

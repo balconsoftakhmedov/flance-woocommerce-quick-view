@@ -2,14 +2,14 @@
 /**
  * The Template for displaying WooCommerce upload.
  *
- * @var YIT_Plugin_Panel_WooCommerce $this   The YITH WooCommerce Panel.
+ * @var YIT_Plugin_Panel_WooCommerce $this   The FLANCE WooCommerce Panel.
  * @var string                       $id     The option ID.
  * @var string                       $name   The name.
  * @var array                        $option The option array.
  * @var string                       $value  The value.
  * @var string                       $desc   The description.
- * @author     YITH <plugins@yithemes.com>
- * @package    YITH\PluginFramework\Templates
+ * @author     FLANCE <plugins@yithemes.com>
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

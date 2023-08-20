@@ -3,7 +3,7 @@
  */
 
 /**
- * The YITH Logo Icon
+ * The FLANCE Logo Icon
  * @type {JSX.Element}
  */
 export const yith_icon = <svg viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" width="22" height="22" role="img" aria-hidden="true" focusable="false">

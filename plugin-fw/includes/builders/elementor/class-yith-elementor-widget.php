@@ -3,7 +3,7 @@
  * Elementor Widget Skeleton Class.
  *
  * @class   FLANCE_Elementor_Widget
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  * @since   3.6.0
  */
 
@@ -17,12 +17,12 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 	/**
 	 * FLANCE_Elementor_Widget class.
 	 *
-	 * @author  YITH <plugins@yithemes.com>
+	 * @author  FLANCE <plugins@yithemes.com>
 	 */
 	class FLANCE_Elementor_Widget extends Widget_Base {
 
 		/**
-		 * YITH Data.
+		 * FLANCE Data.
 		 *
 		 * @var array
 		 */
@@ -44,7 +44,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * Retrieve an YITH prop.
+		 * Retrieve an FLANCE prop.
 		 *
 		 * @param string            $prop    The prop.
 		 * @param bool|string|array $default Default value.
@@ -235,7 +235,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * Retrieve the YITH Data defaults.
+		 * Retrieve the FLANCE Data defaults.
 		 *
 		 * @return array
 		 */
@@ -256,7 +256,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * Retrieve YITH options with their values.
+		 * Retrieve FLANCE options with their values.
 		 */
 		protected function get_yith_option_values() {
 			$settings           = $this->get_settings_for_display();
@@ -291,7 +291,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * YITH Data Initialization.
+		 * FLANCE Data Initialization.
 		 */
 		protected function init_yith_data() {
 			$data = wp_parse_args( $this->yith_data, $this->get_yith_data_defaults() );
@@ -451,7 +451,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * Return the YITH key prefix.
+		 * Return the FLANCE key prefix.
 		 *
 		 * @return string
 		 */
@@ -460,7 +460,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		}
 
 		/**
-		 * Add YITH prefix to a specific key.
+		 * Add FLANCE prefix to a specific key.
 		 *
 		 * @param string $key The key to be prefixed.
 		 *

@@ -3,14 +3,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
+"Report-Msgid-Bugs-To: FLANCE <plugins@yithemes.com>\n"
 "POT-Creation-Date: 2023-07-27 13:50:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: YITH <info@yithemes.com>\n"
+"Language-Team: FLANCE <info@yithemes.com>\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Country: United States\n"
@@ -148,7 +148,7 @@ msgid ""
 "getting, I decided to give it a shot and switch to premium. No regrets!\n"
 "They have an amazing support team that is always there no matter how big or "
 "small your problem is. Do yourself a favor and stop using free plugins that "
-"kind of work and just buy whatever plugin you need from YITH."
+"kind of work and just buy whatever plugin you need from FLANCE."
 msgstr ""
 
 #: includes/class-yit-plugin-panel.php:1490
@@ -207,12 +207,12 @@ msgstr ""
 
 #: includes/class-yit-pointers.php:81
 msgid ""
-"From now on, you can find all plugin options in YITH menu. Plugin "
-"customization settings will be available as a new entry in YITH menu."
+"From now on, you can find all plugin options in FLANCE menu. Plugin "
+"customization settings will be available as a new entry in FLANCE menu."
 msgstr ""
 
 #: includes/class-yit-pointers.php:84 includes/class-yit-pointers.php:100
-#. translators: 1. YITH site link; 2. WordPress site link.
+#. translators: 1. FLANCE site link; 2. WordPress site link.
 msgid "Discover all our plugins available on: %1$s and %2$s"
 msgstr ""
 
@@ -222,11 +222,11 @@ msgstr ""
 
 #: includes/class-yit-pointers.php:97
 msgid ""
-"From now on, you can find the option panel of YITH plugins in YITH menu. "
+"From now on, you can find the option panel of FLANCE plugins in FLANCE menu. "
 "Every time one of our plugins is added, a new entry will be added to this "
-"menu. For example, after the update, plugin options (such as for YITH "
-"WooCommerce Wishlist, YITH WooCommerce Ajax Search, etc.) will be moved "
-"from previous location to YITH menu."
+"menu. For example, after the update, plugin options (such as for FLANCE "
+"WooCommerce Wishlist, FLANCE WooCommerce Ajax Search, etc.) will be moved "
+"from previous location to FLANCE menu."
 msgstr ""
 
 #: includes/class-yith-bh-onboarding.php:85
@@ -234,11 +234,11 @@ msgid "It is not possible save the options"
 msgstr ""
 
 #: includes/class-yith-dashboard.php:35
-msgid "YITH Latest Updates"
+msgid "FLANCE Latest Updates"
 msgstr ""
 
 #: includes/class-yith-dashboard.php:36
-msgid "Latest news from YITH Blog"
+msgid "Latest news from FLANCE Blog"
 msgstr ""
 
 #: includes/class-yith-dashboard.php:56
@@ -320,7 +320,7 @@ msgid "System Status"
 msgstr ""
 
 #: includes/class-yith-system-status.php:177
-msgid "YITH Plugins"
+msgid "FLANCE Plugins"
 msgstr ""
 
 #: includes/class-yith-system-status.php:185
@@ -659,7 +659,7 @@ msgid "Log Files"
 msgstr ""
 
 #: templates/sysinfo/system-information-panel.php:22
-msgid "YITH System Information"
+msgid "FLANCE System Information"
 msgstr ""
 
 #: templates/sysinfo/tabs/error-log.php:13
@@ -718,7 +718,7 @@ msgid "External object cache"
 msgstr ""
 
 #: templates/sysinfo/tabs/main.php:59
-msgid "YITH Plugin Framework Version"
+msgid "FLANCE Plugin Framework Version"
 msgstr ""
 
 #: templates/sysinfo/tabs/main.php:68
@@ -799,7 +799,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #. Author of the plugin/theme
-msgid "YITH"
+msgid "FLANCE"
 msgstr ""
 
 #: includes/builders/elementor/class-yith-elementor-widget.php:252
@@ -810,7 +810,7 @@ msgstr ""
 
 #: includes/builders/gutenberg/class-yith-gutenberg.php:156
 msgctxt "[gutenberg]: Category Name"
-msgid "YITH"
+msgid "FLANCE"
 msgstr ""
 
 #: includes/class-yit-assets.php:120
@@ -908,7 +908,7 @@ msgstr ""
 
 #: includes/privacy/class-yith-privacy.php:61
 msgctxt "Privacy Policy Guide Title"
-msgid "YITH Plugins"
+msgid "FLANCE Plugins"
 msgstr ""
 
 #: includes/privacy/class-yith-privacy.php:93

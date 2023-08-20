@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Plugin Common Class.
+ * FLANCE Plugin Common Class.
  *
  * @class   YIT_Plugin_Common
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

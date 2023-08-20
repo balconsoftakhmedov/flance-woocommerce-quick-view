@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Debug Class.
+ * FLANCE Debug Class.
  *
  * @class   FLANCE_Debug
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'FLANCE_Debug' ) ) {
 	/**
 	 * FLANCE_Debug class.
 	 *
-	 * @author     YITH <plugins@yithemes.com>
+	 * @author     FLANCE <plugins@yithemes.com>
 	 * @deprecated 3.7.7
 	 */
 	class FLANCE_Debug {

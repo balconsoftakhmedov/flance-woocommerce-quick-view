@@ -5,7 +5,7 @@
  * @var array  $options         Array of options.
  * @var string $current_tab     The current tab.
  * @var string $current_sub_tab The current sub-tab.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

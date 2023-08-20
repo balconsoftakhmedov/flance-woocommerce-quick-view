@@ -3,7 +3,7 @@
  * The template for displaying the tags in option labels.
  *
  * @var array $field
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

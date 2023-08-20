@@ -5,7 +5,7 @@
  * @var string $title
  * @var bool   $is_free
  * @var string $rate_url
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

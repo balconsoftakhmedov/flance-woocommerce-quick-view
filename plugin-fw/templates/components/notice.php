@@ -3,7 +3,7 @@
  * Template for displaying the notice component
  *
  * @var array $component The component.
- * @package YITH\PluginFramework\Templates\Components
+ * @package FLANCE\PluginFramework\Templates\Components
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

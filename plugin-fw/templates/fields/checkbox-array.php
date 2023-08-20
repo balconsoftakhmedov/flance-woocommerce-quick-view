@@ -3,7 +3,7 @@
  * Template for displaying the checkbox-array field
  *
  * @var array $field The field.
- * @package YITH\PluginFramework\Templates\Fields
+ * @package FLANCE\PluginFramework\Templates\Fields
  * @since   3.4.0
  */
 

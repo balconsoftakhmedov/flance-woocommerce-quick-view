@@ -1,9 +1,9 @@
-# Translation of YITH Framework in Spanish (Spain)
-# This file is distributed under the same license as the YITH Framework package.
+# Translation of FLANCE Framework in Spanish (Spain)
+# This file is distributed under the same license as the FLANCE Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH Framework\n"
-"Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
+"Project-Id-Version: FLANCE Framework\n"
+"Report-Msgid-Bugs-To: FLANCE <plugins@yithemes.com>\n"
 "POT-Creation-Date: 2023-07-27 13:50:07+00:00\n"
 "PO-Revision-Date: 2023-07-06 06:04:36+0000\n"
 "Language: es\n"
@@ -143,7 +143,7 @@ msgid ""
 "getting, I decided to give it a shot and switch to premium. No regrets!\n"
 "They have an amazing support team that is always there no matter how big or "
 "small your problem is. Do yourself a favor and stop using free plugins that "
-"kind of work and just buy whatever plugin you need from YITH."
+"kind of work and just buy whatever plugin you need from FLANCE."
 msgstr ""
 "Al principio, dudaba si comprar la versión premium, así que empecé con la "
 "opción gratuita.\n"
@@ -152,7 +152,7 @@ msgstr ""
 "me arrepiento!\n"
 "Tienen un equipo de soporte increíble que siempre está ahí por grande o "
 "pequeño que sea tu problema. Hazte un favor y deja de usar plugins gratuitos "
-"que no funcionan y compra cualquier plugin que necesites de YITH."
+"que no funcionan y compra cualquier plugin que necesites de FLANCE."
 
 #: includes/class-yit-plugin-panel.php:1490
 msgid ""
@@ -213,14 +213,14 @@ msgstr "Plugins activados"
 
 #: includes/class-yit-pointers.php:81
 msgid ""
-"From now on, you can find all plugin options in YITH menu. Plugin "
-"customization settings will be available as a new entry in YITH menu."
+"From now on, you can find all plugin options in FLANCE menu. Plugin "
+"customization settings will be available as a new entry in FLANCE menu."
 msgstr ""
 "Desde ahora, puedes encontrar todas las opciones de los plugins en el menú "
-"YITH plugins. La personalización de los ajustes del plugins estará "
-"disponible como una nueva entrada en el menú YITH plugins."
+"FLANCE plugins. La personalización de los ajustes del plugins estará "
+"disponible como una nueva entrada en el menú FLANCE plugins."
 
-#. translators: 1. YITH site link; 2. WordPress site link.
+#. translators: 1. FLANCE site link; 2. WordPress site link.
 #: includes/class-yit-pointers.php:84 includes/class-yit-pointers.php:100
 msgid "Discover all our plugins available on: %1$s and %2$s"
 msgstr "Descubre todos nuestros plugins disponibles en: %1$s y %2$s"
@@ -231,30 +231,30 @@ msgstr "Plugins mejorados"
 
 #: includes/class-yit-pointers.php:97
 msgid ""
-"From now on, you can find the option panel of YITH plugins in YITH menu. "
+"From now on, you can find the option panel of FLANCE plugins in FLANCE menu. "
 "Every time one of our plugins is added, a new entry will be added to this "
-"menu. For example, after the update, plugin options (such as for YITH "
-"WooCommerce Wishlist, YITH WooCommerce Ajax Search, etc.) will be moved from "
-"previous location to YITH menu."
+"menu. For example, after the update, plugin options (such as for FLANCE "
+"WooCommerce Wishlist, FLANCE WooCommerce Ajax Search, etc.) will be moved from "
+"previous location to FLANCE menu."
 msgstr ""
-"Desde ahora puedes encontrar la opción en el panel de Plugins de YITH en el "
-"menú YITH plugins. Cada vez que uno de nuestros plugins es añadido, una "
+"Desde ahora puedes encontrar la opción en el panel de Plugins de FLANCE en el "
+"menú FLANCE plugins. Cada vez que uno de nuestros plugins es añadido, una "
 "nueva entrada será añadida a este menú. Por ejemplo, tras la actualización, "
-"las opciones de los plugins (tales como YITH WooCommerce Wishlist, YITH "
+"las opciones de los plugins (tales como FLANCE WooCommerce Wishlist, FLANCE "
 "WooCommerce Ajax Search, etc.) serán movidos de la ubicación previa a la "
-"pestaña de YITH plugins."
+"pestaña de FLANCE plugins."
 
 #: includes/class-yith-bh-onboarding.php:85
 msgid "It is not possible save the options"
 msgstr "No es posible guardar las opciones"
 
 #: includes/class-yith-dashboard.php:35
-msgid "YITH Latest Updates"
-msgstr "Últimas actualizaciones de YITH"
+msgid "FLANCE Latest Updates"
+msgstr "Últimas actualizaciones de FLANCE"
 
 #: includes/class-yith-dashboard.php:36
-msgid "Latest news from YITH Blog"
-msgstr "Últimas novedades del Blog de YITH"
+msgid "Latest news from FLANCE Blog"
+msgstr "Últimas novedades del Blog de FLANCE"
 
 #: includes/class-yith-dashboard.php:56
 msgid "RSS Error:"
@@ -337,8 +337,8 @@ msgid "System Status"
 msgstr "Estado del sistema"
 
 #: includes/class-yith-system-status.php:177
-msgid "YITH Plugins"
-msgstr "YITH Plugins"
+msgid "FLANCE Plugins"
+msgstr "FLANCE Plugins"
 
 #: includes/class-yith-system-status.php:185
 msgid "WooCommerce"
@@ -689,8 +689,8 @@ msgid "Log Files"
 msgstr "Archivos de registro"
 
 #: templates/sysinfo/system-information-panel.php:22
-msgid "YITH System Information"
-msgstr "Información de Sistema de YITH"
+msgid "FLANCE System Information"
+msgstr "Información de Sistema de FLANCE"
 
 #: templates/sysinfo/tabs/error-log.php:13
 msgid "WP debug.log file"
@@ -750,8 +750,8 @@ msgid "External object cache"
 msgstr "Caché objeto externo"
 
 #: templates/sysinfo/tabs/main.php:59
-msgid "YITH Plugin Framework Version"
-msgstr "Versión del YITH Plugin Framework "
+msgid "FLANCE Plugin Framework Version"
+msgstr "Versión del FLANCE Plugin Framework "
 
 #. translators: %s is the name of the plugin that is loading the framework.
 #: templates/sysinfo/tabs/main.php:68
@@ -835,8 +835,8 @@ msgstr[1] ""
 "mismos plugins."
 
 #. Author of the plugin/theme
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #. translators: %s it the Elementor Widget title.
 #: includes/builders/elementor/class-yith-elementor-widget.php:252
@@ -846,8 +846,8 @@ msgstr "%s - Opciones"
 
 #: includes/builders/gutenberg/class-yith-gutenberg.php:156
 msgctxt "[gutenberg]: Category Name"
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #: includes/class-yit-assets.php:120
 msgctxt "Enhanced select"
@@ -947,8 +947,8 @@ msgstr "Cerrar"
 
 #: includes/privacy/class-yith-privacy.php:61
 msgctxt "Privacy Policy Guide Title"
-msgid "YITH Plugins"
-msgstr "Plugins de YITH"
+msgid "FLANCE Plugins"
+msgstr "Plugins de FLANCE"
 
 #: includes/privacy/class-yith-privacy.php:93
 msgctxt "Privacy Policy Content"

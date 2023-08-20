@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Video Class
+ * FLANCE Video Class
  * manage videos from youtube, vimeo and other services.
  *
  * @class   YIT_Video
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

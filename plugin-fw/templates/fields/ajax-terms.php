@@ -4,7 +4,7 @@
  * Note: the stored value is an array if WooCommerce >= 3.0; string otherwise
  *
  * @var array $field The field.
- * @package YITH\PluginFramework\Templates\Fields
+ * @package FLANCE\PluginFramework\Templates\Fields
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

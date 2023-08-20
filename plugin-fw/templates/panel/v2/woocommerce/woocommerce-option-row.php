@@ -4,7 +4,7 @@
  *
  * @var YIT_Plugin_Panel_WooCommerce $panel
  * @var array                        $field The field.
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Dashboard Class
+ * FLANCE Dashboard Class
  * handle WordPress Admin Dashboard
  *
  * @class   FLANCE_Dashboard
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -32,8 +32,8 @@ if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 		 * Dashboard widget setup.
 		 */
 		public static function dashboard_widget_setup() {
-			wp_add_dashboard_widget( 'yith_dashboard_products_news', __( 'YITH Latest Updates', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_products_news' );
-			wp_add_dashboard_widget( 'yith_dashboard_blog_news', __( 'Latest news from YITH Blog', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_blog_news' );
+			wp_add_dashboard_widget( 'yith_dashboard_products_news', __( 'FLANCE Latest Updates', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_products_news' );
+			wp_add_dashboard_widget( 'yith_dashboard_blog_news', __( 'Latest news from FLANCE Blog', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_blog_news' );
 		}
 
 

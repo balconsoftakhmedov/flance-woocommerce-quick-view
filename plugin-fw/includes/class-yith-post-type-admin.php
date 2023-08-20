@@ -3,7 +3,7 @@
  * Post Type Admin
  *
  * @class   FLANCE_Post_Type_Admin
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'FLANCE_Post_Type_Admin' ) ) {
 	/**
 	 * FLANCE_Post_Type_Admin class.
 	 *
-	 * @author  YITH <plugins@yithemes.com>
+	 * @author  FLANCE <plugins@yithemes.com>
 	 */
 	abstract class FLANCE_Post_Type_Admin {
 
@@ -157,7 +157,7 @@ if ( ! class_exists( 'FLANCE_Post_Type_Admin' ) ) {
 		 * Retrieve an array of parameters for blank state.
 		 *
 		 * @return array{
-		 * @type string $icon         The YITH icon. You can use this one (to use an YITH icon) or icon_class or icon_url.
+		 * @type string $icon         The FLANCE icon. You can use this one (to use an FLANCE icon) or icon_class or icon_url.
 		 * @type string $icon_class   The icon class. You can use this one (to use a custom class for your icon) or icon or icon_url.
 		 * @type string $icon_url     The icon URL. You can use this one (to specify an icon URL) or icon_icon or icon_class.
 		 * @type string $message      The message to be shown.

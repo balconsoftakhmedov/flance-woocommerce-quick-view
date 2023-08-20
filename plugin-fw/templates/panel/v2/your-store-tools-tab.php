@@ -3,7 +3,7 @@
  * The Template for displaying the "Your Store Tools" tab
  *
  * @var array $items
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

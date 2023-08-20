@@ -1,9 +1,9 @@
-# Translation of YITH Framework in Chinese
-# This file is distributed under the same license as the YITH Framework package.
+# Translation of FLANCE Framework in Chinese
+# This file is distributed under the same license as the FLANCE Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH Framework\n"
-"Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
+"Project-Id-Version: FLANCE Framework\n"
+"Report-Msgid-Bugs-To: FLANCE <plugins@yithemes.com>\n"
 "POT-Creation-Date: 2023-07-27 13:50:07+00:00\n"
 "PO-Revision-Date: 2022-06-29 13:12:18+0000\n"
 "Language: zh\n"
@@ -139,7 +139,7 @@ msgid ""
 "getting, I decided to give it a shot and switch to premium. No regrets!\n"
 "They have an amazing support team that is always there no matter how big or "
 "small your problem is. Do yourself a favor and stop using free plugins that "
-"kind of work and just buy whatever plugin you need from YITH."
+"kind of work and just buy whatever plugin you need from FLANCE."
 msgstr ""
 
 #: includes/class-yit-plugin-panel.php:1490
@@ -199,13 +199,13 @@ msgstr "外掛已啟動"
 
 #: includes/class-yit-pointers.php:81
 msgid ""
-"From now on, you can find all plugin options in YITH menu. Plugin "
-"customization settings will be available as a new entry in YITH menu."
+"From now on, you can find all plugin options in FLANCE menu. Plugin "
+"customization settings will be available as a new entry in FLANCE menu."
 msgstr ""
-"從現在開始，您可以在 YITH 選單中找到所有外掛選項。 外掛預設在 YITH 選單下的新"
+"從現在開始，您可以在 FLANCE 選單中找到所有外掛選項。 外掛預設在 FLANCE 選單下的新"
 "項目。"
 
-#. translators: 1. YITH site link; 2. WordPress site link.
+#. translators: 1. FLANCE site link; 2. WordPress site link.
 #: includes/class-yit-pointers.php:84 includes/class-yit-pointers.php:100
 msgid "Discover all our plugins available on: %1$s and %2$s"
 msgstr "探索我們所有可用的外掛：%1$s 和 %2$s"
@@ -216,28 +216,28 @@ msgstr "外掛已升級"
 
 #: includes/class-yit-pointers.php:97
 msgid ""
-"From now on, you can find the option panel of YITH plugins in YITH menu. "
+"From now on, you can find the option panel of FLANCE plugins in FLANCE menu. "
 "Every time one of our plugins is added, a new entry will be added to this "
-"menu. For example, after the update, plugin options (such as for YITH "
-"WooCommerce Wishlist, YITH WooCommerce Ajax Search, etc.) will be moved from "
-"previous location to YITH menu."
+"menu. For example, after the update, plugin options (such as for FLANCE "
+"WooCommerce Wishlist, FLANCE WooCommerce Ajax Search, etc.) will be moved from "
+"previous location to FLANCE menu."
 msgstr ""
-"從現在開始，您可以在 YITH 選單中找到 YITH 外掛的選項面板。 每次添加我們的外掛"
-"時，都會在此選單中添加一個新條目。 例如，更新後，外掛選項（例如 YITH "
-"WooCommerce Wishlist、YITH WooCommerce Ajax 搜尋等）將從之前的位置移動到 "
-"YITH 選單。"
+"從現在開始，您可以在 FLANCE 選單中找到 FLANCE 外掛的選項面板。 每次添加我們的外掛"
+"時，都會在此選單中添加一個新條目。 例如，更新後，外掛選項（例如 FLANCE "
+"WooCommerce Wishlist、FLANCE WooCommerce Ajax 搜尋等）將從之前的位置移動到 "
+"FLANCE 選單。"
 
 #: includes/class-yith-bh-onboarding.php:85
 msgid "It is not possible save the options"
 msgstr ""
 
 #: includes/class-yith-dashboard.php:35
-msgid "YITH Latest Updates"
-msgstr "YITH 最新更新"
+msgid "FLANCE Latest Updates"
+msgstr "FLANCE 最新更新"
 
 #: includes/class-yith-dashboard.php:36
-msgid "Latest news from YITH Blog"
-msgstr "來自 YITH 部落格的最新消息"
+msgid "Latest news from FLANCE Blog"
+msgstr "來自 FLANCE 部落格的最新消息"
 
 #: includes/class-yith-dashboard.php:56
 msgid "RSS Error:"
@@ -318,8 +318,8 @@ msgid "System Status"
 msgstr "系統狀態"
 
 #: includes/class-yith-system-status.php:177
-msgid "YITH Plugins"
-msgstr "YITH 外掛"
+msgid "FLANCE Plugins"
+msgstr "FLANCE 外掛"
 
 #: includes/class-yith-system-status.php:185
 msgid "WooCommerce"
@@ -661,8 +661,8 @@ msgid "Log Files"
 msgstr "紀錄檔"
 
 #: templates/sysinfo/system-information-panel.php:22
-msgid "YITH System Information"
-msgstr "YITH 系統信息"
+msgid "FLANCE System Information"
+msgstr "FLANCE 系統信息"
 
 #: templates/sysinfo/tabs/error-log.php:13
 msgid "WP debug.log file"
@@ -721,8 +721,8 @@ msgid "External object cache"
 msgstr "外部物件快取"
 
 #: templates/sysinfo/tabs/main.php:59
-msgid "YITH Plugin Framework Version"
-msgstr "YITH 外掛 Framework 版本"
+msgid "FLANCE Plugin Framework Version"
+msgstr "FLANCE 外掛 Framework 版本"
 
 #. translators: %s is the name of the plugin that is loading the framework.
 #: templates/sysinfo/tabs/main.php:68
@@ -801,8 +801,8 @@ msgid_plural ""
 msgstr[0] ""
 
 #. Author of the plugin/theme
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #. translators: %s it the Elementor Widget title.
 #: includes/builders/elementor/class-yith-elementor-widget.php:252
@@ -812,8 +812,8 @@ msgstr "%s - 選項"
 
 #: includes/builders/gutenberg/class-yith-gutenberg.php:156
 msgctxt "[gutenberg]: Category Name"
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #: includes/class-yit-assets.php:120
 msgctxt "Enhanced select"
@@ -911,8 +911,8 @@ msgstr "關閉"
 
 #: includes/privacy/class-yith-privacy.php:61
 msgctxt "Privacy Policy Guide Title"
-msgid "YITH Plugins"
-msgstr "YITH 外掛"
+msgid "FLANCE Plugins"
+msgstr "FLANCE 外掛"
 
 #: includes/privacy/class-yith-privacy.php:93
 msgctxt "Privacy Policy Content"

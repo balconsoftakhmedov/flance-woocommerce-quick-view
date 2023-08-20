@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Icons Class.
+ * FLANCE Icons Class.
  *
  * @class       YIT_Icons
- * @package     YITH\PluginFramework\Classes
+ * @package     FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'YIT_Icons' ) ) {
 	/**
 	 * YIT_Icons class.
 	 *
-	 * @author      YITH <plugins@yithemes.com>
+	 * @author      FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Icons {
 

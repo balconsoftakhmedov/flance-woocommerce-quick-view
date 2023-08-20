@@ -3,7 +3,7 @@
  * The Template for displaying the settings sections in YIT panel.
  *
  * @var YIT_Plugin_Panel $panel
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

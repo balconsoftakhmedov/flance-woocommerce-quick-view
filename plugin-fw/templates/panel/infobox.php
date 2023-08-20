@@ -5,7 +5,7 @@
  * @var string $id      The CSS of the box.
  * @var string $name    The name of the box.
  * @var array  $default Array of defaults.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

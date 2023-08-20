@@ -32,7 +32,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 function yith_wcqv_install_woocommerce_admin_notice() {
 	?>
 	<div class="error">
-		<p><?php esc_html_e( 'YITH WooCommerce Quick View is enabled but not effective. It requires WooCommerce in order to work.', 'flance-woocommerce-quick-view' ); ?></p>
+		<p><?php esc_html_e( 'FLANCE WooCommerce Quick View is enabled but not effective. It requires WooCommerce in order to work.', 'flance-woocommerce-quick-view' ); ?></p>
 	</div>
 	<?php
 }
@@ -46,7 +46,7 @@ function yith_wcqv_install_woocommerce_admin_notice() {
 function yith_wcqv_install_free_admin_notice() {
 	?>
 	<div class="error">
-		<p><?php esc_html_e( 'You can\'t activate the free version of YITH WooCommerce Quick View while you are using the premium one.', 'flance-woocommerce-quick-view' ); ?></p>
+		<p><?php esc_html_e( 'You can\'t activate the free version of FLANCE WooCommerce Quick View while you are using the premium one.', 'flance-woocommerce-quick-view' ); ?></p>
 	</div>
 	<?php
 }

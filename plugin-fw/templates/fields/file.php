@@ -3,7 +3,7 @@
  * Template for displaying the File field
  *
  * @var array $field The field.
- * @package YITH\PluginFramework\Templates\Fields
+ * @package FLANCE\PluginFramework\Templates\Fields
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

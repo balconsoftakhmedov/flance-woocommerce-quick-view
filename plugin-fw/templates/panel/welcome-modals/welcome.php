@@ -6,7 +6,7 @@
  * @var array  $modal     The modal info.
  * @var string $close_url The URL for closing the modal.
  *
- * @package YITH\PluginFramework
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit;

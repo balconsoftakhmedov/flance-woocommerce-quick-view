@@ -2,13 +2,13 @@
 /**
  * Framework Name: YIT Plugin Framework
  * Version: 4.3.0
- * Author: YITH
+ * Author: FLANCE
  * Text Domain: yith-plugin-fw
  * Domain Path: /languages/
  *
- * @author  YITH <plugins@yithemes.com>
+ * @author  FLANCE <plugins@yithemes.com>
  * @version 4.3.0
- * @package YITH\PluginFramework
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

@@ -2,7 +2,7 @@
 /**
  * Functions for deactivating plugins.
  *
- * @package YITH\PluginFramework
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

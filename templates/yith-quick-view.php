@@ -2,8 +2,8 @@
 /**
  * Quick view bone.
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE WooCommerce Quick View
  * @version 1.0.0
  */
 

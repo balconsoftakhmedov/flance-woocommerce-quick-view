@@ -1,5 +1,5 @@
 /**
- * Handle YITH Gutenberg Blocks
+ * Handle FLANCE Gutenberg Blocks
  *
  * @var {Object} yithGutenbergBlocks The Gutenberg blocks object.
  */

@@ -4,7 +4,7 @@
  *
  * @var YIT_Plugin_Panel $panel
  * @var string           $content_id
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

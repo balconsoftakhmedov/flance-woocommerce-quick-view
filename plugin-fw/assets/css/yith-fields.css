@@ -523,7 +523,7 @@ WordPress 5.3 with old panel fixes
 }
 
 /****************
-YITH UI
+FLANCE UI
  ****************/
 .yith-plugin-fw-banner {
     width       : calc(100% - 35px);
@@ -1913,7 +1913,7 @@ div#ui-datepicker-div.yith-plugin-fw-datepicker-div {
     margin-left : 4px;
 }
 
-/** YITH PANEL **/
+/** FLANCE PANEL **/
 .yith-plugin-ui #yith-plugin-fw-panel {
     margin-top : -10px;
 }

@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Assets Class. Assets Handler.
+ * FLANCE Assets Class. Assets Handler.
  *
  * @class      YIT_Assets
- * @package    YITH\PluginFramework\Classes
+ * @package    FLANCE\PluginFramework\Classes
  * @since      3.0.0
  */
 
@@ -13,7 +13,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 	/**
 	 * YIT_Assets class.
 	 *
-	 * @author     YITH <plugins@yithemes.com>
+	 * @author     FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Assets {
 		/**

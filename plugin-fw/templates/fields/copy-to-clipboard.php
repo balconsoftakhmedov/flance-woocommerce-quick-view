@@ -4,7 +4,7 @@
  *
  * @var array $field The field.
  *
- * @package YITH\PluginFramework\Templates\Fields\Resources
+ * @package FLANCE\PluginFramework\Templates\Fields\Resources
  * @since   3.6.2
  */
 

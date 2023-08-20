@@ -2,7 +2,7 @@
 /**
  * The Template for displaying the Main page of the System Information.
  *
- * @package YITH\PluginFramework\Templates\SysInfo
+ * @package FLANCE\PluginFramework\Templates\SysInfo
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -56,7 +56,7 @@ $db_error = version_compare( $database_info['mysql_version'], '5.6', '<' ) && ! 
 		</tr>
 		<tr>
 			<th scope="row">
-				<?php esc_html_e( 'YITH Plugin Framework Version', 'yith-plugin-fw' ); ?>
+				<?php esc_html_e( 'FLANCE Plugin Framework Version', 'yith-plugin-fw' ); ?>
 			</th>
 			<td class="info-value">
 				<?php

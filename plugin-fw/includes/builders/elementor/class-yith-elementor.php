@@ -3,7 +3,7 @@
  * Elementor Class.
  *
  * @class   FLANCE_Elementor
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  * @since   3.6.0
  */
 
@@ -13,7 +13,7 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 	/**
 	 * FLANCE_Elementor class.
 	 *
-	 * @author  YITH <plugins@yithemes.com>
+	 * @author  FLANCE <plugins@yithemes.com>
 	 */
 	class FLANCE_Elementor {
 
@@ -102,7 +102,7 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 		}
 
 		/**
-		 * Add "YITH" category for Elementor widgets
+		 * Add "FLANCE" category for Elementor widgets
 		 *
 		 * @param Elementor\Elements_Manager $elements_manager Elements Manager.
 		 */
@@ -111,7 +111,7 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 			$elements_manager->add_category(
 				'yith',
 				array(
-					'title'  => 'YITH',
+					'title'  => 'FLANCE',
 					'icon'   => 'fa fa-plug',
 					'active' => false,
 				)

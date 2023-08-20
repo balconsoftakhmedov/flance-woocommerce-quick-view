@@ -9,7 +9,7 @@
  * @var string                                        $free_vs_premium_url  The free vs premium URL.
  * @var bool                                          $show_free_vs_premium Show free VS premium link flag.
  * @var YIT_Plugin_Panel|YIT_Plugin_Panel_WooCommerce $panel                The panel.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  * @since   3.9.0
  */
 

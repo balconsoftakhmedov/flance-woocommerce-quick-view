@@ -4,7 +4,7 @@
  *
  * @var array  $args              Array of arguments.
  * @var string $custom_attributes Custom attributes.
- * @package YITH\PluginFramework\Templates\Fields\Resources
+ * @package FLANCE\PluginFramework\Templates\Fields\Resources
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

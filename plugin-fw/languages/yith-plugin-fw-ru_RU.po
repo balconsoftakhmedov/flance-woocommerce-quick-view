@@ -1,9 +1,9 @@
-# Translation of YITH Framework in Russian
-# This file is distributed under the same license as the YITH Framework package.
+# Translation of FLANCE Framework in Russian
+# This file is distributed under the same license as the FLANCE Framework package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH Framework\n"
-"Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
+"Project-Id-Version: FLANCE Framework\n"
+"Report-Msgid-Bugs-To: FLANCE <plugins@yithemes.com>\n"
 "POT-Creation-Date: 2023-07-27 13:50:07+00:00\n"
 "PO-Revision-Date: 2022-04-05 17:22:32+0000\n"
 "Language: ru\n"
@@ -144,7 +144,7 @@ msgid ""
 "getting, I decided to give it a shot and switch to premium. No regrets!\n"
 "They have an amazing support team that is always there no matter how big or "
 "small your problem is. Do yourself a favor and stop using free plugins that "
-"kind of work and just buy whatever plugin you need from YITH."
+"kind of work and just buy whatever plugin you need from FLANCE."
 msgstr ""
 
 #: includes/class-yit-plugin-panel.php:1490
@@ -204,13 +204,13 @@ msgstr "Плагины Активированы"
 
 #: includes/class-yit-pointers.php:81
 msgid ""
-"From now on, you can find all plugin options in YITH menu. Plugin "
-"customization settings will be available as a new entry in YITH menu."
+"From now on, you can find all plugin options in FLANCE menu. Plugin "
+"customization settings will be available as a new entry in FLANCE menu."
 msgstr ""
-"Отныне все опции плагина можно найти в меню YITH. Настройки кастомизации "
-"плагина будут доступны как новый пункт в меню YITH."
+"Отныне все опции плагина можно найти в меню FLANCE. Настройки кастомизации "
+"плагина будут доступны как новый пункт в меню FLANCE."
 
-#. translators: 1. YITH site link; 2. WordPress site link.
+#. translators: 1. FLANCE site link; 2. WordPress site link.
 #: includes/class-yit-pointers.php:84 includes/class-yit-pointers.php:100
 msgid "Discover all our plugins available on: %1$s and %2$s"
 msgstr "Откройте для себя все наши плагины, доступные на: %1$s и %2$s"
@@ -221,29 +221,29 @@ msgstr "Плагины Обновлены"
 
 #: includes/class-yit-pointers.php:97
 msgid ""
-"From now on, you can find the option panel of YITH plugins in YITH menu. "
+"From now on, you can find the option panel of FLANCE plugins in FLANCE menu. "
 "Every time one of our plugins is added, a new entry will be added to this "
-"menu. For example, after the update, plugin options (such as for YITH "
-"WooCommerce Wishlist, YITH WooCommerce Ajax Search, etc.) will be moved from "
-"previous location to YITH menu."
+"menu. For example, after the update, plugin options (such as for FLANCE "
+"WooCommerce Wishlist, FLANCE WooCommerce Ajax Search, etc.) will be moved from "
+"previous location to FLANCE menu."
 msgstr ""
-"С этого момента вы можете найти панель опций плагинов YITH в меню YITH. "
+"С этого момента вы можете найти панель опций плагинов FLANCE в меню FLANCE. "
 "Каждый раз, когда добавляется один из наших плагинов, в это меню будет "
 "добавляться новый пункт. Например, после обновления, опции плагинов (такие "
-"как для YITH WooCommerce Wishlist, YITH WooCommerce Ajax Search и т.д.) "
-"будут перемещены из предыдущего места в меню YITH."
+"как для FLANCE WooCommerce Wishlist, FLANCE WooCommerce Ajax Search и т.д.) "
+"будут перемещены из предыдущего места в меню FLANCE."
 
 #: includes/class-yith-bh-onboarding.php:85
 msgid "It is not possible save the options"
 msgstr ""
 
 #: includes/class-yith-dashboard.php:35
-msgid "YITH Latest Updates"
-msgstr "Последние обновления YITH"
+msgid "FLANCE Latest Updates"
+msgstr "Последние обновления FLANCE"
 
 #: includes/class-yith-dashboard.php:36
-msgid "Latest news from YITH Blog"
-msgstr "Последние новости из блога YITH"
+msgid "Latest news from FLANCE Blog"
+msgstr "Последние новости из блога FLANCE"
 
 #: includes/class-yith-dashboard.php:56
 msgid "RSS Error:"
@@ -326,8 +326,8 @@ msgid "System Status"
 msgstr "Состояние Системы"
 
 #: includes/class-yith-system-status.php:177
-msgid "YITH Plugins"
-msgstr "Плагины YITH"
+msgid "FLANCE Plugins"
+msgstr "Плагины FLANCE"
 
 #: includes/class-yith-system-status.php:185
 msgid "WooCommerce"
@@ -677,8 +677,8 @@ msgid "Log Files"
 msgstr "Файлы журнала"
 
 #: templates/sysinfo/system-information-panel.php:22
-msgid "YITH System Information"
-msgstr "Системная информация YITH"
+msgid "FLANCE System Information"
+msgstr "Системная информация FLANCE"
 
 #: templates/sysinfo/tabs/error-log.php:13
 msgid "WP debug.log file"
@@ -738,8 +738,8 @@ msgid "External object cache"
 msgstr "Кэш внешних объектов"
 
 #: templates/sysinfo/tabs/main.php:59
-msgid "YITH Plugin Framework Version"
-msgstr "Версия YITH Plugin Framework"
+msgid "FLANCE Plugin Framework Version"
+msgstr "Версия FLANCE Plugin Framework"
 
 #. translators: %s is the name of the plugin that is loading the framework.
 #: templates/sysinfo/tabs/main.php:68
@@ -821,8 +821,8 @@ msgstr[1] ""
 msgstr[2] ""
 
 #. Author of the plugin/theme
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #. translators: %s it the Elementor Widget title.
 #: includes/builders/elementor/class-yith-elementor-widget.php:252
@@ -832,8 +832,8 @@ msgstr "%s - Параметры"
 
 #: includes/builders/gutenberg/class-yith-gutenberg.php:156
 msgctxt "[gutenberg]: Category Name"
-msgid "YITH"
-msgstr "YITH"
+msgid "FLANCE"
+msgstr "FLANCE"
 
 #: includes/class-yit-assets.php:120
 msgctxt "Enhanced select"
@@ -933,8 +933,8 @@ msgstr "Закрыть"
 
 #: includes/privacy/class-yith-privacy.php:61
 msgctxt "Privacy Policy Guide Title"
-msgid "YITH Plugins"
-msgstr "Плагины YITH"
+msgid "FLANCE Plugins"
+msgstr "Плагины FLANCE"
 
 #: includes/privacy/class-yith-privacy.php:93
 msgctxt "Privacy Policy Content"

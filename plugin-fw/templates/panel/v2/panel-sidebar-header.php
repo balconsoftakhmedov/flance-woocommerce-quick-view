@@ -3,7 +3,7 @@
  * The Template for displaying the Panel Sidebar Header.
  *
  * @var string $header_title
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

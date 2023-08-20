@@ -2,8 +2,8 @@
 /**
  * Functions.
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

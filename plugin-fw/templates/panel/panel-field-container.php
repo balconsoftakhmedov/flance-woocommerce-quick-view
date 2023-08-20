@@ -4,9 +4,9 @@
  *
  * @var array $option   The field.
  * @var mixed $db_value The field value stored in DB.
- * @author     YITH <plugins@yithemes.com>
+ * @author     FLANCE <plugins@yithemes.com>
  * @since      3.0.0
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

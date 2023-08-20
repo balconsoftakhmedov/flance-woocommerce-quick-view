@@ -3,7 +3,7 @@
  * AJAX Class. AJAX Event Handler.
  *
  * @class   YIT_Ajax
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -12,7 +12,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 	/**
 	 * YIT_Ajax class.
 	 *
-	 * @author  YITH <plugins@yithemes.com>
+	 * @author  FLANCE <plugins@yithemes.com>
 	 */
 	class YIT_Ajax {
 

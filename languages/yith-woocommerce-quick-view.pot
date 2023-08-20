@@ -1,8 +1,8 @@
-# Copyright (C) 2023 YITH
-# This file is distributed under the same license as the YITH WooCommerce Quick View package.
+# Copyright (C) 2023 FLANCE
+# This file is distributed under the same license as the FLANCE WooCommerce Quick View package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Quick View 1.30.0\n"
+"Project-Id-Version: FLANCE WooCommerce Quick View 1.30.0\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/flance-woocommerce-quick-view\n"
 "POT-Creation-Date: 2023-08-02 09:12:35+00:00\n"
@@ -24,13 +24,13 @@ msgstr ""
 
 #: init.php:50
 msgid ""
-"YITH WooCommerce Quick View is enabled but not effective. It requires "
+"FLANCE WooCommerce Quick View is enabled but not effective. It requires "
 "WooCommerce in order to work."
 msgstr ""
 
 #: init.php:64
 msgid ""
-"You can't activate the free version of YITH WooCommerce Quick View while "
+"You can't activate the free version of FLANCE WooCommerce Quick View while "
 "you are using the premium one."
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 #: templates/admin/premium.php:257 templates/admin/premium.php:482
 #. translators: placeholders are used to add html tags.
 msgid ""
-"Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Quick View%2$s "
+"Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Quick View%2$s "
 "to benefit from all features!"
 msgstr ""
 
@@ -210,24 +210,24 @@ msgid ""
 msgstr ""
 
 #: templates/admin/premium.php:462
-msgid "Compatibility with other YITH's plugins"
+msgid "Compatibility with other FLANCE's plugins"
 msgstr ""
 
 #: templates/admin/premium.php:467
 #. translators: placeholders are used to add html tags.
 msgid ""
-"Thanks to the compatibility with %1$sYITH WooCommerce Zoom Magnifier, YITH "
-"WooCommerce Badge Management%2$s and %1$sYITH WooCommerce Wishlist%2$s, you "
+"Thanks to the compatibility with %1$sFLANCE WooCommerce Zoom Magnifier, FLANCE "
+"WooCommerce Badge Management%2$s and %1$sFLANCE WooCommerce Wishlist%2$s, you "
 "will be free to enrich further the content of your quick view.%3$s Zoom the "
 "product image, show a badge, or add the button to open the quick view in "
-"all products available in your users' wishlists. With YITH's plugins you "
+"all products available in your users' wishlists. With FLANCE's plugins you "
 "make the difference."
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"The <code><strong>YITH WooCommerce Quick View</strong></code> plugin allows "
+"The <code><strong>FLANCE WooCommerce Quick View</strong></code> plugin allows "
 "your customers to have a quick look about products. <a "
 "href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your "
-"e-commerce shop on <strong>YITH</strong></a>."
+"e-commerce shop on <strong>FLANCE</strong></a>."
 msgstr ""

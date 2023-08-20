@@ -3,7 +3,7 @@
  * The Template for displaying field rows in meta-boxes.
  *
  * @var array $field The field.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

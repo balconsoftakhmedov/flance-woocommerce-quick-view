@@ -1,9 +1,9 @@
 <?php
 /**
- * YITH Help Desk static Class.
+ * FLANCE Help Desk static Class.
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

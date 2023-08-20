@@ -2,8 +2,8 @@
 /**
  * Main class
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE WooCommerce Quick View
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
 if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 	/**
-	 * YITH WooCommerce Quick View
+	 * FLANCE WooCommerce Quick View
 	 *
 	 * @since 1.0.0
 	 */

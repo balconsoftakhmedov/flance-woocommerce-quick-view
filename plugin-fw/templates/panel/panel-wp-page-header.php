@@ -7,7 +7,7 @@
  * @var string                                        $wrap_class
  * @var array                                         $tabs_nav_args
  * @var bool                                          $has_sub_tabs
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

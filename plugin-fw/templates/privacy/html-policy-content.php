@@ -3,7 +3,7 @@
  * The Template for displaying privacy content policy.
  *
  * @var array $sections The sections.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

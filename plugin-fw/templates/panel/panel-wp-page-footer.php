@@ -5,7 +5,7 @@
  * @var YIT_Plugin_Panel|YIT_Plugin_Panel_WooCommerce $panel
  * @var bool                                          $has_sub_tabs
  * @var array                                         $page_args
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

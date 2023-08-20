@@ -1,11 +1,11 @@
 <?php
 /**
- * YITH Privacy Abstract Class
+ * FLANCE Privacy Abstract Class
  * abstract class to handle privacy in plugins
  *
  * @class   FLANCE_Privacy_Plugin_Abstract
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

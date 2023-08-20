@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Plugin Gradients Class.
+ * FLANCE Plugin Gradients Class.
  *
  * @class   YIT_Gradients
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

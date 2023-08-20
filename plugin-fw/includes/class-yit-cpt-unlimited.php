@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Custom-Post-Type Unlimited Class.
+ * FLANCE Custom-Post-Type Unlimited Class.
  * Deprecated! Kept only to prevent fatal errors if someone is using it.
  *
  * @class      YIT_CPT_Unlimited
- * @package    YITH\PluginFramework\Classes
+ * @package    FLANCE\PluginFramework\Classes
  * @deprecated 3.5 | This will be removed, so please don't use it
  */
 

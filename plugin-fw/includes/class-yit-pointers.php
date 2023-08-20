@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Pointers Class.
+ * FLANCE Pointers Class.
  *
  * @class   YIT_Pointers
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -78,9 +78,9 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 		private function __construct() {
 
 			$title            = __( 'Plugins Activated', 'yith-plugin-fw' );
-			$message          = __( 'From now on, you can find all plugin options in YITH menu. Plugin customization settings will be available as a new entry in YITH menu.', 'yith-plugin-fw' );
+			$message          = __( 'From now on, you can find all plugin options in FLANCE menu. Plugin customization settings will be available as a new entry in FLANCE menu.', 'yith-plugin-fw' );
 			$discover_message = sprintf(
-			// translators: 1. YITH site link; 2. WordPress site link.
+			// translators: 1. FLANCE site link; 2. WordPress site link.
 				__( 'Discover all our plugins available on: %1$s and %2$s', 'yith-plugin-fw' ),
 				'<a href="https://yithemes.com/product-category/plugins/" target="_blank">yithemes.com</a>',
 				'<a href="https://profiles.wordpress.org/yithemes/" target="_blank">Wordpress.org</a>'
@@ -94,9 +94,9 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 			);
 
 			$title            = __( 'Plugins Upgraded', 'yith-plugin-fw' );
-			$message          = __( 'From now on, you can find the option panel of YITH plugins in YITH menu. Every time one of our plugins is added, a new entry will be added to this menu. For example, after the update, plugin options (such as for YITH WooCommerce Wishlist, YITH WooCommerce Ajax Search, etc.) will be moved from previous location to YITH menu.', 'yith-plugin-fw' );
+			$message          = __( 'From now on, you can find the option panel of FLANCE plugins in FLANCE menu. Every time one of our plugins is added, a new entry will be added to this menu. For example, after the update, plugin options (such as for FLANCE WooCommerce Wishlist, FLANCE WooCommerce Ajax Search, etc.) will be moved from previous location to FLANCE menu.', 'yith-plugin-fw' );
 			$discover_message = sprintf(
-			// translators: 1. YITH site link; 2. WordPress site link.
+			// translators: 1. FLANCE site link; 2. WordPress site link.
 				__( 'Discover all our plugins available on: %1$s and %2$s', 'yith-plugin-fw' ),
 				'<a href="https://yithemes.com/product-category/plugins/" target="_blank">yithemes.com</a>',
 				'<a href="https://profiles.wordpress.org/yithemes/" target="_blank">Wordpress.org</a>'
@@ -276,7 +276,7 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 
 					/**
 					 * Bulk Action: Activate Plugins
-					 * count( $point_id ) is the number of YITH plugins that have registered specific pointers
+					 * count( $point_id ) is the number of FLANCE plugins that have registered specific pointers
 					 * case 0   -> No pointers -> Exit
 					 * case 1   -> Only one pointers to show -> Use the specific plugin pointer
 					 * default  -> Two or more plugins need to show a pointer -> use a generic pointers

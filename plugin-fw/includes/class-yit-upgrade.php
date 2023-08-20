@@ -1,10 +1,10 @@
 <?php
 /**
- * YITH Upgrade Class
+ * FLANCE Upgrade Class
  * handle notifications and plugin updates.
  *
  * @class   YIT_Upgrade
- * @package YITH\PluginFramework\Classes
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

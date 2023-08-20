@@ -2,8 +2,8 @@
 /**
  * Frontend class
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE WooCommerce Quick View
  * @version 1.1.1
  */
 
@@ -108,7 +108,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 
 
 		/**
-		 * Enqueue scripts for YITH WooCommerce Gift Cards
+		 * Enqueue scripts for FLANCE WooCommerce Gift Cards
 		 *
 		 * @access public
 		 * @since  1.0.0
@@ -156,7 +156,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 
 
 		/**
-		 * Check if current theme is YITH Proteo and if the add to cart button is visible on image hover
+		 * Check if current theme is FLANCE Proteo and if the add to cart button is visible on image hover
 		 *
 		 * @since 1.6.7
 		 * @return boolean

@@ -2,8 +2,8 @@
 /**
  * Quick view bone.
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE WooCommerce Quick View
  * @version 1.0.0
  */
 
@@ -254,7 +254,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 						<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Quick View%2$s to benefit from all features!', 'flance-woocommerce-quick-view' ), '<span class="highlight">', '</span>' );
+						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Quick View%2$s to benefit from all features!', 'flance-woocommerce-quick-view' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
 					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
@@ -459,12 +459,12 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 				<div class="col-2">
 					<div class="section-title">
 						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09-icon.png" alt="Icon 10"/>
-						<h2><?php esc_html_e( 'Compatibility with other YITH\'s plugins', 'flance-woocommerce-quick-view' ); ?></h2>
+						<h2><?php esc_html_e( 'Compatibility with other FLANCE\'s plugins', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Thanks to the compatibility with %1$sYITH WooCommerce Zoom Magnifier, YITH WooCommerce Badge Management%2$s and %1$sYITH WooCommerce Wishlist%2$s, you will be free to enrich further the content of your quick view.%3$s Zoom the product image, show a badge, or add the button to open the quick view in all products available in your users\' wishlists. With YITH\'s plugins you make the difference.', 'flance-woocommerce-quick-view' ), '<b>', '</b>', '<br>' );
+						echo sprintf( esc_html__( 'Thanks to the compatibility with %1$sFLANCE WooCommerce Zoom Magnifier, FLANCE WooCommerce Badge Management%2$s and %1$sFLANCE WooCommerce Wishlist%2$s, you will be free to enrich further the content of your quick view.%3$s Zoom the product image, show a badge, or add the button to open the quick view in all products available in your users\' wishlists. With FLANCE\'s plugins you make the difference.', 'flance-woocommerce-quick-view' ), '<b>', '</b>', '<br>' );
 					?>
 					</p>
 				</div>
@@ -479,7 +479,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 						<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Quick View%2$s to benefit from all features!', 'ywqa' ), '<span class="highlight">', '</span>' );
+						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Quick View%2$s to benefit from all features!', 'ywqa' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
 					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"

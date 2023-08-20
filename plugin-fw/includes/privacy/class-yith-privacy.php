@@ -1,11 +1,11 @@
 <?php
 /**
- * YITH Privacy Class
+ * FLANCE Privacy Class
  * handle privacy for GDPR
  *
  * @class   FLANCE_Privacy
- * @author  YITH <plugins@yithemes.com>
- * @package YITH\PluginFramework\Classes
+ * @author  FLANCE <plugins@yithemes.com>
+ * @package FLANCE\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
@@ -51,14 +51,14 @@ if ( ! class_exists( 'FLANCE_Privacy' ) ) {
 		}
 
 		/**
-		 * Adds the privacy message on YITH privacy page.
+		 * Adds the privacy message on FLANCE privacy page.
 		 */
 		public function add_privacy_message() {
 			if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
 				$content = $this->get_privacy_message();
 
 				if ( $content ) {
-					$title = apply_filters( 'yith_plugin_fw_privacy_policy_guide_title', _x( 'YITH Plugins', 'Privacy Policy Guide Title', 'yith-plugin-fw' ) );
+					$title = apply_filters( 'yith_plugin_fw_privacy_policy_guide_title', _x( 'FLANCE Plugins', 'Privacy Policy Guide Title', 'yith-plugin-fw' ) );
 					wp_add_privacy_policy_content( $title, $content );
 				}
 			}

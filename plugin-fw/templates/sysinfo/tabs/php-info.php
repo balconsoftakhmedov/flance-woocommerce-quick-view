@@ -2,7 +2,7 @@
 /**
  * The Template for displaying PHP Information.
  *
- * @package YITH\PluginFramework\Templates\SysInfo
+ * @package FLANCE\PluginFramework\Templates\SysInfo
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

@@ -6,7 +6,7 @@
  * @var string           $panel_content_class
  * @var string           $form_method
  * @var string           $option_key
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

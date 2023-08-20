@@ -8,7 +8,7 @@
  * @var string $landing_page_url     The premium landing page URL.
  * @var string $free_vs_premium_url  The free vs premium URL.
  * @var bool   $show_free_vs_premium Show free VS premium link flag.
- * @package YITH\PluginFramework\Templates
+ * @package FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit;

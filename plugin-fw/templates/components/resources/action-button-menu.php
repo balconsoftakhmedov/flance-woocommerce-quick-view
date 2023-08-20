@@ -3,7 +3,7 @@
  * Template for displaying the action-button-submenu
  *
  * @var array $action_button_menu The menu.
- * @package YITH\PluginFramework\Templates\Components\Resources
+ * @package FLANCE\PluginFramework\Templates\Components\Resources
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.

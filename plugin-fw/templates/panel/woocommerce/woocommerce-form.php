@@ -2,9 +2,9 @@
 /**
  * The Template for displaying the WooCommerce form.
  *
- * @var YIT_Plugin_Panel_WooCommerce $panel      The YITH WooCommerce Panel.
+ * @var YIT_Plugin_Panel_WooCommerce $panel      The FLANCE WooCommerce Panel.
  * @var string                       $option_key The current option key ( see YIT_Plugin_Panel::get_current_option_key() ).
- * @package    YITH\PluginFramework\Templates
+ * @package    FLANCE\PluginFramework\Templates
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
