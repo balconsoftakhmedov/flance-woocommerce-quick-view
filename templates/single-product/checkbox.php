@@ -18,7 +18,7 @@ if ( $product ) {
 
 		<div class="wpc-addon-wrap wpc-addon-checkbox-wrap wpc-addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>-2-0">
 			<label>
-				<input type="checkbox" class="wpc-addon-field wpc-addon-checkbox yith-wcqv-button-checkbox" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>-2[]" value="red"
+				<input type="checkbox" class="wpc-addon-field wpc-addon-checkbox yith-wcqv-button-checkbox" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>[]" value="red"
 					   data-price-type="quantity_based"
 					   data-price="<?php echo esc_attr( $product_price ); ?>"
 					   data-label="red"
