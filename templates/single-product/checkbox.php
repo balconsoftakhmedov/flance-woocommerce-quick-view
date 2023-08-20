@@ -34,6 +34,7 @@ if ( $product ) {
                 </span>
 			</label>
 		</div>
+		 <div class="stm-loader"></div>
 	</div>
 <?php
 

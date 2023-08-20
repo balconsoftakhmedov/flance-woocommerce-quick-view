@@ -166,7 +166,7 @@ li.product .yith-wcqv-button .blockUI.blockOverlay:before {
 	font-size: 14px;
 }
 
-.wpc-inner-addon-container {
+.wpc-inner-addon-container.stm-loading {
 	background-color: #f0f0f0;
 	position: relative;
 }
@@ -184,7 +184,9 @@ li.product .yith-wcqv-button .blockUI.blockOverlay:before {
 	transform: translate(-50%, -50%);
 	display: none;
 }
-
+.stm-loader .wpc-addon-wrap{
+	visibility: hidden;
+}
 @keyframes spin {
 	0% {
 		transform: rotate(0deg);
@@ -198,7 +200,7 @@ li.product .yith-wcqv-button .blockUI.blockOverlay:before {
 	display: block;
 }
 
-.wpc-inner-addon-container input[type="checkbox"] {
+.wpc-inner-addon-container.stm-loading input[type="checkbox"] {
 	pointer-events: none;
 }
 
