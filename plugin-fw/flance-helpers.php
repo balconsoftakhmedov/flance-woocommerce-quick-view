@@ -18,7 +18,7 @@ if ( ! function_exists( 'flance_woocommerce_simple_add_to_cart' ) ) {
 	 * Output the simple product add to cart area.
 	 */
 	function flance_woocommerce_simple_add_to_cart() {
-		wc_get_template( 'single-product/add-to-cart/simple.php' );
+		wc_get_template( 'single-product/save/simple.php', array(), '', FLANCE_WCQV_DIR . 'templates/' );
 	}
 }
 
