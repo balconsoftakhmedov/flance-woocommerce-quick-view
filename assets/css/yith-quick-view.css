@@ -200,10 +200,9 @@ li.product .yith-wcqv-button .blockUI.blockOverlay:before {
 	display: block;
 }
 
-.wpc-inner-addon-container.stm-loading input[type="checkbox"] {
-	pointer-events: none;
+.wpc-inner-addon-container.stm-loading .wpc-addon-wrap{
+	visibility: hidden;
 }
-
 @media ( max-width: 480px ) {
 	#yith-quick-view-content div.images,
 	#yith-quick-view-content div.summary {

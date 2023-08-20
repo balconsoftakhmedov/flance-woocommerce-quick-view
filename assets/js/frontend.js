@@ -72,11 +72,11 @@ jQuery(document).ready(function ($) {
 		$(document).off('click', '.yith-wcqv-button-checkbox').on('click', '.yith-wcqv-button-checkbox', function (e) {
 
 			e.preventDefault();
-			$('.wpc-inner-addon-container').addClass('stm-loading');
+
 			var t = $(this),
 				product_id = t.data('product_id'),
 				is_blocked = false;
-
+			t.closest('.wpc-inner-addon-container').addClass('stm-loading');
 			if (typeof flance_qv.loader !== 'undefined') {
 				is_blocked = true;
 				t.block({
@@ -177,7 +177,7 @@ jQuery(document).ready(function ($) {
 
 		var close_qv = function () {
 			qv_modal.removeClass('open').removeClass('loading');
-
+		$('.wpc-inner-addon-container').removeClass('stm-loading');
 			setTimeout(function () {
 				qv_content.html('');
 			}, 1000);
