@@ -337,13 +337,13 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 		public function flance_quick_view_action_template() {
 
 			// Image.
-			add_action( 'flance_wcqv_product_image', 'woocommerce_show_product_sale_flash', 10 );
-			add_action( 'flance_wcqv_product_image', 'woocommerce_show_product_images', 20 );
+		//	add_action( 'flance_wcqv_product_image', 'woocommerce_show_product_sale_flash', 10 );
+		//	add_action( 'flance_wcqv_product_image', 'woocommerce_show_product_images', 20 );
 
 			// Summary.
 		//	add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_title', 5 );
 
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_price', 15 );
+		//	add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_price', 15 );
 
 			add_action( 'flance_wcqv_product_summary', 'flance_woocommerce_template_single_add_to_cart', 25 );
 

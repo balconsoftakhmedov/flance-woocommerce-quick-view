@@ -120,7 +120,7 @@ html.yith-quick-view-is-open body {
 #yith-quick-view-content div.summary {
     margin: 0;
     padding: 15px;
-    width: 60%;
+    width: 100%;
     float: left;
     font-size: inherit;
     box-sizing: border-box;
@@ -146,7 +146,14 @@ html.yith-quick-view-is-open body {
 li.product .yith-wcqv-button .blockUI.blockOverlay:before {
     background: none;
 }
-
+.yith-wcqv-main button.single_add_to_cart_button.button.alt.wp-element-button {
+    width: 100%;
+}
+.yith-wcqv-main .woocommerce div.product .entry-summary .price,
+.yith-wcqv-main .woocommerce div.product .entry-summary .woocommerce-Price-amount,
+.yith-wcqv-main .woocommerce div.product .entry-summary del {
+    font-size: 14px;
+}
 @media( max-width: 480px ) {
     #yith-quick-view-content div.images,
     #yith-quick-view-content div.summary {
