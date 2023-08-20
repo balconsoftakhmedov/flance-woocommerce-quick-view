@@ -73,7 +73,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 			// Load action for product template.
 			$this->flance_quick_view_action_template();
 			// Add quick view button.
-			add_action( 'init', array( $this, 'add_button' ) );
+			//add_action( 'init', array( $this, 'add_button' ) );
 
 			add_shortcode( 'flance_quick_view', array( $this, 'quick_view_shortcode' ) );
 			add_filter( 'woocommerce_add_to_cart_form_action', array( $this, 'avoid_redirect_to_single_page' ), 10, 1 );
@@ -151,7 +151,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 				add_action( 'woocommerce_after_shop_loop_item', array( $this, 'flance_add_quick_view_button' ), 15 );
 			}
 
-			add_action( 'flance_wcwl_table_after_product_name', array( $this, 'add_quick_view_button_wishlist' ), 15 );
+			//add_action( 'flance_wcwl_table_after_product_name', array( $this, 'add_quick_view_button_wishlist' ), 15 );
 		}
 
 
@@ -341,12 +341,12 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 			add_action( 'flance_wcqv_product_image', 'woocommerce_show_product_images', 20 );
 
 			// Summary.
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_title', 5 );
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_rating', 10 );
+		//	add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_title', 5 );
+
 			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_price', 15 );
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
 			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_add_to_cart', 25 );
-			add_action( 'flance_wcqv_product_summary', 'woocommerce_template_single_meta', 30 );
+
 		}
 
 		/**
