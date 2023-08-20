@@ -49,13 +49,13 @@ if ( ! class_exists( 'YIT_Theme_Licence' ) ) {
 		 * @since    1.0
 		 */
 		public function register( $init, $secret_key, $product_id ) {
-			if ( ! function_exists( 'YITH_Theme_Licence' ) ) {
-				// Try to load YITH_Theme_Licence class.
+			if ( ! function_exists( 'FLANCE_Theme_Licence' ) ) {
+				// Try to load FLANCE_Theme_Licence class.
 				yith_plugin_fw_load_update_and_licence_files();
 			}
 
-			if ( function_exists( 'YITH_Theme_Licence' ) && is_callable( array( YITH_Theme_Licence(), 'register' ) ) ) {
-				YITH_Theme_Licence()->register( $init, $secret_key, $product_id );
+			if ( function_exists( 'FLANCE_Theme_Licence' ) && is_callable( array( FLANCE_Theme_Licence(), 'register' ) ) ) {
+				FLANCE_Theme_Licence()->register( $init, $secret_key, $product_id );
 			}
 		}
 	}

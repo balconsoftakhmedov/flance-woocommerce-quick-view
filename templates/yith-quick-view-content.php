@@ -7,7 +7,7 @@
  * @version 1.0.0
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
 while ( have_posts() ) :
 	the_post();

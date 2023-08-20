@@ -72,51 +72,51 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
 
 
-if ( ! defined( 'YITH_WCQV_VERSION' ) ) {
-	define( 'YITH_WCQV_VERSION', '1.30.0' );
+if ( ! defined( 'FLANCE_WCQV_VERSION' ) ) {
+	define( 'FLANCE_WCQV_VERSION', '1.30.0' );
 }
 
-if ( ! defined( 'YITH_WCQV_FREE_INIT' ) ) {
-	define( 'YITH_WCQV_FREE_INIT', plugin_basename( __FILE__ ) );
+if ( ! defined( 'FLANCE_WCQV_FREE_INIT' ) ) {
+	define( 'FLANCE_WCQV_FREE_INIT', plugin_basename( __FILE__ ) );
 }
 
-if ( ! defined( 'YITH_WCQV_INIT' ) ) {
-	define( 'YITH_WCQV_INIT', plugin_basename( __FILE__ ) );
+if ( ! defined( 'FLANCE_WCQV_INIT' ) ) {
+	define( 'FLANCE_WCQV_INIT', plugin_basename( __FILE__ ) );
 }
 
-if ( ! defined( 'YITH_WCQV' ) ) {
-	define( 'YITH_WCQV', true );
+if ( ! defined( 'FLANCE_WCQV' ) ) {
+	define( 'FLANCE_WCQV', true );
 }
 
-if ( ! defined( 'YITH_WCQV_FILE' ) ) {
-	define( 'YITH_WCQV_FILE', __FILE__ );
+if ( ! defined( 'FLANCE_WCQV_FILE' ) ) {
+	define( 'FLANCE_WCQV_FILE', __FILE__ );
 }
 
-if ( ! defined( 'YITH_WCQV_URL' ) ) {
-	define( 'YITH_WCQV_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'FLANCE_WCQV_URL' ) ) {
+	define( 'FLANCE_WCQV_URL', plugin_dir_url( __FILE__ ) );
 }
 
-if ( ! defined( 'YITH_WCQV_DIR' ) ) {
-	define( 'YITH_WCQV_DIR', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'FLANCE_WCQV_DIR' ) ) {
+	define( 'FLANCE_WCQV_DIR', plugin_dir_path( __FILE__ ) );
 }
 
-if ( ! defined( 'YITH_WCQV_TEMPLATE_PATH' ) ) {
-	define( 'YITH_WCQV_TEMPLATE_PATH', YITH_WCQV_DIR . 'templates' );
+if ( ! defined( 'FLANCE_WCQV_TEMPLATE_PATH' ) ) {
+	define( 'FLANCE_WCQV_TEMPLATE_PATH', FLANCE_WCQV_DIR . 'templates' );
 }
 
-if ( ! defined( 'YITH_WCQV_ASSETS_URL' ) ) {
-	define( 'YITH_WCQV_ASSETS_URL', YITH_WCQV_URL . 'assets' );
+if ( ! defined( 'FLANCE_WCQV_ASSETS_URL' ) ) {
+	define( 'FLANCE_WCQV_ASSETS_URL', FLANCE_WCQV_URL . 'assets' );
 }
 
-if ( ! defined( 'YITH_WCQV_SLUG' ) ) {
-	define( 'YITH_WCQV_SLUG', 'flance-woocommerce-quick-view' );
+if ( ! defined( 'FLANCE_WCQV_SLUG' ) ) {
+	define( 'FLANCE_WCQV_SLUG', 'flance-woocommerce-quick-view' );
 }
 
 /* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YITH_WCQV_DIR . 'plugin-fw/init.php' ) ) {
-	require_once YITH_WCQV_DIR . 'plugin-fw/init.php';
+if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( FLANCE_WCQV_DIR . 'plugin-fw/init.php' ) ) {
+	require_once FLANCE_WCQV_DIR . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( YITH_WCQV_DIR );
+yit_maybe_plugin_fw_loader( FLANCE_WCQV_DIR );
 
 /**
  * Init.
@@ -130,7 +130,7 @@ function yith_wcqv_init() {
 	// Load required classes and functions.
 	require_once 'includes/class.yith-wcqv.php';
 	// Let's start the game!
-	YITH_WCQV();
+	FLANCE_WCQV();
 }
 
 add_action( 'yith_wcqv_init', 'yith_wcqv_init' );
@@ -145,7 +145,7 @@ function yith_wcqv_install() {
 
 	if ( ! function_exists( 'WC' ) ) {
 		add_action( 'admin_notices', 'yith_wcqv_install_woocommerce_admin_notice' );
-	} elseif ( defined( 'YITH_WCQV_PREMIUM' ) ) {
+	} elseif ( defined( 'FLANCE_WCQV_PREMIUM' ) ) {
 		add_action( 'admin_notices', 'yith_wcqv_install_free_admin_notice' );
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 	} else {

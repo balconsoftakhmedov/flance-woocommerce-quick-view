@@ -7,22 +7,22 @@
  * @version 1.1.1
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
+if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 	/**
 	 * Admin class.
 	 * The class manage all the admin behaviors.
 	 *
 	 * @since 1.0.0
 	 */
-	class YITH_WCQV_Admin {
+	class FLANCE_WCQV_Admin {
 
 		/**
 		 * Single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @var YITH_WCQV_Admin
+		 * @var FLANCE_WCQV_Admin
 		 */
 		protected static $instance;
 
@@ -41,7 +41,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * @since 1.0.0
 		 * @var string
 		 */
-		public $version = YITH_WCQV_VERSION;
+		public $version = FLANCE_WCQV_VERSION;
 
 		/**
 		 * Panel Object
@@ -79,7 +79,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * Returns single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @return YITH_WCQV_Admin
+		 * @return FLANCE_WCQV_Admin
 		 */
 		public static function get_instance() {
 			if ( is_null( self::$instance ) ) {
@@ -101,7 +101,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 			add_action( 'admin_menu', array( $this, 'register_panel' ), 5 );
 
 			// Add action links.
-			add_filter( 'plugin_action_links_' . plugin_basename( YITH_WCQV_DIR . '/' . basename( YITH_WCQV_FILE ) ), array( $this, 'action_links' ) );
+			add_filter( 'plugin_action_links_' . plugin_basename( FLANCE_WCQV_DIR . '/' . basename( FLANCE_WCQV_FILE ) ), array( $this, 'action_links' ) );
 			add_filter( 'yith_show_plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 5 );
 
 			add_action( 'yith_quick_view_premium', array( $this, 'premium_tab' ) );
@@ -155,9 +155,9 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 				'parent_page'      => 'yith_plugin_panel',
 				'page'             => $this->panel_page,
 				'admin-tabs'       => $admin_tabs,
-				'options-path'     => YITH_WCQV_DIR . '/plugin-options',
+				'options-path'     => FLANCE_WCQV_DIR . '/plugin-options',
 				'class'            => yith_set_wrapper_class(),
-				'plugin_slug'      => YITH_WCQV_SLUG,
+				'plugin_slug'      => FLANCE_WCQV_SLUG,
 				'is_free'          => true,
 			);
 
@@ -178,7 +178,7 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * @return   void
 		 */
 		public function premium_tab() {
-			$premium_tab_template = YITH_WCQV_TEMPLATE_PATH . '/admin/' . $this->premium;
+			$premium_tab_template = FLANCE_WCQV_TEMPLATE_PATH . '/admin/' . $this->premium;
 			if ( file_exists( $premium_tab_template ) ) {
 				include_once $premium_tab_template;
 			}
@@ -203,10 +203,10 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * @return array
 		 */
 		public function plugin_row_meta( $new_row_meta_args, $plugin_meta, $plugin_file, $plugin_data, $status ) {
-			if ( defined( 'YITH_WCQV_INIT' ) && YITH_WCQV_INIT === $plugin_file ) {
-				$new_row_meta_args['slug'] = YITH_WCQV_SLUG;
+			if ( defined( 'FLANCE_WCQV_INIT' ) && FLANCE_WCQV_INIT === $plugin_file ) {
+				$new_row_meta_args['slug'] = FLANCE_WCQV_SLUG;
 
-				if ( defined( 'YITH_WCQV_PREMIUM' ) ) {
+				if ( defined( 'FLANCE_WCQV_PREMIUM' ) ) {
 					$new_row_meta_args['is_premium'] = true;
 				}
 			}
@@ -220,17 +220,17 @@ if ( ! class_exists( 'YITH_WCQV_Admin' ) ) {
 		 * @return  string The premium landing link
 		 */
 		public function get_premium_landing_uri() {
-			return apply_filters( 'yith_plugin_fw_premium_landing_uri', $this->premium_landing, YITH_WCQV_SLUG );
+			return apply_filters( 'yith_plugin_fw_premium_landing_uri', $this->premium_landing, FLANCE_WCQV_SLUG );
 		}
 
 	}
 }
 /**
- * Unique access to instance of YITH_WCQV_Admin class
+ * Unique access to instance of FLANCE_WCQV_Admin class
  *
  * @since 1.0.0
- * @return YITH_WCQV_Admin
+ * @return FLANCE_WCQV_Admin
  */
-function YITH_WCQV_Admin() { // phpcs:ignore
-	return YITH_WCQV_Admin::get_instance();
+function FLANCE_WCQV_Admin() { // phpcs:ignore
+	return FLANCE_WCQV_Admin::get_instance();
 }

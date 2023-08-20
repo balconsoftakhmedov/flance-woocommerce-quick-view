@@ -2,32 +2,32 @@
 /**
  * YITH Debug Class.
  *
- * @class   YITH_Debug
+ * @class   FLANCE_Debug
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Debug' ) ) {
+if ( ! class_exists( 'FLANCE_Debug' ) ) {
 	/**
-	 * YITH_Debug class.
+	 * FLANCE_Debug class.
 	 *
 	 * @author     YITH <plugins@yithemes.com>
 	 * @deprecated 3.7.7
 	 */
-	class YITH_Debug {
+	class FLANCE_Debug {
 
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YITH_Debug
+		 * @var FLANCE_Debug
 		 */
 		private static $instance;
 
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YITH_Debug
+		 * @return FLANCE_Debug
 		 */
 		public static function instance() {
 			return ! is_null( self::$instance ) ? self::$instance : self::$instance = new self();
@@ -37,15 +37,15 @@ if ( ! class_exists( 'YITH_Debug' ) ) {
 		 * Deprecated singleton implementation.
 		 * Kept for backward compatibility.
 		 *
-		 * @return YITH_Debug
-		 * @deprecated 3.5 | use YITH_Debug::get_instance() instead.
+		 * @return FLANCE_Debug
+		 * @deprecated 3.5 | use FLANCE_Debug::get_instance() instead.
 		 */
 		public static function get_instance() {
 			return self::instance();
 		}
 
 		/**
-		 * YITH_Debug constructor.
+		 * FLANCE_Debug constructor.
 		 */
 		private function __construct() {
 
@@ -143,12 +143,12 @@ if ( ! class_exists( 'YITH_Debug' ) ) {
 }
 if ( ! function_exists( 'yith_debug' ) ) {
 	/**
-	 * Single instance of YITH_Debug
+	 * Single instance of FLANCE_Debug
 	 *
-	 * @return YITH_Debug
+	 * @return FLANCE_Debug
 	 * @deprecated 3.7.7
 	 */
 	function yith_debug() {
-		return YITH_Debug::instance();
+		return FLANCE_Debug::instance();
 	}
 }

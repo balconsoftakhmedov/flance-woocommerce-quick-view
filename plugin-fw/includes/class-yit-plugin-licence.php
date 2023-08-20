@@ -49,13 +49,13 @@ if ( ! class_exists( 'YIT_Plugin_Licence' ) ) {
 		 * @return void
 		 */
 		public function register( $init, $secret_key, $product_id ) {
-			if ( ! function_exists( 'YITH_Plugin_Licence' ) ) {
-				// Try to load YITH_Plugin_Licence class.
+			if ( ! function_exists( 'FLANCE_Plugin_Licence' ) ) {
+				// Try to load FLANCE_Plugin_Licence class.
 				yith_plugin_fw_load_update_and_licence_files();
 			}
 
-			if ( function_exists( 'YITH_Plugin_Licence' ) && is_callable( array( YITH_Plugin_Licence(), 'register' ) ) ) {
-				YITH_Plugin_Licence()->register( $init, $secret_key, $product_id );
+			if ( function_exists( 'FLANCE_Plugin_Licence' ) && is_callable( array( FLANCE_Plugin_Licence(), 'register' ) ) ) {
+				FLANCE_Plugin_Licence()->register( $init, $secret_key, $product_id );
 			}
 		}
 
@@ -68,7 +68,7 @@ if ( ! class_exists( 'YIT_Plugin_Licence' ) ) {
 		 * @since  3.0.17
 		 */
 		public static function get_license_activation_url( $plugin_slug = '' ) {
-			return function_exists( 'YITH_Plugin_Licence' ) ? YITH_Plugin_Licence()->get_license_activation_url( $plugin_slug ) : false;
+			return function_exists( 'FLANCE_Plugin_Licence' ) ? FLANCE_Plugin_Licence()->get_license_activation_url( $plugin_slug ) : false;
 		}
 
 		/**
@@ -77,7 +77,7 @@ if ( ! class_exists( 'YIT_Plugin_Licence' ) ) {
 		 * @return array
 		 */
 		public function get_products() {
-			return function_exists( 'YITH_Plugin_Licence' ) ? YITH_Plugin_Licence()->get_products() : array();
+			return function_exists( 'FLANCE_Plugin_Licence' ) ? FLANCE_Plugin_Licence()->get_products() : array();
 		}
 	}
 }

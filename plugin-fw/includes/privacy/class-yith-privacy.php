@@ -3,30 +3,30 @@
  * YITH Privacy Class
  * handle privacy for GDPR
  *
- * @class   YITH_Privacy
+ * @class   FLANCE_Privacy
  * @author  YITH <plugins@yithemes.com>
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Privacy' ) ) {
+if ( ! class_exists( 'FLANCE_Privacy' ) ) {
 	/**
-	 * Class YITH_Privacy
+	 * Class FLANCE_Privacy
 	 */
-	class YITH_Privacy {
+	class FLANCE_Privacy {
 
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YITH_Privacy
+		 * @var FLANCE_Privacy
 		 */
 		private static $instance;
 
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YITH_Privacy
+		 * @return FLANCE_Privacy
 		 */
 		public static function instance() {
 			return ! is_null( self::$instance ) ? self::$instance : self::$instance = new self();
@@ -36,15 +36,15 @@ if ( ! class_exists( 'YITH_Privacy' ) ) {
 		 * Deprecated singleton implementation.
 		 * Kept for backward compatibility.
 		 *
-		 * @return YITH_Privacy
-		 * @deprecated 3.5 | use YITH_Privacy::get_instance() instead.
+		 * @return FLANCE_Privacy
+		 * @deprecated 3.5 | use FLANCE_Privacy::get_instance() instead.
 		 */
 		public static function get_instance() {
 			return self::instance();
 		}
 
 		/**
-		 * YITH_Privacy constructor.
+		 * FLANCE_Privacy constructor.
 		 */
 		private function __construct() {
 			add_action( 'admin_init', array( $this, 'add_privacy_message' ) );
@@ -111,4 +111,4 @@ if ( ! class_exists( 'YITH_Privacy' ) ) {
 	}
 }
 
-YITH_Privacy::instance();
+FLANCE_Privacy::instance();

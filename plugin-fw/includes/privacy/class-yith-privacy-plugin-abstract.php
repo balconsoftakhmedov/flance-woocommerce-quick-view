@@ -3,18 +3,18 @@
  * YITH Privacy Abstract Class
  * abstract class to handle privacy in plugins
  *
- * @class   YITH_Privacy_Plugin_Abstract
+ * @class   FLANCE_Privacy_Plugin_Abstract
  * @author  YITH <plugins@yithemes.com>
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Privacy_Plugin_Abstract' ) ) {
+if ( ! class_exists( 'FLANCE_Privacy_Plugin_Abstract' ) ) {
 	/**
-	 * Class YITH_Privacy_Plugin_Abstract
+	 * Class FLANCE_Privacy_Plugin_Abstract
 	 */
-	class YITH_Privacy_Plugin_Abstract {
+	class FLANCE_Privacy_Plugin_Abstract {
 		/**
 		 * The plugin name.
 		 *
@@ -23,7 +23,7 @@ if ( ! class_exists( 'YITH_Privacy_Plugin_Abstract' ) ) {
 		private $plugin_name;
 
 		/**
-		 * YITH_Privacy_Plugin_Abstract constructor.
+		 * FLANCE_Privacy_Plugin_Abstract constructor.
 		 *
 		 * @param string $plugin_name The plugin name.
 		 */

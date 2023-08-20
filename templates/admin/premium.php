@@ -7,7 +7,7 @@
  * @version 1.0.0
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
 ?>
 	<style>
@@ -143,7 +143,7 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			border-radius: 6px;
 			height: 60px;
 			float: right;
-			background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/upgrade.png) #ff643f no-repeat 13px 13px;
+			background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/upgrade.png) #ff643f no-repeat 13px 13px;
 			border-color: #ff643f;
 			box-shadow: none;
 			outline: none;
@@ -156,7 +156,7 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 		.premium-cta a.button:active,
 		.premium-cta a.button:focus {
 			color: #fff;
-			background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/upgrade.png) #971d00 no-repeat 13px 13px;
+			background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/upgrade.png) #971d00 no-repeat 13px 13px;
 			border-color: #971d00;
 			box-shadow: none;
 			outline: none;
@@ -257,7 +257,7 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Quick View%2$s to benefit from all features!', 'flance-woocommerce-quick-view' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
-					<a href="<?php echo esc_url( YITH_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
+					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
 						class="premium-cta-button button btn">
 						<span class="highlight"><?php esc_html_e( 'UPGRADE', 'flance-woocommerce-quick-view' ); ?></span>
 						<span><?php esc_html_e( 'to the premium version', 'flance-woocommerce-quick-view' ); ?></span>
@@ -266,16 +266,16 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-even clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/01-bg.png) no-repeat #fff; background-position: 85% 75%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/01-bg.png) no-repeat #fff; background-position: 85% 75%">
 			<h1><?php esc_html_e( 'Premium Features', 'flance-woocommerce-quick-view' ); ?></h1>
 			<div class="landing-container">
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/01.png"
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/01.png"
 						alt="<?php esc_html_e( 'Button type', 'flance-woocommerce-quick-view' ); ?>"/>
 				</div>
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/01-icon.png" alt="Review Title"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/01-icon.png" alt="Review Title"/>
 						<h2><?php esc_html_e( 'BUTTON TYPE', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -288,11 +288,11 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-odd clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/02-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/02-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
 			<div class="landing-container">
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/02-icon.png"
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/02-icon.png"
 							alt="<?php esc_html_e( 'Product Navigation', 'flance-woocommerce-quick-view' ); ?>"/>
 						<h2><?php esc_html_e( 'Product Navigation', 'flance-woocommerce-quick-view' ); ?> </h2>
 					</div>
@@ -304,20 +304,20 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 					</p>
 				</div>
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/02.png"
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/02.png"
 						alt="<?php esc_html_e( 'Product Navigation', 'flance-woocommerce-quick-view' ); ?>"/>
 				</div>
 			</div>
 		</div>
 		<div class="section section-even clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/03-bg.png) no-repeat #fff; background-position: 85% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/03-bg.png) no-repeat #fff; background-position: 85% 100%">
 			<div class="landing-container">
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/03.png" alt="Icon 03"/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/03.png" alt="Icon 03"/>
 				</div>
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/03-icon.png"
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/03-icon.png"
 							alt="<?php esc_html_e( 'Content to display', 'flance-woocommerce-quick-view' ); ?>"/>
 						<h2><?php esc_html_e( 'Content to display', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
@@ -331,11 +331,11 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-odd clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/07-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/07-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
 			<div class="landing-container">
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/07-icon.png" alt="icon 04"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/07-icon.png" alt="icon 04"/>
 						<h2><?php esc_html_e( 'Quick View Type', 'flance-woocommerce-quick-view' ); ?> </h2>
 					</div>
 					<p>
@@ -346,20 +346,20 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 					</p>
 				</div>
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/07.png"
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/07.png"
 						alt="<?php esc_html_e( 'Quick view type', 'flance-woocommerce-quick-view' ); ?>"/>
 				</div>
 			</div>
 		</div>
 		<div class="section section-even clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/08-bg.png) no-repeat #fff; background-position: 85% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/08-bg.png) no-repeat #fff; background-position: 85% 100%">
 			<div class="landing-container">
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/08.png" alt="View details"/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/08.png" alt="View details"/>
 				</div>
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/08-icon.png"
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/08-icon.png"
 							alt="Vote the review"/>
 						<h2><?php esc_html_e( '"View details" button', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
@@ -373,11 +373,11 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-odd clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/04-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/04-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
 			<div class="landing-container">
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/04-icon.png" alt="Number"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/04-icon.png" alt="Number"/>
 						<h2><?php esc_html_e( 'Type of product images', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -388,19 +388,19 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 					</p>
 				</div>
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/04.png" alt="Icon 04"/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/04.png" alt="Icon 04"/>
 				</div>
 			</div>
 		</div>
 		<div class="section section-even clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/05-bg.png) no-repeat #fff; background-position: 85% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/05-bg.png) no-repeat #fff; background-position: 85% 100%">
 			<div class="landing-container">
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/05.png" alt="Share"/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/05.png" alt="Share"/>
 				</div>
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/05-icon.png" alt="icon 05"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/05-icon.png" alt="icon 05"/>
 						<h2><?php esc_html_e( 'SHARE', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -413,11 +413,11 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-odd clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/06-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/06-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
 			<div class="landing-container">
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/06-icon.png" alt="Icon 06"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/06-icon.png" alt="Icon 06"/>
 						<h2><?php esc_html_e( 'Style Options', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -428,20 +428,20 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 					</p>
 				</div>
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/06.png"
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/06.png"
 						alt="<?php esc_html_e( 'Style Options', 'flance-woocommerce-quick-view' ); ?>"/>
 				</div>
 			</div>
 		</div>
 		<div class="section section-even clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/09-bg.png) no-repeat #fff; background-position: 85% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09-bg.png) no-repeat #fff; background-position: 85% 100%">
 			<div class="landing-container">
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/09.png" alt=""/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09.png" alt=""/>
 				</div>
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/09-icon.png" alt="icon 09"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09-icon.png" alt="icon 09"/>
 						<h2><?php esc_html_e( 'SHORTCODE', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -454,11 +454,11 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 			</div>
 		</div>
 		<div class="section section-odd clear"
-			style="background: url(<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/09-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
+			style="background: url(<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09-bg.png) no-repeat #f1f1f1; background-position: 15% 100%">
 			<div class="landing-container">
 				<div class="col-2">
 					<div class="section-title">
-						<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/09-icon.png" alt="Icon 10"/>
+						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/09-icon.png" alt="Icon 10"/>
 						<h2><?php esc_html_e( 'Compatibility with other YITH\'s plugins', 'flance-woocommerce-quick-view' ); ?></h2>
 					</div>
 					<p>
@@ -469,7 +469,7 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 					</p>
 				</div>
 				<div class="col-1">
-					<img src="<?php echo esc_url( YITH_WCQV_ASSETS_URL ); ?>/image/10.png" alt=""/>
+					<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/10.png" alt=""/>
 				</div>
 			</div>
 		</div>
@@ -482,7 +482,7 @@ defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
 						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Quick View%2$s to benefit from all features!', 'ywqa' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
-					<a href="<?php echo esc_url( YITH_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
+					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
 						class="premium-cta-button button btn">
 						<span class="highlight"><?php esc_html_e( 'UPGRADE', 'flance-woocommerce-quick-view' ); ?></span>
 						<span><?php esc_html_e( 'to the premium version', 'flance-woocommerce-quick-view' ); ?></span>

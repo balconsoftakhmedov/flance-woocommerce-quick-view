@@ -2,7 +2,7 @@
 /**
  * Elementor Widget Skeleton Class.
  *
- * @class   YITH_Elementor_Widget
+ * @class   FLANCE_Elementor_Widget
  * @package YITH\PluginFramework\Classes
  * @since   3.6.0
  */
@@ -13,13 +13,13 @@ use Elementor\Widget_Base;
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Elementor_Widget' ) ) {
+if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 	/**
-	 * YITH_Elementor_Widget class.
+	 * FLANCE_Elementor_Widget class.
 	 *
 	 * @author  YITH <plugins@yithemes.com>
 	 */
-	class YITH_Elementor_Widget extends Widget_Base {
+	class FLANCE_Elementor_Widget extends Widget_Base {
 
 		/**
 		 * YITH Data.

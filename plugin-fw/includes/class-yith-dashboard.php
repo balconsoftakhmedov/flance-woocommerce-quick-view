@@ -3,17 +3,17 @@
  * YITH Dashboard Class
  * handle WordPress Admin Dashboard
  *
- * @class   YITH_Dashboard
+ * @class   FLANCE_Dashboard
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Dashboard' ) ) {
+if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 	/**
-	 * YITH_Dashboard class.
+	 * FLANCE_Dashboard class.
 	 */
-	class YITH_Dashboard {
+	class FLANCE_Dashboard {
 		/**
 		 * Products Feed URL
 		 *
@@ -32,8 +32,8 @@ if ( ! class_exists( 'YITH_Dashboard' ) ) {
 		 * Dashboard widget setup.
 		 */
 		public static function dashboard_widget_setup() {
-			wp_add_dashboard_widget( 'yith_dashboard_products_news', __( 'YITH Latest Updates', 'yith-plugin-fw' ), 'YITH_Dashboard::dashboard_products_news' );
-			wp_add_dashboard_widget( 'yith_dashboard_blog_news', __( 'Latest news from YITH Blog', 'yith-plugin-fw' ), 'YITH_Dashboard::dashboard_blog_news' );
+			wp_add_dashboard_widget( 'yith_dashboard_products_news', __( 'YITH Latest Updates', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_products_news' );
+			wp_add_dashboard_widget( 'yith_dashboard_blog_news', __( 'Latest news from YITH Blog', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_blog_news' );
 		}
 
 
@@ -143,7 +143,7 @@ if ( ! class_exists( 'YITH_Dashboard' ) ) {
 	}
 
 	if ( apply_filters( 'yith_plugin_fw_show_dashboard_widgets', true ) ) {
-		add_action( 'wp_dashboard_setup', 'YITH_Dashboard::dashboard_widget_setup' );
-		add_action( 'admin_enqueue_scripts', 'YITH_Dashboard::enqueue_scripts', 20 );
+		add_action( 'wp_dashboard_setup', 'FLANCE_Dashboard::dashboard_widget_setup' );
+		add_action( 'admin_enqueue_scripts', 'FLANCE_Dashboard::enqueue_scripts', 20 );
 	}
 }

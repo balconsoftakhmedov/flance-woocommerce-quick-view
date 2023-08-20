@@ -7,7 +7,7 @@
  * @version 1.1.1
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
 $settings = array(
 

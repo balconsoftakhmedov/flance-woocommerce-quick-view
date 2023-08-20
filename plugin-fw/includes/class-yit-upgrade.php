@@ -44,13 +44,13 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		 * @param string $plugin_init The plugin init file.
 		 */
 		public function register( $plugin_slug, $plugin_init ) {
-			if ( ! function_exists( 'YITH_Plugin_Upgrade' ) ) {
-				// Try to load YITH_Plugin_Upgrade class.
+			if ( ! function_exists( 'FLANCE_Plugin_Upgrade' ) ) {
+				// Try to load FLANCE_Plugin_Upgrade class.
 				yith_plugin_fw_load_update_and_licence_files();
 			}
 
-			if ( function_exists( 'YITH_Plugin_Upgrade' ) && is_callable( array( YITH_Plugin_Upgrade(), 'register' ) ) ) {
-				YITH_Plugin_Upgrade()->register( $plugin_slug, $plugin_init );
+			if ( function_exists( 'FLANCE_Plugin_Upgrade' ) && is_callable( array( FLANCE_Plugin_Upgrade(), 'register' ) ) ) {
+				FLANCE_Plugin_Upgrade()->register( $plugin_slug, $plugin_init );
 			}
 		}
 	}

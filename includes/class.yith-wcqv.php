@@ -7,21 +7,21 @@
  * @version 1.0.0
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_WCQV' ) ) {
+if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 	/**
 	 * YITH WooCommerce Quick View
 	 *
 	 * @since 1.0.0
 	 */
-	class YITH_WCQV {
+	class FLANCE_WCQV {
 
 		/**
 		 * Single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @var YITH_WCQV
+		 * @var FLANCE_WCQV
 		 */
 		protected static $instance;
 
@@ -31,7 +31,7 @@ if ( ! class_exists( 'YITH_WCQV' ) ) {
 		 * @since 1.0.0
 		 * @var string
 		 */
-		public $version = YITH_WCQV_VERSION;
+		public $version = FLANCE_WCQV_VERSION;
 
 		/**
 		 * Plugin object
@@ -45,7 +45,7 @@ if ( ! class_exists( 'YITH_WCQV' ) ) {
 		 * Returns single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @return YITH_WCQV
+		 * @return FLANCE_WCQV
 		 */
 		public static function get_instance() {
 			if ( is_null( self::$instance ) ) {
@@ -69,11 +69,11 @@ if ( ! class_exists( 'YITH_WCQV' ) ) {
 			if ( $this->can_load() ) {
 				if ( $this->is_admin() ) {
 					require_once 'class.yith-wcqv-admin.php';
-					YITH_WCQV_Admin();
+					FLANCE_WCQV_Admin();
 				}
 				if ( $this->load_frontend() ) {
 					require_once 'class.yith-wcqv-frontend.php';
-					YITH_WCQV_Frontend();
+					FLANCE_WCQV_Frontend();
 				}
 			}
 		}
@@ -150,11 +150,11 @@ if ( ! class_exists( 'YITH_WCQV' ) ) {
 }
 
 /**
- * Unique access to instance of YITH_WCQV class
+ * Unique access to instance of FLANCE_WCQV class
  *
  * @since 1.0.0
- * @return YITH_WCQV
+ * @return FLANCE_WCQV
  */
-function YITH_WCQV() { // phpcs:ignore
-	return YITH_WCQV::get_instance();
+function FLANCE_WCQV() { // phpcs:ignore
+	return FLANCE_WCQV::get_instance();
 }

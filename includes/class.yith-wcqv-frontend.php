@@ -7,22 +7,22 @@
  * @version 1.1.1
  */
 
-defined( 'YITH_WCQV' ) || exit; // Exit if accessed directly.
+defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
+if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 	/**
 	 * Admin class.
 	 * The class manage all the Frontend behaviors.
 	 *
 	 * @since 1.0.0
 	 */
-	class YITH_WCQV_Frontend {
+	class FLANCE_WCQV_Frontend {
 
 		/**
 		 * Single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @var YITH_WCQV_Frontend
+		 * @var FLANCE_WCQV_Frontend
 		 */
 		protected static $instance;
 
@@ -32,13 +32,13 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 		 * @since 1.0.0
 		 * @var string
 		 */
-		public $version = YITH_WCQV_VERSION;
+		public $version = FLANCE_WCQV_VERSION;
 
 		/**
 		 * Returns single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @return YITH_WCQV_Frontend
+		 * @return FLANCE_WCQV_Frontend
 		 */
 		public static function get_instance() {
 			if ( is_null( self::$instance ) ) {
@@ -59,7 +59,7 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles_scripts' ) );
 
 			// Enqueue gift card script.
-			if ( defined( 'YITH_YWGC_FILE' ) ) {
+			if ( defined( 'FLANCE_YWGC_FILE' ) ) {
 				add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_gift_card_script' ) );
 			}
 
@@ -90,9 +90,9 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-			wp_register_script( 'yith-wcqv-frontend', YITH_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), $this->version, true );
+			wp_register_script( 'yith-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), $this->version, true );
 			wp_enqueue_script( 'yith-wcqv-frontend' );
-			wp_enqueue_style( 'yith-quick-view', YITH_WCQV_ASSETS_URL . '/css/yith-quick-view.css', array(), $this->version );
+			wp_enqueue_style( 'yith-quick-view', FLANCE_WCQV_ASSETS_URL . '/css/yith-quick-view.css', array(), $this->version );
 
 			$background_modal  = get_option( 'yith-wcqv-background-modal', '#ffffff' );
 			$close_color       = get_option( 'yith-wcqv-close-color', '#cdcdcd' );
@@ -115,17 +115,17 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 		 * @return void
 		 */
 		public function enqueue_gift_card_script() {
-			if ( ! wp_script_is( 'ywgc-frontend' ) && apply_filters( 'yith_load_gift_card_script_pages_for_quick_view', is_shop() ) && version_compare( YITH_YWGC_VERSION, '3.0.0', '<' ) ) {
-				wp_register_script( 'ywgc-frontend', YITH_YWGC_URL . 'assets/js/' . yit_load_js_file( 'ywgc-frontend.js' ), array( 'jquery', 'woocommerce' ), YITH_YWGC_VERSION, true );
+			if ( ! wp_script_is( 'ywgc-frontend' ) && apply_filters( 'yith_load_gift_card_script_pages_for_quick_view', is_shop() ) && version_compare( FLANCE_YWGC_VERSION, '3.0.0', '<' ) ) {
+				wp_register_script( 'ywgc-frontend', FLANCE_YWGC_URL . 'assets/js/' . yit_load_js_file( 'ywgc-frontend.js' ), array( 'jquery', 'woocommerce' ), FLANCE_YWGC_VERSION, true );
 				wp_enqueue_script( 'ywgc-frontend' );
 			} elseif ( ! wp_script_is( 'ywgc-frontend' ) && apply_filters( 'yith_load_gift_card_script_pages_for_quick_view', is_shop() ) ) {
-				wp_register_script( 'ywgc-frontend', YITH_YWGC_URL . 'assets/js/' . yit_load_js_file( 'ywgc-frontend.js' ), array( 'jquery', 'woocommerce', 'jquery-ui-datepicker', 'accounting' ), YITH_YWGC_VERSION, true );
+				wp_register_script( 'ywgc-frontend', FLANCE_YWGC_URL . 'assets/js/' . yit_load_js_file( 'ywgc-frontend.js' ), array( 'jquery', 'woocommerce', 'jquery-ui-datepicker', 'accounting' ), FLANCE_YWGC_VERSION, true );
 
 				wp_localize_script(
 					'ywgc-frontend',
 					'ywgc_data',
 					array(
-						'loader'        => apply_filters( 'yith_gift_cards_loader', YITH_YWGC_ASSETS_URL . '/images/loading.gif' ),
+						'loader'        => apply_filters( 'yith_gift_cards_loader', FLANCE_YWGC_ASSETS_URL . '/images/loading.gif' ),
 						'ajax_url'      => admin_url( 'admin-ajax.php' ),
 						'wc_ajax_url'   => WC_AJAX::get_endpoint( '%%endpoint%%' ),
 						'notice_target' => apply_filters( 'yith_ywgc_gift_card_notice_target', 'div.woocommerce' ),
@@ -162,7 +162,7 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 		 * @return boolean
 		 */
 		public function is_proteo_add_to_cart_hover() {
-			return defined( 'YITH_PROTEO_VERSION' ) && 'hover' === get_theme_mod( 'yith_proteo_products_loop_add_to_cart_position', 'classic' );
+			return defined( 'FLANCE_PROTEO_VERSION' ) && 'hover' === get_theme_mod( 'yith_proteo_products_loop_add_to_cart_position', 'classic' );
 		}
 
 		/**
@@ -208,11 +208,11 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 		 * Add quick view button in wishlist
 		 *
 		 * @since 1.5.1
-		 * @param YITH_WCWL_Wishlist_Item $item THe wishlist item.
+		 * @param FLANCE_WCWL_Wishlist_Item $item THe wishlist item.
 		 * @return string|void
 		 */
 		public function add_quick_view_button_wishlist( $item ) {
-			if ( $item instanceof YITH_WCWL_Wishlist_Item ) {
+			if ( $item instanceof FLANCE_WCWL_Wishlist_Item ) {
 				$this->yith_add_quick_view_button( $item->get_product_id() );
 			}
 		}
@@ -253,7 +253,7 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 				'yith_qv',
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php', 'relative' ),
-					'loader'  => apply_filters( 'yith_quick_view_loader_gif', YITH_WCQV_ASSETS_URL . '/image/qv-loader.gif' ),
+					'loader'  => apply_filters( 'yith_quick_view_loader_gif', FLANCE_WCQV_ASSETS_URL . '/image/qv-loader.gif' ),
 					'lang'    => defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : '',
 				)
 			);
@@ -294,13 +294,13 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 			remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
 			// Change template for variable products.
 			if ( isset( $GLOBALS['yith_wccl'] ) ) {
-				$GLOBALS['yith_wccl']->obj = new YITH_WCCL_Frontend();
+				$GLOBALS['yith_wccl']->obj = new FLANCE_WCCL_Frontend();
 				$GLOBALS['yith_wccl']->obj->override();
-			} elseif ( defined( 'YITH_WCCL_PREMIUM' ) && YITH_WCCL_PREMIUM && class_exists( 'YITH_WCCL_Frontend' ) ) {
-				$attributes = YITH_WCCL_Frontend()->create_attributes_json( $product_id, true );
+			} elseif ( defined( 'FLANCE_WCCL_PREMIUM' ) && FLANCE_WCCL_PREMIUM && class_exists( 'FLANCE_WCCL_Frontend' ) ) {
+				$attributes = FLANCE_WCCL_Frontend()->create_attributes_json( $product_id, true );
 			}
 						ob_start();
-			wc_get_template( 'yith-quick-view-content.php', array(), '', YITH_WCQV_DIR . 'templates/' );
+			wc_get_template( 'yith-quick-view-content.php', array(), '', FLANCE_WCQV_DIR . 'templates/' );
 			$html = ob_get_contents();  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			ob_end_clean();
 
@@ -324,7 +324,7 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 		 */
 		public function yith_quick_view() {
 			$this->yith_woocommerce_quick_view();
-			wc_get_template( 'yith-quick-view.php', array(), '', YITH_WCQV_DIR . 'templates/' );
+			wc_get_template( 'yith-quick-view.php', array(), '', FLANCE_WCQV_DIR . 'templates/' );
 		}
 
 		/**
@@ -432,11 +432,11 @@ if ( ! class_exists( 'YITH_WCQV_Frontend' ) ) {
 	}
 }
 /**
- * Unique access to instance of YITH_WCQV_Frontend class
+ * Unique access to instance of FLANCE_WCQV_Frontend class
  *
  * @since 1.0.0
- * @return YITH_WCQV_Frontend
+ * @return FLANCE_WCQV_Frontend
  */
-function YITH_WCQV_Frontend() { // phpcs:ignore
-	return YITH_WCQV_Frontend::get_instance();
+function FLANCE_WCQV_Frontend() { // phpcs:ignore
+	return FLANCE_WCQV_Frontend::get_instance();
 }

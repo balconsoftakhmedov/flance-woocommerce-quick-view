@@ -2,25 +2,25 @@
 /**
  * Elementor Class.
  *
- * @class   YITH_Elementor
+ * @class   FLANCE_Elementor
  * @package YITH\PluginFramework\Classes
  * @since   3.6.0
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Elementor' ) ) {
+if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 	/**
-	 * YITH_Elementor class.
+	 * FLANCE_Elementor class.
 	 *
 	 * @author  YITH <plugins@yithemes.com>
 	 */
-	class YITH_Elementor {
+	class FLANCE_Elementor {
 
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YITH_Elementor
+		 * @var FLANCE_Elementor
 		 */
 		private static $instance;
 
@@ -34,14 +34,14 @@ if ( ! class_exists( 'YITH_Elementor' ) ) {
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YITH_Elementor
+		 * @return FLANCE_Elementor
 		 */
 		public static function instance() {
 			return ! is_null( self::$instance ) ? self::$instance : self::$instance = new self();
 		}
 
 		/**
-		 * YITH_Elementor constructor.
+		 * FLANCE_Elementor constructor.
 		 */
 		private function __construct() {
 			if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.0.0', '>=' ) ) {
@@ -94,9 +94,9 @@ if ( ! class_exists( 'YITH_Elementor' ) ) {
 
 			foreach ( $this->widgets as $widget ) {
 				if ( is_callable( array( $widgets_manager, 'register' ) ) ) {
-					\Elementor\Plugin::instance()->widgets_manager->register( new YITH_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
+					\Elementor\Plugin::instance()->widgets_manager->register( new FLANCE_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
 				} else {
-					\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new YITH_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
+					\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FLANCE_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
 				}
 			}
 		}
@@ -132,4 +132,4 @@ if ( ! class_exists( 'YITH_Elementor' ) ) {
 	}
 }
 
-YITH_Elementor::instance();
+FLANCE_Elementor::instance();

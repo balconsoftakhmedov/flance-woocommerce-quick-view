@@ -1351,7 +1351,7 @@ if ( ! function_exists( 'yith_plugin_fw_is_gutenberg_enabled' ) ) {
 	 * @return bool
 	 */
 	function yith_plugin_fw_is_gutenberg_enabled() {
-		return function_exists( 'YITH_Gutenberg' );
+		return function_exists( 'FLANCE_Gutenberg' );
 	}
 }
 
@@ -1367,7 +1367,7 @@ if ( ! function_exists( 'yith_plugin_fw_gutenberg_add_blocks' ) ) {
 		$added = false;
 		if ( yith_plugin_fw_is_gutenberg_enabled() ) {
 			// Add blocks.
-			$added = YITH_Gutenberg()->add_blocks( $blocks );
+			$added = FLANCE_Gutenberg()->add_blocks( $blocks );
 		}
 
 		return $added;
@@ -1381,7 +1381,7 @@ if ( ! function_exists( 'yith_plugin_fw_gutenberg_get_registered_blocks' ) ) {
 	 * @return array
 	 */
 	function yith_plugin_fw_gutenberg_get_registered_blocks() {
-		return yith_plugin_fw_is_gutenberg_enabled() ? YITH_Gutenberg()->get_registered_blocks() : array();
+		return yith_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_registered_blocks() : array();
 	}
 }
 
@@ -1392,7 +1392,7 @@ if ( ! function_exists( 'yith_plugin_fw_gutenberg_get_to_register_blocks' ) ) {
 	 * @return array
 	 */
 	function yith_plugin_fw_gutenberg_get_to_register_blocks() {
-		return yith_plugin_fw_is_gutenberg_enabled() ? YITH_Gutenberg()->get_to_register_blocks() : array();
+		return yith_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_to_register_blocks() : array();
 	}
 }
 
@@ -1591,7 +1591,7 @@ if ( ! function_exists( 'yith_plugin_fw_add_requirements' ) ) {
 	 */
 	function yith_plugin_fw_add_requirements( $plugin_name, $requirements ) {
 		if ( ! empty( $requirements ) ) {
-			YITH_System_Status()->add_requirements( $plugin_name, $requirements );
+			FLANCE_System_Status()->add_requirements( $plugin_name, $requirements );
 		}
 	}
 }
@@ -1671,7 +1671,7 @@ if ( ! function_exists( 'yith_plugin_fw_register_elementor_widget' ) ) {
 	 * @since 3.6.0
 	 */
 	function yith_plugin_fw_register_elementor_widget( $widget_name, $widget_options ) {
-		YITH_Elementor::instance()->register_widget( $widget_name, $widget_options );
+		FLANCE_Elementor::instance()->register_widget( $widget_name, $widget_options );
 	}
 }
 

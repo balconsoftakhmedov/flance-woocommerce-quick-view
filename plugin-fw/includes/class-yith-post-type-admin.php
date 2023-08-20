@@ -2,19 +2,19 @@
 /**
  * Post Type Admin
  *
- * @class   YITH_Post_Type_Admin
+ * @class   FLANCE_Post_Type_Admin
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Post_Type_Admin' ) ) {
+if ( ! class_exists( 'FLANCE_Post_Type_Admin' ) ) {
 	/**
-	 * YITH_Post_Type_Admin class.
+	 * FLANCE_Post_Type_Admin class.
 	 *
 	 * @author  YITH <plugins@yithemes.com>
 	 */
-	abstract class YITH_Post_Type_Admin {
+	abstract class FLANCE_Post_Type_Admin {
 
 		/**
 		 * The post type.
@@ -40,14 +40,14 @@ if ( ! class_exists( 'YITH_Post_Type_Admin' ) ) {
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YITH_Post_Type_Admin[]
+		 * @var FLANCE_Post_Type_Admin[]
 		 */
 		private static $instances = array();
 
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YITH_Post_Type_Admin
+		 * @return FLANCE_Post_Type_Admin
 		 */
 		public static function instance() {
 			$class = get_called_class();
@@ -56,7 +56,7 @@ if ( ! class_exists( 'YITH_Post_Type_Admin' ) ) {
 		}
 
 		/**
-		 * YITH_Admin_Post_List_Table constructor.
+		 * FLANCE_Admin_Post_List_Table constructor.
 		 */
 		protected function __construct() {
 			if ( $this->post_type && $this->is_enabled() ) {
@@ -83,7 +83,7 @@ if ( ! class_exists( 'YITH_Post_Type_Admin' ) ) {
 		/**
 		 * Return true if you want to use the object when you render columns. False otherwise.
 		 * This is useful if you have an object representing your Custom Post Type that handles the CRUD.
-		 * Note: if you use the object, you should set it by overriding the YITH_Post_Type_Admin::prepare_row_data method.
+		 * Note: if you use the object, you should set it by overriding the FLANCE_Post_Type_Admin::prepare_row_data method.
 		 *
 		 * @return bool
 		 */

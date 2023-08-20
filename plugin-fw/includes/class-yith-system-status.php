@@ -3,19 +3,19 @@
  * YITH System Status Class
  * handle System Status panel
  *
- * @class   YITH_System_Status
+ * @class   FLANCE_System_Status
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_System_Status' ) ) {
+if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 	/**
-	 * YITH_System_Status class.
+	 * FLANCE_System_Status class.
 	 *
 	 * @author     YITH <plugins@yithemes.com>
 	 */
-	class YITH_System_Status {
+	class FLANCE_System_Status {
 		/**
 		 * The page slug
 		 *
@@ -48,14 +48,14 @@ if ( ! class_exists( 'YITH_System_Status' ) ) {
 		 * Single instance of the class
 		 *
 		 * @since 1.0.0
-		 * @var YITH_System_Status
+		 * @var FLANCE_System_Status
 		 */
 		protected static $instance = null;
 
 		/**
 		 * Main plugin Instance
 		 *
-		 * @return YITH_System_Status
+		 * @return FLANCE_System_Status
 		 * @since  1.0.0
 		 */
 		public static function instance() {
@@ -788,16 +788,16 @@ if ( ! class_exists( 'YITH_System_Status' ) ) {
 	}
 }
 
-if ( ! function_exists( 'YITH_System_Status' ) ) {
+if ( ! function_exists( 'FLANCE_System_Status' ) ) {
 	/**
-	 * Single instance of YITH_System_Status
+	 * Single instance of FLANCE_System_Status
 	 *
-	 * @return YITH_System_Status
+	 * @return FLANCE_System_Status
 	 * @since  1.0
 	 */
-	function YITH_System_Status() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
-		return YITH_System_Status::instance();
+	function FLANCE_System_Status() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+		return FLANCE_System_Status::instance();
 	}
 }
 
-YITH_System_Status();
+FLANCE_System_Status();

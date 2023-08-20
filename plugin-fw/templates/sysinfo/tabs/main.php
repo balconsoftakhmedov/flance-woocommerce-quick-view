@@ -8,10 +8,10 @@
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 $system_info    = get_option( 'yith_system_info' );
-$output_ip      = YITH_System_Status()->get_output_ip();
-$labels         = YITH_System_Status()->requirement_labels;
-$plugin_fw_info = YITH_System_Status()->get_plugin_fw_info();
-$database_info  = YITH_System_Status()->get_database_info();
+$output_ip      = FLANCE_System_Status()->get_output_ip();
+$labels         = FLANCE_System_Status()->requirement_labels;
+$plugin_fw_info = FLANCE_System_Status()->get_plugin_fw_info();
+$database_info  = FLANCE_System_Status()->get_database_info();
 
 $db_error = version_compare( $database_info['mysql_version'], '5.6', '<' ) && ! strstr( $database_info['mysql_version_string'], 'MariaDB' );
 ?>
@@ -91,16 +91,16 @@ $db_error = version_compare( $database_info['mysql_version'], '5.6', '<' ) && ! 
 				<td class="requirement-value <?php echo( $has_errors ? 'has-errors' : '' ); ?> <?php echo( $has_warnings ? 'has-warnings' : '' ); ?>">
 					<span class="dashicons dashicons-<?php echo( $has_errors || $has_warnings ? 'warning' : 'yes' ); ?>"></span>
 					<?php
-					YITH_System_Status()->format_requirement_value( $key, $item['value'] );
+					FLANCE_System_Status()->format_requirement_value( $key, $item['value'] );
 					?>
 				</td>
 				<td class="requirement-messages">
 					<?php
 					if ( $has_errors ) {
-						YITH_System_Status()->print_error_messages( $key, $item, $labels[ $key ] );
-						YITH_System_Status()->print_solution_suggestion( $key, $item, $labels[ $key ] );
+						FLANCE_System_Status()->print_error_messages( $key, $item, $labels[ $key ] );
+						FLANCE_System_Status()->print_solution_suggestion( $key, $item, $labels[ $key ] );
 					} elseif ( $has_warnings ) {
-						YITH_System_Status()->print_warning_messages( $key );
+						FLANCE_System_Status()->print_warning_messages( $key );
 					}
 					?>
 				</td>

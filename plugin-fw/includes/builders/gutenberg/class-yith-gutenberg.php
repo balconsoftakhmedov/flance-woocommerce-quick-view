@@ -3,23 +3,23 @@
  * YITH Gutenberg Class
  * handle Gutenberg blocks and shortcodes.
  *
- * @class   YITH_Gutenberg
+ * @class   FLANCE_Gutenberg
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_Gutenberg' ) ) {
+if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 	/**
-	 * YITH_Gutenberg class.
+	 * FLANCE_Gutenberg class.
 	 *
 	 * @author  YITH <plugins@yithemes.com>
 	 */
-	class YITH_Gutenberg {
+	class FLANCE_Gutenberg {
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YITH_Gutenberg
+		 * @var FLANCE_Gutenberg
 		 */
 		private static $instance;
 
@@ -47,14 +47,14 @@ if ( ! class_exists( 'YITH_Gutenberg' ) ) {
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YITH_Gutenberg
+		 * @return FLANCE_Gutenberg
 		 */
 		public static function instance() {
 			return ! is_null( self::$instance ) ? self::$instance : self::$instance = new self();
 		}
 
 		/**
-		 * YITH_Gutenberg constructor.
+		 * FLANCE_Gutenberg constructor.
 		 */
 		private function __construct() {
 			add_action( 'init', array( $this, 'init' ) );
@@ -357,8 +357,8 @@ if ( ! class_exists( 'YITH_Gutenberg' ) ) {
 			);
 
 			define( 'IFRAME_REQUEST', true );
-			if ( ! defined( 'YITH_PLUGIN_FW_BLOCK_PREVIEW' ) ) {
-				define( 'YITH_PLUGIN_FW_BLOCK_PREVIEW', true );
+			if ( ! defined( 'FLANCE_PLUGIN_FW_BLOCK_PREVIEW' ) ) {
+				define( 'FLANCE_PLUGIN_FW_BLOCK_PREVIEW', true );
 			}
 
 			do_action( 'wp_loaded' ); // Trigger wp_loaded to allow loading font-families and styles from theme.json.
@@ -440,15 +440,15 @@ if ( ! class_exists( 'YITH_Gutenberg' ) ) {
 	}
 }
 
-if ( ! function_exists( 'YITH_Gutenberg' ) ) {
+if ( ! function_exists( 'FLANCE_Gutenberg' ) ) {
 	/**
-	 * Single instance of YITH_Gutenberg
+	 * Single instance of FLANCE_Gutenberg
 	 *
-	 * @return YITH_Gutenberg
+	 * @return FLANCE_Gutenberg
 	 */
-	function YITH_Gutenberg() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
-		return YITH_Gutenberg::instance();
+	function FLANCE_Gutenberg() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionNameInvalid
+		return FLANCE_Gutenberg::instance();
 	}
 }
 
-YITH_Gutenberg();
+FLANCE_Gutenberg();

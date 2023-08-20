@@ -2,17 +2,17 @@
 /**
  * YITH BH Onboarding Class
  *
- * @class   YITH_BH_Onboarding
+ * @class   FLANCE_BH_Onboarding
  * @package YITH\PluginFramework\Classes
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YITH_BH_Onboarding' ) ) {
+if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 	/**
 	 * Main Class
 	 */
-	class YITH_BH_Onboarding {
+	class FLANCE_BH_Onboarding {
 		/**
 		 * The single instance of the class.
 		 *
@@ -50,7 +50,7 @@ if ( ! class_exists( 'YITH_BH_Onboarding' ) ) {
 				return;
 			}
 
-			define( 'DOING_YITH_BH_ONBOARDING', true );
+			define( 'DOING_FLANCE_BH_ONBOARDING', true );
 
 			if ( ! wp_script_is( 'yith-plugin-fw-fields', 'registered' ) || ! wp_style_is( 'yith-plugin-fw-fields', 'registered' ) ) {
 				YIT_Assets::instance()->register_styles_and_scripts();
@@ -107,4 +107,4 @@ if ( ! class_exists( 'YITH_BH_Onboarding' ) ) {
 	}
 }
 
-YITH_BH_Onboarding::get_instance();
+FLANCE_BH_Onboarding::get_instance();
