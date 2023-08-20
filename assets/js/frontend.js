@@ -69,6 +69,33 @@ jQuery(document).ready(function($){
             }
             ajax_call( t, product_id, is_blocked );
         });
+        $(document).off( 'click', '.yith-wcqv-button-checkbox' ).on( 'click', '.yith-wcqv-button', function(e){
+
+
+            var t           = $(this),
+                product_id  = t.data( 'product_id' ),
+                is_blocked  = false;
+
+            if ( typeof flance_qv.loader !== 'undefined' ) {
+                is_blocked = true;
+                t.block({
+                    message: null,
+                    overlayCSS  : {
+                        background: '#fff url(' + flance_qv.loader + ') no-repeat center',
+                        opacity   : 0.5,
+                        cursor    : 'none'
+                    }
+                });
+
+                if( ! qv_modal.hasClass( 'loading' ) ) {
+                    qv_modal.addClass('loading');
+                }
+
+                // stop loader
+                $(document).trigger( 'qv_loading' );
+            }
+            ajax_call( t, product_id, is_blocked );
+        });
     };
 
     /*================

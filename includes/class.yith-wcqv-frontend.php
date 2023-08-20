@@ -88,7 +88,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 		 */
 		public function enqueue_styles_scripts() {
 
-			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '';
 
 			wp_register_script( 'yith-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), $this->version, true );
 			wp_enqueue_script( 'yith-wcqv-frontend' );
@@ -194,13 +194,9 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 				}
 
 				$button = '<a href="#" class="button yith-wcqv-button" data-product_id="' . esc_attr( $product_id ) . '">' . $label . '</a>';
-				$checkbox   = '<label for="quick_view_checkbox">';
-				$checkbox .= '<input type="checkbox" name="quick_view_checkbox" id="quick_view_checkbox" value="' . esc_attr( $product_id ) . '">';
-				$checkbox .= esc_html( $label );
-				$checkbox .= '</label>';
-			$button = $checkbox;
 
 
+			$button = $this->stm_view($product_id);
 			$button = apply_filters( 'flance_add_quick_view_button_html', $button, $label, $product );
 			}
 
@@ -211,6 +207,13 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 			echo $button;  // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
+		public function stm_view($product_id) {
+			ob_start();
+			// load template file via WooCommerce template function
+			$button =  wc_get_template( 'single-product/checkbox.php', array('product_id' =>$product_id  ), '', FLANCE_WCQV_DIR . 'templates/' );
+
+			return ob_get_clean();
+		}
 		/**
 		 * Add quick view button in wishlist
 		 *
