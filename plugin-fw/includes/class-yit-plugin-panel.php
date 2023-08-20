@@ -121,7 +121,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				add_filter( 'admin_body_class', array( $this, 'add_body_class' ) );
 				add_action( 'admin_init', array( $this, 'register_settings' ) );
 				add_action( 'admin_menu', array( $this, 'add_setting_page' ), 20 );
-				add_action( 'admin_menu', array( $this, 'add_premium_version_upgrade_to_menu' ), 100 );
+
 				add_action( 'admin_bar_menu', array( $this, 'add_admin_bar_menu' ), 100 );
 				add_action( 'admin_init', array( $this, 'add_fields' ) );
 
@@ -539,15 +539,6 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			}
 
 			global $submenu;
-			if ( apply_filters( 'yit_show_upgrade_to_premium_version', isset( $submenu['flance_plugin_panel'] ) ) ) {
-				$how_to_menu                            = array(
-					sprintf( '%s%s%s', '<span id="yith-how-to-premium">', __( 'How to install premium version', 'yith-plugin-fw' ), '</span>' ),
-					'install_plugins',
-					'//support.yithemes.com/hc/en-us/articles/217840988',
-					__( 'How to install premium version', 'yith-plugin-fw' ),
-				);
-				$submenu['flance_plugin_panel']['how_to'] = $how_to_menu; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-			}
 		}
 
 		/**

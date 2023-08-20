@@ -65,7 +65,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		 * @since 1.0.0
 		 * @var string
 		 */
-		protected $premium_landing = 'https://yithemes.com/themes/plugins/flance-woocommerce-quick-view/';
+		protected $premium_landing = 'https://flance.info/';
 
 		/**
 		 * Quick View panel page
@@ -104,7 +104,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 			add_filter( 'plugin_action_links_' . plugin_basename( FLANCE_WCQV_DIR . '/' . basename( FLANCE_WCQV_FILE ) ), array( $this, 'action_links' ) );
 			add_filter( 'flance_show_plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 5 );
 
-			add_action( 'flance_quick_view_premium', array( $this, 'premium_tab' ) );
+
 
 			// FLANCE WCQV Loaded!
 			do_action( 'flance_wcqv_loaded' );
@@ -141,8 +141,8 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 			}
 
 			$admin_tabs = array(
-				'settings' => __( 'Settings', 'flance-woocommerce-quick-view' ),
-				'premium'  => __( 'Premium Version', 'flance-woocommerce-quick-view' ),
+				'settings' => __( 'Settings', 'flance-woocommerce-quick-view' )
+
 			);
 
 			$args = array(

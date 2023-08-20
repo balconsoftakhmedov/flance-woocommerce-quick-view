@@ -528,7 +528,7 @@ FLANCE UI
 .yith-plugin-fw-banner {
     width       : calc(100% - 35px);
     height      : 45px;
-    background  : #cfd9dd url(../images/banner-premium.png) no-repeat;
+
     display     : flex;
     align-items : center;
 }

@@ -1403,7 +1403,7 @@ if ( ! function_exists( 'flance_plugin_fw_get_default_logo' ) ) {
 	 * @return string default logo image url
 	 */
 	function flance_plugin_fw_get_default_logo() {
-		return YIT_CORE_PLUGIN_URL . '/assets/images/yith-icon.svg';
+		return '';
 	}
 }
 
