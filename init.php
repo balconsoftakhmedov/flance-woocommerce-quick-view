@@ -1,36 +1,21 @@
 <?php
 /**
- * Plugin Name: YITH WooCommerce Quick View
- * Plugin URI: https://yithemes.com/themes/plugins/flance-woocommerce-quick-view
- * Description: The <code><strong>YITH WooCommerce Quick View</strong></code> plugin allows your customers to have a quick look about products. <a href="https://yithemes.com/" target="_blank">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>.
- * Version: 1.30.0
- * Author: YITH
+ * Plugin Name: Flance WooCommerce Quick View for advanced options
+ * Plugin URI: https://flance.info
+ * Description:
+ * Version: 1.0.0
+ * Author: falnce
  * Author URI: https://yithemes.com/
  * Text Domain: flance-woocommerce-quick-view
  * Domain Path: /languages/
  * WC requires at least: 7.8
  * WC tested up to: 8.0
  *
- * @author  YITH <plugins@yithemes.com>
- * @package YITH WooCommerce Quick View
- * @version 1.30.0
+ * @author  flance
+ * @package Flance WooCommerce Quick View
+ * @version 1.0.0
  */
 
-/**  Copyright 2015-2023 Your Inspiration Solutions (email : plugins@yithemes.com)
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License, version 2, as
- * published by the Free Software Foundation.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
- */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
