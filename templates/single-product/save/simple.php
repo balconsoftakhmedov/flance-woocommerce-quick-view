@@ -10,21 +10,17 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see https://docs.woocommerce.com/document/template-structure/
+ * @see     https://docs.woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 7.0.1
  */
 
 defined( 'ABSPATH' ) || exit;
-
 global $product;
-
 if ( ! $product->is_purchasable() ) {
 	return;
 }
-
 echo wc_get_stock_html( $product ); // WPCS: XSS ok.
-
 if ( $product->is_in_stock() ) : ?>
 
 	<?php //do_action( 'woocommerce_before_add_to_cart_form' ); ?>
@@ -35,14 +31,14 @@ if ( $product->is_in_stock() ) : ?>
 
 		<?php
 		//do_action( 'woocommerce_before_add_to_cart_quantity' );
-?>
-<input type="hidden" id="flance-qty" name="quantity" value="1"  inputmode="numeric" >
+		?>
+		<input type="hidden" id="flance-qty" name="quantity" value="1" inputmode="numeric">
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>">
-			Save</button>
+			Save
+		</button>
 
 
 	</form>
-
 
 
 <?php endif; ?>
