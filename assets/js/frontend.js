@@ -69,8 +69,8 @@ jQuery(document).ready(function($){
             }
             ajax_call( t, product_id, is_blocked );
         });
-        $(document).off( 'click', '.yith-wcqv-button-checkbox' ).on( 'click', '.yith-wcqv-button', function(e){
-
+        $(document).off( 'click', '.yith-wcqv-button-checkbox' ).on( 'click', '.yith-wcqv-button-checkbox', function(e){
+         e.preventDefault();
 
             var t           = $(this),
                 product_id  = t.data( 'product_id' ),
