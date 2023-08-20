@@ -194,7 +194,14 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 				}
 
 				$button = '<a href="#" class="button yith-wcqv-button" data-product_id="' . esc_attr( $product_id ) . '">' . $label . '</a>';
-				$button = apply_filters( 'flance_add_quick_view_button_html', $button, $label, $product );
+				$checkbox   = '<label for="quick_view_checkbox">';
+				$checkbox .= '<input type="checkbox" name="quick_view_checkbox" id="quick_view_checkbox" value="' . esc_attr( $product_id ) . '">';
+				$checkbox .= esc_html( $label );
+				$checkbox .= '</label>';
+			$button = $checkbox;
+
+
+			$button = apply_filters( 'flance_add_quick_view_button_html', $button, $label, $product );
 			}
 
 			if ( $return ) {
