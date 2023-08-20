@@ -21,4 +21,4 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 <?php if ( $has_sub_tabs ) : ?>
 	<div class="yith-plugin-fw-wp-page__sub-tab-wrap">
-<?php endif; // phpcs:ignore Squiz.PHP.EmbeddedPhp.ContentAfterOpen
+<?php endif;

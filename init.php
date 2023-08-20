@@ -4,8 +4,8 @@
  * Plugin URI: https://flance.info
  * Description:
  * Version: 1.0.0
- * Author: falnce
- * Author URI: https://yithemes.com/
+ * Author: flance
+ * Author URI: https://flance.info/
  * Text Domain: flance-woocommerce-quick-view
  * Domain Path: /languages/
  * WC requires at least: 7.8

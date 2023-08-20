@@ -17,10 +17,9 @@ $collapsed_class = get_user_setting( 'yithFwSidebarFold', 'o' ) === 'f' ? 'yith-
 	<div class="yith-plugin-fw__panel__sidebar <?php echo esc_attr( $collapsed_class ); ?>">
 		<?php
 		$panel->print_sidebar_header();
-		$panel->print_tabs_nav();
 		?>
-	</div><!-- yith-plugin-fw__panel__sidebar -->
+	</div>
 	<div id="<?php echo esc_attr( $content_id ); ?>" class="yith-plugin-fw__panel__content">
 		<?php $panel->render_panel_content_page(); ?>
-	</div><!-- yith-plugin-fw__panel__content-->
-</div><!-- yith-plugin-fw__panel -->
+	</div>
+</div>
