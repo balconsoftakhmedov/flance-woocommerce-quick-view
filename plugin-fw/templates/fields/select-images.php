@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $options, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $options, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'custom_attributes', 'data' );
 
 $class = isset( $class ) ? $class : 'yith-plugin-fw-select-images';
 ?>
@@ -17,8 +17,8 @@ $class = isset( $class ) ? $class : 'yith-plugin-fw-select-images';
 			name="<?php echo esc_attr( $name ); ?>"
 			class="<?php echo esc_attr( $class ); ?>"
 			style="display: none"
-		<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-		<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+		<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+		<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 	>
 		<?php foreach ( $options as $key => $item ) : ?>
 			<?php
@@ -42,7 +42,7 @@ $class = isset( $class ) ? $class : 'yith-plugin-fw-select-images';
 				<li class="yith-plugin-fw-select-images__item <?php echo esc_attr( $current_class ); ?>"
 						data-type="select-images-item"
 						data-key="<?php echo esc_attr( $key ); ?>"
-					<?php echo isset( $item['data'] ) ? yith_plugin_fw_html_data_to_string( $item['data'] ) : ''; ?>
+					<?php echo isset( $item['data'] ) ? flance_plugin_fw_html_data_to_string( $item['data'] ) : ''; ?>
 				>
 					<div class="yith-plugin-fw-select-images__item__selected-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">

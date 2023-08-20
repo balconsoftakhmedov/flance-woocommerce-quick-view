@@ -33,8 +33,8 @@ if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 		 * Constructor
 		 */
 		protected function __construct() {
-			add_action( 'yith_bh_onboarding', array( $this, 'show_onboarding_content' ), 10, 1 );
-			add_action( 'wp_ajax_yith_bh_onboarding', array( $this, 'save_options' ) );
+			add_action( 'flance_bh_onboarding', array( $this, 'show_onboarding_content' ), 10, 1 );
+			add_action( 'wp_ajax_flance_bh_onboarding', array( $this, 'save_options' ) );
 		}
 
 		/**
@@ -44,7 +44,7 @@ if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 		 */
 		public function show_onboarding_content( $slug ) {
 
-			$options = apply_filters( 'yith_bh_onboarding_' . $slug, array() );
+			$options = apply_filters( 'flance_bh_onboarding_' . $slug, array() );
 
 			if ( empty( $options ) || ! isset( $options['tabs'], $options['slug'] ) ) {
 				return;
@@ -88,15 +88,15 @@ if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 			$slug   = sanitize_text_field( wp_unslash( $_REQUEST['yith-plugin'] ) );
 			$posted = $_REQUEST;
 			// the options are filtered by each plugin.
-			$options = apply_filters( 'yith_bh_onboarding_' . $slug, array() );
+			$options = apply_filters( 'flance_bh_onboarding_' . $slug, array() );
 			$tab     = $posted['tab'];
 
-			if ( apply_filters( 'yith_bh_onboarding_save_options_' . $slug, isset( $options['tabs'][ $tab ]['options'] ), $posted ) ) {
+			if ( apply_filters( 'flance_bh_onboarding_save_options_' . $slug, isset( $options['tabs'][ $tab ]['options'] ), $posted ) ) {
 				foreach ( $options['tabs'][ $tab ]['options'] as $single_option ) {
 					if ( isset( $posted[ $single_option['id'] ] ) ) {
 						$value = $posted[ $single_option['id'] ] ?? false;
 						$value = YIT_Plugin_Panel_WooCommerce::sanitize_option( $value, $single_option, $value );
-						$value = apply_filters( 'yith_bh_onboarding_save_option_value', $value, $single_option, $slug );
+						$value = apply_filters( 'flance_bh_onboarding_save_option_value', $value, $single_option, $slug );
 						update_option( $single_option['id'], $value );
 					}
 				}

@@ -21,7 +21,7 @@ $defaults = array(
 );
 $field    = wp_parse_args( $field, $defaults );
 
-list ( $field_id, $class, $name, $elements, $the_title, $subtitle, $onoff_field, $save_single_options, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'elements', 'title', 'subtitle', 'onoff_field', 'save_single_options', 'subtitle', 'custom_attributes' );
+list ( $field_id, $class, $name, $elements, $the_title, $subtitle, $onoff_field, $save_single_options, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'elements', 'title', 'subtitle', 'onoff_field', 'save_single_options', 'subtitle', 'custom_attributes' );
 
 $name  = ! empty( $name ) ? $name : $field_id;
 $value = get_option( $name, array() );
@@ -30,7 +30,7 @@ $value = get_option( $name, array() );
 	<div class="yith-toggle-elements">
 		<div id="<?php echo esc_attr( $field_id ); ?>"
 				class="yith-toggle-row fixed <?php echo ! empty( $subtitle ) ? 'with-subtitle' : ''; ?> <?php echo esc_attr( $class ); ?>"
-			<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+			<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 		>
 			<div class="yith-toggle-title">
 				<h3>
@@ -43,7 +43,7 @@ $value = get_option( $name, array() );
 				<?php if ( ! empty( $onoff_field ) ) : ?>
 					<span class="yith-toggle-onoff">
 						<?php
-						yith_plugin_fw_get_field(
+						flance_plugin_fw_get_field(
 							array(
 								'type'  => 'onoff',
 								'name'  => "{$name}[enabled]",
@@ -73,7 +73,7 @@ $value = get_option( $name, array() );
 					<div class="yith-toggle-content-row <?php echo esc_attr( $element['type'] ); ?>">
 						<label for="<?php echo esc_attr( $element['id'] ); ?>"><?php echo esc_html( $element['title'] ); ?></label>
 						<div class="yith-plugin-fw-option-with-description">
-							<?php yith_plugin_fw_get_field( $element, true ); ?>
+							<?php flance_plugin_fw_get_field( $element, true ); ?>
 							<span class="description"><?php echo ! empty( $element['desc'] ) ? wp_kses_post( $element['desc'] ) : ''; ?></span>
 						</div>
 					</div>

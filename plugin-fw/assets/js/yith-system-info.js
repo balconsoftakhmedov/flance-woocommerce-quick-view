@@ -19,7 +19,7 @@ jQuery(
 					wrapper_id = t.parent().attr( 'id' );
 
 				if ( wrapper_id === 'yith-system-alert' ) {
-					var cname  = 'hide_yith_system_alert',
+					var cname  = 'hide_flance_system_alert',
 						cvalue = 'yes';
 
 					document.cookie = cname + "=" + cvalue + ";path=/";
@@ -33,7 +33,7 @@ jQuery(
 
 				var container = $( this ).parent();
 				var data      = {
-					action: 'yith_create_log_file',
+					action: 'flance_create_log_file',
 					file  : $( this ).data( 'file' ),
 					nonce : $( this ).data( 'nonce' ),
 				};
@@ -41,7 +41,7 @@ jQuery(
 				container.addClass( 'progress' );
 
 				$.post(
-					yith_sysinfo.ajax_url,
+					flance_sysinfo.ajax_url,
 					data,
 					function ( response ) {
 						if ( false !== response.file ) {

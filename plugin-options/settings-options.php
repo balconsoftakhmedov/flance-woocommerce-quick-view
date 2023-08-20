@@ -94,4 +94,4 @@ $settings = array(
 	),
 );
 
-return apply_filters( 'yith_wcqv_panel_settings_options', $settings );
+return apply_filters( 'flance_wcqv_panel_settings_options', $settings );

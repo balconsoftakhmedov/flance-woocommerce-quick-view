@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $filter_icons, $std, $value ) = yith_plugin_fw_extract( $field, 'id', 'name', 'filter_icons', 'std', 'value' );
+list ( $field_id, $name, $filter_icons, $std, $value ) = flance_plugin_fw_extract( $field, 'id', 'name', 'filter_icons', 'std', 'value' );
 
 wp_enqueue_style( 'font-awesome' );
 
@@ -38,7 +38,7 @@ $yit_icons = YIT_Icons()->get_icons( $filter_icons );
 
 	<div class="yit-icons-manager-text">
 		<div class="yit-icons-manager-icon-preview"
-			<?php echo yith_plugin_fw_html_data_to_string( $current_icon_data ); ?>
+			<?php echo flance_plugin_fw_html_data_to_string( $current_icon_data ); ?>
 			<?php if ( $current_icon ) : ?>
 				data-icon="&#x<?php echo esc_attr( $current_icon ); ?>"
 			<?php endif; ?>
@@ -77,7 +77,7 @@ $yit_icons = YIT_Icons()->get_icons( $filter_icons );
 		<?php if ( $default_icon_text ) : ?>
 			<div class="yit-icons-manager-action-set-default button"><?php esc_html_e( 'Set Default', 'yith-plugin-fw' ); ?>
 				<i class="yit-icons-manager-default-icon-preview"
-					<?php echo yith_plugin_fw_html_data_to_string( $default_icon_data ); ?>
+					<?php echo flance_plugin_fw_html_data_to_string( $default_icon_data ); ?>
 					<?php if ( $default_icon ) : ?>
 						data-icon="&#x<?php echo esc_attr( $default_icon ); ?>"
 					<?php endif; ?>

@@ -8,7 +8,7 @@
             b = {},
             close_function = function() { $( this ).dialog( "close" ); };
 
-        b[yith_dashboard.buttons.close] = close_function;
+        b[flance_dashboard.buttons.close] = close_function;
 
         // initalise the dialog
         inlineModal.dialog({

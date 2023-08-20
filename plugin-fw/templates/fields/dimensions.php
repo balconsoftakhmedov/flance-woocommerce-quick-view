@@ -26,7 +26,7 @@ $default_options = array(
 
 $field = wp_parse_args( $field, $default_options );
 
-list ( $field_id, $class, $name, $dimensions, $units, $allow_linked, $min, $max, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'dimensions', 'units', 'allow_linked', 'min', 'max', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $class, $name, $dimensions, $units, $allow_linked, $min, $max, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'dimensions', 'units', 'allow_linked', 'min', 'max', 'value', 'data', 'custom_attributes' );
 
 $class = isset( $class ) ? $class : '';
 $class = 'yith-plugin-fw-dimensions ' . $class;
@@ -42,8 +42,8 @@ if ( $allow_linked && 'yes' === $linked ) {
 }
 ?>
 <div id="<?php echo esc_attr( $field_id ); ?>" class="<?php echo esc_attr( $class ); ?>"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<div class="yith-plugin-fw-dimensions__dimensions">
 		<?php foreach ( $dimensions as $key => $dimension ) : ?>
@@ -85,7 +85,7 @@ if ( $allow_linked && 'yes' === $linked ) {
 					<?php if ( false !== $d_min ) : ?>
 						min="<?php echo esc_attr( $d_min ); ?>"
 					<?php endif; ?>
-					<?php echo yith_plugin_fw_html_attributes_to_string( $d_attributes ); ?>
+					<?php echo flance_plugin_fw_html_attributes_to_string( $d_attributes ); ?>
 				>
 			</div>
 		<?php endforeach ?>

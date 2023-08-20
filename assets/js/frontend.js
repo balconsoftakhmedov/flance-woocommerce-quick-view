@@ -9,7 +9,7 @@
 jQuery(document).ready(function($){
     "use strict";
 
-    if( typeof yith_qv === 'undefined' ) {
+    if( typeof flance_qv === 'undefined' ) {
         return;
     }
 
@@ -40,7 +40,7 @@ jQuery(document).ready(function($){
      *MAIN BUTTON OPEN
      ==================*/
 
-    $.fn.yith_quick_view = function() {
+    $.fn.flance_quick_view = function() {
 
         $(document).off( 'click', '.yith-wcqv-button' ).on( 'click', '.yith-wcqv-button', function(e){
             e.preventDefault();
@@ -49,12 +49,12 @@ jQuery(document).ready(function($){
                 product_id  = t.data( 'product_id' ),
                 is_blocked  = false;
 
-            if ( typeof yith_qv.loader !== 'undefined' ) {
+            if ( typeof flance_qv.loader !== 'undefined' ) {
                 is_blocked = true;
                 t.block({
                     message: null,
                     overlayCSS  : {
-                        background: '#fff url(' + yith_qv.loader + ') no-repeat center',
+                        background: '#fff url(' + flance_qv.loader + ') no-repeat center',
                         opacity   : 0.5,
                         cursor    : 'none'
                     }
@@ -78,11 +78,11 @@ jQuery(document).ready(function($){
     var ajax_call = function( t, product_id, is_blocked ) {
 
         $.ajax({
-            url: yith_qv.ajaxurl,
+            url: flance_qv.ajaxurl,
             data: {
-                action: 'yith_load_product_quick_view',
+                action: 'flance_load_product_quick_view',
                 product_id: product_id,
-                lang: yith_qv.lang,
+                lang: flance_qv.lang,
 				context: 'frontend',
             },
             dataType: 'json',
@@ -96,12 +96,12 @@ jQuery(document).ready(function($){
                 form_variation.each( function() {
                     $( this ).wc_variation_form();
                     // add Color and Label Integration
-                    if( typeof $.fn.yith_wccl !== 'undefined' ) {
-                        $(this).yith_wccl();
+                    if( typeof $.fn.flance_wccl !== 'undefined' ) {
+                        $(this).flance_wccl();
                     }
-                    else if( typeof $.yith_wccl != 'undefined' && data.prod_attr ) {
+                    else if( typeof $.flance_wccl != 'undefined' && data.prod_attr ) {
 						
-                        $.yith_wccl( data.prod_attr );
+                        $.flance_wccl( data.prod_attr );
                     }
                 });
 
@@ -164,11 +164,11 @@ jQuery(document).ready(function($){
     $( window ).on( 'resize', center_modal );
 
     // START
-    $.fn.yith_quick_view();
+    $.fn.flance_quick_view();
 
-    $( document ).on( 'yith_infs_adding_elem yith-wcan-ajax-filtered', function(){
+    $( document ).on( 'flance_infs_adding_elem yith-wcan-ajax-filtered', function(){
         // RESTART
-        $.fn.yith_quick_view();
+        $.fn.flance_quick_view();
     });
 
 });

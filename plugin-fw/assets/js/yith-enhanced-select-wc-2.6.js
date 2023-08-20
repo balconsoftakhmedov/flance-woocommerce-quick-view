@@ -1,5 +1,5 @@
 /*
- global yith_framework_enhanced_select_params
+ global flance_framework_enhanced_select_params
  */
 jQuery( function ( $ ) {
     "use strict";
@@ -9,8 +9,8 @@ jQuery( function ( $ ) {
             // Post Search
             $( ':input.yith-post-search' ).filter( ':not(.enhanced)' ).each( function () {
                 var default_data = {
-                        action   : 'yith_plugin_fw_json_search_posts',
-                        security : yith_framework_enhanced_select_params.search_posts_nonce,
+                        action   : 'flance_plugin_fw_json_search_posts',
+                        security : flance_framework_enhanced_select_params.search_posts_nonce,
                         post_type: 'post'
                     },
                     current_data = $.extend( default_data, $( this ).data() ),
@@ -22,7 +22,7 @@ jQuery( function ( $ ) {
                             return m;
                         },
                         ajax              : {
-                            url        : yith_framework_enhanced_select_params.ajax_url,
+                            url        : flance_framework_enhanced_select_params.ajax_url,
                             dataType   : 'json',
                             quietMillis: 250,
                             data       : function ( term ) {
@@ -78,8 +78,8 @@ jQuery( function ( $ ) {
             // Term Search
             $( ':input.yith-term-search' ).filter( ':not(.enhanced)' ).each( function () {
                 var default_data = {
-                        action   : 'yith_plugin_fw_json_search_terms',
-                        security : yith_framework_enhanced_select_params.search_terms_nonce,
+                        action   : 'flance_plugin_fw_json_search_terms',
+                        security : flance_framework_enhanced_select_params.search_terms_nonce,
                         taxonomy: 'category'
                     },
                     current_data = $.extend( default_data, $( this ).data() ),
@@ -91,7 +91,7 @@ jQuery( function ( $ ) {
                             return m;
                         },
                         ajax              : {
-                            url        : yith_framework_enhanced_select_params.ajax_url,
+                            url        : flance_framework_enhanced_select_params.ajax_url,
                             dataType   : 'json',
                             quietMillis: 250,
                             data       : function ( term ) {

@@ -1,4 +1,4 @@
-/* global yith_framework_enhanced_select_params, ajaxurl */
+/* global flance_framework_enhanced_select_params, ajaxurl */
 
 jQuery( function ( $ ) {
 	"use strict";
@@ -9,22 +9,22 @@ jQuery( function ( $ ) {
 				var remainingChars = args.minimum - args.input.length;
 
 				if ( 1 === remainingChars ) {
-					return yith_framework_enhanced_select_params.i18n.input_too_short_1;
+					return flance_framework_enhanced_select_params.i18n.input_too_short_1;
 				}
 
-				return yith_framework_enhanced_select_params.i18n.input_too_short_n.replace( '%s', remainingChars );
+				return flance_framework_enhanced_select_params.i18n.input_too_short_n.replace( '%s', remainingChars );
 			},
 			errorLoading : function () {
-				return yith_framework_enhanced_select_params.i18n.searching;
+				return flance_framework_enhanced_select_params.i18n.searching;
 			},
 			loadingMore  : function () {
-				return yith_framework_enhanced_select_params.i18n.load_more;
+				return flance_framework_enhanced_select_params.i18n.load_more;
 			},
 			noResults    : function () {
-				return yith_framework_enhanced_select_params.i18n.no_matches;
+				return flance_framework_enhanced_select_params.i18n.no_matches;
 			},
 			searching    : function () {
-				return yith_framework_enhanced_select_params.i18n.searching;
+				return flance_framework_enhanced_select_params.i18n.searching;
 			}
 		};
 	};
@@ -34,8 +34,8 @@ jQuery( function ( $ ) {
 			// Post Search
 			$( '.yith-post-search' ).filter( ':not(.enhanced)' ).each( function () {
 				var default_data = {
-						action   : 'yith_plugin_fw_json_search_posts',
-						security : yith_framework_enhanced_select_params.search_posts_nonce,
+						action   : 'flance_plugin_fw_json_search_posts',
+						security : flance_framework_enhanced_select_params.search_posts_nonce,
 						post_type: 'post'
 					},
 					current_data = $.extend( default_data, $( this ).data() ),
@@ -99,7 +99,7 @@ jQuery( function ( $ ) {
 			$( '.yith-customer-search' ).filter( ':not(.enhanced)' ).each( function () {
 				var default_data = {
 						action  : 'woocommerce_json_search_customers',
-						security: yith_framework_enhanced_select_params.search_customers_nonce
+						security: flance_framework_enhanced_select_params.search_customers_nonce
 					},
 					current_data = $.extend( default_data, $( this ).data() ),
 					select2_args = {
@@ -161,8 +161,8 @@ jQuery( function ( $ ) {
 			// TERM SEARCH
 			$( '.yith-term-search' ).filter( ':not(.enhanced)' ).each( function () {
 				var default_data = {
-						action  : 'yith_plugin_fw_json_search_terms',
-						security: yith_framework_enhanced_select_params.search_terms_nonce,
+						action  : 'flance_plugin_fw_json_search_terms',
+						security: flance_framework_enhanced_select_params.search_terms_nonce,
 						taxonomy: 'category'
 					},
 					current_data = $.extend( default_data, $( this ).data() ),

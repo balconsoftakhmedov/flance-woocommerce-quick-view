@@ -51,7 +51,7 @@ if ( ! class_exists( 'YIT_Help_Desk' ) ) {
 			// format labels to a valid query string param.
 			$labels = implode( ',', array_map( 'sanitize_text_field', $labels ) );
 
-			if ( ! empty( $latest_articles[ $labels ] ) && ! isset( $_GET['yith_plugin_fw_reset_hc_articles'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( ! empty( $latest_articles[ $labels ] ) && ! isset( $_GET['flance_plugin_fw_reset_hc_articles'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 				// if we can find articles in cache, return them.
 				return $latest_articles[ $labels ];
 			} else {

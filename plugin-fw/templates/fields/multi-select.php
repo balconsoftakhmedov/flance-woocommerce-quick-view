@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $selects, $size, $columns, $value ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'selects', 'size', 'columns', 'value' );
+list ( $field_id, $class, $name, $selects, $size, $columns, $value ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'selects', 'size', 'columns', 'value' );
 
 if ( empty( $selects ) ) {
 	return;
@@ -38,7 +38,7 @@ $max_width     = $size * $columns + ( $gap * ( $columns - 1 ) );
 			$select['class'] = $class
 			?>
 			<label for="<?php echo esc_attr( $select['id'] ); ?>"><?php echo esc_html( $select['title'] ); ?></label>
-			<?php yith_plugin_fw_get_field( $select, true, false ); ?>
+			<?php flance_plugin_fw_get_field( $select, true, false ); ?>
 		</div>
 	<?php endfor; ?>
 </div>

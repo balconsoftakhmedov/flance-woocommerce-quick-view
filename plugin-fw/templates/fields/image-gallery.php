@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $value ) = yith_plugin_fw_extract( $field, 'id', 'name', 'value' );
+list ( $field_id, $name, $value ) = flance_plugin_fw_extract( $field, 'id', 'name', 'value' );
 
 $image_ids = ! empty( $value ) ? array_filter( explode( ',', $value ) ) : array();
 ?>

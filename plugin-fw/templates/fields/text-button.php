@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $std, $buttons, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'std', 'buttons', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $std, $buttons, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'std', 'buttons', 'custom_attributes', 'data' );
 
 $backward_compatibility = false;
 if ( ! isset( $buttons ) ) {
@@ -39,10 +39,10 @@ $class = isset( $class ) ? $class : 'yith-plugin-fw-text-input';
 		data-std="<?php echo esc_attr( $std ); ?>"
 	<?php endif; ?>
 
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 	<?php
 	if ( ! $backward_compatibility ) {
-		yith_plugin_fw_html_data_to_string( $data, true );
+		flance_plugin_fw_html_data_to_string( $data, true );
 	}
 	?>
 />
@@ -52,6 +52,6 @@ if ( isset( $buttons ) ) {
 		'type'    => 'buttons',
 		'buttons' => $buttons,
 	);
-	yith_plugin_fw_get_field( $button_field, true );
+	flance_plugin_fw_get_field( $button_field, true );
 }
 ?>

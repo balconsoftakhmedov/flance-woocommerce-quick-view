@@ -112,7 +112,7 @@ if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 		public function is_admin() {
 			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$is_ajax = ( defined( 'DOING_AJAX' ) && DOING_AJAX && isset( $_REQUEST['context'] ) && 'frontend' === $_REQUEST['context'] );
-			return apply_filters( 'yith_wcqv_is_admin', is_admin() && ! $is_ajax );
+			return apply_filters( 'flance_wcqv_is_admin', is_admin() && ! $is_ajax );
 		}
 
 		/**
@@ -126,7 +126,7 @@ if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 			$enable_on_mobile = get_option( 'yith-wcqv-enable-mobile', 'yes' ) === 'yes';
 			$is_mobile        = wp_is_mobile();
 
-			return apply_filters( 'yith_wcqv_load_frontend', ( ! $is_mobile && $enable ) || ( $is_mobile && $enable_on_mobile ) );
+			return apply_filters( 'flance_wcqv_load_frontend', ( ! $is_mobile && $enable ) || ( $is_mobile && $enable_on_mobile ) );
 		}
 
 

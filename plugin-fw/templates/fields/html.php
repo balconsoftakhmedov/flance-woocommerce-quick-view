@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $html ) = yith_plugin_fw_extract( $field, 'html' );
+list ( $html ) = flance_plugin_fw_extract( $field, 'html' );
 
 $html = ! ! $html ? $html : '';
 

@@ -51,7 +51,7 @@ if ( ! class_exists( 'YIT_Plugin_Licence' ) ) {
 		public function register( $init, $secret_key, $product_id ) {
 			if ( ! function_exists( 'FLANCE_Plugin_Licence' ) ) {
 				// Try to load FLANCE_Plugin_Licence class.
-				yith_plugin_fw_load_update_and_licence_files();
+				flance_plugin_fw_load_update_and_licence_files();
 			}
 
 			if ( function_exists( 'FLANCE_Plugin_Licence' ) && is_callable( array( FLANCE_Plugin_Licence(), 'register' ) ) ) {

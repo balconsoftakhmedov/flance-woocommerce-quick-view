@@ -26,7 +26,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @var array
 		 */
-		protected $yith_data = array();
+		protected $flance_data = array();
 
 		/**
 		 * Widget constructor.
@@ -37,8 +37,8 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 * @throws Exception If arguments are missing when initializing a full widget instance.
 		 */
 		public function __construct( $data = array(), $args = null ) {
-			$this->yith_data = $args['yith_data'];
-			$this->init_yith_data();
+			$this->flance_data = $args['flance_data'];
+			$this->init_flance_data();
 
 			parent::__construct( $data, $args );
 		}
@@ -51,13 +51,13 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @return mixed|string
 		 */
-		public function get_yith_prop( $prop, $default = null ) {
+		public function get_flance_prop( $prop, $default = null ) {
 			if ( is_null( $default ) ) {
-				$defaults = $this->get_yith_data_defaults();
+				$defaults = $this->get_flance_data_defaults();
 				$default  = array_key_exists( $prop, $defaults ) ? $defaults[ $prop ] : false;
 			}
 
-			return array_key_exists( $prop, $this->yith_data ) ? $this->yith_data[ $prop ] : $default;
+			return array_key_exists( $prop, $this->flance_data ) ? $this->flance_data[ $prop ] : $default;
 		}
 
 		/**
@@ -66,7 +66,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 * @return string
 		 */
 		public function get_name() {
-			return $this->get_yith_prop( 'name', '' );
+			return $this->get_flance_prop( 'name', '' );
 		}
 
 		/**
@@ -75,7 +75,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 * @return string
 		 */
 		public function get_title() {
-			return $this->get_yith_prop( 'title', '' );
+			return $this->get_flance_prop( 'title', '' );
 		}
 
 		/**
@@ -84,7 +84,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 * @return string
 		 */
 		public function get_icon() {
-			return $this->get_yith_prop( 'icon', 'yith-icon yith-icon-yith' );
+			return $this->get_flance_prop( 'icon', 'yith-icon yith-icon-yith' );
 		}
 
 		/**
@@ -93,21 +93,21 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 * @return array Widget categories.
 		 */
 		public function get_categories() {
-			return array( 'yith' ) + (array) $this->get_yith_prop( 'categories', array() );
+			return array( 'yith' ) + (array) $this->get_flance_prop( 'categories', array() );
 		}
 
 		/**
 		 * Register the widget controls.
 		 */
 		public function register_controls() {
-			$options     = $this->get_yith_prop( 'options' );
-			$description = $this->get_yith_prop( 'description' );
+			$options     = $this->get_flance_prop( 'options' );
+			$description = $this->get_flance_prop( 'description' );
 
 			if ( $options ) {
 				$this->start_controls_section(
 					'options',
 					array(
-						'label' => $this->get_yith_prop( 'section_title' ),
+						'label' => $this->get_flance_prop( 'section_title' ),
 						'tab'   => Controls_Manager::TAB_CONTENT,
 					)
 				);
@@ -128,7 +128,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 						continue;
 					}
 
-					$this->add_control( $option['yith_key'], $option );
+					$this->add_control( $option['flance_key'], $option );
 				}
 
 				$this->end_controls_section();
@@ -158,13 +158,13 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 */
 		protected function render() {
 			$settings         = $this->get_settings_for_display();
-			$option_values    = $this->get_yith_option_values();
-			$options          = $this->get_yith_prop( 'options' );
-			$shortcode_name   = $this->get_yith_prop( 'shortcode_name' );
-			$do_shortcode     = ! ! $this->get_yith_prop( 'do_shortcode' );
-			$render_cb        = $this->get_yith_prop( 'render_cb' );
-			$editor_render_cb = $this->get_yith_prop( 'editor_render_cb' );
-			$empty_message    = $this->get_yith_prop( 'empty_message', '' );
+			$option_values    = $this->get_flance_option_values();
+			$options          = $this->get_flance_prop( 'options' );
+			$shortcode_name   = $this->get_flance_prop( 'shortcode_name' );
+			$do_shortcode     = ! ! $this->get_flance_prop( 'do_shortcode' );
+			$render_cb        = $this->get_flance_prop( 'render_cb' );
+			$editor_render_cb = $this->get_flance_prop( 'editor_render_cb' );
+			$empty_message    = $this->get_flance_prop( 'empty_message', '' );
 
 			if ( Plugin::$instance->editor->is_edit_mode() && $editor_render_cb && is_callable( $editor_render_cb ) ) {
 				echo call_user_func( $editor_render_cb, $option_values ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -174,7 +174,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 				$shortcode_attrs = array();
 
 				foreach ( $options as $option ) {
-					$display_key = $option['yith_display_key'];
+					$display_key = $option['flance_display_key'];
 					$value       = isset( $option_values[ $display_key ] ) ? $option_values[ $display_key ] : null;
 					$show        = $this->is_control_visible( $option, $settings );
 
@@ -191,9 +191,9 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 				if ( Plugin::$instance->editor->is_edit_mode() ) {
 					$html = esc_html( $shortcode );
 					if ( $do_shortcode ) {
-						do_action( 'yith_plugin_fw_elementor_editor_before_do_shortcode', $shortcode, $this );
-						$html = do_shortcode( apply_filters( 'yith_plugin_fw_elementor_editor_shortcode', $shortcode, $this ) );
-						do_action( 'yith_plugin_fw_elementor_editor_after_do_shortcode', $shortcode, $this );
+						do_action( 'flance_plugin_fw_elementor_editor_before_do_shortcode', $shortcode, $this );
+						$html = do_shortcode( apply_filters( 'flance_plugin_fw_elementor_editor_shortcode', $shortcode, $this ) );
+						do_action( 'flance_plugin_fw_elementor_editor_after_do_shortcode', $shortcode, $this );
 					}
 					$type         = $do_shortcode ? 'html' : 'shortcode';
 					$html_to_show = $html;
@@ -227,9 +227,9 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 					</div>
 					<?php
 				} else {
-					do_action( 'yith_plugin_fw_elementor_before_do_shortcode', $shortcode, $this );
-					echo do_shortcode( apply_filters( 'yith_plugin_fw_elementor_shortcode', $shortcode, $this ) );
-					do_action( 'yith_plugin_fw_elementor_after_do_shortcode', $shortcode, $this );
+					do_action( 'flance_plugin_fw_elementor_before_do_shortcode', $shortcode, $this );
+					echo do_shortcode( apply_filters( 'flance_plugin_fw_elementor_shortcode', $shortcode, $this ) );
+					do_action( 'flance_plugin_fw_elementor_after_do_shortcode', $shortcode, $this );
 				}
 			}
 		}
@@ -239,7 +239,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @return array
 		 */
-		public function get_yith_data_defaults() {
+		public function get_flance_data_defaults() {
 			return array(
 				'map_from_gutenberg' => false,
 				'shortcode_name'     => '',
@@ -258,16 +258,16 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		/**
 		 * Retrieve FLANCE options with their values.
 		 */
-		protected function get_yith_option_values() {
+		protected function get_flance_option_values() {
 			$settings           = $this->get_settings_for_display();
-			$map_from_gutenberg = $this->get_yith_prop( 'map_from_gutenberg' );
-			$options            = $this->get_yith_prop( 'options' );
+			$map_from_gutenberg = $this->get_flance_prop( 'map_from_gutenberg' );
+			$options            = $this->get_flance_prop( 'options' );
 			$option_values      = array();
 
 			foreach ( $options as $option ) {
 				$value       = isset( $option['default'] ) ? $option['default'] : null;
-				$key         = $option['yith_key'];
-				$display_key = $option['yith_display_key'];
+				$key         = $option['flance_key'];
+				$display_key = $option['flance_display_key'];
 
 				if ( isset( $settings[ $key ] ) ) {
 					$value = $settings[ $key ];
@@ -293,8 +293,8 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		/**
 		 * FLANCE Data Initialization.
 		 */
-		protected function init_yith_data() {
-			$data = wp_parse_args( $this->yith_data, $this->get_yith_data_defaults() );
+		protected function init_flance_data() {
+			$data = wp_parse_args( $this->flance_data, $this->get_flance_data_defaults() );
 
 			if ( ! ! $data['map_from_gutenberg'] ) {
 				$data = $this->override_elementor_specific_data( $data );
@@ -309,9 +309,9 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 				}
 			}
 
-			$data['options'] = $this->validate_yith_options( $data['options'] );
+			$data['options'] = $this->validate_flance_options( $data['options'] );
 
-			$this->yith_data = $data;
+			$this->flance_data = $data;
 		}
 
 		/**
@@ -321,7 +321,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @return array|false The validate option array; false if the type is not set.
 		 */
-		protected function validate_yith_options( $options ) {
+		protected function validate_flance_options( $options ) {
 			foreach ( $options as $key => &$option ) {
 				if ( ! isset( $option['type'] ) ) {
 					unset( $options[ $key ] );
@@ -333,7 +333,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 					$option['type'] = Controls_Manager::SWITCHER;
 
 					if ( isset( $option['default'] ) && is_bool( $option['default'] ) ) {
-						$option['default'] = yith_plugin_fw_is_true( $option['default'] ) ? 'yes' : 'no';
+						$option['default'] = flance_plugin_fw_is_true( $option['default'] ) ? 'yes' : 'no';
 					}
 				} elseif ( in_array( $option['type'], array( 'radio' ), true ) ) {
 					$option['type'] = Controls_Manager::SELECT;
@@ -344,9 +344,9 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 				}
 
 				// Set the key, used to store the option, and the display_key, used in the render method.
-				$option['yith_key'] = $this->maybe_prefix_yith_key( $key );
-				if ( ! isset( $option['yith_display_key'] ) ) {
-					$option['yith_display_key'] = $key;
+				$option['flance_key'] = $this->maybe_prefix_flance_key( $key );
+				if ( ! isset( $option['flance_display_key'] ) ) {
+					$option['flance_display_key'] = $key;
 				}
 
 				// Auto-set the block_label to display label in a separate line.
@@ -420,7 +420,7 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 						$dep_value = $dep['value'];
 						$dep_id    = $dep['id'];
 						if ( in_array( $type, array( 'toggle', 'onoff', 'checkbox' ), true ) ) {
-							$dep_value = yith_plugin_fw_is_true( $dep_value ) ? 'yes' : 'no';
+							$dep_value = flance_plugin_fw_is_true( $dep_value ) ? 'yes' : 'no';
 						}
 						$option['condition'][ $dep_id ] = $dep_value;
 					}
@@ -455,8 +455,8 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @return string
 		 */
-		public function get_yith_key_prefix() {
-			return '_yith_';
+		public function get_flance_key_prefix() {
+			return '_flance_';
 		}
 
 		/**
@@ -466,10 +466,10 @@ if ( ! class_exists( 'FLANCE_Elementor_Widget' ) ) {
 		 *
 		 * @return string
 		 */
-		public function maybe_prefix_yith_key( $key ) {
+		public function maybe_prefix_flance_key( $key ) {
 			$reserved_keys = array( 'id', 'elType', 'settings', 'elements', 'isInner' );
 			if ( in_array( $key, $reserved_keys, true ) ) {
-				$prefix = $this->get_yith_key_prefix();
+				$prefix = $this->get_flance_key_prefix();
 
 				$key = substr( $key, 0, strlen( $prefix ) ) === $prefix ? $key : ( $prefix . $key );
 			}

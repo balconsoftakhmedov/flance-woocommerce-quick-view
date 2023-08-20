@@ -5,7 +5,7 @@ import { RawHTML }   from '@wordpress/element';
 import classnames    from 'classnames';
 
 import './style.scss';
-import { yith_icon } from '../../common';
+import { flance_icon } from '../../common';
 
 function EditorPlaceholder( { blockArgs } ) {
 	const { editor_placeholder, title, description } = blockArgs;
@@ -17,7 +17,7 @@ function EditorPlaceholder( { blockArgs } ) {
 
 	if ( isDefaultPlaceholder ) {
 		return <div className={classes}>
-			<div className="yith-plugin-fw-blocks__editor-placeholder__title">{yith_icon}{title}</div>
+			<div className="yith-plugin-fw-blocks__editor-placeholder__title">{flance_icon}{title}</div>
 			{description && <div className="yith-plugin-fw-blocks__editor-placeholder__description">{description}</div>}
 		</div>
 	}

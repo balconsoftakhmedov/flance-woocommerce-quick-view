@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'custom_attributes', 'data' );
 
 // Handle deprecated param 'classes' (since 3.5): use 'class' instead.
 if ( isset( $field['classes'] ) && ! isset( $class ) ) {
@@ -17,7 +17,7 @@ if ( isset( $field['classes'] ) && ! isset( $class ) ) {
 
 if ( ! function_exists( 'wp_editor' ) ) {
 	$field['type'] = 'textarea';
-	yith_plugin_fw_get_field( $field, true, false );
+	flance_plugin_fw_get_field( $field, true, false );
 
 	return;
 }
@@ -42,6 +42,6 @@ $editor_args = wp_parse_args(
 );
 ?>
 <div class="editor <?php echo esc_attr( $class ); ?>"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 ><?php wp_editor( $value, $field_id, $editor_args ); ?></div>

@@ -764,19 +764,19 @@ if ( ! function_exists( 'yit_datetime_to_timestamp' ) ) {
 yit_fix_wc_deprecated_filters();
 add_action( 'shutdown', 'yit_send_changes_to_db' );
 
-if ( ! function_exists( 'yith_plugin_fw_is_wc_custom_orders_table_usage_enabled' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_is_wc_custom_orders_table_usage_enabled' ) ) {
 	/**
 	 * Return true if the WooCommerce custom orders table usage is enabled (HPOS).
 	 *
 	 * @return bool
 	 * @since 4.1.0
 	 */
-	function yith_plugin_fw_is_wc_custom_orders_table_usage_enabled(): bool {
+	function flance_plugin_fw_is_wc_custom_orders_table_usage_enabled(): bool {
 		return class_exists( '\Automattic\WooCommerce\Utilities\OrderUtil' ) && is_callable( '\Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled' ) && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled();
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_wc_is_using_block_template_in' ) ) {
 	/**
 	 * Is using the block template in a specific template page?
 	 * Requires WooCommerce 7.9 or greater and WordPress 5.9 or greater.
@@ -786,7 +786,7 @@ if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in' ) ) {
 	 * @return bool
 	 * @since 4.3.0
 	 */
-	function yith_plugin_fw_wc_is_using_block_template_in( $template_name ): bool {
+	function flance_plugin_fw_wc_is_using_block_template_in( $template_name ): bool {
 		static $use_blocks = array();
 		if ( ! isset( $use_blocks[ $template_name ] ) ) {
 			// The blockified templates are available by default since WooCommerce 7.9.
@@ -849,50 +849,50 @@ if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in' ) ) {
 }
 
 
-if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in_single_product' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_wc_is_using_block_template_in_single_product' ) ) {
 	/**
 	 * Is using the block template in Single Product page?
 	 *
 	 * @return bool
 	 * @since 4.3.0
 	 */
-	function yith_plugin_fw_wc_is_using_block_template_in_single_product(): bool {
-		return yith_plugin_fw_wc_is_using_block_template_in( 'single-product' );
+	function flance_plugin_fw_wc_is_using_block_template_in_single_product(): bool {
+		return flance_plugin_fw_wc_is_using_block_template_in( 'single-product' );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in_product_catalogue' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_wc_is_using_block_template_in_product_catalogue' ) ) {
 	/**
 	 * Is using the block template in Shop page?
 	 *
 	 * @return bool
 	 * @since 4.3.0
 	 */
-	function yith_plugin_fw_wc_is_using_block_template_in_product_catalogue(): bool {
-		return yith_plugin_fw_wc_is_using_block_template_in( 'archive-product' );
+	function flance_plugin_fw_wc_is_using_block_template_in_product_catalogue(): bool {
+		return flance_plugin_fw_wc_is_using_block_template_in( 'archive-product' );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in_cart' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_wc_is_using_block_template_in_cart' ) ) {
 	/**
 	 * Is using the block template in Cart page?
 	 *
 	 * @return bool
 	 * @since 4.3.0
 	 */
-	function yith_plugin_fw_wc_is_using_block_template_in_cart(): bool {
-		return yith_plugin_fw_wc_is_using_block_template_in( 'cart' );
+	function flance_plugin_fw_wc_is_using_block_template_in_cart(): bool {
+		return flance_plugin_fw_wc_is_using_block_template_in( 'cart' );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_wc_is_using_block_template_in_checkout' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_wc_is_using_block_template_in_checkout' ) ) {
 	/**
 	 * Is using the block template in Checkout page?
 	 *
 	 * @return bool
 	 * @since 4.3.0
 	 */
-	function yith_plugin_fw_wc_is_using_block_template_in_checkout(): bool {
-		return yith_plugin_fw_wc_is_using_block_template_in( 'checkout' );
+	function flance_plugin_fw_wc_is_using_block_template_in_checkout(): bool {
+		return flance_plugin_fw_wc_is_using_block_template_in( 'checkout' );
 	}
 }

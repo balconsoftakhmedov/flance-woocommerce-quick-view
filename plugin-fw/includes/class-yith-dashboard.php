@@ -32,8 +32,8 @@ if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 		 * Dashboard widget setup.
 		 */
 		public static function dashboard_widget_setup() {
-			wp_add_dashboard_widget( 'yith_dashboard_products_news', __( 'FLANCE Latest Updates', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_products_news' );
-			wp_add_dashboard_widget( 'yith_dashboard_blog_news', __( 'Latest news from FLANCE Blog', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_blog_news' );
+			wp_add_dashboard_widget( 'flance_dashboard_products_news', __( 'FLANCE Latest Updates', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_products_news' );
+			wp_add_dashboard_widget( 'flance_dashboard_blog_news', __( 'Latest news from FLANCE Blog', 'yith-plugin-fw' ), 'FLANCE_Dashboard::dashboard_blog_news' );
 		}
 
 
@@ -94,7 +94,7 @@ if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 				if ( ! empty( $changelog ) ) {
 					$output .= ' - ';
 					$output .= sprintf( '<a class="yith-last-changelog" href="#" data-changelogid="%s" data-plugininfo="%s">%s</a>', $last_update->get_id( true ), $last_update->get_title(), _x( 'View Changelog', 'Plugin FW', 'yith-plugin-fw' ) );
-					$output .= sprintf( '<div class="yith-feeds-wrapper" id="%s"><div class="yith-feeds-changelog-plugin-name"><img class="yith-feeds-logo" src="%s" /><h3 class="yith-feeds-plugin-name"><span style="font-weight: normal;">%s</span> %s</h3></div><p>%s</p></div>', $last_update->get_id( true ), yith_plugin_fw_get_default_logo(), _x( 'Latest update released on', 'Plugin FW', 'yith-plugin-fw' ), $date_i18n, $changelog );
+					$output .= sprintf( '<div class="yith-feeds-wrapper" id="%s"><div class="yith-feeds-changelog-plugin-name"><img class="yith-feeds-logo" src="%s" /><h3 class="yith-feeds-plugin-name"><span style="font-weight: normal;">%s</span> %s</h3></div><p>%s</p></div>', $last_update->get_id( true ), flance_plugin_fw_get_default_logo(), _x( 'Latest update released on', 'Plugin FW', 'yith-plugin-fw' ), $date_i18n, $changelog );
 				}
 
 				$output .= '</li>';
@@ -130,19 +130,19 @@ if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 			if ( function_exists( 'get_current_screen' ) && get_current_screen() && 'dashboard' === get_current_screen()->id ) {
 				$script_path = defined( 'YIT_CORE_PLUGIN_URL' ) ? YIT_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
 				$suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-				wp_enqueue_script( 'yith-dashboard', $script_path . '/assets/js/yith-dashboard' . $suffix . '.js', array( 'jquery-ui-dialog' ), yith_plugin_fw_get_version(), true );
+				wp_enqueue_script( 'yith-dashboard', $script_path . '/assets/js/yith-dashboard' . $suffix . '.js', array( 'jquery-ui-dialog' ), flance_plugin_fw_get_version(), true );
 				wp_enqueue_style( 'wp-jquery-ui-dialog' );
 				$l10n = array(
 					'buttons' => array(
 						'close' => _x( 'Close', 'Button label', 'yith-plugin-fw' ),
 					),
 				);
-				wp_localize_script( 'yith-dashboard', 'yith_dashboard', $l10n );
+				wp_localize_script( 'yith-dashboard', 'flance_dashboard', $l10n );
 			}
 		}
 	}
 
-	if ( apply_filters( 'yith_plugin_fw_show_dashboard_widgets', true ) ) {
+	if ( apply_filters( 'flance_plugin_fw_show_dashboard_widgets', true ) ) {
 		add_action( 'wp_dashboard_setup', 'FLANCE_Dashboard::dashboard_widget_setup' );
 		add_action( 'admin_enqueue_scripts', 'FLANCE_Dashboard::enqueue_scripts', 20 );
 	}

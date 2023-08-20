@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $options, $labelled_by, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'labelled_by', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $options, $labelled_by, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'labelled_by', 'custom_attributes', 'data' );
 
 $class = isset( $class ) ? $class : '';
 $class = 'yith-plugin-fw-radio ' . $class;
@@ -37,10 +37,10 @@ $label_extra_allowed_tags = array(
 	),
 );
 
-$label_extra_allowed_tags = array_map( 'yith_plugin_fw_add_kses_global_attributes', $label_extra_allowed_tags );
+$label_extra_allowed_tags = array_map( 'flance_plugin_fw_add_kses_global_attributes', $label_extra_allowed_tags );
 
 $label_allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), $label_extra_allowed_tags );
-$label_allowed_tags = apply_filters( 'yith_plugin_fw_radio_field_label_allowed_tags', $label_allowed_tags, $field );
+$label_allowed_tags = apply_filters( 'flance_plugin_fw_radio_field_label_allowed_tags', $label_allowed_tags, $field );
 ?>
 <div id="<?php echo esc_attr( $field_id ); ?>"
 	class="<?php echo esc_attr( $class ); ?>"
@@ -50,8 +50,8 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_radio_field_label_allowed_t
 	<?php if ( isset( $labelled_by ) ) : ?>
 		aria-labelledby="<?php echo esc_attr( $labelled_by ); ?>"
 	<?php endif; ?>
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<?php foreach ( $options as $key => $label ) : ?>
 		<?php

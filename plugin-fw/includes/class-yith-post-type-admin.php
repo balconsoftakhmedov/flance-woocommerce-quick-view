@@ -355,7 +355,7 @@ if ( ! class_exists( 'FLANCE_Post_Type_Admin' ) ) {
 			$component         = $this->get_blank_state_params();
 			$component['type'] = 'list-table-blank-state';
 
-			yith_plugin_fw_get_component( $component, true );
+			flance_plugin_fw_get_component( $component, true );
 		}
 
 		/**

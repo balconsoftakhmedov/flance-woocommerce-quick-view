@@ -1,4 +1,4 @@
-/* globals yith_framework_fw_fields, wp, yith */
+/* globals flance_framework_fw_fields, wp, yith */
 ( function ( $ ) {
 
 	/* Upload */
@@ -243,7 +243,7 @@
 		$( document ).on( 'yith-plugin-fw-codemirror-init', codemirrorInit ).trigger( 'yith-plugin-fw-codemirror-init' );
 	} );
 
-	var yith_fields_init = function () {
+	var flance_fields_init = function () {
 		var $datepicker  = $( '.yith-plugin-fw-datepicker:not(.yith-plugin-fw-datepicker--initialized)' ),
 			$colorpicker = $( '.yith-plugin-fw-colorpicker:not(.yith-plugin-fw-colorpicker--initialized)' ),
 			$sidebars    = $( '.yith-plugin-fw-sidebar-layout:not(.yith-plugin-fw-sidebar-layout--initialized)' ),
@@ -441,7 +441,7 @@
 		imageGallery.init();
 	};
 
-	$( document ).on( 'yith_fields_init', yith_fields_init ).trigger( 'yith_fields_init' );
+	$( document ).on( 'flance_fields_init', flance_fields_init ).trigger( 'flance_fields_init' );
 
 	/** Select Images */
 	$( document ).on( 'click', '.yith-plugin-fw-select-images__item', function () {
@@ -452,7 +452,7 @@
 			select  = wrapper.find( 'select' ).first();
 
 		if ( select.length ) {
-			select.val( key ).trigger( 'yith_select_images_value_changed' ).trigger( 'change' );
+			select.val( key ).trigger( 'flance_select_images_value_changed' ).trigger( 'change' );
 			items.removeClass( 'yith-plugin-fw-select-images__item--selected' );
 			item.addClass( 'yith-plugin-fw-select-images__item--selected' );
 		}
@@ -497,7 +497,7 @@
 	//TOGGLE ELEMENT
 	$.fn.saveToggleElement = function ( spinner, array_keys ) {
 		var toggle          = $( this ),
-			action          = 'yith_plugin_fw_save_toggle_element',
+			action          = 'flance_plugin_fw_save_toggle_element',
 			formdata        = toggle.serializeToggleElement(),
 			wrapper         = toggle.find( '.yith-toggle_wrapper' ),
 			id              = wrapper.attr( 'id' ),
@@ -507,22 +507,22 @@
 		formdata.append( 'security', wrapper.data( 'nonce' ) );
 
 		if ( typeof array_keys != 'undefined' && array_keys.length > 0 ) {
-			formdata.append( 'yith_toggle_elements_order_keys', array_keys );
+			formdata.append( 'flance_toggle_elements_order_keys', array_keys );
 		}
 
 		if ( toggle.closest( '.metaboxes-tab.yith-plugin-ui' ).length ) {
-			action              = 'yith_plugin_fw_save_toggle_element_metabox';
+			action              = 'flance_plugin_fw_save_toggle_element_metabox';
 			post_id             = $( this ).closest( 'form#post' ).find( '#post_ID' ).val();
 			yit_metaboxes_nonce = $( this ).closest( 'form#post' ).find( '#yit_metaboxes_nonce' ).val();
 			metabox_tab         = $( this ).closest( '.tabs-panel' ).attr( 'id' );
-			url                 = yith_framework_fw_fields.ajax_url +
+			url                 = flance_framework_fw_fields.ajax_url +
 								  '?action=' + action +
 								  "&post_ID=" + post_id +
 								  '&yit_metaboxes_nonce=' + yit_metaboxes_nonce +
 								  "&toggle_id=" + id +
 								  "&metabox_tab=" + metabox_tab;
 		} else {
-			url = yith_framework_fw_fields.admin_url + '?action=' + action + '&tab=' + current_tab + '&sub_tab=' + current_sub_tab + "&toggle_id=" + id;
+			url = flance_framework_fw_fields.admin_url + '?action=' + action + '&tab=' + current_tab + '&sub_tab=' + current_sub_tab + "&toggle_id=" + id;
 		}
 
 		$.ajax( {
@@ -536,7 +536,7 @@
 							spinner.removeClass( 'show' );
 						}
 
-						$( document ).trigger( 'yith_save_toggle_element_done', [result, toggle] );
+						$( document ).trigger( 'flance_save_toggle_element_done', [result, toggle] );
 					}
 				} );
 	};
@@ -643,7 +643,7 @@
 				}
 			}
 
-			$( document ).trigger( 'yith_fields_init' );
+			$( document ).trigger( 'flance_fields_init' );
 			$( document ).trigger( 'yith-add-box-button-toggle', [$this] );
 		}
 	} );
@@ -723,7 +723,7 @@
 				}, delayInMilliseconds );
 
 
-				$( document ).trigger( 'yith_fields_init' );
+				$( document ).trigger( 'flance_fields_init' );
 			}
 		}, delayInMilliseconds );
 
@@ -1262,7 +1262,7 @@
 			}
 
 			if ( !files.length ) {
-				addErrorNotice( wrapper, yith_framework_fw_fields.i18n.noFileError );
+				addErrorNotice( wrapper, flance_framework_fw_fields.i18n.noFileError );
 				onFinish();
 			} else if ( 'mediaUtils' in wp && 'uploadMedia' in wp.mediaUtils ) {
 				wp.mediaUtils.uploadMedia(
@@ -1286,7 +1286,7 @@
 					}
 				);
 			} else {
-				addErrorNotice( wrapper, yith_framework_fw_fields.i18n.cannotDropError );
+				addErrorNotice( wrapper, flance_framework_fw_fields.i18n.cannotDropError );
 				onFinish();
 			}
 

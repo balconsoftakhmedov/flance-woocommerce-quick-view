@@ -83,7 +83,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 
 			add_filter( 'yit_icons_screen_ids', array( $this, 'add_screen_ids_for_icons' ) );
 
-			add_action( 'wp_ajax_yith_plugin_fw_save_toggle_element_metabox', array( $this, 'save_toggle_element' ) );
+			add_action( 'wp_ajax_flance_plugin_fw_save_toggle_element_metabox', array( $this, 'save_toggle_element' ) );
 		}
 
 		/**
@@ -102,7 +102,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 		 */
 		public function enqueue() {
 			$enqueue = function_exists( 'get_current_screen' ) && get_current_screen() && in_array( get_current_screen()->id, (array) $this->options['pages'], true );
-			$enqueue = apply_filters( 'yith_plugin_fw_metabox_enqueue_styles_and_scripts', $enqueue, $this );
+			$enqueue = apply_filters( 'flance_plugin_fw_metabox_enqueue_styles_and_scripts', $enqueue, $this );
 
 			if ( $enqueue ) {
 				wp_enqueue_media();
@@ -305,7 +305,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 			);
 
 			if ( isset( $meta_box, $meta_box['id'] ) ) {
-				do_action( "yith_plugin_fw_metabox_before_render_{$meta_box['id']}", $post, $meta_box );
+				do_action( "flance_plugin_fw_metabox_before_render_{$meta_box['id']}", $post, $meta_box );
 			}
 
 			yit_plugin_get_template( YIT_CORE_PLUGIN_PATH, 'metaboxes/tab.php', $args );
@@ -323,7 +323,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 				return $post_id;
 			}
 
-			$allow_ajax = isset( $_REQUEST['yith_metabox_allow_ajax_saving'] ) && sanitize_key( wp_unslash( $_REQUEST['yith_metabox_allow_ajax_saving'] ) ) === $this->id;
+			$allow_ajax = isset( $_REQUEST['flance_metabox_allow_ajax_saving'] ) && sanitize_key( wp_unslash( $_REQUEST['flance_metabox_allow_ajax_saving'] ) ) === $this->id;
 			if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) || ( defined( 'DOING_AJAX' ) && DOING_AJAX && ! $allow_ajax ) ) {
 				return $post_id;
 			}
@@ -388,8 +388,8 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			$this->reorder_tabs();
 			$tabs_to_sanitize        = $this->tabs;
-			$allow_ajax              = isset( $_REQUEST['yith_metabox_allow_ajax_saving'] ) && sanitize_key( wp_unslash( $_REQUEST['yith_metabox_allow_ajax_saving'] ) ) === $this->id;
-			$ajax_partial_saving_tab = isset( $_REQUEST['yith_metabox_allow_ajax_partial_saving_tab'] ) ? sanitize_key( wp_unslash( $_REQUEST['yith_metabox_allow_ajax_partial_saving_tab'] ) ) : false;
+			$allow_ajax              = isset( $_REQUEST['flance_metabox_allow_ajax_saving'] ) && sanitize_key( wp_unslash( $_REQUEST['flance_metabox_allow_ajax_saving'] ) ) === $this->id;
+			$ajax_partial_saving_tab = isset( $_REQUEST['flance_metabox_allow_ajax_partial_saving_tab'] ) ? sanitize_key( wp_unslash( $_REQUEST['flance_metabox_allow_ajax_partial_saving_tab'] ) ) : false;
 
 			if ( defined( 'DOING_AJAX' ) && DOING_AJAX && ! $allow_ajax ) {
 				return;

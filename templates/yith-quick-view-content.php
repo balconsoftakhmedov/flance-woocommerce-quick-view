@@ -17,11 +17,11 @@ while ( have_posts() ) :
 
 		<div id="product-<?php the_ID(); ?>" <?php post_class( 'product' ); ?>>
 
-			<?php do_action( 'yith_wcqv_product_image' ); ?>
+			<?php do_action( 'flance_wcqv_product_image' ); ?>
 
 			<div class="summary entry-summary">
 				<div class="summary-content">
-					<?php do_action( 'yith_wcqv_product_summary' ); ?>
+					<?php do_action( 'flance_wcqv_product_summary' ); ?>
 				</div>
 			</div>
 

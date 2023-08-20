@@ -21,7 +21,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 *
 		 * @var string
 		 */
-		protected $page = 'yith_system_info';
+		protected $page = 'flance_system_info';
 
 		/**
 		 * Plugins requirements list
@@ -80,7 +80,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 
 			/**
 			 * Add to prevent trigger admin_init called directly
-			 * wp-admin/admin-post.php?page=yith_system_info
+			 * wp-admin/admin-post.php?page=flance_system_info
 			 */
 			if ( ! is_user_logged_in() ) {
 				return;
@@ -91,7 +91,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 			add_action( 'admin_notices', array( $this, 'activate_system_notice' ), 15 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ), 20 );
 			add_action( 'init', array( $this, 'set_requirements_labels' ) );
-			add_action( 'wp_ajax_yith_create_log_file', array( $this, 'create_log_file' ) );
+			add_action( 'wp_ajax_flance_create_log_file', array( $this, 'create_log_file' ) );
 
 		}
 
@@ -129,10 +129,10 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 */
 		public function add_submenu_page() {
 
-			$system_info  = get_option( 'yith_system_info', array() );
+			$system_info  = get_option( 'flance_system_info', array() );
 			$error_notice = ( isset( $system_info['errors'] ) && true === $system_info['errors'] ? ' <span class="yith-system-info-menu update-plugins">!</span>' : '' );
 			$settings     = array(
-				'parent_page' => 'yith_plugin_panel',
+				'parent_page' => 'flance_plugin_panel',
 				'page_title'  => esc_html__( 'System Status', 'yith-plugin-fw' ),
 				'menu_title'  => esc_html__( 'System Status', 'yith-plugin-fw' ) . $error_notice,
 				'capability'  => 'manage_options',
@@ -171,7 +171,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 */
 		public function check_system_status() {
 
-			if ( '' === get_option( 'yith_system_info' ) || ( isset( $_GET['page'] ) && $_GET['page'] === $this->page ) ) { //phpcs:ignore
+			if ( '' === get_option( 'flance_system_info' ) || ( isset( $_GET['page'] ) && $_GET['page'] === $this->page ) ) { //phpcs:ignore
 
 				$this->add_requirements(
 					esc_html__( 'FLANCE Plugins', 'yith-plugin-fw' ),
@@ -249,7 +249,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 				}
 
 				update_option(
-					'yith_system_info',
+					'flance_system_info',
 					array(
 						'system_info' => $check_results,
 						'errors'      => $errors > 0,
@@ -292,7 +292,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 			$script_path = defined( 'YIT_CORE_PLUGIN_URL' ) ? YIT_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
 			wp_register_script( 'yith-system-info', yit_load_js_file( $script_path . '/assets/js/yith-system-info.js' ), array( 'jquery' ), '1.0.0', true );
 
-			if ( isset( $_GET['page'] ) && 'yith_system_info' === $_GET['page'] ) { //phpcs:ignore
+			if ( isset( $_GET['page'] ) && 'flance_system_info' === $_GET['page'] ) { //phpcs:ignore
 				wp_enqueue_style( 'yith-plugin-fw-fields' );
 				wp_enqueue_script( 'yith-system-info' );
 
@@ -300,7 +300,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 				);
 
-				wp_localize_script( 'yith-system-info', 'yith_sysinfo', $params );
+				wp_localize_script( 'yith-system-info', 'flance_sysinfo', $params );
 
 			}
 
@@ -314,9 +314,9 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 */
 		public function activate_system_notice() {
 
-			$system_info = get_option( 'yith_system_info', '' );
+			$system_info = get_option( 'flance_system_info', '' );
 
-			if ( ( isset( $_GET['page'] ) && $_GET['page'] === $this->page ) || ( ! empty( $_COOKIE['hide_yith_system_alert'] ) && 'yes' === $_COOKIE['hide_yith_system_alert'] ) || ( '' === $system_info ) || ( '' !== $system_info && false === $system_info['errors'] ) ) { //phpcs:ignore
+			if ( ( isset( $_GET['page'] ) && $_GET['page'] === $this->page ) || ( ! empty( $_COOKIE['hide_flance_system_alert'] ) && 'yes' === $_COOKIE['hide_flance_system_alert'] ) || ( '' === $system_info ) || ( '' !== $system_info && false === $system_info['errors'] ) ) { //phpcs:ignore
 				return;
 			}
 
@@ -327,7 +327,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 				?>
 				<div id="yith-system-alert" class="notice notice-error is-dismissible" style="position: relative;">
 					<p>
-						<span class="yith-logo"><img src="<?php echo esc_attr( yith_plugin_fw_get_default_logo() ); ?>"/></span>
+						<span class="yith-logo"><img src="<?php echo esc_attr( flance_plugin_fw_get_default_logo() ); ?>"/></span>
 						<b>
 							<?php esc_html_e( 'Warning!', 'yith-plugin-fw' ); ?>
 						</b><br/>
@@ -369,7 +369,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 			}
 
 			return apply_filters(
-				'yith_system_additional_check',
+				'flance_system_additional_check',
 				array(
 					'min_wp_version'    => get_bloginfo( 'version' ),
 					'min_wc_version'    => function_exists( 'WC' ) ? WC()->version : 'n/a',
@@ -377,7 +377,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 					'min_php_version'   => $php_version,
 					'min_tls_version'   => $tls,
 					'imagick_version'   => $imagick_version,
-					'wp_cron_enabled'   => ( ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) || apply_filters( 'yith_system_status_server_cron', false ) ),
+					'wp_cron_enabled'   => ( ! ( defined( 'DISABLE_WP_CRON' ) && DISABLE_WP_CRON ) || apply_filters( 'flance_system_status_server_cron', false ) ),
 					'mbstring_enabled'  => extension_loaded( 'mbstring' ),
 					'simplexml_enabled' => extension_loaded( 'simplexml' ),
 					'gd_enabled'        => extension_loaded( 'gd' ) && function_exists( 'gd_info' ),
@@ -569,7 +569,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 					echo sprintf( esc_html__( 'Read more %1$shere%2$s or contact your hosting company in order to increase it.', 'yith-plugin-fw' ), '<a href="https://codex.wordpress.org/Editing_wp-config.php#Increasing_memory_allocated_to_PHP" target="_blank">', '</a>' );
 					break;
 				default:
-					echo esc_attr( apply_filters( 'yith_system_generic_message', '', $key, $item, $label ) );
+					echo esc_attr( apply_filters( 'flance_system_generic_message', '', $key, $item, $label ) );
 			}
 		}
 
@@ -611,7 +611,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		public function get_tls_version() {
 			$tls = get_transient( 'yith-plugin-fw-system-status-tls-version' );
 
-			if ( ! $tls && apply_filters( 'yith_system_status_check_ssl', true ) ) {
+			if ( ! $tls && apply_filters( 'flance_system_status_check_ssl', true ) ) {
 				$services = array(
 					array(
 						'url'              => 'https://www.howsmyssl.com/a/check',
@@ -663,7 +663,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		public function get_output_ip() {
 			$ip = get_transient( 'yith-plugin-fw-system-status-output-ip' );
 
-			if ( ! $ip && apply_filters( 'yith_system_status_check_ip', true ) ) {
+			if ( ! $ip && apply_filters( 'flance_system_status_check_ip', true ) ) {
 				$url    = 'https://ifconfig.co/ip';
 				$params = array(
 					'sslverify' => false,
@@ -699,7 +699,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 * @return array
 		 */
 		public function get_plugin_fw_info() {
-			$version        = yith_plugin_fw_get_version();
+			$version        = flance_plugin_fw_get_version();
 			$loaded_by      = basename( dirname( YIT_CORE_PLUGIN_PATH ) );
 			$loaded_by_init = trailingslashit( dirname( YIT_CORE_PLUGIN_PATH ) ) . 'init.php';
 			if ( file_exists( $loaded_by_init ) ) {
@@ -775,7 +775,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 			}
 
 			return apply_filters(
-				'yith_database_info',
+				'flance_database_info',
 				array(
 					'mysql_version'        => $database_version['number'],
 					'mysql_version_string' => $database_version['string'],

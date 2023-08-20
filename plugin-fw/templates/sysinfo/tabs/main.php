@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-$system_info    = get_option( 'yith_system_info' );
+$system_info    = get_option( 'flance_system_info' );
 $output_ip      = FLANCE_System_Status()->get_output_ip();
 $labels         = FLANCE_System_Status()->requirement_labels;
 $plugin_fw_info = FLANCE_System_Status()->get_plugin_fw_info();

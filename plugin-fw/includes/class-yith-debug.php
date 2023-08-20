@@ -114,7 +114,7 @@ if ( ! class_exists( 'FLANCE_Debug' ) ) {
 		 * @return string
 		 */
 		public function get_plugin_framework_info() {
-			$plugin_fw_version   = yith_plugin_fw_get_version();
+			$plugin_fw_version   = flance_plugin_fw_get_version();
 			$plugin_fw_loaded_by = basename( dirname( YIT_CORE_PLUGIN_PATH ) );
 
 			return "$plugin_fw_version (by $plugin_fw_loaded_by)";
@@ -141,14 +141,14 @@ if ( ! class_exists( 'FLANCE_Debug' ) ) {
 		}
 	}
 }
-if ( ! function_exists( 'yith_debug' ) ) {
+if ( ! function_exists( 'flance_debug' ) ) {
 	/**
 	 * Single instance of FLANCE_Debug
 	 *
 	 * @return FLANCE_Debug
 	 * @deprecated 3.7.7
 	 */
-	function yith_debug() {
+	function flance_debug() {
 		return FLANCE_Debug::instance();
 	}
 }

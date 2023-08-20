@@ -37,8 +37,8 @@
     var form = $(this);
 
     if (true ===
-        $(document).triggerHandler('yith_onboarding_form_submit_validation')) {
-      $(document).trigger('yith_onboarding_validate_form_submit', [form]);
+        $(document).triggerHandler('flance_onboarding_form_submit_validation')) {
+      $(document).trigger('flance_onboarding_validate_form_submit', [form]);
       return false;
     }
     block($('.yith-bh-onboarding-tabs__content'));
@@ -46,7 +46,7 @@
         {
           type: 'POST',
           data: form.serialize(),
-          url: yith_bh_onboarding.ajax_url,
+          url: flance_bh_onboarding.ajax_url,
           success: function(response) {
             if (response.success) {
               var button = parent.document.querySelector(

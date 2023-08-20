@@ -11,14 +11,14 @@
 
 defined( 'ABSPATH' ) || exit;
 
-list ( $current_tab, $current_sub_tab, $premium_class, $the_page, $parent_page ) = yith_plugin_fw_extract( $nav_args, 'current_tab', 'current_sub_tab', 'premium_class', 'page', 'parent_page' );
+list ( $current_tab, $current_sub_tab, $premium_class, $the_page, $parent_page ) = flance_plugin_fw_extract( $nav_args, 'current_tab', 'current_sub_tab', 'premium_class', 'page', 'parent_page' );
 
 $active_class = $current_tab === $tab_key ? 'nav-tab-active' : '';
 
 if ( 'premium' === $tab_key ) {
 	$active_class .= ' ' . $premium_class;
 }
-$active_class = apply_filters( 'yith_plugin_fw_panel_active_tab_class', $active_class, $current_tab, $tab_key );
+$active_class = apply_filters( 'flance_plugin_fw_panel_active_tab_class', $active_class, $current_tab, $tab_key );
 
 $first_sub_tab = $panel->get_first_sub_tab_key( $tab_key );
 $sub_tab       = ! ! $first_sub_tab ? $first_sub_tab : '';

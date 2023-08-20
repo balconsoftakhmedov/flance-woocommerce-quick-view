@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $value, $fields, $size, $columns, $inline ) = yith_plugin_fw_extract( $field, 'id', 'name', 'value', 'fields', 'size', 'columns', 'inline' );
+list ( $field_id, $name, $value, $fields, $size, $columns, $inline ) = flance_plugin_fw_extract( $field, 'id', 'name', 'value', 'fields', 'size', 'columns', 'inline' );
 
 if ( empty( $fields ) ) {
 	return;

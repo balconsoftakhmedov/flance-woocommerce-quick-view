@@ -44,8 +44,8 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 			);
 
 			foreach ( $ajax_actions as $ajax_action ) {
-				add_action( 'wp_ajax_yith_plugin_fw_' . $ajax_action, array( $this, $ajax_action ) );
-				add_action( 'wp_ajax_nopriv_yith_plugin_fw_' . $ajax_action, array( $this, $ajax_action ) );
+				add_action( 'wp_ajax_flance_plugin_fw_' . $ajax_action, array( $this, $ajax_action ) );
+				add_action( 'wp_ajax_nopriv_flance_plugin_fw_' . $ajax_action, array( $this, $ajax_action ) );
 			}
 		}
 
@@ -106,7 +106,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 						continue;
 					}
 
-					$the_title = yith_plugin_fw_get_post_formatted_name(
+					$the_title = flance_plugin_fw_get_post_formatted_name(
 						$post_id,
 						array(
 							'post-type' => $args['post_type'],
@@ -114,11 +114,11 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 						)
 					);
 
-					$found_posts[ $post_id ] = apply_filters( 'yith_plugin_fw_json_search_found_post_title', rawurldecode( wp_strip_all_tags( $the_title ) ), $post_id, $request );
+					$found_posts[ $post_id ] = apply_filters( 'flance_plugin_fw_json_search_found_post_title', rawurldecode( wp_strip_all_tags( $the_title ) ), $post_id, $request );
 				}
 			}
 
-			$found_posts = apply_filters( 'yith_plugin_fw_json_search_found_posts', $found_posts, $request );
+			$found_posts = apply_filters( 'flance_plugin_fw_json_search_found_posts', $found_posts, $request );
 			wp_send_json( $found_posts );
 		}
 
@@ -154,7 +154,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 				}
 			}
 
-			$request = apply_filters( 'yith_plugin_fw_json_search_products_request', $request );
+			$request = apply_filters( 'flance_plugin_fw_json_search_products_request', $request );
 			$this->json_search_posts( $request );
 		}
 
@@ -175,11 +175,11 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 
 			$json_orders = array();
 			$orders      = array();
-			$term        = apply_filters( 'yith_plugin_fw_json_search_order_number', $term ); // Filter kept for backward compatibility.
-			$term        = apply_filters( 'yith_plugin_fw_json_search_order_term', $term );
-			$limit       = absint( apply_filters( 'yith_plugin_fw_json_search_order_limit', 10 ) );
+			$term        = apply_filters( 'flance_plugin_fw_json_search_order_number', $term ); // Filter kept for backward compatibility.
+			$term        = apply_filters( 'flance_plugin_fw_json_search_order_term', $term );
+			$limit       = absint( apply_filters( 'flance_plugin_fw_json_search_order_limit', 10 ) );
 
-			if ( yith_plugin_fw_is_wc_custom_orders_table_usage_enabled() ) {
+			if ( flance_plugin_fw_is_wc_custom_orders_table_usage_enabled() ) {
 				$orders = wc_get_orders(
 					array(
 						's'     => $term,
@@ -206,7 +206,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 
 			if ( $orders ) {
 				foreach ( $orders as $order ) {
-					$json_orders[ $order->get_id() ] = yith_plugin_fw_get_post_formatted_name( $order );
+					$json_orders[ $order->get_id() ] = flance_plugin_fw_get_post_formatted_name( $order );
 				}
 			}
 
@@ -228,7 +228,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 			}
 
 			$args = apply_filters(
-				'yith_plugin_fw_json_search_terms_default_args',
+				'flance_plugin_fw_json_search_terms_default_args',
 				array(
 					'taxonomy'     => 'category',
 					'hide_empty'   => false,
@@ -251,7 +251,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 				}
 			}
 
-			$args = apply_filters( 'yith_plugin_fw_json_search_terms_args', $args );
+			$args = apply_filters( 'flance_plugin_fw_json_search_terms_args', $args );
 
 			$args['name__like'] = $term;
 			$args['fields']     = 'id=>name';
@@ -271,7 +271,7 @@ if ( ! class_exists( 'YIT_Ajax' ) ) {
 				}
 			}
 
-			$terms = apply_filters( 'yith_plugin_fw_json_search_found_terms', $terms, $args );
+			$terms = apply_filters( 'flance_plugin_fw_json_search_found_terms', $terms, $args );
 			wp_send_json( $terms );
 		}
 	}

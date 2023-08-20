@@ -14,16 +14,16 @@
         event.preventDefault();
         $.ajax({
             type: 'POST',
-            url: yith_plugin_fw.ajaxurl,
+            url: flance_plugin_fw.ajaxurl,
             data: {
                 'action': "update-plugin",
                 'plugin': t.data('plugin'),
                 'slug': t.data('slug'),
                 'name': t.data('name'),
-                '_ajax_nonce': yith_plugin_fw.ajax_nonce
+                '_ajax_nonce': flance_plugin_fw.ajax_nonce
             },
             beforeSend: function(){
-                p_wrapper.text( yith_plugin_fw.l10n.updating.replace( '%s', t.data('name') ) );
+                p_wrapper.text( flance_plugin_fw.l10n.updating.replace( '%s', t.data('name') ) );
                 p_wrapper.addClass( 'yith-updating' );
             },
             success: function (response) {
@@ -34,12 +34,12 @@
 
                 if( response.success === true ){
                     notice_wrapper.addClass('notice-success updated-message').removeClass( 'update-message' );
-                    result_text = yith_plugin_fw.l10n.updated;
+                    result_text = flance_plugin_fw.l10n.updated;
                 }
 
                 else {
                     notice_wrapper.addClass('notice-error');
-                    result_text = yith_plugin_fw.l10n.failed;
+                    result_text = flance_plugin_fw.l10n.failed;
                 }
 
                 p_wrapper.text( result_text.replace( '%s', t.data('name') ) );

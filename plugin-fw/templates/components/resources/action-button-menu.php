@@ -36,16 +36,16 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 					target="_blank"
 				<?php endif; ?>
 				<?php
-				yith_plugin_fw_html_attributes_to_string( $item_attributes, true );
-				yith_plugin_fw_html_data_to_string( $item_data, true );
+				flance_plugin_fw_html_attributes_to_string( $item_attributes, true );
+				flance_plugin_fw_html_data_to_string( $item_data, true );
 				?>
 			><?php echo esc_html( $item_name ); ?></a>
 		<?php else : ?>
 			<span
 					class="<?php echo esc_attr( $item_classes ); ?>"
 					<?php
-					yith_plugin_fw_html_attributes_to_string( $item_attributes, true );
-					yith_plugin_fw_html_data_to_string( $item_data, true );
+					flance_plugin_fw_html_attributes_to_string( $item_attributes, true );
+					flance_plugin_fw_html_data_to_string( $item_data, true );
 					?>
 			><?php echo esc_html( $item_name ); ?></span>
 		<?php endif; ?>

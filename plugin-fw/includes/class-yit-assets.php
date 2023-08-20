@@ -43,7 +43,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 		 * YIT_Assets constructor.
 		 */
 		private function __construct() {
-			$this->version = yith_plugin_fw_get_version();
+			$this->version = flance_plugin_fw_get_version();
 			add_action( 'init', array( $this, 'register_common_scripts' ) );
 			add_action( 'elementor/editor/before_enqueue_styles', array( $this, 'register_common_scripts' ) );
 
@@ -77,7 +77,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 			wp_register_script( 'yit-metabox', YIT_CORE_PLUGIN_URL . '/assets/js/metabox' . $suffix . '.js', array( 'jquery', 'wp-color-picker', 'yith-plugin-fw-fields', 'yith-ui' ), $this->version, true );
 			wp_register_script( 'yit-plugin-panel', YIT_CORE_PLUGIN_URL . '/assets/js/yit-plugin-panel' . $suffix . '.js', array( 'jquery', 'wp-color-picker', 'jquery-ui-sortable', 'yith-plugin-fw-fields', 'yith-ui', 'utils' ), $this->version, true );
 			wp_register_script( 'colorbox', YIT_CORE_PLUGIN_URL . '/assets/js/jquery.colorbox' . $suffix . '.js', array( 'jquery' ), '1.6.3', true );
-			wp_register_script( 'yith_how_to', YIT_CORE_PLUGIN_URL . '/assets/js/how-to' . $suffix . '.js', array( 'jquery' ), $this->version, true );
+			wp_register_script( 'flance_how_to', YIT_CORE_PLUGIN_URL . '/assets/js/how-to' . $suffix . '.js', array( 'jquery' ), $this->version, true );
 			wp_register_script( 'yith-plugin-fw-wp-pages', YIT_CORE_PLUGIN_URL . '/assets/js/wp-pages' . $suffix . '.js', array( 'jquery' ), $this->version, false );
 			wp_register_script( 'yith-bh-onboarding', YIT_CORE_PLUGIN_URL . '/assets/js/yith-bh-onboarding' . $suffix . '.js', array( 'jquery', 'yit-plugin-panel', 'yith-plugin-fw-fields', 'jquery-blockui' ), $this->version, true );
 			wp_register_script( 'yith-plugin-fw-welcome-modal', YIT_CORE_PLUGIN_URL . '/assets/js/welcome-modal' . $suffix . '.js', array( 'jquery', 'wp-util', 'yith-ui' ), $this->version, true );
@@ -109,7 +109,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 			wp_register_script( 'yith-enhanced-select', YIT_CORE_PLUGIN_URL . '/assets/js/yith-enhanced-select' . $wc_version_suffix . $suffix . '.js', array( 'jquery', 'select2' ), $this->version, true );
 			wp_localize_script(
 				'yith-enhanced-select',
-				'yith_framework_enhanced_select_params',
+				'flance_framework_enhanced_select_params',
 				array(
 					'ajax_url'               => admin_url( 'admin-ajax.php' ),
 					'search_posts_nonce'     => wp_create_nonce( 'search-posts' ),
@@ -128,7 +128,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 
 			wp_localize_script(
 				'yith-plugin-fw-fields',
-				'yith_framework_fw_fields',
+				'flance_framework_fw_fields',
 				array(
 					'admin_url' => admin_url( 'admin.php' ),
 					'ajax_url'  => admin_url( 'admin-ajax.php' ),
@@ -142,7 +142,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 
 			wp_localize_script(
 				'yith-ui',
-				'yith_plugin_fw_ui',
+				'flance_plugin_fw_ui',
 				array(
 					'i18n' => array(
 						'confirm' => _x( 'Confirm', 'Button text', 'yith-plugin-fw' ),
@@ -153,9 +153,9 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 
 			wp_localize_script(
 				'yith-plugin-fw-wp-pages',
-				'yith_plugin_fw_wp_pages',
+				'flance_plugin_fw_wp_pages',
 				array(
-					'bulk_delete_confirmation_enabled' => ! ! apply_filters( "yith_plugin_fw_{$screen_id}_bulk_delete_confirmation_enabled", in_array( $pagenow, array( 'edit.php', 'edit-tags.php' ), true ) ),
+					'bulk_delete_confirmation_enabled' => ! ! apply_filters( "flance_plugin_fw_{$screen_id}_bulk_delete_confirmation_enabled", in_array( $pagenow, array( 'edit.php', 'edit-tags.php' ), true ) ),
 					'i18n'                             => array(
 						'bulk_trash_confirm_title'    => __( 'Confirm trash', 'yith-plugin-fw' ),
 						'bulk_trash_confirm_message'  => __( 'Are you sure you want to trash the selected items?', 'yith-plugin-fw' ),
@@ -171,7 +171,7 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 
 			wp_localize_script(
 				'yith-bh-onboarding',
-				'yith_bh_onboarding',
+				'flance_bh_onboarding',
 				array(
 					'ajax_url' => admin_url( 'admin-ajax.php' ),
 				)

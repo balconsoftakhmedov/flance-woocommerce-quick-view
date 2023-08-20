@@ -37,7 +37,7 @@ $container_id  = $panel->settings['page'] . '_' . $option_key;
 		</form>
 		<form id="plugin-fw-wc-reset" method="post">
 			<input type="hidden" name="yit-action" value="wc-options-reset"/>
-			<?php wp_nonce_field( 'yith_wc_reset_options_' . $panel->settings['page'], 'yith_wc_reset_options_nonce' ); ?>
+			<?php wp_nonce_field( 'flance_wc_reset_options_' . $panel->settings['page'], 'flance_wc_reset_options_nonce' ); ?>
 			<input type="submit" name="yit-reset" class="button-secondary" value="<?php esc_html_e( 'Reset Defaults', 'yith-plugin-fw' ); ?>"/>
 		</form>
 	</div>

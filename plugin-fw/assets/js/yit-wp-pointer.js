@@ -46,7 +46,7 @@ jQuery( function($) {
 
                     }
                 }).pointer('open');
-            } else if( 'yith_default_pointer' == pointer_id ) {
+            } else if( 'flance_default_pointer' == pointer_id ) {
 
                  var selected_plugin_row = t.add( target ),
                      top_level_menu      = target.find( pointers.target.replace( '#', '.' )),

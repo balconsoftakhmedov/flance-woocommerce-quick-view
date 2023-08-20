@@ -18,13 +18,13 @@ import { doAction, addAction }                     from '@wordpress/hooks';
 /**
  * Internal dependencies
  */
-import { ajaxFetch, generateShortcode, yith_icon } from '../../common';
+import { ajaxFetch, generateShortcode, flance_icon } from '../../common';
 import md5                                         from 'md5';
 import './style.scss';
 
-const BEFORE_DO_SHORTCODE_ACTION  = 'yith_plugin_fw_gutenberg_before_do_shortcode';
-const SUCCESS_DO_SHORTCODE_ACTION = 'yith_plugin_fw_gutenberg_success_do_shortcode';
-const AFTER_DO_SHORTCODE_ACTION   = 'yith_plugin_fw_gutenberg_after_do_shortcode';
+const BEFORE_DO_SHORTCODE_ACTION  = 'flance_plugin_fw_gutenberg_before_do_shortcode';
+const SUCCESS_DO_SHORTCODE_ACTION = 'flance_plugin_fw_gutenberg_success_do_shortcode';
+const AFTER_DO_SHORTCODE_ACTION   = 'flance_plugin_fw_gutenberg_after_do_shortcode';
 
 /**
  * Shortcode Component
@@ -86,7 +86,7 @@ export class Shortcode extends Component {
 
 			this.ajaxTimeout = setTimeout( () => {
 				const ajaxData = {
-					action   : 'yith_plugin_fw_gutenberg_do_shortcode',
+					action   : 'flance_plugin_fw_gutenberg_do_shortcode',
 					shortcode: shortcode,
 					context  : { ...( this.props.context ?? {} ), adminPage: window?.adminpage ?? '', pageNow: window?.pagenow ?? '' }
 				};
@@ -131,14 +131,14 @@ export class Shortcode extends Component {
 
 		wrapperClasses.push( `${mainClass}--${type}` );
 		wrapperClasses.push( showMessage ? `${mainClass}--has-message` : `${mainClass}--no-message` );
-		wrapperClasses.push( `yith_block_${shortcodeHash}` );
+		wrapperClasses.push( `flance_block_${shortcodeHash}` );
 
 		return (
 			<>
 				<div className={wrapperClasses.join( ' ' )}>
 					{!!loading ? <div className={`${mainClass}__spinner-wrap`}><Spinner/></div> : ''}
 					{showTitle &&
-					 <div className={`${mainClass}__title components-placeholder__label`}>{yith_icon}{title}</div>
+					 <div className={`${mainClass}__title components-placeholder__label`}>{flance_icon}{title}</div>
 					}
 					{showMessage &&
 					 <RawHTML className={`${mainClass}__message`}>{message}</RawHTML>

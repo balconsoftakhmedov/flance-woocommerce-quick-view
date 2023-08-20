@@ -9,13 +9,13 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $js, $format, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'js', 'format', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $class, $name, $js, $format, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'js', 'format', 'value', 'data', 'custom_attributes' );
 
 $class = isset( $class ) ? $class : '';
 $class = 'yith-plugin-fw-radio yith-plugin-fw-date-format ' . $class;
 
 $format  = isset( $format ) ? $format : 'date';
-$options = 'time' === $format ? yith_get_time_formats() : yith_get_date_formats( $js );
+$options = 'time' === $format ? flance_get_time_formats() : flance_get_date_formats( $js );
 $custom  = true;
 $js      = isset( $js ) && 'date' === $format ? $js : false;
 
@@ -31,8 +31,8 @@ wp_enqueue_script( 'yith-date-format' );
 <div class="<?php echo esc_attr( $class ); ?>"
 		id="<?php echo esc_attr( $field_id ); ?>"
 		value="<?php echo esc_attr( $value ); ?>"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<?php foreach ( $options as $key => $label ) : ?>
 		<?php

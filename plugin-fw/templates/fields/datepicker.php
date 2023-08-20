@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $class, $name, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'data', 'custom_attributes' );
 
 $class = ! empty( $class ) ? $class : 'yith-plugin-fw-datepicker';
 ?>
@@ -18,6 +18,6 @@ $class = ! empty( $class ) ? $class : 'yith-plugin-fw-datepicker';
 		value="<?php echo esc_attr( $value ); ?>"
 		class="<?php echo esc_attr( $class ); ?>"
 		autocomplete="off"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 />

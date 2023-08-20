@@ -26,7 +26,7 @@ foreach ( $option_tags as $key => $option_tag ) {
 		<?php
 		foreach ( $option_tags as $option_tag ) {
 			$option_tag['type'] = 'tag';
-			yith_plugin_fw_get_component( $option_tag, true );
+			flance_plugin_fw_get_component( $option_tag, true );
 		}
 		?>
 	</div>

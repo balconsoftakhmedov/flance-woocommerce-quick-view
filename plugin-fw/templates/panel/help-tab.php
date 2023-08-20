@@ -56,7 +56,7 @@ if ( $has_default_playlist ) {
 }
 ?>
 
-<div id='yith_plugin_fw_panel_help_tab' class='yith-plugin-fw-panel-help-tab-container <?php echo esc_attr( $is_extended ? 'extended' : '' ); ?>'>
+<div id='flance_plugin_fw_panel_help_tab' class='yith-plugin-fw-panel-help-tab-container <?php echo esc_attr( $is_extended ? 'extended' : '' ); ?>'>
 	<div class="yith-plugin-fw-panel-help-tab-content">
 		<?php if ( $the_title ) : ?>
 			<h2 class="yith-plugin-fw-panel-help-tab-title"><?php echo wp_kses_post( $the_title ); ?></h2>

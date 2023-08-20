@@ -52,7 +52,7 @@ $debug_files = array(
 				<td>
 					<?php
 					if ( $file_size > $max_file_size ) {
-						yith_plugin_fw_get_field(
+						flance_plugin_fw_get_field(
 							array(
 								'id'      => $key,
 								'type'    => 'buttons',
@@ -61,7 +61,7 @@ $debug_files = array(
 										'name'  => __( 'Download', 'yith-plugin-fw' ),
 										'class' => 'yith-download-log',
 										'data'  => array(
-											'action' => 'yith_create_log_file',
+											'action' => 'flance_create_log_file',
 											'file'   => $key,
 											'nonce'  => wp_create_nonce( 'yith-export-log' ),
 										),
@@ -74,7 +74,7 @@ $debug_files = array(
 						echo '<span class="description">' . esc_html__( 'The file size exceeds 8 megabytes so it must be downloaded', 'yith-plugin-fw' ) . '</span>';
 
 					} else {
-						yith_plugin_fw_get_field(
+						flance_plugin_fw_get_field(
 							array(
 								'id'                => $key,
 								'type'              => 'textarea',

@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-list ( $current_tab, $current_sub_tab, $premium_class, $the_page, $parent_page ) = yith_plugin_fw_extract( $nav_args, 'current_tab', 'current_sub_tab', 'premium_class', 'page', 'parent_page' );
+list ( $current_tab, $current_sub_tab, $premium_class, $the_page, $parent_page ) = flance_plugin_fw_extract( $nav_args, 'current_tab', 'current_sub_tab', 'premium_class', 'page', 'parent_page' );
 
 $icons = array(
 	'dashboard'     => '<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"></path></svg>',
@@ -30,7 +30,7 @@ $active_class = $current_tab === $tab_key && ! $current_sub_tab ? 'yith-plugin-f
 if ( 'premium' === $tab_key ) {
 	$active_class .= ' ' . $premium_class;
 }
-$active_class = apply_filters( 'yith_plugin_fw_panel_active_tab_class', $active_class, $current_tab, $tab_key );
+$active_class = apply_filters( 'flance_plugin_fw_panel_active_tab_class', $active_class, $current_tab, $tab_key );
 
 $first_sub_tab = $panel->get_first_sub_tab_key( $tab_key );
 $sub_tab       = ! ! $first_sub_tab ? $first_sub_tab : '';
@@ -59,7 +59,7 @@ if ( $sub_tabs ) {
 $classes = $panel->apply_filters( 'nav_item_classes', $classes, $tab_key, $tab_data, $nav_args );
 $classes = implode( ' ', array_filter( $classes ) );
 
-$allowed_icon_tags = array_merge( wp_kses_allowed_html( 'post' ), yith_plugin_fw_kses_allowed_svg_tags() );
+$allowed_icon_tags = array_merge( wp_kses_allowed_html( 'post' ), flance_plugin_fw_kses_allowed_svg_tags() );
 
 ?>
 <div id="<?php echo esc_attr( $menu_id ); ?>" class="<?php echo esc_attr( $classes ); ?>">

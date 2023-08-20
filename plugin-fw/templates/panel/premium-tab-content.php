@@ -13,7 +13,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-list ( $price_html, $discount_percentage ) = yith_plugin_fw_extract( $pricing, 'price_html', 'discount_percentage' );
+list ( $price_html, $discount_percentage ) = flance_plugin_fw_extract( $pricing, 'price_html', 'discount_percentage' );
 
 $default_feature     = array(
 	'title'       => '',
@@ -38,7 +38,7 @@ $default_testimonial = array(
 						<?php echo wp_kses_post( $feature['title'] ); ?>
 
 						<?php
-						yith_plugin_fw_get_component(
+						flance_plugin_fw_get_component(
 							array(
 								'class' => 'feature__premium-tag',
 								'type'  => 'tag',

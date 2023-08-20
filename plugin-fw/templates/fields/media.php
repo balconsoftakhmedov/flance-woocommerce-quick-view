@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $store_as, $allow_custom_url, $default, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'store_as', 'allow_custom_url', 'default', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $store_as, $allow_custom_url, $default, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'store_as', 'allow_custom_url', 'default', 'custom_attributes', 'data' );
 
 $allowed_store_as = array( 'url', 'id' );
 $store_as         = $store_as ?? 'url';
@@ -92,8 +92,8 @@ wp_enqueue_script( 'wp-media-utils' );
 					data-std="<?php echo esc_attr( $default ); ?>"
 				<?php endif; ?>
 
-				<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-				<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+				<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+				<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 			/>
 		</div>
 	</div>

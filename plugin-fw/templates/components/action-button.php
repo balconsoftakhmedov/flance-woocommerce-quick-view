@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $component_id, $class, $the_title, $attributes, $data, $button_action, $icon, $icon_class, $url, $action_button_menu, $confirm_data ) = yith_plugin_fw_extract( $component, 'id', 'class', 'title', 'attributes', 'data', 'action', 'icon', 'icon_class', 'url', 'menu', 'confirm_data' );
+list ( $component_id, $class, $the_title, $attributes, $data, $button_action, $icon, $icon_class, $url, $action_button_menu, $confirm_data ) = flance_plugin_fw_extract( $component, 'id', 'class', 'title', 'attributes', 'data', 'action', 'icon', 'icon_class', 'url', 'menu', 'confirm_data' );
 
 $button_action      = isset( $button_action ) ? $button_action : '';
 $icon               = isset( $icon ) ? $icon : $button_action;
@@ -42,8 +42,8 @@ $link_class = implode( ' ', array_filter( $link_classes ) );
 <span
 		id="<?php echo esc_attr( $component_id ); ?>"
 		class="<?php echo esc_attr( $class ); ?>"
-	<?php echo yith_plugin_fw_html_attributes_to_string( $attributes ); ?>
-	<?php echo yith_plugin_fw_html_data_to_string( $data ); ?>
+	<?php echo flance_plugin_fw_html_attributes_to_string( $attributes ); ?>
+	<?php echo flance_plugin_fw_html_data_to_string( $data ); ?>
 	>
 <a class="<?php echo esc_attr( $link_class ); ?>"
 		aria-label="<?php echo esc_attr( $the_title ); ?>"
@@ -52,13 +52,13 @@ $link_class = implode( ' ', array_filter( $link_classes ) );
 		data-tip="<?php echo esc_attr( $the_title ); ?>"
 	<?php endif; ?>
 
-	<?php yith_plugin_fw_html_data_to_string( $link_data, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $link_data, true ); ?>
 >
 	<?php if ( $icon ) : ?>
 		<i class="yith-plugin-fw__action-button__icon <?php echo esc_attr( $icon_class ); ?>"></i>
 	<?php endif; ?>
 </a>
 	<?php if ( $action_button_menu ) : ?>
-		<?php yith_plugin_fw_include_fw_template( '/components/resources/action-button-menu.php', compact( 'action_button_menu' ) ); ?>
+		<?php flance_plugin_fw_include_fw_template( '/components/resources/action-button-menu.php', compact( 'action_button_menu' ) ); ?>
 	<?php endif; ?>
 </span>

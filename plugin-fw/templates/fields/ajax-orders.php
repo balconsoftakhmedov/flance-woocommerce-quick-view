@@ -8,13 +8,13 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $data ) = yith_plugin_fw_extract( $field, 'data' );
+list ( $data ) = flance_plugin_fw_extract( $field, 'data' );
 
 $field['type'] = 'ajax-posts';
 $field_data    = array(
 	'post_type'            => 'shop_order',
 	'placeholder'          => __( 'Search for an order...', 'yith-plugin-fw' ),
-	'action'               => 'yith_plugin_fw_json_search_orders',
+	'action'               => 'flance_plugin_fw_json_search_orders',
 	'minimum_input_length' => 1,
 );
 if ( ! ! $data ) {
@@ -23,4 +23,4 @@ if ( ! ! $data ) {
 
 $field['data'] = $field_data;
 
-yith_plugin_fw_get_field( $field, true );
+flance_plugin_fw_get_field( $field, true );

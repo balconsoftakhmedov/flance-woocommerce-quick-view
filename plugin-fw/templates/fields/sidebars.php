@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $value ) = yith_plugin_fw_extract( $field, 'id', 'name', 'value' );
+list ( $field_id, $name, $value ) = flance_plugin_fw_extract( $field, 'id', 'name', 'value' );
 
 $layout        = ! isset( $value['layout'] ) ? 'sidebar-no' : $value['layout'];
 $sidebar_left  = ! isset( $value['sidebar-left'] ) ? '-1' : $value['sidebar-left'];

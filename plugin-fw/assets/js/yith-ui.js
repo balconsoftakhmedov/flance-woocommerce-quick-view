@@ -1,4 +1,4 @@
-/* globals yith_plugin_fw_ui */
+/* globals flance_plugin_fw_ui */
 
 // Make sure the yith object exists.
 window.yith = window.yith || {};
@@ -42,8 +42,8 @@ window.yith = window.yith || {};
 					confirm: ''
 				},
 				confirmButtonType               : 'confirm',
-				cancelButton                    : yith_plugin_fw_ui.i18n.cancel,
-				confirmButton                   : yith_plugin_fw_ui.i18n.confirm,
+				cancelButton                    : flance_plugin_fw_ui.i18n.cancel,
+				confirmButton                   : flance_plugin_fw_ui.i18n.confirm,
 				width                           : 350,
 				closeAfterConfirm               : true,
 				allowWpMenu                     : false,

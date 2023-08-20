@@ -17,7 +17,7 @@ add_thickbox();
 	<div id="icon-users" class="icon32"><br/></div>
 	<?php
 
-	do_action( 'yith_plugin_fw_before_woocommerce_panel', $page );
+	do_action( 'flance_plugin_fw_before_woocommerce_panel', $page );
 
 	if ( ! empty( $available_tabs ) ) {
 		$this->print_panel_content();

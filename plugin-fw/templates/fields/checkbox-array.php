@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $class, $options, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'name', 'class', 'options', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $name, $class, $options, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'name', 'class', 'options', 'value', 'data', 'custom_attributes' );
 
 $class = isset( $class ) ? $class : '';
 $class = 'yith-plugin-fw-checkbox-array ' . $class;
@@ -17,8 +17,8 @@ $class = 'yith-plugin-fw-checkbox-array ' . $class;
 $value = is_array( $value ) ? $value : array();
 ?>
 <div class="<?php echo esc_attr( $class ); ?>" id="<?php echo esc_attr( $field_id ); ?>"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<?php foreach ( $options as $key => $label ) : ?>
 		<?php

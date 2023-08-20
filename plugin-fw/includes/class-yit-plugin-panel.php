@@ -95,7 +95,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 				$args = apply_filters( 'yit_plugin_fw_panel_option_args', wp_parse_args( $args, $default_args ) );
 				if ( isset( $args['parent_page'] ) && 'yit_plugin_panel' === $args['parent_page'] ) {
-					$args['parent_page'] = 'yith_plugin_panel';
+					$args['parent_page'] = 'flance_plugin_panel';
 				}
 
 				$this->settings        = $args;
@@ -129,13 +129,13 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				add_action( 'admin_init', array( $this, 'maybe_redirect_to_proper_wp_page' ) );
 
 				/* Add UTM tracking code on premium tab */
-				add_filter( 'yith_plugin_fw_premium_landing_uri', array( $this, 'add_utm_data_on_premium_tab' ), 10, 2 );
+				add_filter( 'flance_plugin_fw_premium_landing_uri', array( $this, 'add_utm_data_on_premium_tab' ), 10, 2 );
 				// Init actions once to prevent multiple initialization.
 				static::init_actions();
 			}
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
-			add_action( 'wp_ajax_yith_plugin_fw_save_toggle_element', array( $this, 'save_toggle_element_options' ) );
+			add_action( 'wp_ajax_flance_plugin_fw_save_toggle_element', array( $this, 'save_toggle_element_options' ) );
 		}
 
 		/**
@@ -229,7 +229,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					} else {
 						// Set the old plugin framework style to be empty, to prevent issues if any plugin is enqueueing it directly.
 						wp_deregister_style( 'yit-plugin-style' );
-						wp_register_style( 'yit-plugin-style', false, array(), yith_plugin_fw_get_version() );
+						wp_register_style( 'yit-plugin-style', false, array(), flance_plugin_fw_get_version() );
 					}
 					wp_enqueue_style( 'yith-plugin-panel' );
 					wp_enqueue_style( 'yith-plugin-fw-fields' );
@@ -257,7 +257,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			if ( ! static::$actions_initialized ) {
 				// Sort plugins by name in FLANCE Plugins menu.
 				add_action( 'admin_menu', array( __CLASS__, 'sort_plugins' ), 90 );
-				add_filter( 'add_menu_classes', array( __CLASS__, 'add_menu_class_in_yith_plugin' ) );
+				add_filter( 'add_menu_classes', array( __CLASS__, 'add_menu_class_in_flance_plugin' ) );
 
 				static::$actions_initialized = true;
 			}
@@ -274,7 +274,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 				foreach ( $this->settings['admin-tabs'] as $item => $tab ) {
 					$path = trailingslashit( $options_path ) . $item . '-options.php';
-					$path = apply_filters( 'yith_plugin_panel_item_options_path', $path, $options_path, $item, $this );
+					$path = apply_filters( 'flance_plugin_panel_item_options_path', $path, $options_path, $item, $this );
 					if ( file_exists( $path ) ) {
 						$_tab                     = $this->get_options_from_path( $path );
 						$this->main_array_options = array_merge( $this->main_array_options, $_tab );
@@ -298,7 +298,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 								$sub_item = substr( $sub_item, strlen( $item ) + 1 );
 							}
 							$sub_tab_path = $sub_options['options_path'] ?? ( $options_path . '/' . $item . '/' . $sub_item . '-options.php' );
-							$sub_tab_path = apply_filters( 'yith_plugin_panel_sub_tab_item_options_path', $sub_tab_path, $sub_tabs, $sub_item, $this );
+							$sub_tab_path = apply_filters( 'flance_plugin_panel_sub_tab_item_options_path', $sub_tab_path, $sub_tabs, $sub_item, $this );
 
 							if ( file_exists( $sub_tab_path ) ) {
 								$_sub_tab                 = $this->get_options_from_path( $sub_tab_path );
@@ -373,16 +373,16 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		public function add_menu_page() {
 			global $admin_page_hooks;
 
-			if ( ! isset( $admin_page_hooks['yith_plugin_panel'] ) ) {
+			if ( ! isset( $admin_page_hooks['flance_plugin_panel'] ) ) {
 				$position   = apply_filters( 'yit_plugins_menu_item_position', '62.32' );
 				$capability = apply_filters( 'yit_plugin_panel_menu_page_capability', 'manage_options' );
 				$show       = apply_filters( 'yit_plugin_panel_menu_page_show', true );
 
 				// FLANCE text must NOT be translated.
 				if ( ! ! $show ) {
-					add_menu_page( 'yith_plugin_panel', 'FLANCE', $capability, 'yith_plugin_panel', null, yith_plugin_fw_get_default_logo(), $position );
+					add_menu_page( 'flance_plugin_panel', 'FLANCE', $capability, 'flance_plugin_panel', null, flance_plugin_fw_get_default_logo(), $position );
 					// Prevent issues for backward compatibility.
-					$admin_page_hooks['yith_plugin_panel'] = 'yith-plugins'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+					$admin_page_hooks['flance_plugin_panel'] = 'yith-plugins'; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 				}
 			}
 		}
@@ -392,7 +392,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * Submenu page hack: Remove the duplicate YIT Plugin link on subpages
 		 */
 		public function remove_duplicate_submenu_page() {
-			remove_submenu_page( 'yith_plugin_panel', 'yith_plugin_panel' );
+			remove_submenu_page( 'flance_plugin_panel', 'flance_plugin_panel' );
 		}
 
 		/**
@@ -413,7 +413,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					} else {
 						// Set the old plugin framework style to be empty, to prevent issues if any plugin is enqueueing it directly.
 						wp_deregister_style( 'yit-plugin-style' );
-						wp_register_style( 'yit-plugin-style', false, array(), yith_plugin_fw_get_version() );
+						wp_register_style( 'yit-plugin-style', false, array(), flance_plugin_fw_get_version() );
 					}
 				}
 
@@ -424,20 +424,20 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				wp_enqueue_script( 'jquery-ui' );
 				wp_enqueue_script( 'jquery-ui-core' );
 				wp_enqueue_script( 'jquery-ui-dialog' );
-				wp_enqueue_script( 'yith_how_to' );
+				wp_enqueue_script( 'flance_how_to' );
 				wp_enqueue_script( 'yith-plugin-fw-fields' );
 
 				wp_enqueue_media();
 				wp_enqueue_script( 'yit-plugin-panel' );
 			}
 
-			if ( 'admin.php' === $pagenow && strpos( get_current_screen()->id, 'yith_upgrade_premium_version' ) !== false ) {
+			if ( 'admin.php' === $pagenow && strpos( get_current_screen()->id, 'flance_upgrade_premium_version' ) !== false ) {
 				wp_enqueue_style( 'yit-upgrade-to-pro' );
 				wp_enqueue_script( 'colorbox' );
 			}
 
 			if ( $this->is_current_panel( true ) ) {
-				do_action( 'yith_plugin_fw_panel_enqueue_scripts', $this );
+				do_action( 'flance_plugin_fw_panel_enqueue_scripts', $this );
 			}
 		}
 
@@ -510,7 +510,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 							if ( isset( $option['id'] ) ) {
 								$value = $field[ $option['id'] ] ?? false;
 								if ( isset( $option['type'] ) && in_array( $option['type'], array( 'checkbox', 'onoff' ), true ) ) {
-									$value = yith_plugin_fw_is_true( $value ) ? 'yes' : 'no';
+									$value = flance_plugin_fw_is_true( $value ) ? 'yes' : 'no';
 								}
 
 								if ( ! empty( $option['yith-sanitize-callback'] ) && is_callable( $option['yith-sanitize-callback'] ) ) {
@@ -539,14 +539,14 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			}
 
 			global $submenu;
-			if ( apply_filters( 'yit_show_upgrade_to_premium_version', isset( $submenu['yith_plugin_panel'] ) ) ) {
+			if ( apply_filters( 'yit_show_upgrade_to_premium_version', isset( $submenu['flance_plugin_panel'] ) ) ) {
 				$how_to_menu                            = array(
 					sprintf( '%s%s%s', '<span id="yith-how-to-premium">', __( 'How to install premium version', 'yith-plugin-fw' ), '</span>' ),
 					'install_plugins',
 					'//support.yithemes.com/hc/en-us/articles/217840988',
 					__( 'How to install premium version', 'yith-plugin-fw' ),
 				);
-				$submenu['yith_plugin_panel']['how_to'] = $how_to_menu; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				$submenu['flance_plugin_panel']['how_to'] = $how_to_menu; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 		}
 
@@ -604,7 +604,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				$url = admin_url( "admin.php{$url}" );
 			}
 
-			return apply_filters( 'yith_plugin_fw_panel_url', $url, $page, $tab, $sub_tab, $parent_page );
+			return apply_filters( 'flance_plugin_fw_panel_url', $url, $page, $tab, $sub_tab, $parent_page );
 		}
 
 		/**
@@ -699,7 +699,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			<div class="yith-plugin-fw__wrap wrap <?php echo esc_attr( $wrap_class ); ?>">
 				<div id="icon-themes" class="icon32"><br/></div>
 				<?php
-				do_action( 'yith_plugin_fw_before_yith_panel', $this->settings['page'] );
+				do_action( 'flance_plugin_fw_before_flance_panel', $this->settings['page'] );
 
 				$this->get_template(
 					'panel-content.php',
@@ -821,7 +821,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * @return bool Whether panel has help tab or no.
 		 */
 		public function has_help_tab() {
-			return apply_filters( 'yith_plugin_fw_panel_has_help_tab', isset( $this->settings['help_tab'] ) && is_array( $this->settings['help_tab'] ) && ( ! $this->is_free() || ! empty( $this->settings['help_tab']['show_on_free'] ) ), $this );
+			return apply_filters( 'flance_plugin_fw_panel_has_help_tab', isset( $this->settings['help_tab'] ) && is_array( $this->settings['help_tab'] ) && ( ! $this->is_free() || ! empty( $this->settings['help_tab']['show_on_free'] ) ), $this );
 		}
 
 
@@ -895,7 +895,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			$current_sub_tab = $this->get_current_sub_tab();
 			$latest_articles = ! ! $plugin_slug ? YIT_Help_Desk::get_latest_articles( $plugin_slug ) : array();
 
-			$options = apply_filters( 'yith_plugin_fw_panel_help_tab_options', $options, $this->settings );
+			$options = apply_filters( 'flance_plugin_fw_panel_help_tab_options', $options, $this->settings );
 
 			include YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/help-tab.php';
 		}
@@ -972,7 +972,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * @since  3.9.14
 		 */
 		protected function is_panel(): bool {
-			$is_panel            = yith_plugin_fw_is_panel() && isset( $_GET['page'] ) && $_GET['page'] === $this->settings['page']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$is_panel            = flance_plugin_fw_is_panel() && isset( $_GET['page'] ) && $_GET['page'] === $this->settings['page']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$is_wp_page_in_panel = isset( self::$panel_tabs_in_wp_pages, self::$panel_tabs_in_wp_pages['page'] ) && self::$panel_tabs_in_wp_pages['page'] === $this->settings['page'];
 
 			return $is_panel || $is_wp_page_in_panel;
@@ -1191,7 +1191,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					)
 				);
 
-				$transient_name = 'yith_fw_plugin_pricing_' . md5( $slug . '_' . implode( '_', array_values( $params ) ) );
+				$transient_name = 'flance_fw_plugin_pricing_' . md5( $slug . '_' . implode( '_', array_values( $params ) ) );
 				$pricing        = get_transient( $transient_name );
 				if ( false === $pricing || ! is_array( $pricing ) ) {
 					$url      = add_query_arg( $params, $api_url );
@@ -1519,7 +1519,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * @return string
 		 */
 		public function get_message( $message, $type = 'error', $echo = true ) {
-			return yith_plugin_fw_get_component(
+			return flance_plugin_fw_get_component(
 				array(
 					'type'        => 'notice',
 					'notice_type' => $type,
@@ -1795,13 +1795,13 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					}
 					$std                 = $field['std'] ?? '';
 					$db_value            = $db_options[ $field_id ] ?? $std;
-					$field_template_path = yith_plugin_fw_get_field_template_path( $field );
+					$field_template_path = flance_plugin_fw_get_field_template_path( $field );
 					if ( $field_template_path ) {
 						$field['id']    = $this->get_id_field( $field_id );
 						$field['name']  = $this->get_name_field( $field_id );
 						$field['value'] = $db_value;
 
-						yith_plugin_fw_get_field( $field, true, true );
+						flance_plugin_fw_get_field( $field, true, true );
 					} else {
 						do_action( "yit_panel_{$field['type']}", $field, $db_value );
 					}
@@ -1832,9 +1832,9 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					$option['type'] = 'onoff';
 				}
 
-				$field_template_path = yith_plugin_fw_get_field_template_path( $option );
+				$field_template_path = flance_plugin_fw_get_field_template_path( $option );
 				if ( $field_template_path ) {
-					$field_container_path = apply_filters( 'yith_plugin_fw_panel_field_container_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/panel-field-container.php', $option );
+					$field_container_path = apply_filters( 'flance_plugin_fw_panel_field_container_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/panel-field-container.php', $option );
 					file_exists( $field_container_path ) && include $field_container_path;
 				} else {
 					do_action( "yit_panel_{$option['type']}", $option, $db_value, $custom_attributes );
@@ -1899,8 +1899,8 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 */
 		public static function sort_plugins() {
 			global $submenu;
-			if ( ! empty( $submenu['yith_plugin_panel'] ) ) {
-				$sorted_plugins = $submenu['yith_plugin_panel'];
+			if ( ! empty( $submenu['flance_plugin_panel'] ) ) {
+				$sorted_plugins = $submenu['flance_plugin_panel'];
 
 				usort(
 					$sorted_plugins,
@@ -1909,7 +1909,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 					}
 				);
 
-				$submenu['yith_plugin_panel'] = $sorted_plugins; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				$submenu['flance_plugin_panel'] = $sorted_plugins; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 		}
 
@@ -1921,19 +1921,19 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 * @return array
 		 * @since    3.0.0
 		 */
-		public static function add_menu_class_in_yith_plugin( $menu ) {
+		public static function add_menu_class_in_flance_plugin( $menu ) {
 			global $submenu;
 
-			if ( ! empty( $submenu['yith_plugin_panel'] ) ) {
-				$item_count = count( $submenu['yith_plugin_panel'] );
+			if ( ! empty( $submenu['flance_plugin_panel'] ) ) {
+				$item_count = count( $submenu['flance_plugin_panel'] );
 				$columns    = absint( $item_count / 20 ) + 1;
 				$columns    = max( 1, min( $columns, 3 ) );
-				$columns    = apply_filters( 'yith_plugin_fw_yith_plugins_menu_columns', $columns, $item_count );
+				$columns    = apply_filters( 'flance_plugin_fw_flance_plugins_menu_columns', $columns, $item_count );
 
 				if ( $columns > 1 ) {
 					$class = "yith-plugin-fw-menu-$columns-columns";
 					foreach ( $menu as $order => $top ) {
-						if ( 'yith_plugin_panel' === $top[2] ) {
+						if ( 'flance_plugin_panel' === $top[2] ) {
 							$c                 = $menu[ $order ][4];
 							$menu[ $order ][4] = add_cssclass( $class, $c );
 							break;
@@ -1987,14 +1987,14 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			$plugin_slug = $this->get_plugin_slug();
 			$this->render_mobile_header();
 
-			do_action( 'yith_plugin_fw_panel_before_panel_header', $this );
+			do_action( 'flance_plugin_fw_panel_before_panel_header', $this );
 
 			$this->get_template(
 				'panel-header.php',
 				array(
 					'title'    => $this->settings['page_title'],
 					'is_free'  => $this->is_free(),
-					'rate_url' => ! ! $plugin_slug ? apply_filters( 'yith_plugin_fw_rate_url', 'https://wordpress.org/support/plugin/' . $plugin_slug . '/reviews/#new-post' ) : '',
+					'rate_url' => ! ! $plugin_slug ? apply_filters( 'flance_plugin_fw_rate_url', 'https://wordpress.org/support/plugin/' . $plugin_slug . '/reviews/#new-post' ) : '',
 				)
 			);
 		}
@@ -2025,7 +2025,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 *
 		 * @since  3.2
 		 */
-		public function add_yith_ui( $field ) {
+		public function add_flance_ui( $field ) {
 			global $pagenow;
 
 			$screen = function_exists( 'get_current_screen' ) ? get_current_screen() : false;
@@ -2074,7 +2074,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 			$panel_page = isset( $this->settings['page'] ) ? $this->settings['page'] : 'general';
 
-			return apply_filters( "yith_plugin_fw_panel_{$panel_page}_get_post_type_tabs", $tabs, $post_type );
+			return apply_filters( "flance_plugin_fw_panel_{$panel_page}_get_post_type_tabs", $tabs, $post_type );
 		}
 
 		/**
@@ -2107,7 +2107,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 			$panel_page = isset( $this->settings['page'] ) ? $this->settings['page'] : 'general';
 
-			return apply_filters( "yith_plugin_fw_panel_{$panel_page}_get_taxonomy_tabs", $tabs, $taxonomy );
+			return apply_filters( "flance_plugin_fw_panel_{$panel_page}_get_taxonomy_tabs", $tabs, $taxonomy );
 		}
 
 
@@ -2212,7 +2212,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		 */
 		public function set_parent_file_to_handle_menu_for_wp_pages( $parent_file ) {
 			if ( self::$panel_tabs_in_wp_pages ) {
-				return 'yith_plugin_panel';
+				return 'flance_plugin_panel';
 			}
 
 			return $parent_file;
@@ -2444,7 +2444,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		public function add_utm_data( $url, $campaign ) {
 			$plugin_slug = $this->get_plugin_slug();
 			if ( $plugin_slug ) {
-				$url = yith_plugin_fw_add_utm_data( $url, $plugin_slug, $campaign, $this->get_plugin_version_type() );
+				$url = flance_plugin_fw_add_utm_data( $url, $plugin_slug, $campaign, $this->get_plugin_version_type() );
 			}
 
 			return $url;
@@ -2462,7 +2462,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		public function apply_filters( $partial_hook_name, $value, ...$args ) {
 			$panel_page = $this->settings['page'] ?? '';
 			if ( $panel_page ) {
-				$hook_name = "yith_plugin_fw_panel_{$panel_page}_{$partial_hook_name}";
+				$hook_name = "flance_plugin_fw_panel_{$panel_page}_{$partial_hook_name}";
 
 				array_unshift( $args, $value );
 

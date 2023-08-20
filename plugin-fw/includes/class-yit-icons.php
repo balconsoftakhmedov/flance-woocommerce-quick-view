@@ -1005,7 +1005,7 @@ if ( ! class_exists( 'YIT_Icons' ) ) {
 		public function get_icons( $filter_suffix = '' ) {
 			$icons = $this->icons;
 			if ( ! empty( $filter_suffix ) ) {
-				$icons = apply_filters( 'yith_plugin_fw_icons_field_icons_' . sanitize_key( $filter_suffix ), $icons );
+				$icons = apply_filters( 'flance_plugin_fw_icons_field_icons_' . sanitize_key( $filter_suffix ), $icons );
 			}
 
 			return $icons;
@@ -1020,7 +1020,7 @@ if ( ! class_exists( 'YIT_Icons' ) ) {
 		 * @return string
 		 */
 		public function get_icon_data( $icon_string, $filter_suffix = '' ) {
-			return yith_plugin_fw_html_data_to_string( $this->get_icon_data_array( $icon_string, $filter_suffix ) );
+			return flance_plugin_fw_html_data_to_string( $this->get_icon_data_array( $icon_string, $filter_suffix ) );
 		}
 
 		/**

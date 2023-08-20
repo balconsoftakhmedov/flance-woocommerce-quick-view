@@ -101,7 +101,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 
 		$to_show           = array( 'live_demo', 'documentation', 'support', 'premium_version' );
 		$new_row_meta_args = apply_filters(
-			'yith_show_plugin_row_meta',
+			'flance_show_plugin_row_meta',
 			array(
 				'to_show' => $to_show,
 				'slug'    => '',
@@ -187,7 +187,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 								$url .= '-extended';
 							}
 
-							$url = apply_filters( "yith_plugin_row_meta_{$field}_url", $url, $field, $slug, $base_uri );
+							$url = apply_filters( "flance_plugin_row_meta_{$field}_url", $url, $field, $slug, $base_uri );
 						}
 					}
 				}
@@ -195,7 +195,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 
 			if ( ! empty( $url ) && ! empty( $label ) ) {
 				if ( ! ( $is_extended && in_array( $field, array( 'support', 'documentation' ), true ) ) ) {
-					$url = yith_plugin_fw_add_utm_data( $url, $slug, $utm_campaign, $plugin_version );
+					$url = flance_plugin_fw_add_utm_data( $url, $slug, $utm_campaign, $plugin_version );
 				}
 
 				$plugin_meta[] = sprintf( '<a href="%s" target="_blank"><span class="%s"></span>%s</a>', $url, $icon, $label );
@@ -203,7 +203,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 		}
 
 		if ( isset( $plugin_meta[1] ) ) {
-			$utm_author_uri = yith_plugin_fw_add_utm_data( $plugin_data['AuthorURI'], $slug, $utm_campaign, $plugin_version );
+			$utm_author_uri = flance_plugin_fw_add_utm_data( $plugin_data['AuthorURI'], $slug, $utm_campaign, $plugin_version );
 			$plugin_meta[1] = str_replace( $plugin_data['AuthorURI'], $utm_author_uri, $plugin_meta[1] );
 		}
 
@@ -211,7 +211,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 			if ( $is_extended ) {
 				unset( $plugin_meta[2] );
 			} else {
-				$utm_plugin_uri = yith_plugin_fw_add_utm_data( $plugin_data['PluginURI'], $slug, $utm_campaign, $plugin_version );
+				$utm_plugin_uri = flance_plugin_fw_add_utm_data( $plugin_data['PluginURI'], $slug, $utm_campaign, $plugin_version );
 				$plugin_meta[2] = str_replace( $plugin_data['PluginURI'], $utm_plugin_uri, $plugin_meta[2] );
 			}
 		}
@@ -220,7 +220,7 @@ if ( ! function_exists( 'yit_plugin_fw_row_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_add_action_links' ) ) {
+if ( ! function_exists( 'flance_add_action_links' ) ) {
 	/**
 	 * Add the action links to plugin admin page
 	 *
@@ -232,7 +232,7 @@ if ( ! function_exists( 'yith_add_action_links' ) ) {
 	 * @return   array
 	 * @since    1.6.5
 	 */
-	function yith_add_action_links( $links, $panel_page = '', $is_premium = false, $plugin_slug = '' ) {
+	function flance_add_action_links( $links, $panel_page = '', $is_premium = false, $plugin_slug = '' ) {
 		$links = is_array( $links ) ? $links : array();
 		if ( ! empty( $panel_page ) ) {
 			$links[] = sprintf( '<a href="%s">%s</a>', admin_url( "admin.php?page={$panel_page}" ), _x( 'Settings', 'Action links', 'yith-plugin-fw' ) );
@@ -246,22 +246,22 @@ if ( ! function_exists( 'yith_add_action_links' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_print_deactivation_message' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_print_deactivation_message' ) ) {
 	/**
 	 * Prints message about plugins deactivation, due to multiple versions active of the same software active at the same time
 	 *
 	 * @return void
 	 * @since 3.9.8
 	 */
-	function yith_plugin_fw_print_deactivation_message() {
+	function flance_plugin_fw_print_deactivation_message() {
 		global $pagenow;
 
 		// phpcs:disable WordPress.Security.NonceVerification
-		if ( 'plugins.php' !== $pagenow || ! isset( $_GET['yith_deactivated_plugins'] ) ) {
+		if ( 'plugins.php' !== $pagenow || ! isset( $_GET['flance_deactivated_plugins'] ) ) {
 			return;
 		}
 
-		$names = sanitize_text_field( wp_unslash( $_GET['yith_deactivated_plugins'] ) );
+		$names = sanitize_text_field( wp_unslash( $_GET['flance_deactivated_plugins'] ) );
 		$names = explode( ',', $names );
 		$names = array_map(
 			function ( $init_file ) {
@@ -294,4 +294,4 @@ if ( ! function_exists( 'yith_plugin_fw_print_deactivation_message' ) ) {
 	}
 }
 
-add_action( 'admin_notices', 'yith_plugin_fw_print_deactivation_message' );
+add_action( 'admin_notices', 'flance_plugin_fw_print_deactivation_message' );

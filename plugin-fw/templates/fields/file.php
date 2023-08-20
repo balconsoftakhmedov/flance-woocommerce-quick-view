@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $message, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'message', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $message, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'message', 'custom_attributes', 'data' );
 
 
 $message = $message ?? __( 'Drag or upload a file.', 'yith-plugin-fw' );
@@ -26,8 +26,8 @@ $classes = implode( ' ', array_filter( $classes ) );
 			id="<?php echo esc_attr( $field_id ); ?>"
 			name="<?php echo esc_attr( $name ); ?>"
 			class="yith-plugin-fw-file__field"
-		<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-		<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+		<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+		<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 	/>
 	<div class="yith-plugin-fw-file__message">
 		<?php echo wp_kses_post( $message ); ?>

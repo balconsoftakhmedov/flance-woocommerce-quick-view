@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $colorpickers, $value ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'colorpickers', 'value' );
+list ( $field_id, $class, $name, $colorpickers, $value ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'colorpickers', 'value' );
 
 wp_enqueue_style( 'wp-color-picker' );
 
@@ -56,7 +56,7 @@ $items_to_process    = array();
 				?>
 				<div class="yith-single-colorpicker colorpicker">
 					<label for="<?php echo esc_attr( $color_picker['id'] ); ?>"><?php echo esc_html( $color_picker['title'] ); ?></label>
-					<?php yith_plugin_fw_get_field( $color_picker, true, false ); ?>
+					<?php flance_plugin_fw_get_field( $color_picker, true, false ); ?>
 				</div>
 			<?php endforeach; ?>
 

@@ -47,7 +47,7 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 			if ( defined( 'ELEMENTOR_VERSION' ) && version_compare( ELEMENTOR_VERSION, '3.0.0', '>=' ) ) {
 				$register_widget_hook = version_compare( ELEMENTOR_VERSION, '3.5.0', '<' ) ? 'elementor/widgets/widgets_registered' : 'elementor/widgets/register';
 				add_action( $register_widget_hook, array( $this, 'register_widgets' ) );
-				add_action( 'elementor/elements/categories_registered', array( $this, 'add_yith_category' ) );
+				add_action( 'elementor/elements/categories_registered', array( $this, 'add_flance_category' ) );
 
 				add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'enqueue_styles' ) );
 				add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_styles' ) );
@@ -94,9 +94,9 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 
 			foreach ( $this->widgets as $widget ) {
 				if ( is_callable( array( $widgets_manager, 'register' ) ) ) {
-					\Elementor\Plugin::instance()->widgets_manager->register( new FLANCE_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
+					\Elementor\Plugin::instance()->widgets_manager->register( new FLANCE_Elementor_Widget( array(), array( 'flance_data' => $widget ) ) );
 				} else {
-					\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FLANCE_Elementor_Widget( array(), array( 'yith_data' => $widget ) ) );
+					\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new FLANCE_Elementor_Widget( array(), array( 'flance_data' => $widget ) ) );
 				}
 			}
 		}
@@ -106,7 +106,7 @@ if ( ! class_exists( 'FLANCE_Elementor' ) ) {
 		 *
 		 * @param Elementor\Elements_Manager $elements_manager Elements Manager.
 		 */
-		public function add_yith_category( $elements_manager ) {
+		public function add_flance_category( $elements_manager ) {
 			// If the category is empty, it'll be automatically hidden by Elementor.
 			$elements_manager->add_category(
 				'yith',

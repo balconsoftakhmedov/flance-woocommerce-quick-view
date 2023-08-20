@@ -17,18 +17,18 @@ if ( ! function_exists( 'yit_deactive_free_version' ) ) {
 	 * @deprecated  3.9.8
 	 */
 	function yit_deactive_free_version( $to_deactivate, $to_activate ) {
-		yith_deactivate_plugins( $to_deactivate, $to_activate );
+		flance_deactivate_plugins( $to_deactivate, $to_activate );
 	}
 }
 
-if ( ! function_exists( 'yith_deactivate_plugins' ) ) {
+if ( ! function_exists( 'flance_deactivate_plugins' ) ) {
 	/**
 	 *  Deactivate a list of plugins, and terminates activating another plugin.
 	 *
 	 * @param string|string[] $to_deactivate The constant name of the plugin(s) to deactivate.
 	 * @param string          $to_activate   The path of the File of the plugin to activate.
 	 */
-	function yith_deactivate_plugins( $to_deactivate, $to_activate = false ) {
+	function flance_deactivate_plugins( $to_deactivate, $to_activate = false ) {
 		if ( ! function_exists( 'is_plugin_active' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		}
@@ -59,7 +59,7 @@ if ( ! function_exists( 'yith_deactivate_plugins' ) ) {
 		global $status, $page, $s;
 
 		$query_params = array(
-			'yith_deactivated_plugins' => implode( ',', $deactivated ),
+			'flance_deactivated_plugins' => implode( ',', $deactivated ),
 			'plugin_status'            => $status,
 			'paged'                    => $page,
 			's'                        => $s,

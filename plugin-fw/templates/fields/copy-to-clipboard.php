@@ -10,7 +10,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $force_value, $readonly, $std, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'force_value', 'readonly', 'std', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $force_value, $readonly, $std, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'force_value', 'readonly', 'std', 'custom_attributes', 'data' );
 
 $readonly      = isset( $readonly ) ? ! ! $readonly : true;
 $wrapper_id    = ! ! $field_id ? $field_id . '-wrapper' : '';
@@ -35,8 +35,8 @@ if ( isset( $force_value ) ) {
 				readonly
 			<?php endif; ?>
 
-			<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-			<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+			<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+			<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 		>
 		<div class="yith-plugin-fw-copy-to-clipboard__tip"><?php echo esc_html_x( 'Copied!', 'Copy-to-clipboard message', 'yith-plugin-fw' ); ?></div>
 	</div>

@@ -47,13 +47,13 @@ $_tabs = $options['tabs'];
 							<table class="form-table">
 								<?php
 								foreach ( $_tab['options'] as $name => $option ) {
-									YIT_Plugin_Panel_WooCommerce::add_yith_field( $option );
+									YIT_Plugin_Panel_WooCommerce::add_flance_field( $option );
 								}
 								?>
 							</table>
 							<?php if ( isset( $_tab['show_save_button'] ) && $_tab['show_save_button'] ) : ?>
 								<input type="hidden" name="yith-plugin" value="<?php echo esc_attr( $options['slug'] ); ?>">
-								<input type="hidden" name="action" value="yith_bh_onboarding">
+								<input type="hidden" name="action" value="flance_bh_onboarding">
 								<input type="hidden" name="tab" value="<?php echo esc_attr( $key ); ?>">
 								<?php wp_nonce_field( 'yith-bh-onboarding-save-options' ); ?>
 								<div class="submit-area">

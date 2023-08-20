@@ -46,7 +46,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		public function register( $plugin_slug, $plugin_init ) {
 			if ( ! function_exists( 'FLANCE_Plugin_Upgrade' ) ) {
 				// Try to load FLANCE_Plugin_Upgrade class.
-				yith_plugin_fw_load_update_and_licence_files();
+				flance_plugin_fw_load_update_and_licence_files();
 			}
 
 			if ( function_exists( 'FLANCE_Plugin_Upgrade' ) && is_callable( array( FLANCE_Plugin_Upgrade(), 'register' ) ) ) {

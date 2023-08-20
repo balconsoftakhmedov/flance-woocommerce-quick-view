@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $options, $disabled_options, $multiple, $placeholder, $buttons, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'disabled_options', 'multiple', 'placeholder', 'buttons', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $options, $disabled_options, $multiple, $placeholder, $buttons, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'options', 'disabled_options', 'multiple', 'placeholder', 'buttons', 'custom_attributes', 'data' );
 
 $multiple         = ! empty( $multiple );
 $class            = $class ?? 'yith-plugin-fw-select';
@@ -38,8 +38,8 @@ if ( $multiple && ! is_array( $value ) ) {
 		data-placeholder="<?php echo esc_attr( $placeholder ); ?>"
 	<?php endif; ?>
 
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<?php foreach ( $options as $key => $item ) : ?>
 		<?php if ( is_array( $item ) ) : ?>
@@ -81,6 +81,6 @@ if ( isset( $buttons ) ) {
 		'type'    => 'buttons',
 		'buttons' => $buttons,
 	);
-	yith_plugin_fw_get_field( $button_field, true );
+	flance_plugin_fw_get_field( $button_field, true );
 }
 ?>

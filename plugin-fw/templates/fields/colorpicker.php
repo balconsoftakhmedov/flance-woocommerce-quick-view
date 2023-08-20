@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 wp_enqueue_style( 'wp-color-picker' );
 
-list ( $field_id, $name, $class, $default, $alpha_enabled, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'name', 'class', 'default', 'alpha_enabled', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $name, $class, $default, $alpha_enabled, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'name', 'class', 'default', 'alpha_enabled', 'value', 'data', 'custom_attributes' );
 
 $class         = ! empty( $class ) ? $class : 'yith-plugin-fw-colorpicker color-picker';
 $alpha_enabled = isset( $alpha_enabled ) ? $alpha_enabled : true;
@@ -25,6 +25,6 @@ $default       = isset( $default ) ? $default : '';
 	<?php if ( $default ) : ?>
 		data-default-color="<?php echo esc_attr( $default ); ?>"
 	<?php endif ?>
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 />

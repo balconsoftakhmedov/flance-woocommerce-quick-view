@@ -29,7 +29,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
  * @since 1.0.0
  * @return void
  */
-function yith_wcqv_install_woocommerce_admin_notice() {
+function flance_wcqv_install_woocommerce_admin_notice() {
 	?>
 	<div class="error">
 		<p><?php esc_html_e( 'FLANCE WooCommerce Quick View is enabled but not effective. It requires WooCommerce in order to work.', 'flance-woocommerce-quick-view' ); ?></p>
@@ -43,7 +43,7 @@ function yith_wcqv_install_woocommerce_admin_notice() {
  * @since 1.0.0
  * @return void
  */
-function yith_wcqv_install_free_admin_notice() {
+function flance_wcqv_install_free_admin_notice() {
 	?>
 	<div class="error">
 		<p><?php esc_html_e( 'You can\'t activate the free version of FLANCE WooCommerce Quick View while you are using the premium one.', 'flance-woocommerce-quick-view' ); ?></p>
@@ -51,10 +51,10 @@ function yith_wcqv_install_free_admin_notice() {
 	<?php
 }
 
-if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
+if ( ! function_exists( 'flance_plugin_registration_hook' ) ) {
 	require_once 'plugin-fw/yit-plugin-registration-hook.php';
 }
-register_activation_hook( __FILE__, 'yith_plugin_registration_hook' );
+register_activation_hook( __FILE__, 'flance_plugin_registration_hook' );
 
 
 if ( ! defined( 'FLANCE_WCQV_VERSION' ) ) {
@@ -109,7 +109,7 @@ yit_maybe_plugin_fw_loader( FLANCE_WCQV_DIR );
  * @since 1.0.0
  * @return void
  */
-function yith_wcqv_init() {
+function flance_wcqv_init() {
 
 	load_plugin_textdomain( 'flance-woocommerce-quick-view', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	// Load required classes and functions.
@@ -118,7 +118,7 @@ function yith_wcqv_init() {
 	FLANCE_WCQV();
 }
 
-add_action( 'yith_wcqv_init', 'yith_wcqv_init' );
+add_action( 'flance_wcqv_init', 'flance_wcqv_init' );
 
 /**
  * Install.
@@ -126,21 +126,21 @@ add_action( 'yith_wcqv_init', 'yith_wcqv_init' );
  * @since 1.0.0
  * @return void
  */
-function yith_wcqv_install() {
+function flance_wcqv_install() {
 
 	if ( ! function_exists( 'WC' ) ) {
-		add_action( 'admin_notices', 'yith_wcqv_install_woocommerce_admin_notice' );
+		add_action( 'admin_notices', 'flance_wcqv_install_woocommerce_admin_notice' );
 	} elseif ( defined( 'FLANCE_WCQV_PREMIUM' ) ) {
-		add_action( 'admin_notices', 'yith_wcqv_install_free_admin_notice' );
+		add_action( 'admin_notices', 'flance_wcqv_install_free_admin_notice' );
 		deactivate_plugins( plugin_basename( __FILE__ ) );
 	} else {
-		do_action( 'yith_wcqv_init' );
+		do_action( 'flance_wcqv_init' );
 	}
 }
 
-add_action( 'plugins_loaded', 'yith_wcqv_install', 11 );
+add_action( 'plugins_loaded', 'flance_wcqv_install', 11 );
 
-add_action( 'before_woocommerce_init', 'yith_wcqv_declare_hpos_compatibility' );
+add_action( 'before_woocommerce_init', 'flance_wcqv_declare_hpos_compatibility' );
 
 /**
  * Declare HPOS compatibility
@@ -149,8 +149,8 @@ add_action( 'before_woocommerce_init', 'yith_wcqv_declare_hpos_compatibility' );
  * @since  1.23.0
  */
 
-if( ! function_exists( 'yith_wcqv_declare_hpos_compatibility' ) ){
-	function yith_wcqv_declare_hpos_compatibility() {
+if( ! function_exists( 'flance_wcqv_declare_hpos_compatibility' ) ){
+	function flance_wcqv_declare_hpos_compatibility() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
 			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
 		}

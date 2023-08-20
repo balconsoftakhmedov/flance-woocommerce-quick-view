@@ -111,9 +111,9 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 
 			$this->default_pointer = $this->parse_args( $this->default_pointer );
 
-			// DEPRECATED 'yit-pointer-special-screen' filter since 3.5 | use yith_plugin_fw_pointers_special_screens instead.
+			// DEPRECATED 'yit-pointer-special-screen' filter since 3.5 | use flance_plugin_fw_pointers_special_screens instead.
 			$this->special_screen = apply_filters( 'yit-pointer-special-screen', array( 'plugins', 'update' ) ); //phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
-			$this->special_screen = apply_filters( 'yith_plugin_fw_pointers_special_screens', array( 'plugins', 'update' ) );
+			$this->special_screen = apply_filters( 'flance_plugin_fw_pointers_special_screens', array( 'plugins', 'update' ) );
 
 			add_action( 'admin_enqueue_scripts', array( $this, 'pointer_load' ) );
 			add_action( 'admin_init', array( $this, 'add_pointers' ), 100 );
@@ -128,7 +128,7 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 		 */
 		public function parse_args( $args ) {
 			$default = array(
-				'pointer_id' => 'yith_default_pointer',
+				'pointer_id' => 'flance_default_pointer',
 				'target'     => '#toplevel_page_yit_plugin_panel',
 				'init'       => null,
 			);
@@ -332,7 +332,7 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 			wp_enqueue_style( 'wp-pointer' );
 			wp_enqueue_script( 'wp-pointer' );
 
-			wp_enqueue_script( 'yit-wp-pointer', YIT_CORE_PLUGIN_URL . '/assets/js/' . $script_file, array( 'wp-pointer' ), yith_plugin_fw_get_version(), true );
+			wp_enqueue_script( 'yit-wp-pointer', YIT_CORE_PLUGIN_URL . '/assets/js/' . $script_file, array( 'wp-pointer' ), flance_plugin_fw_get_version(), true );
 			wp_localize_script( 'yit-wp-pointer', 'custom_pointer', $valid_pointers );
 
 			// phpcs:enable

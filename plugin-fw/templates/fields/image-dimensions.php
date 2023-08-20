@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value' );
+list ( $field_id, $class, $name, $value ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value' );
 
 $value = isset( $value ) && is_array( $value ) ? $value : array();
 

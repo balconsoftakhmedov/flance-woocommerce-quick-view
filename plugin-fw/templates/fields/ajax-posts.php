@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-yith_plugin_fw_enqueue_enhanced_select();
+flance_plugin_fw_enqueue_enhanced_select();
 
 $default_field = array(
 	'id'       => '',
@@ -30,14 +30,14 @@ foreach ( $default_field as $field_key => $field_value ) {
 unset( $field_key );
 unset( $field_value );
 
-list ( $field_id, $class, $no_value, $multiple, $data, $name, $style, $value ) = yith_plugin_fw_extract( $field, 'id', 'class', 'no_value', 'multiple', 'data', 'name', 'style', 'value' );
+list ( $field_id, $class, $no_value, $multiple, $data, $name, $style, $value ) = flance_plugin_fw_extract( $field, 'id', 'class', 'no_value', 'multiple', 'data', 'name', 'style', 'value' );
 
 if ( $no_value ) {
 	$value = array();
 }
 
 $default_data  = array(
-	'action'      => 'yith_plugin_fw_json_search_posts',
+	'action'      => 'flance_plugin_fw_json_search_posts',
 	'placeholder' => __( 'Search for a post...', 'yith-plugin-fw' ),
 	'allow_clear' => false,
 );
@@ -72,7 +72,7 @@ if ( ! empty( $value ) ) {
 	}
 
 	foreach ( $selected_ids as $selected_id ) {
-		$the_title = yith_plugin_fw_get_post_formatted_name(
+		$the_title = flance_plugin_fw_get_post_formatted_name(
 			$selected_id,
 			array(
 				'post-type' => $the_post_type,

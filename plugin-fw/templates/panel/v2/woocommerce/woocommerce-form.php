@@ -38,7 +38,7 @@ $notices          = $panel->get_notices();
 			foreach ( $notices as $notice ) {
 				$notice_type    = $notice['type'] ?? 'info';
 				$notice_message = $notice['message'] ?? '';
-				yith_plugin_fw_get_component(
+				flance_plugin_fw_get_component(
 					array(
 						'type'        => 'notice',
 						'notice_type' => $notice_type,
@@ -59,7 +59,7 @@ $notices          = $panel->get_notices();
 	<form id="plugin-fw-wc-reset" method="post">
 		<input type="hidden" name="yit-action" value="wc-options-reset"/>
 		<input type="hidden" name="yit-reset" value="1"/>
-		<?php wp_nonce_field( 'yith_wc_reset_options_' . $panel->settings['page'], 'yith_wc_reset_options_nonce' ); ?>
+		<?php wp_nonce_field( 'flance_wc_reset_options_' . $panel->settings['page'], 'flance_wc_reset_options_nonce' ); ?>
 	</form>
 </div>
 

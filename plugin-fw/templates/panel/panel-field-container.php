@@ -31,9 +31,9 @@ $container_classes = array(
 );
 $container_classes = implode( ' ', $container_classes );
 ?>
-<div id="<?php echo esc_attr( $container_id ); ?>" class="<?php echo esc_attr( $container_classes ); ?>" <?php echo yith_panel_field_deps_data( $option, $this ); ?>>
+<div id="<?php echo esc_attr( $container_id ); ?>" class="<?php echo esc_attr( $container_classes ); ?>" <?php echo flance_panel_field_deps_data( $option, $this ); ?>>
 	<div class="option">
-		<?php yith_plugin_fw_get_field( $field, true, false ); ?>
+		<?php flance_plugin_fw_get_field( $field, true, false ); ?>
 	</div>
 
 	<?php if ( ! empty( $field['desc'] ) ) : ?>

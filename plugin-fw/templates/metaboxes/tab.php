@@ -11,8 +11,8 @@
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 global $post;
-$classes  = apply_filters( 'yith_plugin_fw_metabox_class', $class, $post );
-$classes  = yith_plugin_fw_remove_duplicate_classes( $classes );
+$classes  = apply_filters( 'flance_plugin_fw_metabox_class', $class, $post );
+$classes  = flance_plugin_fw_remove_duplicate_classes( $classes );
 $ul_style = count( $tabs ) <= 1 ? 'display:none;' : '';
 $i        = 0;
 do_action( 'yit_before_metaboxes_tab' );
@@ -24,8 +24,8 @@ $label_extra_allowed_tags = array(
 	),
 );
 
-$label_allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), yith_plugin_fw_kses_allowed_svg_tags(), $label_extra_allowed_tags );
-$label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags', $label_allowed_tags, $meta_box_id );
+$label_allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), flance_plugin_fw_kses_allowed_svg_tags(), $label_extra_allowed_tags );
+$label_allowed_tags = apply_filters( 'flance_plugin_fw_metabox_label_allowed_tags', $label_allowed_tags, $meta_box_id );
 
 ?>
 	<div class="yith-plugin-fw metaboxes-tab <?php echo esc_attr( $classes ); ?>">
@@ -58,7 +58,7 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags'
 				}
 				$i ++;
 				?>
-				<li id="<?php echo esc_attr( $anchor_id ); ?>" class="<?php echo esc_attr( $class ); ?>" <?php echo yith_field_deps_data( $_tab ); ?>>
+				<li id="<?php echo esc_attr( $anchor_id ); ?>" class="<?php echo esc_attr( $class ); ?>" <?php echo flance_field_deps_data( $_tab ); ?>>
 					<a href="#<?php echo esc_attr( urldecode( $key ) ); ?>" class="yith-plugin-fw__tab__handler">
 						<?php echo wp_kses( $_tab['label'], $label_allowed_tags ); ?>
 					</a>
@@ -96,7 +96,7 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags'
 					}
 
 					/**
-					 * APPLY_FILTER: yith_plugin_fw_metabox_{meta_box_id}_field_pre_get_value
+					 * APPLY_FILTER: flance_plugin_fw_metabox_{meta_box_id}_field_pre_get_value
 					 * Allow filtering values for meta-box fields instead of retrieving them by post_meta(s).
 					 *
 					 * @param mixed|null $value      The value to be filtered. Set 'null' to retrieve it by the related post_meta (Default: null).
@@ -106,7 +106,7 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags'
 					 *
 					 * @since 3.7.6
 					 */
-					$value = apply_filters( "yith_plugin_fw_metabox_{$meta_box_id}_field_pre_get_value", null, $post->ID, $field_name, $field );
+					$value = apply_filters( "flance_plugin_fw_metabox_{$meta_box_id}_field_pre_get_value", null, $post->ID, $field_name, $field );
 					if ( is_null( $value ) ) {
 						$value = yit_get_post_meta( $post->ID, $field_name );
 					}
@@ -122,7 +122,7 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags'
 					?>
 					<div class="<?php echo esc_attr( $container_classes ); ?>">
 						<?php
-						$field_template_path = yith_plugin_fw_get_field_template_path( $field );
+						$field_template_path = flance_plugin_fw_get_field_template_path( $field );
 						if ( $field_template_path ) {
 							$display_row                 = 'hidden' !== $field['type'];
 							$display_row                 = isset( $field['yith-display-row'] ) ? ! ! $field['yith-display-row'] : $display_row;
@@ -130,10 +130,10 @@ $label_allowed_tags = apply_filters( 'yith_plugin_fw_metabox_label_allowed_tags'
 
 							if ( $display_row ) {
 
-								$field_row_path = apply_filters( 'yith_plugin_fw_metabox_field_row_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/metaboxes/field-row.php', $field );
+								$field_row_path = apply_filters( 'flance_plugin_fw_metabox_field_row_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/metaboxes/field-row.php', $field );
 								file_exists( $field_row_path ) && include $field_row_path;
 							} else {
-								yith_plugin_fw_get_field( $field, true );
+								flance_plugin_fw_get_field( $field, true );
 							}
 						} else {
 							// Backward compatibility.

@@ -45,7 +45,7 @@ $sections = $wp_settings_sections['yit'] ?? array();
 					$row_classes = implode( ' ', array_filter( $row_classes ) );
 					?>
 
-					<div class="<?php echo esc_attr( $row_classes ); ?>" <?php echo yith_panel_field_deps_data( $option, $panel ); ?>>
+					<div class="<?php echo esc_attr( $row_classes ); ?>" <?php echo flance_panel_field_deps_data( $option, $panel ); ?>>
 						<div class="yith-plugin-fw__panel__option__label">
 							<label for="<?php echo esc_attr( $label_for ); ?>"><?php echo wp_kses_post( $field['title'] ); ?></label>
 							<?php $panel->get_template( 'panel-option-label-tags.php', array( 'field' => $option ) ); ?>

@@ -19,7 +19,7 @@ import { RawHTML }                      from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { yith_icon, generateShortcode } from './common';
+import { flance_icon, generateShortcode } from './common';
 import { createEditFunction }           from './edit';
 import './common/actions-to-jquery-events';
 
@@ -29,7 +29,7 @@ for ( const [blockName, blockArgs] of Object.entries( yithGutenbergBlocks ) ) {
 		description: blockArgs.description,
 		category   : blockArgs.category,
 		attributes : blockArgs.attributes,
-		icon       : typeof blockArgs.icon !== 'undefined' ? blockArgs.icon : yith_icon,
+		icon       : typeof blockArgs.icon !== 'undefined' ? blockArgs.icon : flance_icon,
 		keywords   : blockArgs.keywords,
 		edit       : createEditFunction( blockName, blockArgs ),
 		usesContext: [
@@ -44,7 +44,7 @@ for ( const [blockName, blockArgs] of Object.entries( yithGutenbergBlocks ) ) {
 				save      : ( { attributes } ) => {
 					const shortcode     = generateShortcode( blockArgs, attributes );
 					const blockHash     = md5( shortcode );
-					const shortcodeSpan = '<span class="yith_block_' + blockHash + '">' + shortcode + '</span>';
+					const shortcodeSpan = '<span class="flance_block_' + blockHash + '">' + shortcode + '</span>';
 
 					return (
 						<RawHTML>{shortcodeSpan}</RawHTML>

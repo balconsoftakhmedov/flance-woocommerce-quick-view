@@ -814,7 +814,7 @@ if ( ! function_exists( 'yit_load_js_file' ) ) {
 	 */
 	function yit_load_js_file( $filename ) {
 
-		if ( ! ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || isset( $_GET['yith_script_debug'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ! ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || isset( $_GET['flance_script_debug'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$filename = str_replace( '.js', '.min.js', $filename );
 		}
 
@@ -833,7 +833,7 @@ if ( ! function_exists( 'yit_load_css_file' ) ) {
 	 */
 	function yit_load_css_file( $filename ) {
 
-		if ( ! ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || isset( $_GET['yith_script_debug'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( ! ( ( defined( 'WP_DEBUG' ) && WP_DEBUG ) || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) || isset( $_GET['flance_script_debug'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			$filename = str_replace( '.css', '.min.css', $filename );
 		}
 
@@ -965,7 +965,7 @@ if ( ! function_exists( 'yit_get_language_from_locale' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_get_formatted_price' ) ) {
+if ( ! function_exists( 'flance_get_formatted_price' ) ) {
 	/**
 	 * Format the price with a currency symbol.
 	 *
@@ -974,7 +974,7 @@ if ( ! function_exists( 'yith_get_formatted_price' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_get_formatted_price( $price, $args = array() ) {
+	function flance_get_formatted_price( $price, $args = array() ) {
 		$defaults = array(
 			'ex_tax_label'       => false,
 			'currency'           => '',
@@ -986,7 +986,7 @@ if ( ! function_exists( 'yith_get_formatted_price' ) ) {
 		$args     = wp_parse_args( $args, $defaults );
 		$args     = apply_filters( 'wc_price_args', $args );
 
-		list ( $decimals, $decimal_separator, $thousand_separator, $price_format, $currency ) = yith_plugin_fw_extract( $args, 'decimals', 'decimal_separator', 'thousand_separator', 'price_format', 'currency' );
+		list ( $decimals, $decimal_separator, $thousand_separator, $price_format, $currency ) = flance_plugin_fw_extract( $args, 'decimals', 'decimal_separator', 'thousand_separator', 'price_format', 'currency' );
 
 		$negative = $price < 0;
 		$price    = apply_filters( 'raw_woocommerce_price', floatval( $negative ? $price * - 1 : $price ) );
@@ -1003,7 +1003,7 @@ if ( ! function_exists( 'yith_get_formatted_price' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_get_terms' ) ) {
+if ( ! function_exists( 'flance_get_terms' ) ) {
 	/**
 	 * Get terms.
 	 *
@@ -1012,7 +1012,7 @@ if ( ! function_exists( 'yith_get_terms' ) ) {
 	 * @return array|int|WP_Error
 	 * @deprecated 3.5 | use get_terms instead
 	 */
-	function yith_get_terms( $args ) {
+	function flance_get_terms( $args ) {
 		global $wp_version;
 		if ( version_compare( $wp_version, '4.5', '>=' ) ) {
 			$terms = get_terms( $args );
@@ -1024,7 +1024,7 @@ if ( ! function_exists( 'yith_get_terms' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_field_deps_data' ) ) {
+if ( ! function_exists( 'flance_field_deps_data' ) ) {
 	/**
 	 * Retrieve the field deps HTML data.
 	 *
@@ -1032,7 +1032,7 @@ if ( ! function_exists( 'yith_field_deps_data' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_field_deps_data( $field ) {
+	function flance_field_deps_data( $field ) {
 		$deps_data = '';
 		if ( isset( $field['deps'] ) && ( isset( $field['deps']['ids'] ) || isset( $field['deps']['id'] ) ) && ( isset( $field['deps']['values'] ) || isset( $field['deps']['value'] ) ) ) {
 			$deps       = $field['deps'];
@@ -1048,7 +1048,7 @@ if ( ! function_exists( 'yith_field_deps_data' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_panel_field_deps_data' ) ) {
+if ( ! function_exists( 'flance_panel_field_deps_data' ) ) {
 	/**
 	 * Retrieve the panel field deps HTML data.
 	 *
@@ -1057,7 +1057,7 @@ if ( ! function_exists( 'yith_panel_field_deps_data' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_panel_field_deps_data( $field, $panel ) {
+	function flance_panel_field_deps_data( $field, $panel ) {
 		$deps_data = '';
 		if ( isset( $field['deps'] ) && ( isset( $field['deps']['ids'] ) || isset( $field['deps']['id'] ) ) && isset( $field['deps']['values'] ) ) {
 			$dep_id               = isset( $field['deps']['id'] ) ? $field['deps']['id'] : $field['deps']['ids'];
@@ -1065,14 +1065,14 @@ if ( ! function_exists( 'yith_panel_field_deps_data' ) ) {
 			$field['deps']['id']  = $panel->get_id_field( $dep_id );
 			$field['id']          = $panel->get_id_field( $field['id'] );
 
-			$deps_data = yith_field_deps_data( $field );
+			$deps_data = flance_field_deps_data( $field );
 		}
 
 		return $deps_data;
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_field' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_field' ) ) {
 	/**
 	 * Retrieve a field.
 	 *
@@ -1082,7 +1082,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_field' ) ) {
 	 *
 	 * @return false|string
 	 */
-	function yith_plugin_fw_get_field( $field, $echo = false, $show_container = true ) {
+	function flance_plugin_fw_get_field( $field, $echo = false, $show_container = true ) {
 		if ( empty( $field['type'] ) ) {
 			return '';
 		}
@@ -1104,14 +1104,14 @@ if ( ! function_exists( 'yith_plugin_fw_get_field' ) ) {
 			 * Convert custom_attributes to string to prevent issues in plugins using them as string in their templates.
 			 * todo: remove after checking plugins using custom_attributes as "string" in custom fields templates and as "array" in custom fields options.
 			 */
-			$field['custom_attributes'] = yith_plugin_fw_html_attributes_to_string( $field['custom_attributes'] );
+			$field['custom_attributes'] = flance_plugin_fw_html_attributes_to_string( $field['custom_attributes'] );
 		}
 
 		if ( ! isset( $field['default'] ) && isset( $field['std'] ) ) {
 			$field['default'] = $field['std'];
 		}
 
-		$field_template = yith_plugin_fw_get_field_template_path( $field );
+		$field_template = flance_plugin_fw_get_field_template_path( $field );
 
 		if ( ! isset( $field['id'] ) ) {
 			static $field_number = 1;
@@ -1129,13 +1129,13 @@ if ( ! function_exists( 'yith_plugin_fw_get_field' ) ) {
 				echo '<div class="yith-plugin-fw-field-wrapper yith-plugin-fw-' . esc_attr( $field['type'] ) . '-field-wrapper">';
 			}
 
-			do_action( 'yith_plugin_fw_get_field_before', $field );
-			do_action( 'yith_plugin_fw_get_field_' . $field['type'] . '_before', $field );
+			do_action( 'flance_plugin_fw_get_field_before', $field );
+			do_action( 'flance_plugin_fw_get_field_' . $field['type'] . '_before', $field );
 
 			include $field_template;
 
-			do_action( 'yith_plugin_fw_get_field_after', $field );
-			do_action( 'yith_plugin_fw_get_field_' . $field['type'] . '_after', $field );
+			do_action( 'flance_plugin_fw_get_field_after', $field );
+			do_action( 'flance_plugin_fw_get_field_' . $field['type'] . '_after', $field );
 
 			if ( $show_container ) {
 				echo '</div>';
@@ -1150,7 +1150,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_field' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_field_template_path' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_field_template_path' ) ) {
 	/**
 	 * Retrieve the field template path.
 	 *
@@ -1158,20 +1158,20 @@ if ( ! function_exists( 'yith_plugin_fw_get_field_template_path' ) ) {
 	 *
 	 * @return false|string
 	 */
-	function yith_plugin_fw_get_field_template_path( $field ) {
+	function flance_plugin_fw_get_field_template_path( $field ) {
 		if ( empty( $field['type'] ) ) {
 			return false;
 		}
 
 		$field_template = YIT_CORE_PLUGIN_TEMPLATE_PATH . '/fields/' . sanitize_title( $field['type'] ) . '.php';
 
-		$field_template = apply_filters( 'yith_plugin_fw_get_field_template_path', $field_template, $field );
+		$field_template = apply_filters( 'flance_plugin_fw_get_field_template_path', $field_template, $field );
 
 		return file_exists( $field_template ) ? $field_template : false;
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_html_data_to_string' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_html_data_to_string' ) ) {
 	/**
 	 * Transform data array to HTML data.
 	 *
@@ -1180,7 +1180,7 @@ if ( ! function_exists( 'yith_plugin_fw_html_data_to_string' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_plugin_fw_html_data_to_string( $data = array(), $echo = false ) {
+	function flance_plugin_fw_html_data_to_string( $data = array(), $echo = false ) {
 		$html_data = '';
 
 		if ( ! ! $data ) {
@@ -1203,7 +1203,7 @@ if ( ! function_exists( 'yith_plugin_fw_html_data_to_string' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_icon' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_icon' ) ) {
 	/**
 	 * Retrieve an icon.
 	 *
@@ -1212,12 +1212,12 @@ if ( ! function_exists( 'yith_plugin_fw_get_icon' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_plugin_fw_get_icon( $icon = '', $args = array() ) {
+	function flance_plugin_fw_get_icon( $icon = '', $args = array() ) {
 		return YIT_Icons()->get_icon( $icon, $args );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_is_true' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_is_true' ) ) {
 	/**
 	 * Is something true?
 	 *
@@ -1225,16 +1225,16 @@ if ( ! function_exists( 'yith_plugin_fw_is_true' ) ) {
 	 *
 	 * @return bool
 	 */
-	function yith_plugin_fw_is_true( $value ) {
+	function flance_plugin_fw_is_true( $value ) {
 		return true === $value || 1 === $value || '1' === $value || 'yes' === $value || 'true' === $value;
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_enqueue_enhanced_select' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_enqueue_enhanced_select' ) ) {
 	/**
 	 * Enqueue the enhanced select style and script.
 	 */
-	function yith_plugin_fw_enqueue_enhanced_select() {
+	function flance_plugin_fw_enqueue_enhanced_select() {
 		wp_enqueue_script( 'yith-enhanced-select' );
 		$select2_style_to_enqueue = function_exists( 'WC' ) ? 'woocommerce_admin_styles' : 'yith-select2-no-wc';
 		wp_enqueue_style( $select2_style_to_enqueue );
@@ -1291,20 +1291,20 @@ if ( ! function_exists( 'yit_add_select2_fields' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_version' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_version' ) ) {
 	/**
 	 * Retrieve the Plugin Framework version.
 	 *
 	 * @return string
 	 */
-	function yith_plugin_fw_get_version() {
+	function flance_plugin_fw_get_version() {
 		$plugin_fw_data = get_file_data( trailingslashit( YIT_CORE_PLUGIN_PATH ) . 'init.php', array( 'Version' => 'Version' ) );
 
 		return $plugin_fw_data['Version'];
 	}
 }
 
-if ( ! function_exists( 'yith_get_premium_support_url' ) ) {
+if ( ! function_exists( 'flance_get_premium_support_url' ) ) {
 	/**
 	 * Return the url for My Account > Support dashboard
 	 *
@@ -1312,18 +1312,18 @@ if ( ! function_exists( 'yith_get_premium_support_url' ) ) {
 	 * @since      2.0.0
 	 * @deprecated 3.5
 	 */
-	function yith_get_premium_support_url() {
+	function flance_get_premium_support_url() {
 		return 'https://yithemes.com/my-account/support/dashboard/';
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_is_panel' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_is_panel' ) ) {
 	/**
 	 * Is this a Plugin Framework panel?
 	 *
 	 * @return bool
 	 */
-	function yith_plugin_fw_is_panel() {
+	function flance_plugin_fw_is_panel() {
 		$panel_screen_id = 'yith-plugins_page';
 		$screen          = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 
@@ -1331,7 +1331,7 @@ if ( ! function_exists( 'yith_plugin_fw_is_panel' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_force_regenerate_plugin_update_transient' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_force_regenerate_plugin_update_transient' ) ) {
 	/**
 	 * Delete the update plugins transient
 	 *
@@ -1339,23 +1339,23 @@ if ( ! function_exists( 'yith_plugin_fw_force_regenerate_plugin_update_transient
 	 * @since  1.0
 	 * @see    update_plugins transient and pre_set_site_transient_update_plugins hooks
 	 */
-	function yith_plugin_fw_force_regenerate_plugin_update_transient() {
+	function flance_plugin_fw_force_regenerate_plugin_update_transient() {
 		delete_site_transient( 'update_plugins' );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_is_gutenberg_enabled' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_is_gutenberg_enabled' ) ) {
 	/**
 	 * Is Gutenberg enabled?
 	 *
 	 * @return bool
 	 */
-	function yith_plugin_fw_is_gutenberg_enabled() {
+	function flance_plugin_fw_is_gutenberg_enabled() {
 		return function_exists( 'FLANCE_Gutenberg' );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_gutenberg_add_blocks' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_gutenberg_add_blocks' ) ) {
 	/**
 	 * Add new blocks to Gutenberg
 	 *
@@ -1363,9 +1363,9 @@ if ( ! function_exists( 'yith_plugin_fw_gutenberg_add_blocks' ) ) {
 	 *
 	 * @return bool true if add a new blocks, false otherwise
 	 */
-	function yith_plugin_fw_gutenberg_add_blocks( $blocks ) {
+	function flance_plugin_fw_gutenberg_add_blocks( $blocks ) {
 		$added = false;
-		if ( yith_plugin_fw_is_gutenberg_enabled() ) {
+		if ( flance_plugin_fw_is_gutenberg_enabled() ) {
 			// Add blocks.
 			$added = FLANCE_Gutenberg()->add_blocks( $blocks );
 		}
@@ -1374,52 +1374,52 @@ if ( ! function_exists( 'yith_plugin_fw_gutenberg_add_blocks' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_gutenberg_get_registered_blocks' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_gutenberg_get_registered_blocks' ) ) {
 	/**
 	 * Return an array with the registered blocks
 	 *
 	 * @return array
 	 */
-	function yith_plugin_fw_gutenberg_get_registered_blocks() {
-		return yith_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_registered_blocks() : array();
+	function flance_plugin_fw_gutenberg_get_registered_blocks() {
+		return flance_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_registered_blocks() : array();
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_gutenberg_get_to_register_blocks' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_gutenberg_get_to_register_blocks' ) ) {
 	/**
 	 * Return an array with the blocks to register
 	 *
 	 * @return array
 	 */
-	function yith_plugin_fw_gutenberg_get_to_register_blocks() {
-		return yith_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_to_register_blocks() : array();
+	function flance_plugin_fw_gutenberg_get_to_register_blocks() {
+		return flance_plugin_fw_is_gutenberg_enabled() ? FLANCE_Gutenberg()->get_to_register_blocks() : array();
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_default_logo' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_default_logo' ) ) {
 	/**
 	 * Get the default SVG logo
 	 *
 	 * @return string default logo image url
 	 */
-	function yith_plugin_fw_get_default_logo() {
+	function flance_plugin_fw_get_default_logo() {
 		return YIT_CORE_PLUGIN_URL . '/assets/images/yith-icon.svg';
 	}
 }
 
-if ( ! function_exists( 'yith_get_wrapper_class' ) ) {
+if ( ! function_exists( 'flance_get_wrapper_class' ) ) {
 	/**
 	 * Return the wrapper class for the UI style.
 	 *
 	 * @return string
 	 * @since 3.7.0
 	 */
-	function yith_get_wrapper_class() {
+	function flance_get_wrapper_class() {
 		return 'yith-plugin-ui';
 	}
 }
 
-if ( ! function_exists( 'yith_set_wrapper_class' ) ) {
+if ( ! function_exists( 'flance_set_wrapper_class' ) ) {
 	/**
 	 * Return the wrapper class for the UI style, by setting any additional class passed through the $class parameter.
 	 *
@@ -1427,15 +1427,15 @@ if ( ! function_exists( 'yith_set_wrapper_class' ) ) {
 	 *
 	 * @return string
 	 */
-	function yith_set_wrapper_class( $class = '' ) {
-		$new_class = yith_get_wrapper_class();
+	function flance_set_wrapper_class( $class = '' ) {
+		$new_class = flance_get_wrapper_class();
 		$class     = ( ! empty( $class ) && is_array( $class ) ) ? implode( ' ', $class ) : $class;
 
 		return $new_class . ' ' . $class;
 	}
 }
 
-if ( ! function_exists( 'yith_get_date_formats' ) ) {
+if ( ! function_exists( 'flance_get_date_formats' ) ) {
 	/**
 	 * Get all available date format.
 	 *
@@ -1443,14 +1443,14 @@ if ( ! function_exists( 'yith_get_date_formats' ) ) {
 	 *
 	 * @return array
 	 * @since      3.1
-	 * @deprecated 3.5 | use yith_get_date_formats() instead
+	 * @deprecated 3.5 | use flance_get_date_formats() instead
 	 */
-	function yith_get_date_format( $js = true ) {
-		return yith_get_date_formats( $js );
+	function flance_get_date_format( $js = true ) {
+		return flance_get_date_formats( $js );
 	}
 }
 
-if ( ! function_exists( 'yith_get_date_formats' ) ) {
+if ( ! function_exists( 'flance_get_date_formats' ) ) {
 	/**
 	 * Get all available date formats.
 	 *
@@ -1459,7 +1459,7 @@ if ( ! function_exists( 'yith_get_date_formats' ) ) {
 	 * @return array
 	 * @since  3.5
 	 */
-	function yith_get_date_formats( $js = true ) {
+	function flance_get_date_formats( $js = true ) {
 		$date_formats = array(
 			'F j, Y' => 'F j, Y',
 			'Y-m-d'  => 'Y-m-d',
@@ -1476,18 +1476,18 @@ if ( ! function_exists( 'yith_get_date_formats' ) ) {
 			);
 		}
 
-		return apply_filters( 'yith_plugin_fw_date_formats', $date_formats, $js );
+		return apply_filters( 'flance_plugin_fw_date_formats', $date_formats, $js );
 	}
 }
 
-if ( ! function_exists( 'yith_get_time_formats' ) ) {
+if ( ! function_exists( 'flance_get_time_formats' ) ) {
 	/**
 	 * Get all available time format.
 	 *
 	 * @return array
 	 * @since  3.5
 	 */
-	function yith_get_time_formats() {
+	function flance_get_time_formats() {
 
 		$time_formats = array(
 			'h:i:s' => 'h:i:s',
@@ -1496,12 +1496,12 @@ if ( ! function_exists( 'yith_get_time_formats' ) ) {
 			'H:i'   => 'H:i',
 		);
 
-		return apply_filters( 'yith_plugin_fw_time_formats', $time_formats );
+		return apply_filters( 'flance_plugin_fw_time_formats', $time_formats );
 	}
 }
 
 
-if ( ! function_exists( 'yith_format_toggle_title' ) ) {
+if ( ! function_exists( 'flance_format_toggle_title' ) ) {
 	/**
 	 * Replace the placeholders with the values of the element id for toggle element field.
 	 *
@@ -1511,7 +1511,7 @@ if ( ! function_exists( 'yith_format_toggle_title' ) ) {
 	 * @return array
 	 * @since  3.1
 	 */
-	function yith_format_toggle_title( $title, $values ) {
+	function flance_format_toggle_title( $title, $values ) {
 		preg_match_all( '/(?<=\%%).+?(?=\%%)/', $title, $matches );
 		if ( isset( $matches[0] ) ) {
 			foreach ( $matches[0] as $element_id ) {
@@ -1525,11 +1525,11 @@ if ( ! function_exists( 'yith_format_toggle_title' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_load_update_and_licence_files' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_load_update_and_licence_files' ) ) {
 	/**
 	 * Load premium file for license and update system
 	 */
-	function yith_plugin_fw_load_update_and_licence_files() {
+	function flance_plugin_fw_load_update_and_licence_files() {
 		global $plugin_upgrade_fw_data;
 
 		/**
@@ -1562,7 +1562,7 @@ if ( ! function_exists( 'yith_plugin_fw_load_update_and_licence_files' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_remove_duplicate_classes' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_remove_duplicate_classes' ) ) {
 	/**
 	 * Remove the duplicate classes from a string.
 	 *
@@ -1571,7 +1571,7 @@ if ( ! function_exists( 'yith_plugin_fw_remove_duplicate_classes' ) ) {
 	 * @return string
 	 * @since  3.2.2
 	 */
-	function yith_plugin_fw_remove_duplicate_classes( $classes ) {
+	function flance_plugin_fw_remove_duplicate_classes( $classes ) {
 		$class_array  = explode( ' ', $classes );
 		$class_unique = array_unique( array_filter( $class_array ) );
 		if ( $class_unique ) {
@@ -1582,21 +1582,21 @@ if ( ! function_exists( 'yith_plugin_fw_remove_duplicate_classes' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_add_requirements' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_add_requirements' ) ) {
 	/**
 	 * Add plugin requirements
 	 *
 	 * @param string $plugin_name  The name of the plugin.
 	 * @param array  $requirements Array of plugin requirements.
 	 */
-	function yith_plugin_fw_add_requirements( $plugin_name, $requirements ) {
+	function flance_plugin_fw_add_requirements( $plugin_name, $requirements ) {
 		if ( ! empty( $requirements ) ) {
 			FLANCE_System_Status()->add_requirements( $plugin_name, $requirements );
 		}
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_parse_dimensions' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_parse_dimensions' ) ) {
 	/**
 	 * Parse dimensions stored through a "dimensions" field to a key-value array
 	 * where the key will be equal to the dimension key
@@ -1606,7 +1606,7 @@ if ( ! function_exists( 'yith_plugin_fw_parse_dimensions' ) ) {
 	 *
 	 * @return array
 	 */
-	function yith_plugin_fw_parse_dimensions( $values ) {
+	function flance_plugin_fw_parse_dimensions( $values ) {
 		$dimensions = array();
 		if ( is_array( $values ) && isset( $values['dimensions'], $values['unit'] ) && is_array( $values['dimensions'] ) ) {
 			$raw_unit = $values['unit'];
@@ -1620,7 +1620,7 @@ if ( ! function_exists( 'yith_plugin_fw_parse_dimensions' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_dimensions_by_option' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_dimensions_by_option' ) ) {
 	/**
 	 * Retrieve a parsed array of dimensions by an option
 	 *
@@ -1629,19 +1629,19 @@ if ( ! function_exists( 'yith_plugin_fw_get_dimensions_by_option' ) ) {
 	 *
 	 * @return array|bool
 	 */
-	function yith_plugin_fw_get_dimensions_by_option( $option, $default = false ) {
+	function flance_plugin_fw_get_dimensions_by_option( $option, $default = false ) {
 		$dimensions = get_option( $option, false );
 
-		return ! ! $dimensions ? yith_plugin_fw_parse_dimensions( $dimensions ) : $default;
+		return ! ! $dimensions ? flance_plugin_fw_parse_dimensions( $dimensions ) : $default;
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_extract' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_extract' ) ) {
 	/**
 	 * Extract array variables
 	 * Usage example:
 	 * ```
-	 * list ( $type, $class, $value ) = yith_plugin_fw_extract( $field, 'type', 'class', 'value' );
+	 * list ( $type, $class, $value ) = flance_plugin_fw_extract( $field, 'type', 'class', 'value' );
 	 * ```
 	 *
 	 * @param array  $array   The array.
@@ -1650,7 +1650,7 @@ if ( ! function_exists( 'yith_plugin_fw_extract' ) ) {
 	 * @return array
 	 * @since 3.5
 	 */
-	function yith_plugin_fw_extract( $array, ...$keys ) {
+	function flance_plugin_fw_extract( $array, ...$keys ) {
 		return array_map(
 			function ( $key ) use ( $array ) {
 				return isset( $array[ $key ] ) ? $array[ $key ] : null;
@@ -1661,7 +1661,7 @@ if ( ! function_exists( 'yith_plugin_fw_extract' ) ) {
 }
 
 
-if ( ! function_exists( 'yith_plugin_fw_register_elementor_widget' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_register_elementor_widget' ) ) {
 	/**
 	 * Register Elementor widget
 	 *
@@ -1670,12 +1670,12 @@ if ( ! function_exists( 'yith_plugin_fw_register_elementor_widget' ) ) {
 	 *
 	 * @since 3.6.0
 	 */
-	function yith_plugin_fw_register_elementor_widget( $widget_name, $widget_options ) {
+	function flance_plugin_fw_register_elementor_widget( $widget_name, $widget_options ) {
 		FLANCE_Elementor::instance()->register_widget( $widget_name, $widget_options );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_register_elementor_widgets' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_register_elementor_widgets' ) ) {
 	/**
 	 * Register Elementor widgets
 	 *
@@ -1684,17 +1684,17 @@ if ( ! function_exists( 'yith_plugin_fw_register_elementor_widgets' ) ) {
 	 *
 	 * @since 3.6.0
 	 */
-	function yith_plugin_fw_register_elementor_widgets( $widgets, $map_from_gutenberg = false ) {
+	function flance_plugin_fw_register_elementor_widgets( $widgets, $map_from_gutenberg = false ) {
 		foreach ( $widgets as $widget_name => $widget_options ) {
 			if ( $map_from_gutenberg ) {
 				$widget_options = array_merge( array( 'map_from_gutenberg' => true ), $widget_options );
 			}
-			yith_plugin_fw_register_elementor_widget( $widget_name, $widget_options );
+			flance_plugin_fw_register_elementor_widget( $widget_name, $widget_options );
 		}
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_copy_to_clipboard' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_copy_to_clipboard' ) ) {
 	/**
 	 * Print a field with a button to copy its content to clipboard
 	 *
@@ -1703,7 +1703,7 @@ if ( ! function_exists( 'yith_plugin_fw_copy_to_clipboard' ) ) {
 	 *
 	 * @since 3.6.2
 	 */
-	function yith_plugin_fw_copy_to_clipboard( $value, $field = array() ) {
+	function flance_plugin_fw_copy_to_clipboard( $value, $field = array() ) {
 		$defaults      = array(
 			'id'    => '',
 			'value' => $value,
@@ -1715,11 +1715,11 @@ if ( ! function_exists( 'yith_plugin_fw_copy_to_clipboard' ) ) {
 		wp_enqueue_style( 'yith-plugin-fw-fields' );
 		wp_enqueue_script( 'yith-plugin-fw-fields' );
 
-		yith_plugin_fw_get_field( $field, true, false );
+		flance_plugin_fw_get_field( $field, true, false );
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_add_utm_data' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_add_utm_data' ) ) {
 	/**
 	 * Add UTM data in backend url
 	 *
@@ -1730,7 +1730,7 @@ if ( ! function_exists( 'yith_plugin_fw_add_utm_data' ) ) {
 	 *
 	 * @since 3.6.10
 	 */
-	function yith_plugin_fw_add_utm_data( $url, $slug, $campaign = 'default', $source = 'wp-dashboard' ) {
+	function flance_plugin_fw_add_utm_data( $url, $slug, $campaign = 'default', $source = 'wp-dashboard' ) {
 		$sources = array(
 			'free'     => 'wp-free-dashboard',
 			'extended' => 'wp-extended-dashboard',
@@ -1753,7 +1753,7 @@ if ( ! function_exists( 'yith_plugin_fw_add_utm_data' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_panel_utm_source' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_panel_utm_source' ) ) {
 	/**
 	 * Generates default UTM source for the dashboard
 	 *
@@ -1762,7 +1762,7 @@ if ( ! function_exists( 'yith_plugin_fw_panel_utm_source' ) ) {
 	 * @since      3.6.10
 	 * @deprecated 4.1.0
 	 */
-	function yith_plugin_fw_panel_utm_source( $panel = false ) {
+	function flance_plugin_fw_panel_utm_source( $panel = false ) {
 		if ( $panel && $panel->is_free() ) {
 			return 'wp-free-dashboard';
 		}
@@ -1775,7 +1775,7 @@ if ( ! function_exists( 'yith_plugin_fw_panel_utm_source' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_include_fw_template' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_include_fw_template' ) ) {
 	/**
 	 * Include a FW template
 	 *
@@ -1784,7 +1784,7 @@ if ( ! function_exists( 'yith_plugin_fw_include_fw_template' ) ) {
 	 *
 	 * @since 3.7.0
 	 */
-	function yith_plugin_fw_include_fw_template( $template, $args = array() ) {
+	function flance_plugin_fw_include_fw_template( $template, $args = array() ) {
 		$_template_path = trailingslashit( YIT_CORE_PLUGIN_TEMPLATE_PATH ) . $template;
 
 		if ( file_exists( $_template_path ) ) {
@@ -1794,7 +1794,7 @@ if ( ! function_exists( 'yith_plugin_fw_include_fw_template' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_html_attributes_to_string' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_html_attributes_to_string' ) ) {
 	/**
 	 * Transform attributes array to HTML attributes string.
 	 * If using a string, the attributes will be escaped.
@@ -1807,7 +1807,7 @@ if ( ! function_exists( 'yith_plugin_fw_html_attributes_to_string' ) ) {
 	 * @since 3.7.0
 	 * @since 3.8.0 Escaping attributes when using strings; allow value-less attributes by setting value to null.
 	 */
-	function yith_plugin_fw_html_attributes_to_string( $attributes = array(), $echo = false ) {
+	function flance_plugin_fw_html_attributes_to_string( $attributes = array(), $echo = false ) {
 		$html_attributes = '';
 
 		if ( ! ! $attributes ) {
@@ -1841,7 +1841,7 @@ if ( ! function_exists( 'yith_plugin_fw_html_attributes_to_string' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_component' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_component' ) ) {
 	/**
 	 * Retrieve a component.
 	 *
@@ -1851,7 +1851,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_component' ) ) {
 	 * @return false|string
 	 * @since 3.7.0
 	 */
-	function yith_plugin_fw_get_component( $component, $echo = true ) {
+	function flance_plugin_fw_get_component( $component, $echo = true ) {
 		if ( ! empty( $component['type'] ) ) {
 			$type     = sanitize_title( $component['type'] );
 			$defaults = array(
@@ -1869,7 +1869,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_component' ) ) {
 				ob_start();
 			}
 
-			yith_plugin_fw_include_fw_template( $component_template, compact( 'component' ) );
+			flance_plugin_fw_include_fw_template( $component_template, compact( 'component' ) );
 
 			if ( ! $echo ) {
 				return ob_get_clean();
@@ -1880,7 +1880,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_component' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_default_post_actions' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_default_post_actions' ) ) {
 	/**
 	 * Retrieve the default post actions to be used in WP List tables to show action buttons.
 	 *
@@ -1897,7 +1897,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_post_actions' ) ) {
 	 * @return array
 	 * @since 3.7.0
 	 */
-	function yith_plugin_fw_get_default_post_actions( $post, $args = array() ) {
+	function flance_plugin_fw_get_default_post_actions( $post, $args = array() ) {
 		$post    = get_post( $post );
 		$actions = array();
 		if ( $post ) {
@@ -2032,7 +2032,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_post_actions' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_default_term_actions' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_default_term_actions' ) ) {
 	/**
 	 * Retrieve the default term actions to be used in WP List tables to show action buttons.
 	 *
@@ -2049,7 +2049,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_term_actions' ) ) {
 	 * @return array
 	 * @since 3.7.0
 	 */
-	function yith_plugin_fw_get_default_term_actions( $term, $args = array() ) {
+	function flance_plugin_fw_get_default_term_actions( $term, $args = array() ) {
 		if ( isset( $args['taxonomy'] ) ) {
 			$taxonomy = $args['taxonomy'];
 		} else {
@@ -2147,7 +2147,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_default_term_actions' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_action_buttons' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_action_buttons' ) ) {
 	/**
 	 * Retrieve action buttons.
 	 *
@@ -2157,20 +2157,20 @@ if ( ! function_exists( 'yith_plugin_fw_get_action_buttons' ) ) {
 	 * @return string
 	 * @since 3.7.0
 	 */
-	function yith_plugin_fw_get_action_buttons( $actions, $echo = true ) {
+	function flance_plugin_fw_get_action_buttons( $actions, $echo = true ) {
 		$actions_html = '';
 
 		foreach ( $actions as $action ) {
 			$action['type'] = 'action-button';
 
-			$actions_html .= yith_plugin_fw_get_component( $action, $echo );
+			$actions_html .= flance_plugin_fw_get_component( $action, $echo );
 		}
 
 		return $actions_html;
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_get_post_formatted_name' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_get_post_formatted_name' ) ) {
 	/**
 	 * Get the formatted name for posts/products
 	 *
@@ -2180,7 +2180,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_post_formatted_name' ) ) {
 	 * @return string
 	 * @since 3.7.2
 	 */
-	function yith_plugin_fw_get_post_formatted_name( $post, $args = array() ) {
+	function flance_plugin_fw_get_post_formatted_name( $post, $args = array() ) {
 		$defaults  = array(
 			'show-id'   => false,
 			'post-type' => false,
@@ -2248,7 +2248,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_post_formatted_name' ) ) {
 						$buyer = ucwords( $user->display_name );
 					}
 
-					$order_number = apply_filters( 'yith_plugin_fw_order_number', '#' . $order->get_id(), $order->get_id() );
+					$order_number = apply_filters( 'flance_plugin_fw_order_number', '#' . $order->get_id(), $order->get_id() );
 					$name         = sprintf(
 						'%s %s - %s',
 						$order_number,
@@ -2270,7 +2270,7 @@ if ( ! function_exists( 'yith_plugin_fw_get_post_formatted_name' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_add_kses_global_attributes' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_add_kses_global_attributes' ) ) {
 
 	/**
 	 * Add global attributes to a tag in the allowed HTML list.
@@ -2280,7 +2280,7 @@ if ( ! function_exists( 'yith_plugin_fw_add_kses_global_attributes' ) ) {
 	 * @return array The array of attributes with global attributes added.
 	 * @since  3.8.0
 	 */
-	function yith_plugin_fw_add_kses_global_attributes( $attributes ) {
+	function flance_plugin_fw_add_kses_global_attributes( $attributes ) {
 		$global_attributes = array(
 			'aria-describedby' => true,
 			'aria-details'     => true,
@@ -2307,7 +2307,7 @@ if ( ! function_exists( 'yith_plugin_fw_add_kses_global_attributes' ) ) {
 	}
 }
 
-if ( ! function_exists( 'yith_plugin_fw_kses_allowed_svg_tags' ) ) {
+if ( ! function_exists( 'flance_plugin_fw_kses_allowed_svg_tags' ) ) {
 
 	/**
 	 * Return the list of allowed HTML tag for SVGs.
@@ -2315,7 +2315,7 @@ if ( ! function_exists( 'yith_plugin_fw_kses_allowed_svg_tags' ) ) {
 	 * @return array
 	 * @since  4.0.0
 	 */
-	function yith_plugin_fw_kses_allowed_svg_tags() {
+	function flance_plugin_fw_kses_allowed_svg_tags() {
 		return array(
 			'svg'      => array(
 				'class'        => true,

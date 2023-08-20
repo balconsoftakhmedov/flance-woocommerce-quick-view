@@ -8,12 +8,12 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $component_id, $class, $icon, $icon_class, $icon_url, $message, $cta, $attributes, $data ) = yith_plugin_fw_extract( $component, 'id', 'class', 'icon', 'icon_class', 'icon_url', 'message', 'cta', 'attributes', 'data' );
+list ( $component_id, $class, $icon, $icon_class, $icon_url, $message, $cta, $attributes, $data ) = flance_plugin_fw_extract( $component, 'id', 'class', 'icon', 'icon_class', 'icon_url', 'message', 'cta', 'attributes', 'data' );
 ?>
 <div id="<?php echo esc_attr( $component_id ); ?>"
 		class="yith-plugin-fw__list-table-blank-state <?php echo esc_attr( $class ); ?>"
-	<?php echo yith_plugin_fw_html_attributes_to_string( $attributes ); ?>
-	<?php echo yith_plugin_fw_html_data_to_string( $data ); ?>
+	<?php echo flance_plugin_fw_html_attributes_to_string( $attributes ); ?>
+	<?php echo flance_plugin_fw_html_data_to_string( $data ); ?>
 >
 	<?php if ( $icon ) : ?>
 		<i class="yith-plugin-fw__list-table-blank-state__icon yith-icon yith-icon-<?php echo esc_attr( $icon ); ?>"></i>

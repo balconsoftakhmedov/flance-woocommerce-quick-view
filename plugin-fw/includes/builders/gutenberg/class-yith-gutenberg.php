@@ -60,8 +60,8 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 			add_action( 'init', array( $this, 'init' ) );
 			add_action( 'init', array( $this, 'register_blocks' ), 30 );
 			add_action( 'init', array( $this, 'handle_iframe_preview' ), 99 );
-			add_action( 'wp_ajax_yith_plugin_fw_gutenberg_do_shortcode', array( $this, 'do_shortcode' ) );
-			add_action( 'wc_ajax_yith_plugin_fw_gutenberg_do_shortcode', array( $this, 'do_shortcode' ) );
+			add_action( 'wp_ajax_flance_plugin_fw_gutenberg_do_shortcode', array( $this, 'do_shortcode' ) );
+			add_action( 'wc_ajax_flance_plugin_fw_gutenberg_do_shortcode', array( $this, 'do_shortcode' ) );
 		}
 
 		/**
@@ -75,7 +75,7 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 		 * Enqueue scripts for gutenberg
 		 */
 		public function register_block_editor_assets() {
-			$ajax_url   = function_exists( 'WC' ) ? add_query_arg( 'wc-ajax', 'yith_plugin_fw_gutenberg_do_shortcode', trailingslashit( site_url() ) ) : admin_url( 'admin-ajax.php' );
+			$ajax_url   = function_exists( 'WC' ) ? add_query_arg( 'wc-ajax', 'flance_plugin_fw_gutenberg_do_shortcode', trailingslashit( site_url() ) ) : admin_url( 'admin-ajax.php' );
 			$gutenberg  = array(
 				'ajaxurl'      => $ajax_url,
 				'ajaxNonce'    => wp_create_nonce( 'gutenberg-ajax-action' ),
@@ -94,13 +94,13 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 				true
 			);
 
-			wp_localize_script( 'yith-gutenberg', 'yith_gutenberg_ajax', $gutenberg ); // Deprecated! Kept for backward compatibility.
-			wp_localize_script( 'yith-gutenberg', 'yith_gutenberg', $this->blocks ); // Deprecated! Kept for backward compatibility.
+			wp_localize_script( 'yith-gutenberg', 'flance_gutenberg_ajax', $gutenberg ); // Deprecated! Kept for backward compatibility.
+			wp_localize_script( 'yith-gutenberg', 'flance_gutenberg', $this->blocks ); // Deprecated! Kept for backward compatibility.
 
 			wp_localize_script( 'yith-gutenberg', 'yithGutenberg', $gutenberg );
 			wp_localize_script( 'yith-gutenberg', 'yithGutenbergBlocks', $this->blocks );
 
-			wp_register_style( 'yith-gutenberg', $gutenberg_assets_url . '/style-index.css', array( 'yith-plugin-fw-icon-font' ), yith_plugin_fw_get_version() );
+			wp_register_style( 'yith-gutenberg', $gutenberg_assets_url . '/style-index.css', array( 'yith-plugin-fw-icon-font' ), flance_plugin_fw_get_version() );
 		}
 
 		/**
@@ -290,15 +290,15 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 				$current_action = current_action();
 				$shortcode      = ! empty( $_REQUEST['shortcode'] ) ? wp_unslash( $_REQUEST['shortcode'] ) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-				if ( ! apply_filters( 'yith_plugin_fw_gutenberg_skip_shortcode_sanitize', false ) ) {
+				if ( ! apply_filters( 'flance_plugin_fw_gutenberg_skip_shortcode_sanitize', false ) ) {
 					$shortcode = sanitize_text_field( stripslashes( $shortcode ) );
 				}
 
 				ob_start();
 
-				do_action( 'yith_plugin_fw_gutenberg_before_do_shortcode', $shortcode, $current_action );
-				echo do_shortcode( apply_filters( 'yith_plugin_fw_gutenberg_shortcode', $shortcode, $current_action ) );
-				do_action( 'yith_plugin_fw_gutenberg_after_do_shortcode', $shortcode, $current_action );
+				do_action( 'flance_plugin_fw_gutenberg_before_do_shortcode', $shortcode, $current_action );
+				echo do_shortcode( apply_filters( 'flance_plugin_fw_gutenberg_shortcode', $shortcode, $current_action ) );
+				do_action( 'flance_plugin_fw_gutenberg_after_do_shortcode', $shortcode, $current_action );
 
 				$html = ob_get_clean();
 

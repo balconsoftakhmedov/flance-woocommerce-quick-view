@@ -9,7 +9,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-list ( $wrapper_class ) = yith_plugin_fw_extract( $nav_args, 'wrapper_class' );
+list ( $wrapper_class ) = flance_plugin_fw_extract( $nav_args, 'wrapper_class' );
 ?>
 <div class="yith-plugin-fw__panel__menu__wrapper <?php echo esc_attr( $wrapper_class ); ?>">
 	<div class="yith-plugin-fw__panel__menu">

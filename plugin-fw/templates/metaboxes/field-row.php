@@ -24,16 +24,16 @@ $display_field_only = isset( $field['display-field-only'] ) ? $field['display-fi
 $is_required        = ! empty( $field['required'] );
 
 $extra_row_classes = $is_required ? array( 'yith-plugin-fw--required' ) : array();
-$extra_row_classes = apply_filters( 'yith_plugin_fw_metabox_extra_row_classes', $extra_row_classes, $field );
+$extra_row_classes = apply_filters( 'flance_plugin_fw_metabox_extra_row_classes', $extra_row_classes, $field );
 $extra_row_classes = is_array( $extra_row_classes ) ? implode( ' ', $extra_row_classes ) : '';
 
 ?>
-<div id="<?php echo esc_attr( $field['id'] ); ?>-container" <?php echo yith_field_deps_data( $field ); ?> class="yith-plugin-fw-metabox-field-row <?php echo esc_attr( $extra_row_classes ); ?>">
+<div id="<?php echo esc_attr( $field['id'] ); ?>-container" <?php echo flance_field_deps_data( $field ); ?> class="yith-plugin-fw-metabox-field-row <?php echo esc_attr( $extra_row_classes ); ?>">
 	<?php if ( $display_field_only ) : ?>
-		<?php yith_plugin_fw_get_field( $field, true ); ?>
+		<?php flance_plugin_fw_get_field( $field, true ); ?>
 	<?php else : ?>
 		<label for="<?php echo esc_attr( $field['id'] ); ?>"><?php echo wp_kses_post( $field['title'] ); ?></label>
-		<?php yith_plugin_fw_get_field( $field, true ); ?>
+		<?php flance_plugin_fw_get_field( $field, true ); ?>
 		<div class="clear"></div>
 		<span class="description"><?php echo wp_kses_post( $field['desc'] ); ?></span>
 	<?php endif; ?>

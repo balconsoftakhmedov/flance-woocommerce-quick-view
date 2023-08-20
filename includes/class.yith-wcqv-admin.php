@@ -73,7 +73,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		 * @since 1.0.0
 		 * @var string
 		 */
-		protected $panel_page = 'yith_wcqv_panel';
+		protected $panel_page = 'flance_wcqv_panel';
 
 		/**
 		 * Returns single instance of the class
@@ -102,12 +102,12 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 
 			// Add action links.
 			add_filter( 'plugin_action_links_' . plugin_basename( FLANCE_WCQV_DIR . '/' . basename( FLANCE_WCQV_FILE ) ), array( $this, 'action_links' ) );
-			add_filter( 'yith_show_plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 5 );
+			add_filter( 'flance_show_plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 5 );
 
-			add_action( 'yith_quick_view_premium', array( $this, 'premium_tab' ) );
+			add_action( 'flance_quick_view_premium', array( $this, 'premium_tab' ) );
 
 			// FLANCE WCQV Loaded!
-			do_action( 'yith_wcqv_loaded' );
+			do_action( 'flance_wcqv_loaded' );
 
 		}
 
@@ -122,7 +122,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		 * @use      plugin_action_links_{$plugin_file_name}
 		 */
 		public function action_links( $links ) {
-			$links = yith_add_action_links( $links, $this->panel_page, false );
+			$links = flance_add_action_links( $links, $this->panel_page, false );
 			return $links;
 		}
 
@@ -152,11 +152,11 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 				'menu_title'       => 'Quick View',
 				'capability'       => 'manage_options',
 				'parent'           => '',
-				'parent_page'      => 'yith_plugin_panel',
+				'parent_page'      => 'flance_plugin_panel',
 				'page'             => $this->panel_page,
 				'admin-tabs'       => $admin_tabs,
 				'options-path'     => FLANCE_WCQV_DIR . '/plugin-options',
-				'class'            => yith_set_wrapper_class(),
+				'class'            => flance_set_wrapper_class(),
 				'plugin_slug'      => FLANCE_WCQV_SLUG,
 				'is_free'          => true,
 			);
@@ -220,7 +220,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		 * @return  string The premium landing link
 		 */
 		public function get_premium_landing_uri() {
-			return apply_filters( 'yith_plugin_fw_premium_landing_uri', $this->premium_landing, FLANCE_WCQV_SLUG );
+			return apply_filters( 'flance_plugin_fw_premium_landing_uri', $this->premium_landing, FLANCE_WCQV_SLUG );
 		}
 
 	}

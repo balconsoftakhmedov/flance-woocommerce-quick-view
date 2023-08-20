@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $value, $std, $rows, $cols, $custom_attributes, $data ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'std', 'rows', 'cols', 'custom_attributes', 'data' );
+list ( $field_id, $class, $name, $value, $std, $rows, $cols, $custom_attributes, $data ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'value', 'std', 'rows', 'cols', 'custom_attributes', 'data' );
 
 $class = isset( $class ) ? $class : 'yith-plugin-fw-textarea';
 $rows  = isset( $rows ) ? $rows : 5;
@@ -24,6 +24,6 @@ $cols  = isset( $cols ) ? $cols : 50;
 		data-std="<?php echo esc_attr( $std ); ?>"
 	<?php endif; ?>
 
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 ><?php echo esc_textarea( $value ); ?></textarea>

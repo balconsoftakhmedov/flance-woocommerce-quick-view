@@ -22,5 +22,5 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 	<?php echo( ! empty( $args['data-action'] ) ? 'data-action="' . esc_attr( $args['data-action'] ) . '"' : '' ); ?>
 		value="<?php echo esc_attr( $args['value'] ); ?>"
 		style="<?php echo esc_attr( $args['style'] ); ?>"
-	<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+	<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 />

@@ -8,11 +8,11 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $class, $name, $std, $value, $custom_attributes, $data, $desc_inline ) = yith_plugin_fw_extract( $field, 'id', 'class', 'name', 'std', 'value', 'custom_attributes', 'data', 'desc-inline' );
+list ( $field_id, $class, $name, $std, $value, $custom_attributes, $data, $desc_inline ) = flance_plugin_fw_extract( $field, 'id', 'class', 'name', 'std', 'value', 'custom_attributes', 'data', 'desc-inline' );
 
 ?>
 <div class="yith-plugin-fw-onoff-container <?php echo ! empty( $class ) ? esc_attr( $class ) : ''; ?>"
-	<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+	<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 >
 	<input type="checkbox" id="<?php echo esc_attr( $field_id ); ?>"
 			class="on_off"
@@ -21,8 +21,8 @@ list ( $field_id, $class, $name, $std, $value, $custom_attributes, $data, $desc_
 		<?php if ( isset( $std ) ) : ?>
 			data-std="<?php echo esc_attr( $std ); ?>"
 		<?php endif; ?>
-		<?php checked( true, yith_plugin_fw_is_true( $value ) ); ?>
-		<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+		<?php checked( true, flance_plugin_fw_is_true( $value ) ); ?>
+		<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 	/>
 	<span class="yith-plugin-fw-onoff">
 		<span class="yith-plugin-fw-onoff__handle">

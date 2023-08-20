@@ -10,12 +10,12 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 ?>
 <div class="wp-suggested-text">
-	<?php do_action( 'yith_plugin_fw_privacy_guide_content_before' ); ?>
+	<?php do_action( 'flance_plugin_fw_privacy_guide_content_before' ); ?>
 
 	<?php
 	foreach ( $sections as $key => $section ) {
-		$privacy_action = "yith_plugin_fw_privacy_guide_content_{$key}";
-		$content        = apply_filters( 'yith_plugin_fw_privacy_guide_content', '', $key );
+		$privacy_action = "flance_plugin_fw_privacy_guide_content_{$key}";
+		$content        = apply_filters( 'flance_plugin_fw_privacy_guide_content', '', $key );
 
 		if ( has_action( $privacy_action ) || ! empty( $section['tutorial'] ) || ! empty( $section['description'] ) || $content ) {
 			if ( ! empty( $section['title'] ) ) {
@@ -39,5 +39,5 @@ defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 	}
 	?>
 
-	<?php do_action( 'yith_plugin_fw_privacy_guide_content_after' ); ?>
+	<?php do_action( 'flance_plugin_fw_privacy_guide_content_after' ); ?>
 </div>

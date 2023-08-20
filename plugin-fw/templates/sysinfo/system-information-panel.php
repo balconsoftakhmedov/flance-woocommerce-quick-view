@@ -19,7 +19,7 @@ $tab_path    = defined( 'YIT_CORE_PLUGIN_PATH' ) ? YIT_CORE_PLUGIN_PATH : get_te
 ?>
 <div id="yith-sysinfo" class="wrap yith-system-info yith-plugin-ui">
 	<h2 class="yith-sysinfo-title">
-		<span class="yith-logo"><img src="<?php echo esc_url( yith_plugin_fw_get_default_logo() ); ?>"/></span> <?php esc_html_e( 'FLANCE System Information', 'yith-plugin-fw' ); ?>
+		<span class="yith-logo"><img src="<?php echo esc_url( flance_plugin_fw_get_default_logo() ); ?>"/></span> <?php esc_html_e( 'FLANCE System Information', 'yith-plugin-fw' ); ?>
 	</h2>
 
 	<h2 class="nav-tab-wrapper">

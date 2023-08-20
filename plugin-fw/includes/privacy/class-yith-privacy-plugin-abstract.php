@@ -36,7 +36,7 @@ if ( ! class_exists( 'FLANCE_Privacy_Plugin_Abstract' ) ) {
 		 * Let's initialize the privacy.
 		 */
 		protected function init() {
-			add_filter( 'yith_plugin_fw_privacy_guide_content', array( $this, 'add_message_in_section' ), 10, 2 );
+			add_filter( 'flance_plugin_fw_privacy_guide_content', array( $this, 'add_message_in_section' ), 10, 2 );
 		}
 
 		/**

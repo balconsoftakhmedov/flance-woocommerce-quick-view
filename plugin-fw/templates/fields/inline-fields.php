@@ -8,17 +8,17 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-list ( $field_id, $name, $class, $fields, $value, $data, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'name', 'class', 'fields', 'value', 'data', 'custom_attributes' );
+list ( $field_id, $name, $class, $fields, $value, $data, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'name', 'class', 'fields', 'value', 'data', 'custom_attributes' );
 
 $class         = ! ! $class ? $class : '';
 $value         = maybe_unserialize( $value );
-$allowed_types = apply_filters( 'yith_plugin_fw_inline_fields_allowed_types', array( 'select', 'select-buttons', 'number', 'text', 'slider', 'hidden', 'html', 'datepicker' ), $name, $field );
+$allowed_types = apply_filters( 'flance_plugin_fw_inline_fields_allowed_types', array( 'select', 'select-buttons', 'number', 'text', 'slider', 'hidden', 'html', 'datepicker' ), $name, $field );
 $default_args  = array( 'type' => 'select' );
 ?>
 <?php if ( ! empty( $fields ) && is_array( $fields ) ) : ?>
 	<div id="<?php echo esc_attr( $field_id ); ?>" class="<?php echo esc_attr( $class ); ?> yith-inline-fields"
-		<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
-		<?php yith_plugin_fw_html_data_to_string( $data, true ); ?>
+		<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+		<?php flance_plugin_fw_html_data_to_string( $data, true ); ?>
 	>
 		<?php foreach ( $fields as $key => $inline_field ) : ?>
 			<?php
@@ -49,7 +49,7 @@ $default_args  = array( 'type' => 'select' );
 				<?php if ( isset( $inline_field['label'] ) && '' !== $inline_field['label'] ) : ?>
 					<label for="<?php echo esc_attr( $inline_field['id'] ); ?>"><?php echo esc_html( $inline_field['label'] ); ?></label>
 				<?php endif; ?>
-				<?php yith_plugin_fw_get_field( $inline_field, true ); ?>
+				<?php flance_plugin_fw_get_field( $inline_field, true ); ?>
 			</div>
 		<?php endforeach; ?>
 	</div>

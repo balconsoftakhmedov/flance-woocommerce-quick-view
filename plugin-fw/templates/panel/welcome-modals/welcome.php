@@ -47,7 +47,7 @@ $items       = $modal['items'] ?? array();
 		</div>
 	</div>
 	<?php
-	yith_plugin_fw_get_component(
+	flance_plugin_fw_get_component(
 		array(
 			'type'    => 'list-items',
 			'variant' => 'steps',

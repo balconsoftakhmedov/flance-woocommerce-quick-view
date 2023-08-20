@@ -41,4 +41,4 @@ $default_args     = array(
 
 $field = wp_parse_args( $field, $default_args );
 
-yith_plugin_fw_get_field( $field, true );
+flance_plugin_fw_get_field( $field, true );

@@ -27,7 +27,7 @@ $defaults = array(
 );
 $field    = wp_parse_args( $field, $defaults );
 
-list ( $field_id, $class, $wrapper_class, $label, $name, $data, $value, $add_button, $elements, $the_title, $subtitle, $onoff_field, $sortable, $save_button, $delete_button, $custom_attributes ) = yith_plugin_fw_extract( $field, 'id', 'class', 'wrapper_class', 'label', 'name', 'data', 'value', 'add_button', 'elements', 'title', 'subtitle', 'onoff_field', 'sortable', 'save_button', 'delete_button', 'custom_attributes' );
+list ( $field_id, $class, $wrapper_class, $label, $name, $data, $value, $add_button, $elements, $the_title, $subtitle, $onoff_field, $sortable, $save_button, $delete_button, $custom_attributes ) = flance_plugin_fw_extract( $field, 'id', 'class', 'wrapper_class', 'label', 'name', 'data', 'value', 'add_button', 'elements', 'title', 'subtitle', 'onoff_field', 'sortable', 'save_button', 'delete_button', 'custom_attributes' );
 $show_add_button   = isset( $add_button ) && $add_button;
 $add_button_closed = $add_button_closed ?? '';
 $values            = $value ?? get_option( $name, array() );
@@ -55,7 +55,7 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 
 ?>
 <div class="yith-toggle_wrapper <?php echo esc_attr( $wrapper_class ); ?>" id="<?php echo esc_attr( $field_id ); ?>"
-	data-nonce="<?php echo esc_attr( $ajax_nonce ); ?>" <?php yith_plugin_fw_html_data_to_string( $data, true ); ?> >
+	data-nonce="<?php echo esc_attr( $ajax_nonce ); ?>" <?php flance_plugin_fw_html_data_to_string( $data, true ); ?> >
 	<?php if ( ! empty( $label ) ) : ?>
 		<label for="<?php esc_attr( $field_id ); ?>"><?php echo esc_html( $label ); ?></label>
 	<?php endif; ?>
@@ -89,12 +89,12 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 				}
 				?>
 				<div
-					class="yith-add-box-row yith-toggle-content-row <?php echo esc_attr( $class_element ); ?> <?php echo '{{{data.index}}}'; ?>" <?php echo yith_field_deps_data( $element ); ?>>
+					class="yith-add-box-row yith-toggle-content-row <?php echo esc_attr( $class_element ); ?> <?php echo '{{{data.index}}}'; ?>" <?php echo flance_field_deps_data( $element ); ?>>
 
 					<label
 						for="<?php echo esc_attr( $element['id'] ); ?>"><?php echo esc_html( $element['title'] ); ?></label>
 					<div class="yith-plugin-fw-option-with-description">
-						<?php yith_plugin_fw_get_field( $element, true ); ?>
+						<?php flance_plugin_fw_get_field( $element, true ); ?>
 						<span
 							class="description"><?php echo ! empty( $element['desc'] ) ? wp_kses_post( $element['desc'] ) : ''; ?></span>
 					</div>
@@ -115,15 +115,15 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 		<?php if ( $values ) : ?>
 			<?php foreach ( $values as $i => $value ) : ?>
 				<?php
-				$title_element    = yith_format_toggle_title( $the_title, $value );
-				$title_element    = apply_filters( 'yith_plugin_fw_toggle_element_title_' . $field_id, $title_element, $elements, $value );
-				$subtitle_element = yith_format_toggle_title( $subtitle, $value );
-				$subtitle_element = apply_filters( 'yith_plugin_fw_toggle_element_subtitle_' . $field_id, $subtitle_element, $elements, $value );
+				$title_element    = flance_format_toggle_title( $the_title, $value );
+				$title_element    = apply_filters( 'flance_plugin_fw_toggle_element_title_' . $field_id, $title_element, $elements, $value );
+				$subtitle_element = flance_format_toggle_title( $subtitle, $value );
+				$subtitle_element = apply_filters( 'flance_plugin_fw_toggle_element_subtitle_' . $field_id, $subtitle_element, $elements, $value );
 				?>
 				<div id="<?php echo esc_attr( $field_id ); ?>_<?php echo esc_attr( $i ); ?>"
 					class="yith-toggle-row <?php echo ! empty( $subtitle ) ? 'with-subtitle' : ''; ?> <?php echo esc_attr( $class ); ?>"
 					data-item_key="<?php echo esc_attr( $i ); ?>"
-					<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+					<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 				>
 					<div class="yith-toggle-title">
 						<h3>
@@ -149,7 +149,7 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 									data-ajax_action="<?php echo esc_attr( $onoff_field['ajax_action'] ); ?>"
 								<?php endif ?>
 							>
-								<?php yith_plugin_fw_get_field( $onoff_field, true ); ?>
+								<?php flance_plugin_fw_get_field( $onoff_field, true ); ?>
 							</span>
 
 							<?php if ( $sortable ) : ?>
@@ -181,11 +181,11 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 								}
 								?>
 								<div
-									class="yith-toggle-content-row <?php echo esc_attr( $element['class_row'] . ' ' . $element['type'] ); ?>" <?php echo yith_field_deps_data( $element ); ?>>
+									class="yith-toggle-content-row <?php echo esc_attr( $element['class_row'] . ' ' . $element['type'] ); ?>" <?php echo flance_field_deps_data( $element ); ?>>
 									<label
 										for="<?php echo esc_attr( $element['id'] ); ?>"><?php echo esc_html( $element['title'] ); ?></label>
 									<div class="yith-plugin-fw-option-with-description">
-										<?php yith_plugin_fw_get_field( $element, true ); ?>
+										<?php flance_plugin_fw_get_field( $element, true ); ?>
 										<span
 											class="description"><?php echo ! empty( $element['desc'] ) ? wp_kses_post( $element['desc'] ) : ''; ?></span>
 									</div>
@@ -225,7 +225,7 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 		<div id="<?php echo esc_attr( $field_id ); ?>_{{{data.index}}}"
 			class="yith-toggle-row highlight <?php echo ! empty( $subtitle ) ? 'with-subtitle' : ''; ?> <?php echo esc_attr( $class ); ?>"
 			data-item_key="{{{data.index}}}"
-			<?php yith_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
+			<?php flance_plugin_fw_html_attributes_to_string( $custom_attributes, true ); ?>
 		>
 			<div class="yith-toggle-title">
 				<h3>
@@ -248,7 +248,7 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 							data-ajax_action="<?php echo esc_attr( $onoff_field['ajax_action'] ); ?>"
 						<?php endif ?>
 					>
-						<?php yith_plugin_fw_get_field( $onoff_field, true ); ?>
+						<?php flance_plugin_fw_get_field( $onoff_field, true ); ?>
 					</span>
 				<?php endif; ?>
 				<?php if ( $sortable ) : ?>
@@ -279,11 +279,11 @@ if ( empty( $values ) && ! $show_add_button && $elements ) {
 
 						?>
 						<div
-							class="yith-toggle-content-row <?php echo esc_attr( $class_element . ' ' . $element['type'] ); ?>" <?php echo yith_field_deps_data( $element ); ?>>
+							class="yith-toggle-content-row <?php echo esc_attr( $class_element . ' ' . $element['type'] ); ?>" <?php echo flance_field_deps_data( $element ); ?>>
 							<label
 								for="<?php echo esc_attr( $element['id'] ); ?>"><?php echo esc_html( $element['title'] ); ?></label>
 							<div class="yith-plugin-fw-option-with-description">
-								<?php yith_plugin_fw_get_field( $element, true ); ?>
+								<?php flance_plugin_fw_get_field( $element, true ); ?>
 								<span
 									class="description"><?php echo ! empty( $element['desc'] ) ? wp_kses_post( $element['desc'] ) : ''; ?></span>
 							</div>
