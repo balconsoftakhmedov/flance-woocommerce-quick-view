@@ -6,7 +6,7 @@ if ( ! function_exists( 'flance_woocommerce_template_single_add_to_cart' ) ) {
 	 */
 	function flance_woocommerce_template_single_add_to_cart() {
 		global $product;
-		echo 'woocommerce_' . $product->get_type() . '_add_to_cart';
+
 		do_action( 'flance_woocommerce_' . $product->get_type() . '_add_to_cart' );
 	}
 }
