@@ -40,6 +40,7 @@ require_once 'includes/class-yith-system-status.php';
 require_once 'includes/class-yith-post-type-admin.php';
 require_once 'includes/class-yith-bh-onboarding.php';
 require_once 'flance-helpers.php';
+require_once 'flance-classes.php';
 // Gutenberg Support.
 if ( class_exists( 'WP_Block_Type_Registry' ) ) {
 	require_once 'includes/builders/gutenberg/class-yith-gutenberg.php';

@@ -76,6 +76,7 @@ jQuery(document).ready(function ($) {
 				is_blocked = false;
 
 			if (!t.prop('checked')) {
+				t.attr('data-json', '[]');
 				return;
 			}
 			t.closest('.wpc-inner-addon-container').addClass('stm-loading');
@@ -114,11 +115,20 @@ jQuery(document).ready(function ($) {
 			let product_id = $(this).data('product_id');
 			// Create an object to store the collected input values
 			var collectedValues = [];
-
+			var jsonData = [];
 			selectedInputs.each(function () {
 				var input = $(this);
 				var price = input.data('price');
+				let value = input.val();
+				let inputName = input.attr('name');
 				collectedValues.push(price);
+				var inputJsonData = {
+					field_name: inputName,
+					field_value: value,
+					field_price: price
+				};
+
+				jsonData.push(inputJsonData);
 			});
 
 
@@ -131,9 +141,16 @@ jQuery(document).ready(function ($) {
 				}
 			});
 
-            $('body .wpc-addon-field[data-product_id="' + product_id + '"]').trigger('change');
+
+
+			var jsonString = JSON.stringify(jsonData);
+			let set_el = $('body').find('.wpc-addon-field[data-product_id="' + product_id + '"]');
+
+			set_el.attr('data-json', jsonString);
+
+			set_el.trigger('change');
 			console.log('Added Values:', addedValues);
-			 close_qv();
+			close_qv();
 
 		});
 	};
