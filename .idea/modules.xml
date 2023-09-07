@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/flance-woocommerce-quick-view.iml" filepath="$PROJECT_DIR$/.idea/flance-woocommerce-quick-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wp-cafe/.idea/wp-cafe.iml" filepath="$PROJECT_DIR$/../wp-cafe/.idea/wp-cafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wpcafe-pro/.idea/wpcafe-pro.iml" filepath="$PROJECT_DIR$/../wpcafe-pro/.idea/wpcafe-pro.iml" />
+    </modules>
+  </component>
+</project>

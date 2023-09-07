@@ -3,7 +3,7 @@
  * Plugin Name: Flance WooCommerce Quick View for advanced options
  * Plugin URI: https://flance.info
  * Description:
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: flance
  * Author URI: https://flance.info/
  * Text Domain: flance-woocommerce-quick-view
@@ -13,7 +13,7 @@
  *
  * @author  flance
  * @package Flance WooCommerce Quick View
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 
@@ -156,3 +156,6 @@ if( ! function_exists( 'flance_wcqv_declare_hpos_compatibility' ) ){
 		}
 	}
 }
+
+
+require_once 'plugin-fw/product-addons_helpers.php';
