@@ -2,8 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/plugin-fw/product-addons-advanced" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/plugin-fw/wp-cafe-pro/core/modules/product-addons-advanced" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/plugin-fw/product-addons-advanced" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/product-addons-advanced" vcs="Git" />
   </component>
 </project>
