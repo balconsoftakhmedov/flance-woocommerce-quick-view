@@ -3,7 +3,7 @@
  * Admin class
  *
  * @author  FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Woocommerce Product Child Options
  * @version 1.1.1
  */
 
@@ -68,7 +68,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 		protected $premium_landing = 'https://flance.info/';
 
 		/**
-		 * Quick View panel page
+		 * Woocommerce Product Child Options panel page
 		 *
 		 * @since 1.0.0
 		 * @var string
@@ -148,8 +148,8 @@ if ( ! class_exists( 'FLANCE_WCQV_Admin' ) ) {
 			$args = array(
 				'create_menu_page' => true,
 				'parent_slug'      => '',
-				'page_title'       => 'FLANCE WooCommerce Quick View',
-				'menu_title'       => 'Quick View',
+				'page_title'       => 'FLANCE WooCommerce Woocommerce Product Child Options',
+				'menu_title'       => 'Woocommerce Product Child Options',
 				'capability'       => 'manage_options',
 				'parent'           => '',
 				'parent_page'      => 'flance_plugin_panel',

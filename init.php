@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Flance WooCommerce Quick View for advanced options
+ * Plugin Name: Flance WooCommerce Woocommerce Product Child Options for advanced options
  * Plugin URI: https://flance.info
  * Description:
  * Version: 1.1.0
@@ -12,7 +12,7 @@
  * WC tested up to: 8.0
  *
  * @author  flance
- * @package Flance WooCommerce Quick View
+ * @package Flance WooCommerce Woocommerce Product Child Options
  * @version 1.1.0
  */
 
@@ -32,7 +32,7 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 function flance_wcqv_install_woocommerce_admin_notice() {
 	?>
 	<div class="error">
-		<p><?php esc_html_e( 'FLANCE WooCommerce Quick View is enabled but not effective. It requires WooCommerce in order to work.', 'flance-woocommerce-quick-view' ); ?></p>
+		<p><?php esc_html_e( 'FLANCE WooCommerce Woocommerce Product Child Options is enabled but not effective. It requires WooCommerce in order to work.', 'flance-woocommerce-quick-view' ); ?></p>
 	</div>
 	<?php
 }
@@ -46,7 +46,7 @@ function flance_wcqv_install_woocommerce_admin_notice() {
 function flance_wcqv_install_free_admin_notice() {
 	?>
 	<div class="error">
-		<p><?php esc_html_e( 'You can\'t activate the free version of FLANCE WooCommerce Quick View while you are using the premium one.', 'flance-woocommerce-quick-view' ); ?></p>
+		<p><?php esc_html_e( 'You can\'t activate the free version of FLANCE WooCommerce Woocommerce Product Child Options while you are using the premium one.', 'flance-woocommerce-quick-view' ); ?></p>
 	</div>
 	<?php
 }

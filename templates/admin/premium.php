@@ -3,7 +3,7 @@
  * Quick view bone.
  *
  * @author  FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Woocommerce Product Child Options
  * @version 1.0.0
  */
 
@@ -254,7 +254,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 						<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Quick View%2$s to benefit from all features!', 'flance-woocommerce-quick-view' ), '<span class="highlight">', '</span>' );
+						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Woocommerce Product Child Options%2$s to benefit from all features!', 'flance-woocommerce-quick-view' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
 					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"
@@ -281,7 +281,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Choose between the button or a custom icon to access the %1$sQuick View%2$s: you can choose to place it after the "Add To Cart" button or inside the thumbnail of the product.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
+						echo sprintf( esc_html__( 'Choose between the button or a custom icon to access the %1$sWoocommerce Product Child Options%2$s: you can choose to place it after the "Add To Cart" button or inside the thumbnail of the product.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
 					?>
 					</p>
 				</div>
@@ -299,7 +299,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'The navigation in the "Quick View" allows browsing among %1$sproducts%2$s displayed in it. The navigation arrows show on mousehover the image of the next/previous product.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
+						echo sprintf( esc_html__( 'The navigation in the "Woocommerce Product Child Options" allows browsing among %1$sproducts%2$s displayed in it. The navigation arrows show on mousehover the image of the next/previous product.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
 					?>
 					</p>
 				</div>
@@ -324,7 +324,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'The display of the product information in the "Quick View" are managed by %1$sadministrators%2$s who can decide whether to show everything or only a part of it.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
+						echo sprintf( esc_html__( 'The display of the product information in the "Woocommerce Product Child Options" are managed by %1$sadministrators%2$s who can decide whether to show everything or only a part of it.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
 					?>
 					</p>
 				</div>
@@ -336,7 +336,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 				<div class="col-2">
 					<div class="section-title">
 						<img src="<?php echo esc_url( FLANCE_WCQV_ASSETS_URL ); ?>/image/07-icon.png" alt="icon 04"/>
-						<h2><?php esc_html_e( 'Quick View Type', 'flance-woocommerce-quick-view' ); ?> </h2>
+						<h2><?php esc_html_e( 'Woocommerce Product Child Options Type', 'flance-woocommerce-quick-view' ); ?> </h2>
 					</div>
 					<p>
 					<?php
@@ -406,7 +406,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( '%1$sQuick View is also social-friendly!%2$s Activating this option, you will be able to share the Quick View on Facebook, Twitter, Pinterest, Google+, or sending an email.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
+						echo sprintf( esc_html__( '%1$sWoocommerce Product Child Options is also social-friendly!%2$s Activating this option, you will be able to share the Woocommerce Product Child Options on Facebook, Twitter, Pinterest, Google+, or sending an email.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
 					?>
 					</p>
 				</div>
@@ -423,7 +423,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 					<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'A rich option panel to change the colors of the %1$s"Quick View"%2$s button and of everything that is within the modal window generated.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
+						echo sprintf( esc_html__( 'A rich option panel to change the colors of the %1$s"Woocommerce Product Child Options"%2$s button and of everything that is within the modal window generated.', 'flance-woocommerce-quick-view' ), '<b>', '</b>' );
 					?>
 					</p>
 				</div>
@@ -479,7 +479,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 					<p>
 						<?php
 						// translators: placeholders are used to add html tags.
-						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Quick View%2$s to benefit from all features!', 'ywqa' ), '<span class="highlight">', '</span>' );
+						echo sprintf( esc_html__( 'Upgrade to %1$spremium version%2$s of %1$sFLANCE WooCommerce Woocommerce Product Child Options%2$s to benefit from all features!', 'ywqa' ), '<span class="highlight">', '</span>' );
 						?>
 					</p>
 					<a href="<?php echo esc_url( FLANCE_WCQV_Admin()->get_premium_landing_uri() ); ?>" target="_blank"

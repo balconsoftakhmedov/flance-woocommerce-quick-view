@@ -3,7 +3,7 @@
  * Uninstall plugin
  *
  * @author FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Woocommerce Product Child Options
  * @version 1.0.0
  */
 

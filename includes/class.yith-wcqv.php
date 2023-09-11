@@ -3,7 +3,7 @@
  * Main class
  *
  * @author  FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Woocommerce Product Child Options
  * @version 1.0.0
  */
 
@@ -11,7 +11,7 @@ defined( 'FLANCE_WCQV' ) || exit; // Exit if accessed directly.
 
 if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 	/**
-	 * FLANCE WooCommerce Quick View
+	 * FLANCE WooCommerce Woocommerce Product Child Options
 	 *
 	 * @since 1.0.0
 	 */

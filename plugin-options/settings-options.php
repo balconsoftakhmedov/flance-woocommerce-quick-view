@@ -3,7 +3,7 @@
  * Settings tab array
  *
  * @author  FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Child Options
  * @version 1.1.1
  */
 
@@ -22,7 +22,7 @@ $settings = array(
 
 		'enable-quick-view'        => array(
 			'id'        => 'yith-wcqv-enable',
-			'name'      => __( 'Enable Quick View', 'flance-woocommerce-quick-view' ),
+			'name'      => __( 'Enable Child Options', 'flance-woocommerce-quick-view' ),
 			'type'      => 'yith-field',
 			'yith-type' => 'onoff',
 			'default'   => 'yes',
@@ -30,21 +30,13 @@ $settings = array(
 
 		'enable-quick-view-mobile' => array(
 			'id'        => 'yith-wcqv-enable-mobile',
-			'name'      => __( 'Enable Quick View on mobile', 'flance-woocommerce-quick-view' ),
-			'desc'      => __( 'Enable quick view features on mobile device too', 'flance-woocommerce-quick-view' ),
+			'name'      => __( 'Enable Child Options on mobile', 'flance-woocommerce-quick-view' ),
+			'desc'      => __( 'Enable Child Options features on mobile device too', 'flance-woocommerce-quick-view' ),
 			'type'      => 'yith-field',
 			'yith-type' => 'onoff',
 			'default'   => 'yes',
 		),
 
-		'quick-view-label'         => array(
-			'id'        => 'yith-wcqv-button-label',
-			'name'      => __( 'Quick View Button Label', 'flance-woocommerce-quick-view' ),
-			'desc'      => __( 'Label for the quick view button in the WooCommerce loop.', 'flance-woocommerce-quick-view' ),
-			'type'      => 'yith-field',
-			'yith-type' => 'text',
-			'default'   => __( 'Quick View', 'flance-woocommerce-quick-view' ),
-		),
 
 		'general-options-end'      => array(
 			'type' => 'sectionend',

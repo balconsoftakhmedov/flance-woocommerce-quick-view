@@ -110,49 +110,88 @@ jQuery(document).ready(function ($) {
 		};
 		$(document).off('click', '.single-button-save').on('click', '.single-button-save', function (e) {
 
-			var form = $(this).closest('form');
-			var  selectedInputs = form.find('input[type="radio"]:checked, input[type="checkbox"]:checked');
-			let product_id = $(this).data('product_id');
-			// Create an object to store the collected input values
-			var collectedValues = [];
-			var jsonData = [];
-			selectedInputs.each(function () {
-				var input = $(this);
-				var price = input.data('price');
-				let value = input.val();
-				let inputName = input.attr('name');
-				collectedValues.push(price);
-				var inputJsonData = {
-					field_name: inputName,
-					field_value: value,
-					field_price: price
-				};
 
-				jsonData.push(inputJsonData);
-			});
+				var proceed_cart_action = true;
 
+		$('.wpc-addons-container').find('.wpc-addon-required-block').each(function () {
+			var current_block = this;
+			var field_type    = $(current_block).data('field_type');
 
-			var addedValues = 0;
-			$.each(collectedValues, function (name, value) {
-				if (collectedValues.length > 0) {
-					addedValues += value;
+			if(field_type == 'dropdown') {
+				if ($(current_block).find('option:selected').val() == '') {
+					proceed_cart_action = false;
+					$(current_block).parent().addClass('wpc-addon-field-error');
 				} else {
-					addedValues = value;
+					$(current_block).parent().removeClass('wpc-addon-field-error');
 				}
-			});
+			} else if(field_type == 'text') {
+				if ($.trim($(current_block).find('input[type=text]').val()).length == 0) {
+					$(current_block).parent().addClass('wpc-addon-field-error');
+				} else {
+					$(current_block).parent().removeClass('wpc-addon-field-error');
+				}
+			} else {
+				if ($(current_block).find('input:checked').length == 0) {
+					proceed_cart_action = false;
+					$(current_block).parent().addClass('wpc-addon-field-error');
 
-
-
-			var jsonString = JSON.stringify(jsonData);
-			let set_el = $('body').find('.wpc-addon-field[data-product_id="' + product_id + '"]');
-
-			set_el.attr('data-json', jsonString);
-
-			set_el.trigger('change');
-			console.log('Added Values:', addedValues);
-			close_qv();
-
+					// add required attribute to each item
+					$(current_block).find('input').each(function () {
+						$(this).attr('required', true);
+					});
+				} else {
+					$(current_block).parent().removeClass('wpc-addon-field-error');
+					$(current_block).find('input').each(function () {
+						$(this).attr('required', false);
+					});
+				}
+			}
 		});
+
+			if (proceed_cart_action) {
+				var form = $(this).closest('form');
+				var selectedInputs = form.find('input[type="radio"]:checked, input[type="checkbox"]:checked');
+				let product_id = $(this).data('product_id');
+				// Create an object to store the collected input values
+				var collectedValues = [];
+				var jsonData = [];
+				selectedInputs.each(function () {
+					var input = $(this);
+					var price = input.data('price');
+					let value = input.val();
+					let inputName = input.attr('name');
+					collectedValues.push(price);
+					var inputJsonData = {
+						field_name: inputName,
+						field_value: value,
+						field_price: price
+					};
+
+					jsonData.push(inputJsonData);
+				});
+
+
+				var addedValues = 0;
+				$.each(collectedValues, function (name, value) {
+					if (collectedValues.length > 0) {
+						addedValues += value;
+					} else {
+						addedValues = value;
+					}
+				});
+
+
+				var jsonString = JSON.stringify(jsonData);
+				let set_el = $('body').find('.wpc-addon-field[data-product_id="' + product_id + '"]');
+
+				set_el.attr('data-json', jsonString);
+
+				set_el.trigger('change');
+				console.log('Added Values:', addedValues);
+				close_qv();
+			}
+		});
+
 	};
 
 	/*================

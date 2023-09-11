@@ -3,7 +3,7 @@
  * Frontend class
  *
  * @author  FLANCE <plugins@yithemes.com>
- * @package FLANCE WooCommerce Quick View
+ * @package FLANCE WooCommerce Woocommerce Product Child Options
  * @version 1.1.1
  */
 
@@ -90,7 +90,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '';
 
-			wp_register_script( 'yith-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), $this->version, true );
+			wp_register_script( 'yith-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), time(), true );
 			wp_enqueue_script( 'yith-wcqv-frontend' );
 			wp_enqueue_style( 'yith-quick-view', FLANCE_WCQV_ASSETS_URL . '/css/yith-quick-view.css', array(), $this->version );
 
@@ -360,7 +360,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 		}
 
 		/**
-		 * Get Quick View button label
+		 * Get Woocommerce Product Child Options button label
 		 *
 		 * @since  1.2.0
 		 * @return string
@@ -373,7 +373,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 		}
 
 		/**
-		 * Quick View shortcode button
+		 * Woocommerce Product Child Options shortcode button
 		 *
 		 * @access public
 		 * @since  1.0.7
