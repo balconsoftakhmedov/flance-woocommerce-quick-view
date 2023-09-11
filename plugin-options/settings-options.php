@@ -13,36 +13,6 @@ $settings = array(
 
 	'settings' => array(
 
-		'general-options'          => array(
-			'title' => __( 'General Options', 'flance-woocommerce-quick-view' ),
-			'type'  => 'title',
-			'desc'  => '',
-			'id'    => 'yith-wcqv-general-options',
-		),
-
-		'enable-quick-view'        => array(
-			'id'        => 'yith-wcqv-enable',
-			'name'      => __( 'Enable Child Options', 'flance-woocommerce-quick-view' ),
-			'type'      => 'yith-field',
-			'yith-type' => 'onoff',
-			'default'   => 'yes',
-		),
-
-		'enable-quick-view-mobile' => array(
-			'id'        => 'yith-wcqv-enable-mobile',
-			'name'      => __( 'Enable Child Options on mobile', 'flance-woocommerce-quick-view' ),
-			'desc'      => __( 'Enable Child Options features on mobile device too', 'flance-woocommerce-quick-view' ),
-			'type'      => 'yith-field',
-			'yith-type' => 'onoff',
-			'default'   => 'yes',
-		),
-
-
-		'general-options-end'      => array(
-			'type' => 'sectionend',
-			'id'   => 'yith-wcqv-general-options',
-		),
-
 		'style-options'            => array(
 			'title' => __( 'Style Options', 'flance-woocommerce-quick-view' ),
 			'desc'  => '',
