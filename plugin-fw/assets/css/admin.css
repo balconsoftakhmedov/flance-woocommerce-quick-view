@@ -98,6 +98,14 @@
 .wpc-pro-pao-fields.rec_product .wpc-pro-pao-option-price-type  {
     display: none;
 }
+.wpc-pro-pao-fields.rec_product
+.wpc_pro_pao_add_option{
+    display: none;
+}
+
+.woocommerce_options_panel .wpc-pro-pao-fields {
+    float: unset;
+}
 /*-----------------------
     FLANCE Plugins Columns
  ------------------------*/
