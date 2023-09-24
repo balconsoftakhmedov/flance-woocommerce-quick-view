@@ -83,6 +83,21 @@
 .select2-container--default .select2-selection--multiple {
   max-width: 300px;
 }
+
+.wpc-pro-pao-fields:not(.rec_product) .wpc-pro-pao-option-rec_product-type {
+    display: none;
+}
+
+.wpc-pro-pao-fields.rec_product .wpc-pro-pao-option-rec_product-type {
+    display: block;
+}
+.wpc-pro-pao-fields.rec_product .wpc-pro-pao-option-price  {
+    display: none;
+}
+
+.wpc-pro-pao-fields.rec_product .wpc-pro-pao-option-price-type  {
+    display: none;
+}
 /*-----------------------
     FLANCE Plugins Columns
  ------------------------*/
