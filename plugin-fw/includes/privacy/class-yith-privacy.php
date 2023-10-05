@@ -70,7 +70,7 @@ if ( ! class_exists( 'FLANCE_Privacy' ) ) {
 		 * @return string
 		 */
 		public function get_privacy_message() {
-			$privacy_content_path = YIT_CORE_PLUGIN_TEMPLATE_PATH . '/privacy/html-policy-content.php';
+			$privacy_content_path = FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/privacy/html-policy-content.php';
 			ob_start();
 			$sections = $this->get_sections();
 			if ( file_exists( $privacy_content_path ) ) {

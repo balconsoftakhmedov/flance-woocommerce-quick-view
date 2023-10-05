@@ -157,7 +157,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 			$this->render_panel_header();
 
 			extract( $additional_info ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
-			require YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-panel.php';
+			require FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-panel.php';
 		}
 
 		/**
@@ -181,7 +181,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 				$args['value'] = ( get_option( $args['id'] ) ) ? get_option( $args['id'] ) : $args['default'];
 				extract( $args ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 
-				include YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-upload.php';
+				include FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-upload.php';
 			}
 		}
 
@@ -851,7 +851,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel_WooCommerce' ) ) {
 				// Let's filter field data just before print.
 				$field = apply_filters( 'flance_plugin_fw_wc_panel_field_data', $field );
 
-				require YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-option-row.php';
+				require FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/woocommerce/woocommerce-option-row.php';
 			}
 		}
 

@@ -1141,7 +1141,7 @@ if ( ! class_exists( 'YIT_Icons' ) ) {
 		 * Enqueue Scripts
 		 */
 		public function enqueue_scripts() {
-			wp_register_style( 'font-awesome', YIT_CORE_PLUGIN_URL . '/assets/fonts/font-awesome/font-awesome.min.css', array(), $this->font_awesome_version );
+			wp_register_style( 'font-awesome', FLANCE_CORE_PLUGIN_URL . '/assets/fonts/font-awesome/font-awesome.min.css', array(), $this->font_awesome_version );
 
 			wp_add_inline_style( 'font-awesome', $this->get_inline_style( 'font-awesome' ) );
 

@@ -44,7 +44,7 @@ $hidden_val = get_option( $id . '-yith-attachment-id', 0 );
 				<?php
 				$file = $value;
 				if ( preg_match( '/(jpg|jpeg|png|gif|ico)$/', $file ) ) {
-					$file_url = YIT_CORE_PLUGIN_URL . 'assets/images/sleep.png';
+					$file_url = FLANCE_CORE_PLUGIN_URL . 'assets/images/sleep.png';
 					echo '<img src="' . esc_url( $file_url ) . '" data-src="' . esc_attr( $file ) . '" />';
 				}
 				?>

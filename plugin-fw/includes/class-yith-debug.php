@@ -115,7 +115,7 @@ if ( ! class_exists( 'FLANCE_Debug' ) ) {
 		 */
 		public function get_plugin_framework_info() {
 			$plugin_fw_version   = flance_plugin_fw_get_version();
-			$plugin_fw_loaded_by = basename( dirname( YIT_CORE_PLUGIN_PATH ) );
+			$plugin_fw_loaded_by = basename( dirname( FLANCE_CORE_PLUGIN_PATH ) );
 
 			return "$plugin_fw_version (by $plugin_fw_loaded_by)";
 		}

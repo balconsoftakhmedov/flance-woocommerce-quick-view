@@ -82,9 +82,9 @@ if ( ! class_exists( 'FLANCE_Gutenberg' ) ) {
 				'siteURL'      => get_site_url(),
 				'previewNonce' => wp_create_nonce( 'yith-plugin-fw-block-preview' ),
 			);
-			$asset_file = include YIT_CORE_PLUGIN_PATH . '/dist/gutenberg/index.asset.php';
+			$asset_file = include FLANCE_CORE_PLUGIN_PATH . '/dist/gutenberg/index.asset.php';
 
-			$gutenberg_assets_url = YIT_CORE_PLUGIN_URL . '/dist/gutenberg';
+			$gutenberg_assets_url = FLANCE_CORE_PLUGIN_URL . '/dist/gutenberg';
 
 			wp_register_script(
 				'yith-gutenberg',

@@ -71,7 +71,7 @@ if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 			wp_enqueue_script( 'yith-bh-onboarding' );
 			wp_enqueue_style( 'yith-bh-onboarding' );
 
-			include YIT_CORE_PLUGIN_TEMPLATE_PATH . '/bh-onboarding/onboarding-tabs.php';
+			include FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/bh-onboarding/onboarding-tabs.php';
 		}
 
 		/**

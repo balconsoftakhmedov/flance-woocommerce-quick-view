@@ -308,7 +308,7 @@ if ( ! class_exists( 'YIT_Metabox' ) ) {
 				do_action( "flance_plugin_fw_metabox_before_render_{$meta_box['id']}", $post, $meta_box );
 			}
 
-			yit_plugin_get_template( YIT_CORE_PLUGIN_PATH, 'metaboxes/tab.php', $args );
+			yit_plugin_get_template( FLANCE_CORE_PLUGIN_PATH, 'metaboxes/tab.php', $args );
 		}
 
 		/**

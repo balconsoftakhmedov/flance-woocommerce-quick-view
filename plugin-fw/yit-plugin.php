@@ -9,10 +9,10 @@
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 
-! defined( 'YIT_CORE_PLUGIN' ) && define( 'YIT_CORE_PLUGIN', true );
-! defined( 'YIT_CORE_PLUGIN_PATH' ) && define( 'YIT_CORE_PLUGIN_PATH', dirname( __FILE__ ) );
-! defined( 'YIT_CORE_PLUGIN_URL' ) && define( 'YIT_CORE_PLUGIN_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
-! defined( 'YIT_CORE_PLUGIN_TEMPLATE_PATH' ) && define( 'YIT_CORE_PLUGIN_TEMPLATE_PATH', YIT_CORE_PLUGIN_PATH . '/templates' );
+! defined( 'FLANCE_CORE_PLUGIN' ) && define( 'FLANCE_CORE_PLUGIN', true );
+! defined( 'FLANCE_CORE_PLUGIN_PATH' ) && define( 'FLANCE_CORE_PLUGIN_PATH', dirname( __FILE__ ) );
+! defined( 'FLANCE_CORE_PLUGIN_URL' ) && define( 'FLANCE_CORE_PLUGIN_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
+! defined( 'FLANCE_CORE_PLUGIN_TEMPLATE_PATH' ) && define( 'FLANCE_CORE_PLUGIN_TEMPLATE_PATH', FLANCE_CORE_PLUGIN_PATH . '/templates' );
 
 require_once 'yit-functions.php';
 require_once 'yit-woocommerce-compatibility.php';

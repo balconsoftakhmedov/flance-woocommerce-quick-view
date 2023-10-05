@@ -213,7 +213,7 @@ if ( $has_default_playlist ) {
 			<div class="row">
 				<?php if ( $options['doc_url'] ) : ?>
 					<div class="box-with-image">
-						<img src="<?php echo esc_url( YIT_CORE_PLUGIN_URL ); ?>/assets/images/help-tab/documentation.svg" alt="<?php echo esc_attr_x( 'Read the plugin documentation', 'Help tab documentation', 'yith-plugin-fw' ); ?>">
+						<img src="<?php echo esc_url( FLANCE_CORE_PLUGIN_URL ); ?>/assets/images/help-tab/documentation.svg" alt="<?php echo esc_attr_x( 'Read the plugin documentation', 'Help tab documentation', 'yith-plugin-fw' ); ?>">
 						<div class="box-content">
 							<h3><?php echo esc_html_x( 'Read the plugin documentation', 'Help tab documentation', 'yith-plugin-fw' ); ?></h3>
 							<p>
@@ -228,7 +228,7 @@ if ( $has_default_playlist ) {
 
 				<?php if ( $show_submit_ticket ) : ?>
 					<div class="box-with-image">
-						<img src="<?php echo esc_url( YIT_CORE_PLUGIN_URL ); ?>/assets/images/help-tab/support-desk.svg" alt="<?php echo esc_attr_x( 'Need some help?', 'Help tab support', 'yith-plugin-fw' ); ?>">
+						<img src="<?php echo esc_url( FLANCE_CORE_PLUGIN_URL ); ?>/assets/images/help-tab/support-desk.svg" alt="<?php echo esc_attr_x( 'Need some help?', 'Help tab support', 'yith-plugin-fw' ); ?>">
 						<div class="box-content">
 							<h3><?php echo esc_html_x( 'Need some help?', 'Help tab support', 'yith-plugin-fw' ); ?></h3>
 							<p>

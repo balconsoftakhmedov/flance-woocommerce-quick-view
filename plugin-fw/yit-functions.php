@@ -1163,7 +1163,7 @@ if ( ! function_exists( 'flance_plugin_fw_get_field_template_path' ) ) {
 			return false;
 		}
 
-		$field_template = YIT_CORE_PLUGIN_TEMPLATE_PATH . '/fields/' . sanitize_title( $field['type'] ) . '.php';
+		$field_template = FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/fields/' . sanitize_title( $field['type'] ) . '.php';
 
 		$field_template = apply_filters( 'flance_plugin_fw_get_field_template_path', $field_template, $field );
 
@@ -1284,7 +1284,7 @@ if ( ! function_exists( 'yit_add_select2_fields' ) ) {
 			$select2_template_name = 'select2-wc-2.6.php';
 		}
 
-		$template = YIT_CORE_PLUGIN_TEMPLATE_PATH . '/fields/resources/' . $select2_template_name;
+		$template = FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/fields/resources/' . $select2_template_name;
 		if ( file_exists( $template ) ) {
 			include $template;
 		}
@@ -1298,7 +1298,7 @@ if ( ! function_exists( 'flance_plugin_fw_get_version' ) ) {
 	 * @return string
 	 */
 	function flance_plugin_fw_get_version() {
-		$plugin_fw_data = get_file_data( trailingslashit( YIT_CORE_PLUGIN_PATH ) . 'init.php', array( 'Version' => 'Version' ) );
+		$plugin_fw_data = get_file_data( trailingslashit( FLANCE_CORE_PLUGIN_PATH ) . 'init.php', array( 'Version' => 'Version' ) );
 
 		return $plugin_fw_data['Version'];
 	}
@@ -1785,7 +1785,7 @@ if ( ! function_exists( 'flance_plugin_fw_include_fw_template' ) ) {
 	 * @since 3.7.0
 	 */
 	function flance_plugin_fw_include_fw_template( $template, $args = array() ) {
-		$_template_path = trailingslashit( YIT_CORE_PLUGIN_TEMPLATE_PATH ) . $template;
+		$_template_path = trailingslashit( FLANCE_CORE_PLUGIN_TEMPLATE_PATH ) . $template;
 
 		if ( file_exists( $_template_path ) ) {
 			extract( $args ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
