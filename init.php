@@ -98,10 +98,10 @@ if ( ! defined( 'FLANCE_WCQV_SLUG' ) ) {
 }
 
 /* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( FLANCE_WCQV_DIR . 'plugin-fw/init.php' ) ) {
+if ( ! function_exists( 'flance_maybe_plugin_fw_loader' ) && file_exists( FLANCE_WCQV_DIR . 'plugin-fw/init.php' ) ) {
 	require_once FLANCE_WCQV_DIR . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( FLANCE_WCQV_DIR );
+flance_maybe_plugin_fw_loader( FLANCE_WCQV_DIR );
 
 /**
  * Init.

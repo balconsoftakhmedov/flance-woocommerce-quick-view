@@ -1298,9 +1298,9 @@ if ( ! function_exists( 'flance_plugin_fw_get_version' ) ) {
 	 * @return string
 	 */
 	function flance_plugin_fw_get_version() {
-		$plugin_fw_data = get_file_data( trailingslashit( FLANCE_CORE_PLUGIN_PATH ) . 'init.php', array( 'Version' => 'Version' ) );
+		$flance_plugin_fw_data = get_file_data( trailingslashit( FLANCE_CORE_PLUGIN_PATH ) . 'init.php', array( 'Version' => 'Version' ) );
 
-		return $plugin_fw_data['Version'];
+		return $flance_plugin_fw_data['Version'];
 	}
 }
 

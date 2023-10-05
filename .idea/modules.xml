@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/flance-woocommerce-quick-view.iml" filepath="$PROJECT_DIR$/.idea/flance-woocommerce-quick-view.iml" />
       <module fileurl="file://$PROJECT_DIR$/../wp-cafe/.idea/wp-cafe.iml" filepath="$PROJECT_DIR$/../wp-cafe/.idea/wp-cafe.iml" />
       <module fileurl="file://$PROJECT_DIR$/../wpcafe-pro/.idea/wpcafe-pro.iml" filepath="$PROJECT_DIR$/../wpcafe-pro/.idea/wpcafe-pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../yith-woocommerce-ajax-navigation/.idea/yith-woocommerce-ajax-navigation.iml" filepath="$PROJECT_DIR$/../yith-woocommerce-ajax-navigation/.idea/yith-woocommerce-ajax-navigation.iml" />
     </modules>
   </component>
 </project>

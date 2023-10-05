@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="wp-cafe" />
     <orderEntry type="module" module-name="wpcafe-pro" />
+    <orderEntry type="module" module-name="yith-woocommerce-ajax-navigation" />
   </component>
 </module>

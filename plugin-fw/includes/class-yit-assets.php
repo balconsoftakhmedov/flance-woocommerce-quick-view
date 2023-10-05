@@ -2,20 +2,20 @@
 /**
  * FLANCE Assets Class. Assets Handler.
  *
- * @class      YIT_Assets
+ * @class      FLANCE_Assets
  * @package    FLANCE\PluginFramework\Classes
  * @since      3.0.0
  */
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! class_exists( 'YIT_Assets' ) ) {
+if ( ! class_exists( 'FLANCE_Assets' ) ) {
 	/**
-	 * YIT_Assets class.
+	 * FLANCE_Assets class.
 	 *
 	 * @author     FLANCE <plugins@yithemes.com>
 	 */
-	class YIT_Assets {
+	class FLANCE_Assets {
 		/**
 		 * The framework version
 		 *
@@ -26,21 +26,21 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 		/**
 		 * The single instance of the class.
 		 *
-		 * @var YIT_Assets
+		 * @var FLANCE_Assets
 		 */
 		private static $instance;
 
 		/**
 		 * Singleton implementation.
 		 *
-		 * @return YIT_Assets
+		 * @return FLANCE_Assets
 		 */
 		public static function instance() {
 			return ! is_null( self::$instance ) ? self::$instance : self::$instance = new self();
 		}
 
 		/**
-		 * YIT_Assets constructor.
+		 * FLANCE_Assets constructor.
 		 */
 		private function __construct() {
 			$this->version = flance_plugin_fw_get_version();
@@ -204,9 +204,9 @@ if ( ! class_exists( 'YIT_Assets' ) ) {
 				);
 			}
 
-			wp_enqueue_style( 'yith-plugin-fw-admin', FLANCE_CORE_PLUGIN_URL . '/assets/css/admin.css', array(), time() );
+			wp_enqueue_style( 'flance-plugin-fw-admin', FLANCE_CORE_PLUGIN_URL . '/assets/css/admin.css', array(), time() );
 		}
 	}
 }
 
-YIT_Assets::instance();
+FLANCE_Assets::instance();

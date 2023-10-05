@@ -13,14 +13,14 @@
 
 defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) ) {
+if ( ! function_exists( 'flance_maybe_plugin_fw_loader' ) ) {
 	/**
 	 * Load the framework if it's not yet loaded.
 	 *
 	 * @param string $plugin_path The plugin path.
 	 */
-	function yit_maybe_plugin_fw_loader( $plugin_path ) {
-		global $plugin_fw_data, $plugin_upgrade_fw_data;
+	function flance_maybe_plugin_fw_loader( $plugin_path ) {
+		global $flance_plugin_fw_data, $plugin_upgrade_fw_data;
 
 		$default_headers = array(
 			'Name'       => 'Framework Name',
@@ -32,16 +32,16 @@ if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) ) {
 
 		$plugin_path         = trailingslashit( $plugin_path );
 		$framework_data      = get_file_data( $plugin_path . 'plugin-fw/init.php', $default_headers );
-		$plugin_fw_main_file = $plugin_path . 'plugin-fw/yit-plugin.php';
+		$plugin_fw_main_file = $plugin_path . 'plugin-fw/flance-plugin.php';
 
-		if ( ! empty( $plugin_fw_data ) ) {
-			foreach ( $plugin_fw_data as $version => $path ) {
+		if ( ! empty( $flance_plugin_fw_data ) ) {
+			foreach ( $flance_plugin_fw_data as $version => $path ) {
 				if ( version_compare( $version, $framework_data['Version'], '<' ) ) {
-					$plugin_fw_data = array( $framework_data['Version'] => $plugin_fw_main_file );
+					$flance_plugin_fw_data = array( $framework_data['Version'] => $plugin_fw_main_file );
 				}
 			}
 		} else {
-			$plugin_fw_data = array( $framework_data['Version'] => $plugin_fw_main_file );
+			$flance_plugin_fw_data = array( $framework_data['Version'] => $plugin_fw_main_file );
 		}
 
 		// Check for license & upgrade classes.

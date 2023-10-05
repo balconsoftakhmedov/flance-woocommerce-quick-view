@@ -53,7 +53,7 @@ if ( ! class_exists( 'FLANCE_BH_Onboarding' ) ) {
 			define( 'DOING_FLANCE_BH_ONBOARDING', true );
 
 			if ( ! wp_script_is( 'yith-plugin-fw-fields', 'registered' ) || ! wp_style_is( 'yith-plugin-fw-fields', 'registered' ) ) {
-				YIT_Assets::instance()->register_styles_and_scripts();
+				FLANCE_Assets::instance()->register_styles_and_scripts();
 			}
 
 			if ( isset( $options['enqueue_script'] ) ) {
