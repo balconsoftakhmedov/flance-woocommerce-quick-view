@@ -14,7 +14,7 @@ $section_tabs = array(
 );
 
 $current_tab = isset( $_GET['tab'] ) ? sanitize_key( wp_unslash( $_GET['tab'] ) ) : 'main'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-$tab_path    = defined( 'FLANCE_CORE_PLUGIN_PATH' ) ? FLANCE_CORE_PLUGIN_PATH : get_template_directory() . '/core/plugin-fw/';
+$tab_path    = defined( 'YIT_CORE_PLUGIN_PATH' ) ? YIT_CORE_PLUGIN_PATH : get_template_directory() . '/core/plugin-fw/';
 
 ?>
 <div id="yith-sysinfo" class="wrap yith-system-info yith-plugin-ui">

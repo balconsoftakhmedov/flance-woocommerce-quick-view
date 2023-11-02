@@ -130,7 +130,7 @@ $label_allowed_tags = apply_filters( 'flance_plugin_fw_metabox_label_allowed_tag
 
 							if ( $display_row ) {
 
-								$field_row_path = apply_filters( 'flance_plugin_fw_metabox_field_row_template_path', FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/metaboxes/field-row.php', $field );
+								$field_row_path = apply_filters( 'flance_plugin_fw_metabox_field_row_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/metaboxes/field-row.php', $field );
 								file_exists( $field_row_path ) && include $field_row_path;
 							} else {
 								flance_plugin_fw_get_field( $field, true );
@@ -140,7 +140,7 @@ $label_allowed_tags = apply_filters( 'flance_plugin_fw_metabox_label_allowed_tag
 							$args       = apply_filters(
 								'yit_fw_metaboxes_type_args',
 								array(
-									'basename' => FLANCE_CORE_PLUGIN_PATH,
+									'basename' => YIT_CORE_PLUGIN_PATH,
 									'path'     => '/metaboxes/types/',
 									'type'     => $field['type'],
 									'args'     => array( 'args' => $field ),

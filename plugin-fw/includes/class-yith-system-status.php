@@ -157,7 +157,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 */
 		public function show_information_panel() {
 
-			$path = defined( 'FLANCE_CORE_PLUGIN_PATH' ) ? FLANCE_CORE_PLUGIN_PATH : get_template_directory() . '/core/plugin-fw/';
+			$path = defined( 'YIT_CORE_PLUGIN_PATH' ) ? YIT_CORE_PLUGIN_PATH : get_template_directory() . '/core/plugin-fw/';
 
 			require_once $path . '/templates/sysinfo/system-information-panel.php';
 
@@ -289,7 +289,7 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 * @since   1.0.0
 		 */
 		public function enqueue_scripts() {
-			$script_path = defined( 'FLANCE_CORE_PLUGIN_URL' ) ? FLANCE_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
+			$script_path = defined( 'YIT_CORE_PLUGIN_URL' ) ? YIT_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
 			wp_register_script( 'yith-system-info', yit_load_js_file( $script_path . '/assets/js/yith-system-info.js' ), array( 'jquery' ), '1.0.0', true );
 
 			if ( isset( $_GET['page'] ) && 'flance_system_info' === $_GET['page'] ) { //phpcs:ignore
@@ -700,8 +700,8 @@ if ( ! class_exists( 'FLANCE_System_Status' ) ) {
 		 */
 		public function get_plugin_fw_info() {
 			$version        = flance_plugin_fw_get_version();
-			$loaded_by      = basename( dirname( FLANCE_CORE_PLUGIN_PATH ) );
-			$loaded_by_init = trailingslashit( dirname( FLANCE_CORE_PLUGIN_PATH ) ) . 'init.php';
+			$loaded_by      = basename( dirname( YIT_CORE_PLUGIN_PATH ) );
+			$loaded_by_init = trailingslashit( dirname( YIT_CORE_PLUGIN_PATH ) ) . 'init.php';
 			if ( file_exists( $loaded_by_init ) ) {
 				$plugin_data = get_plugin_data( $loaded_by_init );
 				$loaded_by   = $plugin_data['Name'] ?? $loaded_by;

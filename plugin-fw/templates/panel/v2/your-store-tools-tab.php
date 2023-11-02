@@ -12,7 +12,7 @@ defined( 'ABSPATH' ) || exit;
 <div id="yith-plugin-fw__panel__your-store-tools-tab" class="yith-plugin-fw__panel__content__page yith-plugin-fw__panel__content__page--your-store-tools">
 	<div class="yith-plugin-fw__panel__content__page__heading">
 		<div class="yith-plugin-fw__panel__your-store-tools-tab__header">
-			<img class="yith-plugin-fw__panel__your-store-tools-tab__header__logo" src="<?php echo esc_url( FLANCE_CORE_PLUGIN_URL . '/assets/images/yith-logo.svg' ); ?>"/>
+			<img class="yith-plugin-fw__panel__your-store-tools-tab__header__logo" src="<?php echo esc_url( YIT_CORE_PLUGIN_URL . '/assets/images/yith-logo.svg' ); ?>"/>
 			<div class="yith-plugin-fw__panel__your-store-tools-tab__header__title">
 				<?php echo wp_kses_post( __( '#1 Independent Seller of <mark>WooCommerce plugins</mark>', 'yith-plugin-fw' ) ); ?>
 			</div>

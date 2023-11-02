@@ -138,10 +138,10 @@ if ( ! class_exists( 'FLANCE_WCQV' ) ) {
 		 * @return void
 		 */
 		public function plugin_fw_loader() {
-			if ( ! defined( 'FLANCE_CORE_PLUGIN' ) ) {
-				global $flance_plugin_fw_data;
-				if ( ! empty( $flance_plugin_fw_data ) ) {
-					$plugin_fw_file = array_shift( $flance_plugin_fw_data );
+			if ( ! defined( 'YIT_CORE_PLUGIN' ) ) {
+				global $plugin_fw_data;
+				if ( ! empty( $plugin_fw_data ) ) {
+					$plugin_fw_file = array_shift( $plugin_fw_data );
 					require_once $plugin_fw_file;
 				}
 			}

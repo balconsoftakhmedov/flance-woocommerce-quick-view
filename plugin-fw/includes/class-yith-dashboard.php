@@ -128,7 +128,7 @@ if ( ! class_exists( 'FLANCE_Dashboard' ) ) {
 		 */
 		public static function enqueue_scripts() {
 			if ( function_exists( 'get_current_screen' ) && get_current_screen() && 'dashboard' === get_current_screen()->id ) {
-				$script_path = defined( 'FLANCE_CORE_PLUGIN_URL' ) ? FLANCE_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
+				$script_path = defined( 'YIT_CORE_PLUGIN_URL' ) ? YIT_CORE_PLUGIN_URL : get_template_directory_uri() . '/core/plugin-fw';
 				$suffix      = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 				wp_enqueue_script( 'yith-dashboard', $script_path . '/assets/js/yith-dashboard' . $suffix . '.js', array( 'jquery-ui-dialog' ), flance_plugin_fw_get_version(), true );
 				wp_enqueue_style( 'wp-jquery-ui-dialog' );

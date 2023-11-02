@@ -332,7 +332,7 @@ if ( ! class_exists( 'YIT_Pointers' ) ) {
 			wp_enqueue_style( 'wp-pointer' );
 			wp_enqueue_script( 'wp-pointer' );
 
-			wp_enqueue_script( 'yit-wp-pointer', FLANCE_CORE_PLUGIN_URL . '/assets/js/' . $script_file, array( 'wp-pointer' ), flance_plugin_fw_get_version(), true );
+			wp_enqueue_script( 'yit-wp-pointer', YIT_CORE_PLUGIN_URL . '/assets/js/' . $script_file, array( 'wp-pointer' ), flance_plugin_fw_get_version(), true );
 			wp_localize_script( 'yit-wp-pointer', 'custom_pointer', $valid_pointers );
 
 			// phpcs:enable

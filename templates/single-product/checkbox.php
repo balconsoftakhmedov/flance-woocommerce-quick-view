@@ -13,8 +13,8 @@ if ( $product ) {
 
 ?>
 
-	<div class="wpc-inner-addon-container wpc-addon wpc-addon-testa" data-product-name="<?php echo esc_attr( $product_name ); ?>">
-		<label for="wpc_addon-<?php echo esc_attr( $product_name ); ?>" class="wpc-addon-name" data-addon-name="<?php echo esc_attr( $product_name ); ?>"><?php echo esc_html( $product_name ); ?></label>
+	<div class="wpc-addon wpc-addon-testa wpc-addon-item-block" data-product-name="<?php echo esc_attr( $product_name ); ?>">
+		<?php /*<label for="wpc_addon-<?php echo esc_attr( $product_name ); ?>" class="wpc-addon-name" data-addon-name="<?php echo esc_attr( $product_name ); ?>"><?php echo esc_html( $product_name ); ?></label> */?>
 
 		<div class="wpc-addon-wrap wpc-addon-checkbox-wrap wpc-addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>-2-0">
 			<label>

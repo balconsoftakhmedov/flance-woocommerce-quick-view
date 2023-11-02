@@ -625,7 +625,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 			$sub_tabs = $this->get_sub_tabs( $current_tab );
 
 			if ( $sub_tabs && $current_sub_tab ) {
-				include FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/sub-tabs-nav.php';
+				include YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/sub-tabs-nav.php';
 			}
 		}
 
@@ -888,7 +888,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 			$options = apply_filters( 'flance_plugin_fw_panel_help_tab_options', $options, $this->settings );
 
-			include FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/help-tab.php';
+			include YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/help-tab.php';
 		}
 
 		/**
@@ -1070,7 +1070,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 					if ( $should_be_shown ) {
 						$type      = $modal['type'] ?? $key;
-						$template  = FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/welcome-modals/' . $type . '.php';
+						$template  = YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/welcome-modals/' . $type . '.php';
 						$close_url = wp_nonce_url(
 							add_query_arg(
 								array(
@@ -1226,7 +1226,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 				'testimonials'              => array(
 					array(
 						'name'    => 'Max Ackerman',
-						'avatar'  => FLANCE_CORE_PLUGIN_URL . '/assets/images/premium-tab/testimonial.jpg',
+						'avatar'  => YIT_CORE_PLUGIN_URL . '/assets/images/premium-tab/testimonial.jpg',
 						'message' => __( "At first, I was hesitant to buy the premium version so I started with the free option.\nAfter a while, seeing the quality of the plugin and the results I was getting, I decided to give it a shot and switch to premium. No regrets!\nThey have an amazing support team that is always there no matter how big or small your problem is. Do yourself a favor and stop using free plugins that kind of work and just buy whatever plugin you need from FLANCE.", 'yith-plugin-fw' ),
 					),
 				),
@@ -1825,7 +1825,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 
 				$field_template_path = flance_plugin_fw_get_field_template_path( $option );
 				if ( $field_template_path ) {
-					$field_container_path = apply_filters( 'flance_plugin_fw_panel_field_container_template_path', FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/panel-field-container.php', $option );
+					$field_container_path = apply_filters( 'flance_plugin_fw_panel_field_container_template_path', YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/panel-field-container.php', $option );
 					file_exists( $field_container_path ) && include $field_container_path;
 				} else {
 					do_action( "yit_panel_{$option['type']}", $option, $db_value, $custom_attributes );
@@ -1857,7 +1857,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		public static function add_infobox( $args = array() ) {
 			if ( ! empty( $args ) ) {
 				extract( $args ); // phpcs:ignore WordPress.PHP.DontExtract.extract_extract
-				require FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/boxinfo.php';
+				require YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/boxinfo.php';
 			}
 		}
 
@@ -2356,7 +2356,7 @@ if ( ! class_exists( 'YIT_Plugin_Panel' ) ) {
 		public function get_template( $template, $args = array() ) {
 			$_template_args = array(
 				'template'      => $template,
-				'base_path'     => FLANCE_CORE_PLUGIN_TEMPLATE_PATH . '/panel/',
+				'base_path'     => YIT_CORE_PLUGIN_TEMPLATE_PATH . '/panel/',
 				'ui_version'    => $this->get_ui_version(),
 				'template_path' => '',
 			);

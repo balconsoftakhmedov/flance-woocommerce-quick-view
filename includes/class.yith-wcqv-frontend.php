@@ -90,8 +90,8 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 
 			$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '';
 
-			wp_register_script( 'flance-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), time(), true );
-			wp_enqueue_script( 'flance-wcqv-frontend' );
+			wp_register_script( 'yith-wcqv-frontend', FLANCE_WCQV_ASSETS_URL . '/js/frontend' . $suffix . '.js', array( 'jquery' ), time(), true );
+			wp_enqueue_script( 'yith-wcqv-frontend' );
 			wp_enqueue_style( 'yith-quick-view', FLANCE_WCQV_ASSETS_URL . '/css/yith-quick-view.css', array(), $this->version );
 
 			$background_modal  = get_option( 'yith-wcqv-background-modal', '#ffffff' );
@@ -259,7 +259,7 @@ if ( ! class_exists( 'FLANCE_WCQV_Frontend' ) ) {
 			do_action( 'flance_quick_view_custom_style_scripts' );
 
 			wp_localize_script(
-				'flance-wcqv-frontend',
+				'yith-wcqv-frontend',
 				'flance_qv',
 				array(
 					'ajaxurl' => admin_url( 'admin-ajax.php', 'relative' ),
