@@ -15,10 +15,15 @@ if ( $product ) {
 
 	<div class="wpc-addon wpc-addon-testa wpc-addon-item-block" data-product-name="<?php echo esc_attr( $product_name ); ?>">
 		<?php /*<label for="wpc_addon-<?php echo esc_attr( $product_name ); ?>" class="wpc-addon-name" data-addon-name="<?php echo esc_attr( $product_name ); ?>"><?php echo esc_html( $product_name ); ?></label> */?>
+<?php
 
+
+		$wpc_addons = array_filter( (array) $product->get_meta( '_wpc_pro_pao_data' ) );
+$class_modal = '';
+ $class_modal = 'yith-wcqv-button-checkbox' ?>
 		<div class="wpc-addon-wrap wpc-addon-checkbox-wrap wpc-addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>-2-0">
 			<label>
-				<input type="checkbox" class="wpc-addon-field stm-parent wpc-addon-checkbox yith-wcqv-button-checkbox" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>[]" value="red"
+				<input type="checkbox" class="wpc-addon-field stm-parent wpc-addon-checkbox <?php echo  $class_modal ?>" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>[]" value="red"
 					   data-price-type="quantity_based"
 					   data-price="<?php echo esc_attr( $product_price ); ?>"
 					   data-label="<?php echo esc_attr( $product_name ); ?>"
