@@ -20,7 +20,7 @@ if ( $product ) {
 
 		$wpc_addons = array_filter( (array) $product->get_meta( '_wpc_pro_pao_data' ) );
 $class_modal = '';
- $class_modal = 'yith-wcqv-button-checkbox' ?>
+ if (!empty($wpc_addons)) $class_modal = 'yith-wcqv-button-checkbox' ?>
 		<div class="wpc-addon-wrap wpc-addon-checkbox-wrap wpc-addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>-2-0">
 			<label>
 				<input type="checkbox" class="wpc-addon-field stm-parent wpc-addon-checkbox <?php echo  $class_modal ?>" name="wpc_addon-<?php echo esc_attr( $product_id ); ?>-<?php echo esc_attr( $product_name ); ?>[]" value="red"
