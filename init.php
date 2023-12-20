@@ -3,7 +3,7 @@
  * Plugin Name: Flance WooCommerce Woocommerce Product Child Options for advanced options
  * Plugin URI: https://flance.info
  * Description:
- * Version: 2.1.0
+ * Version: 3.1.0
  * Author: flance
  * Author URI: https://flance.info/
  * Text Domain: flance-woocommerce-quick-view

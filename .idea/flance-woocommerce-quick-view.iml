@@ -7,5 +7,6 @@
     <orderEntry type="module" module-name="wp-cafe" />
     <orderEntry type="module" module-name="wpcafe-pro" />
     <orderEntry type="module" module-name="yith-woocommerce-ajax-navigation" />
+    <orderEntry type="module" module-name="flance-import-doordash" />
   </component>
 </module>
